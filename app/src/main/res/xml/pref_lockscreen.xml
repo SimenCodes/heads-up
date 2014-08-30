@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="lock_screen_on"
+        android:title="@string/pref_lock_screen_on"
+        android:summary="@string/pref_lock_screen_on_desc"
+        android:defaultValue="true"
+        />
+
+    <CheckBoxPreference
+        android:key="turn_screen_on"
+        android:title="@string/pref_turn_screen_on"
+        android:summary="@string/pref_turn_screen_on_desc"
+        android:defaultValue="false"
+        android:dependency="lock_screen_on"
+        />
+
+    <CheckBoxPreference
+        android:key="use_proximity"
+        android:title="@string/pref_use_proximity"
+        android:summary="@string/pref_use_proximity_desc"
+        android:defaultValue="false"
+        android:dependency="turn_screen_on"
+        />
+
+    <CheckBoxPreference
+        android:key="keep_on_lock_screen"
+        android:title="@string/pref_keep_on_lock_screen"
+        android:summary="@string/pref_keep_on_lock_screen_desc"
+        android:defaultValue="false"
+        android:dependency="lock_screen_on"
+        />
+
+    <CheckBoxPreference
+        android:key="keep_screen_on_forever"
+        android:title="@string/pref_keep_screen_on_forever"
+        android:summary="@string/pref_keep_screen_on_forever_desc"
+        android:defaultValue="false"
+        android:dependency="turn_screen_on"
+        />
+
+    <CheckBoxPreference
+        android:key="only_on_lock_screen"
+        android:title="@string/pref_only_on_lock_screen"
+        android:summary="@string/pref_only_on_lock_screen_desc"
+        android:defaultValue="false"
+        android:dependency="lock_screen_on"
+        />
+
+    <CheckBoxPreference
+        android:key="privacy_on_lockscreen"
+        android:title="@string/pref_privacy_on_lockscreen"
+        android:summary="@string/pref_privacy_on_lockscreen_desc"
+        android:defaultValue="false"
+        android:dependency="lock_screen_on"
+        />
+
+    <Preference
+        android:title="@string/pref_device_admin"
+        android:summary="@string/device_admin_enable_explanation">
+        <intent android:targetPackage="codes.simen.l50notifications"
+            android:action="codes.simen.l50notifications.deviceAdmin"
+            />
+    </Preference>
+
+</PreferenceScreen>

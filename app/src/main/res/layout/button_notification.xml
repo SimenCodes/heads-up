@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:textAlignment="textStart"
+    android:text="ACTION!"
+    style="@style/Button_Borderless"
+    android:textSize="@dimen/text_size_popup_button"
+    android:singleLine="true"
+    android:id="@+id/button"
+    android:paddingRight="5dp"
+    android:paddingLeft="3dp">
+</Button>

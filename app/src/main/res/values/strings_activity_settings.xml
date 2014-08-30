@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array translatable="false" name="priorityLevelValues">
+        <item name="MAX">2</item>
+        <item name="HIGH">1</item>
+        <item name="NORMAL">0</item>
+        <item name="LOW">-1</item>
+        <item name="MIN">-2</item>
+    </string-array>
+    <string-array translatable="false" name="priorityLevelDefaultValues">
+        <item name="MAX">2</item>
+        <item name="HIGH">1</item>
+        <item name="NORMAL">0</item>
+    </string-array>
+
+    <string-array translatable="false" name="overlayPositionValues">
+        <item name="aboveStatus">2</item>
+        <item name="top">1</item>
+        <item name="center">0</item>
+        <item name="bottom">-1</item>
+    </string-array>
+
+    <string-array translatable="false" name="overlayStyleValues">
+        <item name="l">0</item>
+        <item name="ldark">1</item>
+        <item name="holo">2</item>
+        <item name="holodark">3</item>
+        <item name="random">4</item>
+    </string-array>
+
+    <!-- Do not translate these -->
+    <string name="title_activity_set_locale" translatable="false">Override language setting</string>
+    <string name="set_locale" translatable="false">To change the current app language, enter language/country code below, and tap \'Set language\'.</string>
+
+</resources>

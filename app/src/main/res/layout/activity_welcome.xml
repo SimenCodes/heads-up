@@ -1,0 +1,117 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="codes.simen.l50notifications.ui.WelcomeActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/ErrorHighlight"
+        android:text="@string/intro_warning_miui"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/miui_warning" />
+
+    <TextView
+        android:text="@string/intro_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/notification_open"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            style="@style/Button_Borderless"
+            android:textColor="@android:color/primary_text_light"
+            android:text="@string/welcome_btn_toggleservice"
+            android:singleLine="true"
+            android:onClick="onClick"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="#33333333" />
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            style="@style/Button_Borderless"
+            android:id="@+id/settings_button"
+            android:src="@drawable/ic_action_settings"
+            android:contentDescription="@string/action_settings"
+            android:onClick="doOpenSettings" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="#33333333" />
+
+        <ImageButton
+            style="@style/Button_Borderless"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:id="@+id/test_button"
+            android:src="@drawable/ic_play"
+            android:contentDescription="Test"
+            android:onClick="doSendTest" />
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/intro_status_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/SuggestionHighlight"
+        android:visibility="gone"
+        android:id="@+id/status" />
+
+    <TextView
+        style="@style/ErrorHighlight"
+        android:text="@string/intro_warning_both_services"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bothEnabled" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/errorDisplay"
+        android:text="Error"
+        android:onClick="doReport"
+        android:clickable="true"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:textAppearance="@style/ErrorHighlight"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/site_ad"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Button_Borderless"
+        android:textColor="@color/notification_btn_text_color_light"
+        android:text="@string/site_ad_link"
+        android:onClick="doOpenSite"/>
+
+</LinearLayout>
+</ScrollView>

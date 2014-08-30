@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="holo_orange_dark">#ff8800</color>
+    <color name="notification_ic_background">#0a242e</color>
+    <color name="notification_ic_small_background">#a3a3a3</color>
+    <color name="notification_btn_text_color">#eee</color>
+    <color name="notification_background">#000000</color>
+    <color name="notification_background_light">#FFFFFF</color>
+    <color name="notification_btn_text_color_light">#000</color>
+    <color name="shadow_dark">#666</color>
+
+    <color name="suggestion_highlight_text">#177bbd</color>
+    <color name="button_press_highlight">#dedede</color>
+
+    <color name="notification_icon_color">#878787</color>
+
+    <color name="text_color_dark">#000000</color>
+    <color name="text_color_light">#FFFFFF</color>
+    <color name="error_highlight_text">#ffcc0000</color>
+</resources>

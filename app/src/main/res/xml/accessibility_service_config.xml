@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:description="@string/accessibility_desc"
+    android:accessibilityEventTypes="typeNotificationStateChanged"
+    android:accessibilityFlags="flagDefault"
+    android:accessibilityFeedbackType="feedbackVisual"
+    android:notificationTimeout="100"
+    android:settingsActivity="codes.simen.l50notifications.ui.SettingsActivity"
+    tools:ignore="UnusedAttribute" />

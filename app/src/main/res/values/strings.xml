@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+
+    <!--
+Hi!, thank you for wanting to help translate Heads-up!
+To begin, download this file to your computer. When you're finished translating, email your file to sb@simen.codes. Please include the word 'translation' in the subject line, as this puts your email in my priority inbox.
+After receiving the translation, I'll send you a testing APK containing your translation.
+For details regarding problems and missing strings in your translation, see http://app.simen.codes/dev/translation/heads-up/ I update this document every time I receive a translation.
+    -->
+
+    <string name="app_name">Heads-up notifications</string>
+    <string name="app_icon_name">Heads-up</string>
+    <string name="title_activity_welcome">Heads-up notifications</string>
+    <string name="action_settings">Settings</string>
+    <string name="reader_btn_open">Open</string>
+    <string name="reader_btn_dismiss">Dismiss</string>
+    <string name="intro_desc">Tap the button below to enable or disable heads-up notifications.</string>
+    <string name="welcome_btn_toggleservice">Enable / Disable heads-up</string>
+    <string name="intro_warning_miui">Are you using MIUI? Before you can use this app, you\'ll probably need to give it some slack when it comes to security.\n1. Go to System Settings > All > Apps > Downloaded > Heads-up notifications.\n2. Toggle the switch that says \'Show popup windows\' (second option).\n3. At the bottom, go to \'Manage permissions\'.\n4. Set \'I trust this app\' to on. </string>
+    <string name="site_ad">Like what you see? Check out my other apps as well:</string>
+    <string name="site_ad_link">Visit Simen.codes</string>
+    <string name="title_activity_app_list">App filter</string>
+    <string name="pref_priority_title">Notification priority</string>
+    <string name="pref_priority_summary">Filter notifications based on their priority.\nRequires Android 4.1</string>
+    <string name="applist_desc">Uncheck an app to mute it. You can also tap and hold on the X button in the heads-up to mute an app.</string>
+    <string name="blocklist_desc">Check an app to keep heads-up from interfering while you\'re using it.</string>
+    <string name="blocked_confirmation">App blocked</string>
+    <string name="pref_header_style">Style</string>
+    <string name="pref_lock_screen_on">Display on lockscreen</string>
+    <string name="pref_lock_screen_on_desc">Display the heads-up on the lockscreen.</string>
+    <!-- Translators: Please add a note in the next lines asking users to write in English. -->
+    <string name="intro_status_on">The service is enabled. Try sending yourself a message.\nIf it doesn\'t work, please reboot your device and try again. Contact me at sb@simen.codes you can\'t get it to work.</string>
+    <string name="intro_status_on_confirmed">The service is running. Try sending yourself a message.\nContact me at sb@simen.codes you can\'t get it to work.</string>
+    <string name="bug_report_request">If the app has been misbehaving lately, tap here to report the problem. You don\'t have to do anything if the app is behaving normally.\n\n</string>
+    <string name="pref_overlay_display_time">Display time</string>
+    <string name="pref_overlay_time_max">Until I dismiss it</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="pref_header_general">Filtering</string>
+
+    <string-array name="priorityLevel">
+        <item name="MAX">Critical and urgent (missed calls, directions, emergency alerts)</item>
+        <item name="HIGH">Important (communications, important emails)</item>
+        <item name="NORMAL">Normal (+notifications from old apps)</item>
+        <item name="LOW">Non-important (software updates, junk mail)</item>
+        <item name="MIN">Contextual and background info (weather, expired events, suggestions)</item>
+    </string-array>
+
+    <string name="pref_overlay_display_time_counter"><xliff:g id="time" example="7">%s</xliff:g> seconds</string>
+    <string name="pref_top_margin">Popup position</string>
+    <string name="pref_turn_screen_on">Turn screen on</string>
+    <string name="pref_turn_screen_on_desc">Turn the screen on when you get a notification</string>
+    <string name="pref_opacity">Opacity</string>
+    <string name="pref_overlay_style">Theme</string>
+    <string name="pref_keep_on_lock_screen">Keep on lockscreen</string>
+    <string name="pref_keep_on_lock_screen_desc">Keep notifications on the lockscreen until you dismiss them</string>
+    <string name="pref_dismiss_on_swipe">Dismiss on swipe</string>
+    <string name="pref_dismiss_on_swipe_desc">Remove notifications from the drawer when you swipe them away. You can still tap the X to dismiss from the drawer.</string>
+    <string name="title_activity_noshow_list">Don\'t disturb</string>
+    <string name="pref_round_icons">Round icons</string>
+    <string name="pref_round_icons_desc">Use L\'s round icons instead of the squared icons from earlier releases</string>
+    <string name="pref_use_proximity">Pocket detection</string>
+    <string name="pref_use_proximity_desc">Don\'t turn the screen on if the phone is in a pocket or facedown on a table.</string>
+    <string name="pref_header_lockscreen">Lock screen</string>
+    <string name="pref_block_current_app">Block current app</string>
+    <string name="pref_block_current_app_desc">Don\'t display heads-up for notifications from the current app</string>
+    <string name="pref_header_behaviour">Behaviour</string>
+    <string name="music_title">Playing <xliff:g id="track" example="TRACK">%s</xliff:g></string>
+    <string name="music_text">By: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+    <string name="pref_music_popup">Current song popup</string>
+    <string name="pref_music_popup_desc">Display song metadata on track change.\nNote: not all music players are supported.</string>
+    <string name="intro_warning_both_services">Both the notification listener and the accessibility service is enabled. Please disable one of them.</string>
+    <string name="notification_listener_not_found_detour">Select \'Notification Listeners\' and toggle \'Heads-up notifications\'</string>
+    <string name="accessibility_not_found_detour"><![CDATA[Go to \'Accessibility\' > \'Heads-up notifications\']]></string>
+    <string name="accessibility_toast">Select \'Heads-up notifications\' to toggle the service</string>
+    <string name="pref_floating_window">Open as floating window</string>
+    <string name="pref_floating_window_desc">Long-tap the icon to open the notification as a floating window. Experimental feature, works with OmniRom and XHaloFloatingWindow.</string>
+    <string name="pendingintent_cancel_exception">App has canceled action</string>
+    <string name="pendingintent_null_exception">App didn\'t define any action</string>
+    <string name="pref_hide_dismiss_button">Hide dismiss button</string>
+    <string name="pref_hide_dismiss_button_desc">Hide the dismiss button from the notifications</string>
+    <string name="pref_dismiss_keyguard">Unlock phone</string>
+    <string name="pref_dismiss_keyguard_desc">Automatically unlock the phone when you open a notification.\nWARNING! This will allow ANYONE to unlock your phone, regardless of your security settings.</string>
+    <string name="pref_compact_mode">Compact mode</string>
+    <string name="pref_compact_mode_desc">Only display the first line of the notification.</string>
+    <string name="pref_font_size">Font size</string>
+    <string name="pref_font_size_desc">Fine-tune the font size in the popups</string>
+    <string name="leave_review">Leave review</string>
+    <string name="pref_header_other">About</string>
+
+    <string-array name="overlayPosition">
+        <item name="aboveStatus">Top</item>
+        <item name="top">Below status bar</item>
+        <item name="center">Center</item>
+        <item name="bottom">Bottom</item>
+    </string-array>
+    <string-array name="overlayStyles">
+        <item name="l">Android 5.0 \'L\' light</item>
+        <item name="ldark">Android 5.0 \'L\' dark</item>
+        <item name="holo">Plain light</item>
+        <item name="holodark">Plain dark</item>
+    </string-array>
+
+    <!-- Added since 1.7 -->
+    <string name="pref_only_on_lock_screen">Only on lockscreen</string>
+    <string name="pref_only_on_lock_screen_desc">Only display popups on the lockscreen.</string>
+    <string name="pref_privacy_on_lockscreen">Privacy on lockscreen</string>
+    <string name="pref_privacy_on_lockscreen_desc">Don\'t display message contents on the lockscreen</string>
+    <string name="accessibility_desc">Enable this service to allow Heads-up to read your notifications.\n\nDO NOT enable this service if your device is running Android 4.3 or newer.</string>
+    <string name="device_admin_disable_warning">After disabling this service, some features in Heads-up might not work properly.</string>
+    <string name="title_activity_device_admin_enabler">Enable device admin</string>
+    <string name="device_admin_enable_explanation">Enabling this will allow Heads-up to turn off your screen. Use this if the screen doesn\'t turn off after displaying popups on the lockscreen, or if the pocket detection doesn\'t work properly.</string>
+    <string name="pref_device_admin">Fix \'screen on\' bug.</string>
+
+    <!-- Added since 1.8 -->
+    <string name="no_proximity_sensor_error">No proximity sensor detected. Pocket detection will not work. Please DON\'T report this bug.</string>
+    <string name="pref_keep_screen_on_forever">Keep screen on</string>
+    <string name="pref_keep_screen_on_forever_desc">After turning the screen on, keep it on as long as the heads-up is visible.</string>
+
+</resources>

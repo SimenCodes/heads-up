@@ -1,0 +1,25 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- These settings headers are only used on tablets. -->
+
+    <header
+        android:fragment="codes.simen.l50notifications.ui.SettingsActivity$GeneralPreferenceFragment"
+        android:title="@string/pref_header_general" />
+
+    <header
+        android:fragment="codes.simen.l50notifications.ui.SettingsActivity$BehaviourPreferenceFragment"
+        android:title="@string/pref_header_behaviour" />
+
+    <header
+        android:fragment="codes.simen.l50notifications.ui.SettingsActivity$StylePreferenceFragment"
+        android:title="@string/pref_header_style" />
+
+    <header
+        android:fragment="codes.simen.l50notifications.ui.SettingsActivity$LockscreenPreferenceFragment"
+        android:title="@string/pref_header_lockscreen" />
+
+    <header
+        android:fragment="codes.simen.l50notifications.ui.SettingsActivity$OtherPreferenceFragment"
+        android:title="@string/pref_header_other" />
+
+</preference-headers>

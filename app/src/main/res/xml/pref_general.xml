@@ -1,0 +1,44 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="blacklist"
+        android:defaultValue=""
+        android:title="@string/title_activity_app_list">
+        <intent android:targetPackage="codes.simen.l50notifications"
+            android:action="codes.simen.l50notifications.activities.AppList.blacklist"
+            />
+    </Preference>
+    <Preference
+        android:key="noshowlist"
+        android:defaultValue=""
+        android:title="@string/title_activity_noshow_list">
+        <intent android:targetPackage="codes.simen.l50notifications"
+            android:action="codes.simen.l50notifications.activities.AppList.noshowlist"
+            />
+    </Preference>
+
+    <MultiSelectListPreference
+        android:key="notification_priority"
+        android:entries="@array/priorityLevel"
+        android:entryValues="@array/priorityLevelValues"
+        android:defaultValue="@array/priorityLevelDefaultValues"
+        android:title="@string/pref_priority_title"
+        android:summary="@string/pref_priority_summary"
+        />
+
+    <CheckBoxPreference
+        android:key="block_current_app"
+        android:title="@string/pref_block_current_app"
+        android:summary="@string/pref_block_current_app_desc"
+        android:defaultValue="false"
+        />
+
+    <CheckBoxPreference
+        android:key="music_on"
+        android:title="@string/pref_music_popup"
+        android:summary="@string/pref_music_popup_desc"
+        android:defaultValue="false"
+        />
+
+
+</PreferenceScreen>

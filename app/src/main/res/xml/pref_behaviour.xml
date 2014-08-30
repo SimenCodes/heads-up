@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <codes.simen.l50notifications.ui.DisplayTimePreference
+        android:key="overlay_display_time"
+        android:title="@string/pref_overlay_display_time"
+        android:defaultValue="8000"
+        />
+
+    <CheckBoxPreference
+        android:key="dismiss_on_swipe"
+        android:title="@string/pref_dismiss_on_swipe"
+        android:summary="@string/pref_dismiss_on_swipe_desc"
+        android:defaultValue="@bool/is_sdk_18"
+        android:enabled="@bool/is_sdk_18"
+        />
+
+    <CheckBoxPreference
+        android:key="floating_window"
+        android:title="@string/pref_floating_window"
+        android:summary="@string/pref_floating_window_desc"
+        android:defaultValue="false"
+        />
+
+    <CheckBoxPreference
+        android:key="dismiss_keyguard"
+        android:title="@string/pref_dismiss_keyguard"
+        android:summary="@string/pref_dismiss_keyguard_desc"
+        android:defaultValue="false"
+        />
+
+</PreferenceScreen>

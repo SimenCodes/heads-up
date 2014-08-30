@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:xliff="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+    <string name="app_name">Notifiche Heads-up</string>
+    <string name="app_icon_name">Heads-up</string>
+    <string name="title_activity_welcome">Notifiche Heads-up</string>
+    <string name="action_settings">Impostazioni</string>
+    <string name="reader_btn_open">Apri</string>
+    <string name="reader_btn_dismiss">Scarta</string>
+    <string name="intro_desc">Clicca il tasto qui sotto per attivare o disattivare le notifiche heads-up.</string>
+    <string name="welcome_btn_toggleservice">Attiva / Disattiva heads-up</string>
+    <string name="intro_warning_miui">Utilizzi la ROM MIUI? Prima di poter utilizzare quest\'app, dovrai probabilmente seguire questi passaggi per via della troppa sicurezza.\n1. Vai su Impostazioni di sistema > Tutte > Apps > Scaricate > Notifiche Heads-up.\n2. Attiva la seconda opzione \"Mostra finestre popup\".\n3. In basso, vai su \"Gestisci autorizzazioni\".\n 4. Imposta \"Mi fido di quest \'app\" su ON. </string>
+    <string name="site_ad">Ti piace? Visita altre mie app:</string>
+    <string name="site_ad_link">Visita Simen.codes</string>
+    <string name="title_activity_app_list">Filtro applicazioni</string>
+    <string name="pref_priority_title">Priorita\' notifiche</string>
+    <string name="pref_priority_summary">Filtra le notifiche in base alla loro priorità.\nRichiede Android 4.1</string>
+    <string name="applist_desc">Deseleziona un app per silenziarla. Puoi anche tener premuto sul tasto \'Scarta\' nella notifica heads-up dell\'app desiderata per silenziarla.</string>
+    <string name="blocked_confirmation">App bloccata</string>
+    <string name="pref_header_style">Stile</string>
+    <string name="pref_lock_screen_on">Visualizza sulla lockscreen</string>
+    <string name="pref_lock_screen_on_desc">Visualizza le notifiche heads-up sulla schermata di sblocco.</string>
+    <string name="intro_status_on">Il servizio è attivo. Prova inviandoti un messaggio.\nSe non funziona correttamente riavvia il dispositivo e prova di nuovo. Contattami a sb@simen.codes se non riesci a far funzionare l\'app come vorrseti (scrivimi in lingua inglese).</string>
+    <string name="intro_status_on_confirmed">Il servizio è in funzione. Prova inviandoti un messaggio.\n Contattami a sb@simen.codes se non riesci a far funzionare correttamente l\'app (scrivimi in lingua inglese).</string>
+    <!-- Please add a note in the next line asking users to write in English. -->
+    <string name="bug_report_request">Se l\'app non funziona come dovrebbe, clicca qui per segnalare il problema.\n\n</string>
+    <string name="pref_overlay_display_time">Durata visualizzazione heads-up</string>
+    <string name="pref_overlay_time_max">Finche\' non la scarto</string>
+    <string name="title_activity_settings">Impostazioni</string>
+    <string name="pref_header_general">Generale</string>
+    <string-array name="priorityLevel">
+        <item name="MAX">Urgenti (chiamate in arrivo, avvertenze, avvisi d\'emergenza)</item>
+        <item name="HIGH">Importanti (comunicazioni, email importanti)</item>
+        <item name="NORMAL">Normali (+notificate da app vecchie)</item>
+        <item name="LOW">Non importanti (aggiornamenti software, email irrilevanti)</item>
+        <item name="MIN">Informazioni contestuali e di background (meteo, eventi passati, suggerimenti)</item>
+    </string-array>
+    <string name="pref_overlay_display_time_counter">
+        <xliff:g id="time" example="7" >%s</xliff:g> secondi
+    </string>
+		<string name="pref_top_margin">Posizione popup</string>
+    <string name="pref_turn_screen_on">Attiva lo schermo</string>
+    <string name="pref_turn_screen_on_desc">Attiva lo schermo quando si riceve una notifica.</string>
+    <string name="pref_opacity">Opacità</string>
+    <string name="pref_overlay_style">Tema</string>
+    <string name="pref_keep_on_lock_screen">Mantieni sulla lockscreen</string>
+    <string name="pref_keep_on_lock_screen_desc">Mantieni le notifiche sulla lockscreen finchè non le scarti</string>
+    <string name="pref_dismiss_on_swipe">Scarta con swipe</string>
+    <string name="pref_dismiss_on_swipe_desc">Rimuove la notifica dal centro notifiche quando la scarti con uno swipe. (Puoi comunque cliccare sulla X per scartarla dal centro notifiche)</string>
+    <string name="pref_compact_mode">Compact mode</string>
+    <string name="leave_review">Leave review</string>
+    <string-array name="overlayPosition">
+        <item name="aboveStatus">Sopra</item>
+        <item name="top">Below status bar</item>
+        <item name="center">In centro</item>
+        <item name="bottom">Sotto</item>
+    </string-array>
+    <string-array name="overlayStyles">
+        <item name="l">Android 5.0 \"L\" chiaro</item>
+        <item name="ldark">Android 5.0 \"L\" scuro</item>
+        <item name="holo">Holo chiaro</item>
+        <item name="holodark">Holo scuro</item>
+    </string-array>
+</resources>
+

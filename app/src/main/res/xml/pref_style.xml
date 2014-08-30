@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:key="overlay_style"
+        android:title="@string/pref_overlay_style"
+        android:entries="@array/overlayStyles"
+        android:entryValues="@array/overlayStyleValues"
+        android:defaultValue="0"
+        />
+
+    <ListPreference
+        android:key="overlay_vertical_position"
+        android:entries="@array/overlayPosition"
+        android:entryValues="@array/overlayPositionValues"
+        android:title="@string/pref_top_margin"
+        android:defaultValue="1"
+        />
+
+    <codes.simen.l50notifications.ui.OpacityPreference
+        android:key="opacity"
+        android:title="@string/pref_opacity"
+        android:defaultValue="98"
+        />
+
+    <codes.simen.l50notifications.ui.FontSizePreference
+        android:key="font_size"
+        android:title="@string/pref_font_size"
+        android:summary="@string/pref_font_size_desc"
+        android:defaultValue="100"
+        />
+
+    <CheckBoxPreference
+        android:key="compact_mode"
+        android:title="@string/pref_compact_mode"
+        android:summary="@string/pref_compact_mode_desc"
+        android:defaultValue="true"
+        />
+
+    <CheckBoxPreference
+        android:key="round_icons"
+        android:title="@string/pref_round_icons"
+        android:summary="@string/pref_round_icons_desc"
+        android:defaultValue="true"
+        />
+
+    <CheckBoxPreference
+        android:key="hide_dismiss_button"
+        android:title="@string/pref_hide_dismiss_button"
+        android:summary="@string/pref_hide_dismiss_button_desc"
+        android:defaultValue="false"
+        />
+
+    <Preference
+        android:title="@string/title_activity_set_locale">
+        <intent android:targetPackage="codes.simen.l50notifications"
+            android:action="codes.simen.l50notifications.activities.SetLocale"
+            />
+    </Preference>
+
+</PreferenceScreen>

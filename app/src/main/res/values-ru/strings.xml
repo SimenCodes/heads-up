@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+
+
+    <string name="intro_warning_miui">Вы используете MIUI? Прежде чем вы сможете использовать это приложение,  нужно дать ему разрешения, в настройках безопасности.\n1. Откройте системные настройки> Все> Приложения> Загружены> Heads-up notifications.\n2. Установите галочку \'Показать всплывающие окна\'.\n3. Внизу, перейдите к \'Управление разрешениями\'.\n4. Установите \'Я доверяю этому приложению\', чтобы уведомления заработали. </string>
+    <string name="app_name">Heads-up notifications</string>
+    <string name="title_activity_welcome">Heads-up notifications</string>
+    <string name="action_settings">Настройки</string>
+    <string name="reader_btn_open">Открыть</string>
+    <string name="reader_btn_dismiss">Скрыть</string>
+    <string name="intro_desc">Нажмите кнопку ниже, чтобы включить или отключить heads-up notifications.</string>
+    <string name="welcome_btn_toggleservice">Включить / Выключить уведомления</string>
+    <string name="site_ad">Вам нравиться моё приложение? Попробуйте другие мои приложения:</string>
+    <string name="site_ad_link">Перейти Simen.codes</string>
+    <string name="title_activity_app_list">Фильтр приложений</string>
+    <string name="pref_priority_title">Приоритет уведомлений</string>
+    <string name="pref_priority_summary">Фильтр уведомлений на основе их приоритета.\nТребуется Android 4.1</string>
+    <string name="applist_desc">Снимите галку для отключения уведомлений от этого приложения. Вы также можете нажать и удерживать кнопку \"Скрыть\" в самом уведомление, чтобы отключить приложение.</string>
+    <string name="blocklist_desc">Нажмите для выбора всех приложений</string>
+	<string name="blocked_confirmation">Приложение заблокировано</string>
+    <string name="pref_header_style">Стиль</string>
+    <string name="pref_lock_screen_on">Показывать на экране блокировки</string>
+    <string name="pref_lock_screen_on_desc">Включите для отображения уведомления на экране блокировки.\nВНИМАНИЕ! Некоторые устройства могут сделать экран блокировки прозрачным во время отображения уведомления. Будьте осторожны!.</string>
+    <string name="intro_status_on">Служба включена. Попробуйте отправить себе сообщение.\nЕсли уведомление не работает, пожалуйста, перезагрузите устройство и попробуйте еще раз. Свяжитесь со мной sb@simen.codes если уведомление не работает.</string>
+    <!--<string name="pref_overlay_mode">Режим отображения</string>
+    <string name="pref_overlay_mode_desc">Не закрывать текущую деятельность при отображении уведомления</string>-->
+    <string name="bug_report_request">Нажмите здесь, чтобы сообщить об ошибке.\n\n</string>
+    <string name="pref_overlay_display_time">Время показа</string>
+    <string name="pref_overlay_time_max">Пока не скрою</string>
+    <string name="title_activity_settings">Настройки</string>
+    <string name="pref_header_general">Общий</string>
+	<string name="pref_header_other">О программе</string>
+	
+	
+    <string-array name="priorityLevel">
+        <item name="MAX">Важные и неотложные (текущие вызовы, указания, аварийные оповещения)</item>
+        <item name="HIGH">Важные (контакты, важные письма)</item>
+        <item name="NORMAL">Нормальные (+уведомления от старых приложений)</item>
+        <item name="LOW">Не важные (обновления ПО, нежелательная почта)</item>
+        <item name="MIN">Контекстная и фоновая информация (погода, старые события, советы)</item>
+    </string-array>
+	
+    <string name="pref_overlay_display_time_counter">
+        <xliff:g id="time" example="7" >%s</xliff:g> секунд
+    </string>
+	
+	
+	 <string name="pref_top_margin">Положение уведомления</string>
+    <string name="pref_turn_screen_on">Включать экран</string>
+    <string name="pref_turn_screen_on_desc">Включает экран при новом уведомление, когда экран заблокирован</string>
+    <string name="pref_opacity">Прозрачность</string>
+    <string name="pref_overlay_style">Тема</string>
+    <string name="pref_keep_on_lock_screen">Удерживать на экране блокировки</string>
+    <string name="pref_keep_on_lock_screen_desc">Удерживает уведомление на экране блокировки, пока не закроете</string>
+    <string name="pref_dismiss_on_swipe">Закрыть жестом</string>
+    <string name="pref_dismiss_on_swipe_desc">Удаляет уведомления из строки состояния, когда Вы проводите жестом по всплывающему уведомлению. (Вы все еще можете нажать на X, чтоб удалить.)</string>
+	
+	<string name="title_activity_noshow_list">Не показывать в этих приложениях</string>
+    <string name="pref_round_icons">Круглые иконки</string>
+    <string name="pref_round_icons_desc">Использовать круглые иконки вместо квадратных</string>
+    <string name="pref_use_proximity">Карманный режим</string>
+    <string name="pref_use_proximity_desc">Не включает экран, если телефон находится в кармане или лежит на столе экраном вниз.</string>
+    <string name="pref_header_lockscreen">Экран блокировки</string>
+    <string name="pref_block_current_app">Блокировать текущее приложение</string>
+    <string name="pref_block_current_app_desc">Не показывать уведомление если это приложение открыто</string>
+    <string name="pref_header_behaviour">Поведение</string>
+    <string name="music_title">Трек: <xliff:g id="track" example="TRACK">%s</xliff:g></string>
+    <string name="music_text">Автор: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nАльбом: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+    <string name="pref_music_popup">Текущая песня во всплывающем окне</string>
+    <string name="pref_music_popup_desc">Показывает  информацию о текущей песни при изменение трека \nПримечание: Не все музыкальные плееры поддерживаются.</string>
+    <string name="intro_warning_both_services">Обе функции уведомлений включены. Пожалуйста, отключите одно из них.</string>
+    <string name="notification_listener_not_found_detour">Выберите нужные пункты для \'Heads-up notifications\'</string>
+    <string name="accessibility_not_found_detour"><![CDATA[Go to \'Accessibility\' > \'Heads-up notifications\']]></string>
+    <string name="accessibility_toast">Выберите \'Heads-Up Notification \' для переключения службы</string>
+    <string name="pref_floating_window">Открыть как плавающее окно</string>
+    <string name="pref_floating_window_desc">Долгое нажатие на иконке открывает уведомление как плавающее окно. Экспериментальная функция, работает с OmniRom и XHaloFloatingWindow.</string>
+    <string name="pendingintent_cancel_exception">Приложение отменило действие</string>
+    <string name="pendingintent_null_exception">Приложение не определило никаких действий</string>
+    <string name="pref_hide_dismiss_button">Убрать кнопку Скрыть</string>
+    <string name="pref_hide_dismiss_button_desc">Убирает кнопку Скрыть с уведомления</string>
+	 <string name="pref_dismiss_keyguard">Разблокировать телефон</string>
+    <string name="pref_dismiss_keyguard_desc">Автоматически разблокировать телефон при открытии уведомления. \nВНИМАНИЕ! Это позволит всем желающим разблокировать телефон, независимо от настроек безопасности.</string>
+	<string name="pref_compact_mode">Компактный режим</string>
+    <string name="pref_compact_mode_desc">Отобразит только первую строку уведомления.</string>
+    <string name="pref_font_size">Размер шрифта</string>
+    <string name="pref_font_size_desc">Тонкая настройка размера шрифта во всплывающем окне</string>
+    <string name="leave_review">Оставить отзыв</string>
+	
+    <string-array name="overlayPosition">
+	    <item name="aboveStatus">Сверху</item>
+        <item name="top">Ниже строки состояния</item>
+        <item name="center">По центру</item>
+        <item name="bottom">Снизу</item>
+    </string-array>
+    <string-array name="overlayStyles">
+        <item name="l">Android 5.0 \"L\" Светлая</item>
+        <item name="ldark">Android 5.0 \"L\" Тёмная</item>
+        <item name="holodark">Тёмная</item>
+        <item name="holo">Светлая</item>
+    </string-array>
+	
+	 <!-- New strings since 1.7 -->
+    <string name="pref_only_on_lock_screen">Только на экране блокировки</string>
+    <string name="pref_only_on_lock_screen_desc">Отображать только на экране блокировки.</string>
+    <string name="pref_privacy_on_lockscreen">Защита на экране блокировки</string>
+    <string name="pref_privacy_on_lockscreen_desc">Не показывать содержание сообщения на экране блокировки</string>
+    <string name="accessibility_desc">Включите Heads-up, чтобы отображать уведомления.\n\nНЕ ВКЛЮЧАЙТЕ эту службу, если ваше устройство работает на Android 4.3 или новее.</string>
+    <string name="device_admin_disable_warning">После отключение этой службы, некоторые функции в Heads-up могут работать неправильно.</string>
+    <string name="title_activity_device_admin_enabler">Включить админ. устройства</string>
+    <string name="device_admin_enable_explanation">Используйте это, если экран не выключается после уведомления на экрана блокировки, или если карманный режим не работает должным образом.</string>
+    <string name="pref_device_admin">Фикс ошибок дисплея.</string>
+	
+	<!-- Added since 1.8 -->
+    <string name="no_proximity_sensor_error">Датчик приближения не обнаружен. Карманный режим работать не будет. Пожалуйста, НЕ СООБЩАЙТЕ об этой ошибке.</string>
+    <string name="pref_keep_screen_on_forever">Держать экран включенным</string>
+    <string name="pref_keep_screen_on_forever_desc">Держать экран включенным, пока уведомление не закроется.</string>
+
+</resources>

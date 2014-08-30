@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="http://schemas.android.com/apk/res-auto" tools:ignore="FaltaTraducción">
+    <!-- For details regarding problems and missing strings in your translation, see http://app.simen.codes/dev/translation/heads-up/ -->
+zx
+    <string name="app_name">Heads-up notifications</string>
+    <string name="app_icon_name">Heads-up</string>
+    <string name="title_activity_welcome">Heads-up notifications</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="reader_btn_open">Abrir</string>
+    <string name="reader_btn_dismiss">Descartar</string>
+    <string name="intro_desc">Presione el botón de abajo para habilitar / deshabilitar notificaciones heads-up.</string>
+    <string name="welcome_btn_toggleservice">Habilitar / Deshabilitar heads-up</string>
+    <string name="intro_warning_miui">¿Estás usando MIUI? Antes de usar esta aplicación, \'ll probablemente necesites entregarle un poco holgura cuando se trata de seguridad.\n1. Ve hacia Ajustes de Sistema > Todo > Aplicaciones > Descargas > Heads-up notifications.\n2. Mueva el interruptor que dice \"Mostrar ventana emergente\" (Segunda opción).\n3. En la parte inferior, ve hacia \"Administrar permisos\".\n 4. Activa \"Confío en esta aplicación\". </string>
+    <string name="site_ad">¿Te gusta lo que ves? Prueba también mis otras aplicaciones:</string>
+    <string name="site_ad_link">Visita Simen.codes</string>
+    <string name="title_activity_app_list">Filtro de aplicaciones</string>
+    <string name="pref_priority_title">Prioridad de las notificaciones</string>
+    <string name="pref_priority_summary">Filtro de notificaciones basado en su prioridad.\nRequiere Android 4.1</string>
+    <string name="applist_desc">Desmarca una aplicación para silenciarla. También puedes silenciar una aplicación, haciendo una pulsación larga en el botón X de un heads-up.</string>
+    <string name="blocklist_desc">Marca una aplicación para evitar que se muestren heads-up mientras dicha aplicación se esté ejecutando.</string> <!-- Note to translators: Inverted behavior since last version -->
+    <string name="blocked_confirmation">Aplicación bloqueada</string>
+    <string name="pref_header_style">Estilo</string>
+    <string name="pref_lock_screen_on">Usar en pantalla de bloqueo</string>
+    <string name="pref_lock_screen_on_desc">Mostrar heads-up en la pantalla de bloqueo.</string>
+    <!-- Please add a note in the next lines asking users to write in English. -->
+    <string name="intro_status_on">El servicio se está ejecutando. Pruébalo enviando un mensaje a tu mismo.\nContáctame a sb@simen.codes si no puedes hacerlo funcionar.\nPor favor escríbeme en inglés.</string>
+    <string name="intro_status_on_confirmed">El servicio se está ejecutando. Pruébalo enviando un mensaje a tu mismo.\nContáctame a sb@simen.codes si no puedes hacerlo funcionar.\nPor favor escríbeme en inglés.</string>
+    <string name="bug_report_request">Si la aplicación se ha estado comportando mal, presiona aquí para reportar el problema. No necesitas hacer nada si la aplicación está comportándose normalmente.\n\n</string>
+    <string name="pref_overlay_display_time">Duración de la notificación</string>
+    <string name="pref_overlay_time_max">Hasta que la descarte</string>
+    <string name="title_activity_settings">Ajustes</string>
+    <string name="pref_header_general">Filtros</string>
+    <string name="pref_header_other">Acerca de</string>
+
+
+    <string-array name="priorityLevel">
+        <item name="MAX">Extremo y urgente (llamadas perdidas, direcciones, alertas de emergencia)</item>
+        <item name="HIGH">Importante (comunicaciones, correos importantes)</item>
+        <item name="NORMAL">Normal (notificaciones de otras aplicaciones)</item>
+        <item name="LOW">No importante (actualizaciones de software, correo basura)</item>
+        <item name="MIN">Información contextual y de fondo (clima, eventos expirados, sugerencias)</item>
+    </string-array>
+
+    <string name="pref_overlay_display_time_counter"><xliff:g id="time" example="7">%s</xliff:g> segundos</string>
+    <string name="pref_top_margin">Posición de los heads-up</string>
+    <string name="pref_turn_screen_on">Encender la pantalla</string>
+    <string name="pref_turn_screen_on_desc">Encender la pantalla al recibir una notificación</string>
+    <string name="pref_opacity">Opacidad</string>
+    <string name="pref_overlay_style">Tema</string>
+    <string name="pref_keep_on_lock_screen">Mantener heads-up</string>
+    <string name="pref_keep_on_lock_screen_desc">Mantener el heads-up en la pantalla de bloqueo hasta que lo descartes</string>
+    <string name="pref_dismiss_on_swipe">Descartar al deslizar</string>
+    <string name="pref_dismiss_on_swipe_desc"> Al descartar un heads-up deslizando, remover también la notificación en la barra de notificaciones. Igual puedes presionar la X para descartar notificaciones en la barra.</string>
+    <string name="title_activity_noshow_list">No molestar</string>
+    <string name="pref_round_icons">Íconos redondos</string>
+    <string name="pref_round_icons_desc">Usar los íconos redondos de Android L en vez de los íconos cuadrados de versiones anteriores</string>
+    <string name="pref_use_proximity">Detección de bolsillo</string>
+    <string name="pref_use_proximity_desc">No encender la pantalla si el teléfono está en un bolsillo o boca abajo en una mesa.</string>
+    <string name="pref_header_lockscreen">Pantalla de bloqueo</string>
+    <string name="pref_block_current_app">Bloquear aplicación actual</string>
+    <string name="pref_block_current_app_desc">No mostrar heads-up provenientes de la aplicación actualmente en uso.</string>
+    <string name="pref_header_behaviour">Comportamiento</string>
+    <string name="music_title">Reproduciendo <xliff:g id="track" example="TRACK">%s</xliff:g></string>
+    <string name="music_text">Por <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nEn el álbum <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+    <string name="pref_music_popup">Mostrar canción actual</string>
+    <string name="pref_music_popup_desc">Mostrar metadatos de la canción al cambiar de pista.\nNota: no todos los reproductores son compatibles.</string>
+    <string name="intro_warning_both_services">El servicio de accesibilidad e interpretar notificaciones están habilitados. Por favor deshabilita uno de ellos.</string>
+    <string name="notification_listener_not_found_detour">Selecciona \'Interpretar notificaciones\' y enciende \'Heads-up notifications\'</string>
+    <string name="accessibility_not_found_detour"><![CDATA[Ve hacia \'Accesibilidad\' > \'Heads-up notifications\']]></string>
+    <string name="accessibility_toast">Selecciona \'Heads-up notifications\' para encender el servicio</string>
+    <string name="pref_floating_window">Abrir como ventana flotante</string>
+    <string name="pref_floating_window_desc">Manten presionado el ícono para abrir como ventana flotante. Función experimental, funciona con OmniRom y XHaloFloatingWindow.</string>
+    <string name="pendingintent_cancel_exception">La aplicación canceló la acción</string>
+    <string name="pendingintent_null_exception">La aplicación no puede determinar la acción</string>
+    <string name="pref_hide_dismiss_button">Ocultar el botón descartar</string>
+    <string name="pref_hide_dismiss_button_desc">Ocultar el botón descartar de las notificaciones</string>
+    <string name="pref_dismiss_keyguard">Desbloquear teléfono</string>
+    <string name="pref_dismiss_keyguard_desc">Desbloquear automáticamente cuando abras una notificación.\nCuidado! Esto permitirá que CUALQUIER PERSONA pueda desbloquear el teléfono, independiente de la configuración de seguridad.</string>
+    <string name="pref_compact_mode">Modo compacto</string>
+    <string name="pref_compact_mode_desc">Mostrar sólo la primera línea de la notificación.</string>
+    <string name="pref_font_size">Tamaño de fuente</string>
+    <string name="pref_font_size_desc">Cambiar el tamaño del texto en los heads-up.</string>
+    <string name="leave_review">Escribe una opinión</string>
+
+    <string-array name="overlayPosition">
+        <item name="aboveStatus">Arriba</item>
+        <item name="top">Bajo la barra de estado</item>
+        <item name="center">Centro</item>
+        <item name="bottom">Abajo</item>
+    </string-array>
+    <string-array name="overlayStyles">
+        <item name="l">Android 5.0 \"L\" claro</item>
+        <item name="ldark">Android 5.0 \"L\" oscuro</item>
+        <item name="holo">Blanco normal</item>
+        <item name="holodark">Oscuro normal</item>
+    </string-array>
+
+    <!-- Added after 1.7 - you don't have to translate these if you don't want to -->
+    <string name="pref_only_on_lock_screen">Solo estando bloqueado</string>
+    <string name="pref_only_on_lock_screen_desc">Solo mostrar heads-ups en la pantalla de bloqueo.</string>
+    <string name="pref_privacy_on_lockscreen">Ocultar contenido</string>
+    <string name="pref_privacy_on_lockscreen_desc">No mostrar el contenido de los mensajes en la pantalla de bloqueo.</string>
+    <string name="accessibility_desc">Activa este servicio para permitir que Heads-up vea tus notificaciones.\n\nNO ACTIVES este servicio si tu dispositivo usa Android 4.3 o superior.</string>
+    <string name="device_admin_disable_warning">Al desactivar este servicio, algunas funciones de Heads-up pueden no funcionar correctamente.</string>
+    <string name="title_activity_device_admin_enabler">Activar como Administrador de Dispositivo</string>
+    <string name="device_admin_enable_explanation">Activar esto permite a Heads-up apagar tu pantalla. Usar si la pantalla no se apaga tras mostrar un heads-up en la pantalla de bloqueo, o si la detección de bolsillo no funciona correctamente.</string>
+    <string name="pref_device_admin">Forzar Apagar pantalla</string>
+
+</resources>

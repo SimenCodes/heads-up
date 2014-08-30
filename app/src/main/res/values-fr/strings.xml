@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="http://schemas.android.com/apk/res-auto" tools:ignore="MissingTranslation">
+<!--
+
+    Hi!, thank you for wanting to help translate Heads-up!
+
+    To begin, download this file to your computer. When you're finished translating, email your file to sb@simen.codes. Please include the word 'translation' in the subject line, as this puts your email in my priority inbox.
+
+    After receiving the translation, I'll send you a testing APK containing your translation.
+
+    For details regarding problems and missing strings in your translation, see http://app.simen.codes/dev/translation/heads-up/ I update this document every time I receive a translation.
+
+-->
+    <string name="app_name">Heads-up notifications</string>
+    <string name="app_icon_name">Heads-up</string>
+    <string name="title_activity_welcome">Heads-up notifications</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="reader_btn_open">Ouvrir</string>
+    <string name="reader_btn_dismiss">Rejeter</string>
+    <string name="intro_desc">Appuyer ci-dessous pour activer/désactiver les notifications heads-up.</string>
+    <string name="welcome_btn_toggleservice">Activer/Désactiver</string>
+    <string name="intro_warning_miui">Vous utilisez MIUI? Avant de pouvoir utiliser cette application, vous devez réduire un peut la sécurité.\n1. Aller à System Settings > All > Apps > Downloaded > Heads-up notifications.\n2. Activer l\'interrupteur \'Show popup windows\' (seconde option).\n3. En bas aller à \'Manage permissions\'.\n4. Sélectionner \'I trust this app\'. </string>
+    <string name="site_ad">Vous aimer ce que vous voyez ? Allez voir mes autres applications :</string>
+    <string name="site_ad_link">Aller à Simen.codes</string>
+    <string name="title_activity_app_list">Filtrer les Applis</string>
+    <string name="pref_priority_title">Priorité des notifications</string>
+    <string name="pref_priority_summary">Filtrer les notifications en fonction de leurs priorités.\nAndroid 4.1</string>
+    <string name="applist_desc">Désélectionner une appli pour enlever sa notification. Vous pouvez aussi maintenir appuyé le bouton X sur la notification.</string>
+    <string name="blocklist_desc">Sélectionner une appli pour empêcher heads-up d\'interférer pendant que l\'appli fonctionne.</string>
+	<string name="blocked_confirmation">Appli bloquée</string>
+    <string name="pref_header_style">Style</string>
+    <string name="pref_lock_screen_on">Montrer sur l\'écran de verrouillage</string>
+    <string name="pref_lock_screen_on_desc">Montrer la notification sur l\'écran de verrouillage.</string>
+    <!-- Please add a note in the next lines asking users to write in English. -->
+    <string name="intro_status_on">Le service est actif. Essayez de vous envoyer un message.\nSi cela ne fonctionne pas, redémarrer votre appareil puis ressayez. Contacter moi sb@simen.codes si ça ne fonctionne pas.</string>
+    <string name="intro_status_on_confirmed">Le service est actif. Essayez de vous envoyer un message.\nContacter moi sb@simen.codes si ça ne fonctionne pas.</string>
+    <string name="bug_report_request">Si l\'appli ne fonctionne pas correctement, appuyez ici pour rapporter un problème (support en Anglais). Vous n\'avez rien à faire si tout fonctionne correctement.\n\n</string>
+    <string name="pref_overlay_display_time">Délai d\'affichage</string>
+    <string name="pref_overlay_time_max">Jusqu\'au rejet</string>
+    <string name="title_activity_settings">Paramètres</string>
+    <string name="pref_header_general">Filtre</string>
+    <string name="pref_header_other">À propos</string>
+	
+	
+    <string-array name="priorityLevel">
+        <item name="MAX">Critique et urgent (appels manqués, directions, alertes urgentes)</item>
+        <item name="HIGH">Important (communications, courriels importants)</item>
+        <item name="NORMAL">Normal (+notifications des anciennes appli)</item>
+        <item name="LOW">Non important (MàJ logiciel, courriels spam)</item>
+        <item name="MIN">Info contextuelle et en tâche de fond (météo, événements expirés, suggestions)</item>
+    </string-array>
+
+    <string name="pref_overlay_display_time_counter"><xliff:g id="time" example="7" >%s</xliff:g> secondes</string>
+    <string name="pref_top_margin">Position de la notification</string>
+    <string name="pref_turn_screen_on">Allumer l\'écran</string>
+    <string name="pref_turn_screen_on_desc">Allumer l\'écran lors d\'une notification</string>
+    <string name="pref_opacity">Opacité</string>
+    <string name="pref_overlay_style">Thème</string>
+    <string name="pref_keep_on_lock_screen">Garder sur l\'écran de verrouillage</string>
+    <string name="pref_keep_on_lock_screen_desc">Garder les notifications sur l\'écran de verrouillage jusqu\'au rejet</string>
+    <string name="pref_dismiss_on_swipe">Rejet sur balayage</string>
+    <string name="pref_dismiss_on_swipe_desc">Enlever la notification quand vous la balayer. Vous pouvez toujours utiliser le bouton X.</string>
+    <string name="title_activity_noshow_list">Ne pas déranger</string>
+    <string name="pref_round_icons">Icônes rondes</string>
+    <string name="pref_round_icons_desc">Utiliser les icônes rondes de Android L à la place des carrées</string>
+    <string name="pref_use_proximity">Détecter la poche</string>
+    <string name="pref_use_proximity_desc">Ne pas allumer l\'écran si le téléphone est dans une poche ou face en bas.</string>
+    <string name="pref_header_lockscreen">Écran de verrouillage</string>
+    <string name="pref_block_current_app">Bloquer l\'appli courante</string>
+    <string name="pref_block_current_app_desc">Cacher les notifications de l\'appli courante à l\'intérieur d\'elle-même</string>
+    <string name="pref_header_behaviour">Fonctionnement</string>
+    <string name="music_title">Écoute <xliff:g id="track" example="TRACK">%s</xliff:g></string>
+    <string name="music_text">Par <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nde l\'album <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+    <string name="pref_music_popup">Chanson en lecture</string>
+    <string name="pref_music_popup_desc">Montrer les données lors d\'un changement de chanson.\nTous les lecteurs ne sont pas supportés.</string>
+    <string name="intro_warning_both_services">Et l\'écoute de notification et le service d\'accessibilité sont en fonctions. Veuillez en désactiver un.</string>
+    <string name="notification_listener_not_found_detour">Sélectionner \'Écoute de notification\' et allumer \'Heads-up notifications\'</string>
+    <string name="accessibility_not_found_detour"><![CDATA[Aller à \'Accessibilité\' > \'Heads-up notifications\']]></string>
+    <string name="accessibility_toast">Activer le service \'Heads-up notifications\'</string>
+    <string name="pref_floating_window">Ouvrir comme fenêtre volante</string>
+    <string name="pref_floating_window_desc">Appuie long sur l\'icône pour ouvrir une notification volante. Fonction expérimentale, fonctionne avec OmniRom et XHaloFloatingWindow.</string>
+    <string name="pendingintent_cancel_exception">L\'appli a annulée une action</string>
+    <string name="pendingintent_null_exception">L\'appli n\'a définie aucune action</string>
+    <string name="pref_hide_dismiss_button">Cacher le bouton de rejet</string>
+    <string name="pref_hide_dismiss_button_desc">Cacher le bouton de rejet des notifications</string>
+    <string name="pref_dismiss_keyguard">Débloquer le téléphone</string>
+    <string name="pref_dismiss_keyguard_desc">Débloquer le téléphone lors de l\'ouverture d\'une notification.\nATTENTION! N\'importe qui pourra débloquer votre téléphone, peut importe les paramétrages de sécurité.</string>
+    <string name="pref_compact_mode">Mode compact</string>
+    <string name="pref_compact_mode_desc">Ne montrer que la première ligne de la notification.</string>
+    <string name="pref_font_size">Taille des caractères</string>
+    <string name="pref_font_size_desc">Paramétrer la taille des caractères de la notification</string>
+    <string name="leave_review">Donnez votre avis</string>
+
+    <string-array name="overlayPosition">
+        <item name="aboveStatus">En haut</item>
+        <item name="top">Sous la barre de notification</item>
+        <item name="center">Centrée</item>
+        <item name="bottom">Basse</item>
+    </string-array>
+    <string-array name="overlayStyles">
+        <item name="l">Android 5.0 \'L\' clair</item>
+        <item name="ldark">Android 5.0 \'L\' foncé</item>
+        <item name="holo">Clair normal</item>
+        <item name="holodark">Foncé normal</item>
+    </string-array>
+    
+    <!-- New strings since 1.7 -->
+    <string name="pref_only_on_lock_screen">Seulement sur l\'écran de verrouillage</string>
+    <string name="pref_only_on_lock_screen_desc">Ne montrer les notifications que sur l\'écran de verrouillage.</string>
+    <string name="pref_privacy_on_lockscreen">Mode privée si verrouillage</string>
+    <string name="pref_privacy_on_lockscreen_desc">Ne pas montrer le contenu des messages sur l\'écran de verrouillage</string>
+    <string name="accessibility_desc">Activer ce service pour permettre à Heads-up de lire vos notifications.\n\nNE PAS ACTIVER si vous utiliser Android 4.3 ou plus.</string>
+    <string name="device_admin_disable_warning">Après la désactivation, certaines fonctionnalités peuvent ne pas fonctionner.</string>
+    <string name="title_activity_device_admin_enabler">Activer l\'admin du matériel</string>
+    <string name="device_admin_enable_explanation">L\'activation permet à Heads-up d\'éteindre l\'écran. À utiliser que si l\'écran ne s\'éteint pas lorsqu\'il est verrouillé, ou si la détection de la poche ne fonctionne pas.</string>
+    <string name="pref_device_admin">Réparer le bogue \'écran allumé\'.</string>
+
+</resources>
