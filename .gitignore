@@ -4,4 +4,5 @@
 .DS_Store
 /build
 /build.sh
+/build.sh~
 res
