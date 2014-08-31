@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+echo "0: release"
+echo "1: testing"
+read app
+if [ $app = '0' ]
+ then ./gradlew assemblePlayRelease
+elif [ $app = '1' ]
+ then ./gradlew assembleLocalTesting
+fi
+"/home/simen/adt-bundle-linux-x86_64-20130522/android-studio-06/sdk/tools/lint" --check MissingTranslation,InconsistentArrays,StringFormatMatches,StringFormatInvalid,Typos,ExtraTranslation,StringFormatCount,TypographyDashes,TypographyEllipsis,TypographyOther,EnforceUTF8 --disable LintError --html /home/simen/Web/simencodes/apps/dev/translation/heads-up/translationReport.html /home/simen/workspace/Lnotifications/app
+curl -T '/home/simen/Web/simencodes/apps/dev/translation/heads-up/translationReport.html'  'http://app.simen.codes/dev/translation/heads-up/echo.php?u=4891h22u8NO3dlrQC30F668uMMWW6s&p=93Kz5mm7B9L3qZ25MFY1I75k09P4W' --user-agent "autoupload"

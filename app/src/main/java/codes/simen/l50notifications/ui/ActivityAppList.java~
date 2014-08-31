@@ -1,0 +1,236 @@
+package codes.simen.l50notifications.ui;
+
+import android.app.ListActivity;
+import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.IOException;
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import codes.simen.l50notifications.R;
+import codes.simen.l50notifications.util.ObjectSerializer;
+
+public class ActivityAppList extends ListActivity {
+    private final String logTag = "AppList";
+    private AppAdapter adapter = null;
+    private SharedPreferences prefs;
+    private Set<String> blacklisted;
+    private String type = "blacklist";
+    private boolean checkedWhenInList = false;
+
+    private PackageManager pm;
+    private List<ApplicationInfo> pkgs;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_app_list);
+        prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+        type = getIntent().getAction().substring(48);
+        Log.d(type, String.valueOf(prefs.contains(type)));
+        if ("blacklist".equals(type)) {
+            setTitle(R.string.title_activity_app_list);
+        } else {
+            setTitle(R.string.title_activity_noshow_list);
+            checkedWhenInList = true;
+            ((TextView) findViewById(R.id.titleView)).setText(R.string.blocklist_desc);
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        /*if (Build.VERSION.SDK_INT >= 11) {
+            blacklisted = prefs.getStringSet(type, new HashSet<String>());
+            Log.d(logTag, blacklisted.toString());
+        } else {*/
+            try {
+                String serializedBlacklist = prefs.getString(type/* + "Serial"*/, "");
+                blacklisted = (Set<String>) ObjectSerializer.deserialize(serializedBlacklist);
+                if (blacklisted == null) {
+                    Log.w(logTag, "null");
+                    blacklisted = new HashSet<String>();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                Toast.makeText(getApplicationContext(), "IOe " + e.getMessage(), Toast.LENGTH_LONG).show();
+                blacklisted = new HashSet<String>();
+                //finish();
+            } catch (ClassCastException e) {
+                e.printStackTrace();
+                Toast.makeText(getApplicationContext(), "CCe " + e.getMessage(), Toast.LENGTH_LONG).show();
+                blacklisted = new HashSet<String>();
+                //finish();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+                Toast.makeText(getApplicationContext(), "CNF " + e.getMessage(), Toast.LENGTH_LONG).show();
+                blacklisted = new HashSet<String>();
+                //finish();
+            }
+        //}
+        CheckBox checkBox = (CheckBox) findViewById(R.id.checkAllBox);
+        if (blacklisted.size() == 0) {
+            checkBox.setChecked(!checkedWhenInList);
+        } else {
+            checkBox.setChecked(checkedWhenInList);
+        }
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                blacklisted.clear();
+                if (isChecked == checkedWhenInList) {
+                    Log.d(logTag, "addAll");
+                    blacklisted.clear();
+                    for (ApplicationInfo applicationInfo : pkgs) {
+                        blacklisted.add(applicationInfo.packageName);
+                    }
+                } else
+                    Log.d(logTag, "removeAll");
+
+                //adapter.clear();
+                adapter = null;
+                adapter = new AppAdapter(pm, pkgs);
+                setListAdapter(adapter);
+            }
+        });
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                pm = getPackageManager();
+
+                pkgs = pm.getInstalledApplications(0);
+                if (pkgs == null) finish();
+
+                Collections.sort(pkgs, new ApplicationInfo.DisplayNameComparator(pm));
+
+                loadThreadHandler.sendEmptyMessage(0);
+            }
+        }).start();
+
+
+    }
+
+    private Handler loadThreadHandler = new Handler() {
+        public void handleMessage (Message msg) {
+            adapter = new AppAdapter(pm, pkgs);
+            setListAdapter(adapter);
+            findViewById(R.id.progressBar).setVisibility(View.GONE);
+            findViewById(android.R.id.list).setVisibility(View.VISIBLE);
+        }
+    };
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        ApplicationInfo pkg = adapter.getItem(position);
+
+        if (pkg == null) {
+            Toast.makeText(getApplicationContext(), "ERROR (null) at AppList ln114", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+//        ComponentName name = new ComponentName(
+//                activity.applicationInfo.packageName, activity.name);
+
+        Log.d(logTag, pkg.packageName);
+
+        if (v instanceof ViewGroup) {
+            ViewGroup vg = (ViewGroup) v;
+            CheckBox checkBox = (CheckBox) vg.getChildAt(0);
+            assert checkBox != null;
+            boolean isChecked = checkBox.isChecked();
+            if (checkedWhenInList) {
+                isChecked = !isChecked;
+            }
+            if (isChecked) {
+                blacklisted.add(pkg.packageName);
+                checkBox.setChecked(checkedWhenInList);
+            } else {
+                blacklisted.remove(pkg.packageName);
+                checkBox.setChecked(!checkedWhenInList);
+            }
+        }
+
+    }
+
+    class AppAdapter extends ArrayAdapter<ApplicationInfo> {
+        private PackageManager pm = null;
+
+        AppAdapter(PackageManager pm, List<ApplicationInfo> apps) {
+            super(ActivityAppList.this, R.layout.row_app_list, apps);
+            this.pm = pm;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if (convertView == null) {
+                convertView = newView(parent);
+            }
+
+            bindView(position, convertView);
+
+            return (convertView);
+        }
+
+        private View newView(ViewGroup parent) {
+            return (getLayoutInflater().inflate(R.layout.row_app_list, parent, false));
+        }
+
+        private void bindView(int position, View row) {
+            ApplicationInfo applicationInfo = getItem(position);
+
+            CheckBox checkBox = (CheckBox) row.findViewById(R.id.label);
+            ImageView icon = (ImageView) row.findViewById(R.id.icon);
+            checkBox.setText(pm.getApplicationLabel(applicationInfo));
+            icon.setImageDrawable(pm.getApplicationIcon(applicationInfo));
+
+            if ( blacklisted.contains(applicationInfo.packageName) ) {
+                //Log.d(activityInfo.packageName, "false");
+                checkBox.setChecked(checkedWhenInList);
+            } else {
+                //Log.d(activityInfo.packageName, "true");
+                checkBox.setChecked(!checkedWhenInList);
+            }
+        }
+    }
+
+    @Override
+    protected void onStop () {
+        super.onStop();
+        SharedPreferences.Editor editor = prefs.edit();
+        /*if (Build.VERSION.SDK_INT >= 11)
+            editor.putStringSet(type, blacklisted);
+        else {*/
+            try {
+                editor.putString(type/* + "Serial"*/, ObjectSerializer.serialize( (Serializable) blacklisted));
+            } catch (IOException e) {
+                e.printStackTrace();
+                Toast.makeText(getApplicationContext(), "IOe " + e.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        //}
+        editor.commit();
+        //Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_SHORT).show();
+        Log.d(logTag, "Saved " + blacklisted.toString());
+    }
+}
