@@ -39,7 +39,7 @@ public class WelcomeActivity extends Activity {
         setContentView(R.layout.activity_welcome);
         preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        if (Build.DISPLAY.contains("MIUI")) {
+        if (Build.DISPLAY.toUpperCase().contains("MIUI") || Build.MANUFACTURER.toUpperCase().contains("XIAOMI")) {
             findViewById(R.id.miui_warning).setVisibility(View.VISIBLE);
         }
         if (Mlog.isLogging)
@@ -130,7 +130,7 @@ public class WelcomeActivity extends Activity {
         intent.setAction("TEST");
         intent.putExtra("packageName", getPackageName());
         intent.putExtra("title", "Simen.codes");
-        intent.putExtra("text", "Thanks for trying my app! If you like it, please leave a review on Play. If you can\'t get it to work, just email me.");
+        intent.putExtra("text", "Thanks for trying Heads-up! If you like it, please leave a review on Play. If you can\'t get it to work, you can get help on the project's GitHub issue page.");
         intent.putExtra("action", PendingIntent.getActivity(this, 0,
                 new Intent(Intent.ACTION_VIEW)
                         .setData(Uri.parse("https://play.google.com/store/apps/details?id=codes.simen.l50notifications"))
@@ -157,6 +157,14 @@ public class WelcomeActivity extends Activity {
                 , PendingIntent.FLAG_UPDATE_CURRENT));
 
         startService(intent);
+
+        Mlog.v(logTag, "open");
+    }
+
+    public void getHelp (View v) {
+        startActivity(new Intent(
+                Intent.ACTION_VIEW, Uri.parse("https://github.com/SimenCodes/heads-up/issues")
+        ));
     }
 
     public void doReport (View view) {
@@ -289,10 +297,9 @@ public class WelcomeActivity extends Activity {
             String settingValue = Settings.Secure.getString(getContentResolver(), Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES);
             Mlog.d(logTag, "Setting: " + settingValue);
             if (settingValue != null) {
-                TextUtils.SimpleStringSplitter splitter = mStringColonSplitter;
-                splitter.setString(settingValue);
-                while (splitter.hasNext()) {
-                    String accessibilityService = splitter.next();
+                mStringColonSplitter.setString(settingValue);
+                while (mStringColonSplitter.hasNext()) {
+                    String accessibilityService = mStringColonSplitter.next();
                     Mlog.d(logTag, "Setting: " + accessibilityService);
                     if (accessibilityService.equalsIgnoreCase(ACCESSIBILITY_SERVICE_NAME)){
                         Mlog.d(logTag, "We've found the correct setting - accessibility is switched on!");

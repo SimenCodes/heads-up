@@ -29,8 +29,8 @@ For details regarding problems and missing strings in your translation, see http
     <string name="pref_lock_screen_on">Display on lockscreen</string>
     <string name="pref_lock_screen_on_desc">Display the heads-up on the lockscreen.</string>
     <!-- Translators: Please add a note in the next lines asking users to write in English. -->
-    <string name="intro_status_on">The service is enabled. Try sending yourself a message.\nIf it doesn\'t work, please reboot your device and try again. Contact me at sb@simen.codes you can\'t get it to work.</string>
-    <string name="intro_status_on_confirmed">The service is running. Try sending yourself a message.\nContact me at sb@simen.codes you can\'t get it to work.</string>
+    <string name="intro_status_on">The service is enabled. Try sending yourself a message.\nIf it doesn\'t work, please reboot your device and try again.\nTap here if you need help</string>
+    <string name="intro_status_on_confirmed">The service is running. Try sending yourself a message.\nTap here if you need help.</string>
     <string name="bug_report_request">If the app has been misbehaving lately, tap here to report the problem. You don\'t have to do anything if the app is behaving normally.\n\n</string>
     <string name="pref_overlay_display_time">Display time</string>
     <string name="pref_overlay_time_max">Until I dismiss it</string>

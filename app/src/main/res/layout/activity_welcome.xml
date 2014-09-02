@@ -78,8 +78,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/SuggestionHighlight"
+        android:id="@+id/status"
         android:visibility="gone"
-        android:id="@+id/status" />
+        android:onClick="getHelp"
+        android:clickable="true" />
 
     <TextView
         style="@style/ErrorHighlight"
