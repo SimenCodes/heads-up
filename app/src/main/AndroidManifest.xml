@@ -25,10 +25,14 @@
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <!-- Turn the screen on. Not kept for longer than one minute unless "keep screen on" is enabled -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
-    <permission
-        android:name="codes.simen.permission.DISPLAY_POPUP"
-        android:protectionLevel="signature" />
+    <!-- Receive and send SMS messages for quick reply -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- API < 19: Write messages to the storage, so they show up in the stock messaging app -->
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <!-- Fetch contact name and images for the popup -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <application
         android:allowBackup="true"
@@ -41,7 +45,6 @@
             android:label="@string/app_icon_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -86,16 +89,29 @@
         <service
             android:name=".OverlayService"
             android:enabled="true"
-            android:exported="false"
-            android:permission="codes.simen.permission.DISPLAY_POPUP" >
+            android:exported="false">
         </service>
 
         <service
             android:name=".OverlayServiceCommon"
             android:enabled="true"
-            android:exported="false"
-            android:permission="codes.simen.permission.DISPLAY_POPUP" >
+            android:exported="false">
         </service>
+
+        <service
+            android:name=".OverlayServiceMsg"
+            android:enabled="true"
+            android:exported="false">
+        </service>
+
+        <receiver android:name=".SmsMessageReceiver">
+            <intent-filter android:priority="100000">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED_ACTION" />
+            </intent-filter>
+            <intent-filter android:priority="100000">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
 
         <activity
             android:name=".ui.SetLocaleActivity"
