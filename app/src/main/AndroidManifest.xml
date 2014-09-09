@@ -17,11 +17,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="codes.simen.l50notifications" >
 
+    <!-- Display the popup -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- Determine currently running task -->
     <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- Dismiss the keyguard -->
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <!-- Turn the screen on. Not kept for longer than one minute unless "keep screen on" is enabled -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <!-- <uses-permission android:name="android.permission.REBOOT" /> -->
 
     <permission
         android:name="codes.simen.permission.DISPLAY_POPUP"
