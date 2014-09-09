@@ -252,8 +252,9 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 addViewToWindowManager();
             }
         } else {
-            if (isLocked && position == 2) stopSelf();
-            addViewToWindowManager();
+            if (isLocked()) stopSelf();
+            else
+                addViewToWindowManager();
         }
     }
 
@@ -272,8 +273,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         else isLocked = keyguardManager.inKeyguardRestrictedInputMode();
 
         Mlog.v(logTag, isLocked + " " + LOCKSCREEN_APPS.contains(currentPackage));
-        if (isLocked || (currentPackage != null && LOCKSCREEN_APPS.contains(currentPackage))) return true;
-        return false;
+        return isLocked || (currentPackage != null && LOCKSCREEN_APPS.contains(currentPackage));
     }
 
     private void addViewToWindowManager() {
