@@ -16,7 +16,6 @@
     <string name="site_ad">Podoba Ci się ta aplikacja? Spróbuj też innych moich aplikacji:</string>
     <string name="site_ad_link">Odwiedź Simen.codes</string>
     <string name="title_activity_app_list">Filtr aplikacji</string>
-    <string name="title_activity_noshow_list">Nie pokazuj dla tych aplikacji</string>
     <string name="pref_priority_title">Priorytety powiadomień</string>
     <string name="pref_priority_summary">Filtr powiadomień bazujący na priorytetach.\nWymagany Android 4.1</string>
     <string name="applist_desc">Odznacz aplikację aby nie widzieć powiadomień. Możesz również nacisnąć i przytrzymać przycisk \'Odrzuć\' na powiadomieniu aby wyłączyć powiadomienia dla aplikacji.</string>
@@ -28,12 +27,12 @@
     <string name="intro_status_on">Usługa jest aktywna. Spróbuj wysłać sobie wiadomość.\nJeśli nie działa, zrestartuj urządzenie i spróbuj ponownie. Jeśli nie możesz sobie poradzić z konfiguracją, napisz do mnie na sb@simen.codes</string>
     <string name="intro_status_on_confirmed">Usługa jest uruchomiona. Spróbuj wysłać sobie wiadomość.\nJeśli nie możesz sobie poradzić z konfiguracją, napisz do mnie na sb@simen.codes</string>
     <!-- Please add a note in the next line asking users to write in English. -->
-    <string name="bug_report_request">Jeśli aplikacja nie działa tak jak powinna, naciśnij tutaj aby zgłosić problem. Proszę byś opisał problem w języku angielskim.\n\n</string>
+    <string name="bug_report_request">Jeśli aplikacja nie działa tak jak powinna, naciśnij tutaj aby zgłosić problem. Proszę pisać w języku angielskim.\n\n</string>
     <string name="pref_overlay_display_time">Czas wyświetlania</string>
     <string name="pref_overlay_time_max">Dopóki jej nie odrzucę</string>
     <string name="title_activity_settings">Ustawienia</string>
     <string name="pref_header_general">Ogólne</string>
-	<string name="pref_header_other">O programie</string>
+
     <string-array name="priorityLevel">
         <item name="MAX">Krytyczne i pilne (nieodebrane połączenia, powiadomienia alarmowe)</item>
         <item name="HIGH">Ważne (komunikacja, ważne emaile)</item>
@@ -41,10 +40,8 @@
         <item name="LOW">Nieważne (aktualizacje aplikacji, spam)</item>
         <item name="MIN">Informacje kontekstowe i w tle (pogoda, wygasłe wydarzenia, propozycje)</item>
     </string-array>
-    <string name="pref_overlay_display_time_counter">
-        <xliff:g id="time" example="7" >%s</xliff:g> sekund
-    </string>
-
+	
+    <string name="pref_overlay_display_time_counter"><xliff:g id="time" example="7" >%s</xliff:g> sekund</string>
     <string name="pref_top_margin">Pozycja powiadomienia</string>
     <string name="pref_turn_screen_on">Włącz ekran</string>
     <string name="pref_turn_screen_on_desc">Włącz ekran gdy otrzymasz powiadomienie</string>
@@ -54,10 +51,10 @@
     <string name="pref_keep_on_lock_screen_desc">Zachowuje powiadomienia na ekranie blokady dopóki ich nie odrzucisz</string>
     <string name="pref_dismiss_on_swipe">Odrzuć przeciągnięciem palca</string>
     <string name="pref_dismiss_on_swipe_desc">Usuń powiadomienie przesuwając je palcem w bok. (Nadal możesz wcisnąć X by odrzucić powiadomienie).</string>
-	
+    <string name="title_activity_noshow_list">Nie pokazuj dla tych aplikacji</string>
 	<string name="pref_round_icons">Okrągłe ikony</string>
     <string name="pref_round_icons_desc">Używaj okrągłych ikon z Androida "L" zamiast czworokątnych z poprzednich wersji</string>
-    <string name="pref_use_proximity">Tryb \'kieszeniowy\'</string>
+    <string name="pref_use_proximity">Tryb \'kieszonkowy\'</string>
     <string name="pref_use_proximity_desc">Ekran nie zostanie włączony gdy telefon jest w kieszeni lub leży ekranem do dołu (używany w tym celu jest czujnik zbliżeniowy)</string>
     <string name="pref_header_lockscreen">Ekran blokady</string>
     <string name="pref_block_current_app">Blokuj obecnie używaną aplikację</string>
@@ -84,9 +81,11 @@
     <string name="pref_font_size">Rozmiar czcionki</string>
     <string name="pref_font_size_desc">Zmień rozmiar czcionki użytej w powiadomieniu</string>
     <string name="leave_review">Napisz recenzję</string>
+    <string name="pref_header_other">O aplikacji</string>
+
     <string-array name="overlayPosition">
         <item name="aboveStatus">U góry</item>
-        <item name="top">Below status bar</item>
+        <item name="top">Pod paskiem statusu</item>
         <item name="center">Na środku</item>
         <item name="bottom">Na dole</item>
     </string-array>
@@ -95,6 +94,7 @@
         <item name="ldark">Android 5.0 \"L\" ciemny</item>
         <item name="holo">Zwykły jasny</item>
         <item name="holodark">Zwykły ciemny</item>
+        <item name="random">Psychodeliczny (losowy)</item>
     </string-array>
 
     <!-- New strings since 1.7 -->
@@ -108,5 +108,9 @@
     <string name="device_admin_enable_explanation">Uruchomienie tej usługi pozwoli programowi na wygaszanie ekranu. Włącz tę funkcję gdy ekran nie wygasa samoistnie po ukazaniu powiadomień na ekranie blokady lub gdy nie działa opcja \'Tryb kieszeniowy\'.</string>
     <string name="pref_device_admin">Napraw błąd związany z włączaniem ekranu.</string>
 
-</resources>
+    <!-- Added since 1.8 -->
+    <string name="no_proximity_sensor_error">Nie wykryto czujnika zbliżeniowego. Tryb kieszonkowy nie będzie działać. Proszę NIE zgłaszaj tego jako błąd.</string>
+    <string name="pref_keep_screen_on_forever">Podtrzymaj włączony ekran</string>
+    <string name="pref_keep_screen_on_forever_desc">Po włączeniu ekranu, podtrzymuj go tak długo jak heads-up jest widoczny.</string>
 
+</resources>
