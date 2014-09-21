@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This program is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     This program is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <resources>
     <color name="holo_orange_dark">#ff8800</color>
     <color name="notification_ic_background">#0a242e</color>
@@ -17,4 +32,9 @@
     <color name="text_color_dark">#000000</color>
     <color name="text_color_light">#FFFFFF</color>
     <color name="error_highlight_text">#ffcc0000</color>
+
+    <color name="holo_blue_dark">#ff0099cc</color>
+    <color name="holo_blue_darker">#ff0088bb</color>
+    <color name="holo_blue_darkest">#ff0077aa</color>
+    <color name="holo_blue_light">#ff33b5e5</color>
 </resources>

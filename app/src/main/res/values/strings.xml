@@ -124,12 +124,16 @@ For details regarding problems and missing strings in your translation, see http
     <string name="accessibility_desc">Enable this service to allow Heads-up to read your notifications.\n\nDO NOT enable this service if your device is running Android 4.3 or newer.</string>
     <string name="device_admin_disable_warning">After disabling this service, some features in Heads-up might not work properly.</string>
     <string name="title_activity_device_admin_enabler">Enable device admin</string>
-    <string name="device_admin_enable_explanation">Enabling this will allow Heads-up to turn off your screen. Use this if the screen doesn\'t turn off after displaying popups on the lockscreen, or if the pocket detection doesn\'t work properly.</string>
-    <string name="pref_device_admin">Fix \'screen on\' bug.</string>
+    <string name="pref_device_admin">Fix \'screen stays on\' bug.</string>
 
     <!-- Added since 1.8 -->
     <string name="no_proximity_sensor_error">No proximity sensor detected. Pocket detection will not work. Please DON\'T report this bug.</string>
     <string name="pref_keep_screen_on_forever">Keep screen on</string>
     <string name="pref_keep_screen_on_forever_desc">After turning the screen on, keep it on as long as the heads-up is visible.</string>
+
+    <!-- Added/changed since 1.8.1 -->
+    <string name="action_help">Help!</string>
+    <string name="action_test">Test</string>
+    <string name="device_admin_enable_explanation">Enabling this will allow Heads-up to turn off your screen. Only use this if the screen doesn\'t turn off after displaying popups on the lockscreen, or if the pocket detection doesn\'t work properly.\n\nIMPORTANT! You will not be able to uninstall Heads-up while this feature is enabled.</string>
 
 </resources>

@@ -86,6 +86,7 @@ public class WelcomeActivity extends Activity {
                 findViewById(R.id.bothEnabled).setVisibility(View.GONE);
             }
         } else {
+
             status.setVisibility(View.GONE);
         }
 
@@ -178,7 +179,7 @@ public class WelcomeActivity extends Activity {
 
     public void getHelp (View v) {
         startActivity(new Intent(
-                Intent.ACTION_VIEW, Uri.parse("https://github.com/SimenCodes/heads-up/issues")
+                Intent.ACTION_VIEW, Uri.parse("https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue")
         ));
     }
 
