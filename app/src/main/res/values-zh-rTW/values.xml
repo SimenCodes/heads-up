@@ -77,8 +77,8 @@ For details regarding problems and missing strings in your translation, see http
     <string name="pref_use_proximity">口袋偵測</string>
     <string name="pref_use_proximity_desc">如果裝置放置於口袋中或朝下時, \n則不會自動將螢幕開啟.</string>
     <string name="pref_header_lockscreen">鎖屏</string>
-    <string name="pref_block_current_app">禁止App在此顯示通知</string>
-    <string name="pref_block_current_app_desc">禁止App在這裡顯示浮動通知</string>
+    <string name="pref_block_current_app">禁止顯示正在使用的APP的通知</string>
+    <string name="pref_block_current_app_desc">禁止正在使用的APP顯示浮動通知</string>
     <string name="pref_header_behaviour">行為</string>
     <string name="music_title">正在播放 <xliff:g id="track" example="TRACK">%s</xliff:g></string>
     <string name="music_text"><xliff:g id="artist" example="ARTIST">%s</xliff:g>\n的<xliff:g id="album" example="ALBUM">%s</xliff:g></string>
