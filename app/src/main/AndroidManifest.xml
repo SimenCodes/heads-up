@@ -26,10 +26,6 @@
     <!-- Turn the screen on. Not kept for longer than one minute unless "keep screen on" is enabled -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <permission
-        android:name="codes.simen.permission.DISPLAY_POPUP"
-        android:protectionLevel="signature" />
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -86,15 +82,13 @@
         <service
             android:name=".OverlayService"
             android:enabled="true"
-            android:exported="false"
-            android:permission="codes.simen.permission.DISPLAY_POPUP" >
+            android:exported="false" >
         </service>
 
         <service
             android:name=".OverlayServiceCommon"
             android:enabled="true"
-            android:exported="false"
-            android:permission="codes.simen.permission.DISPLAY_POPUP" >
+            android:exported="false" >
         </service>
 
         <activity
