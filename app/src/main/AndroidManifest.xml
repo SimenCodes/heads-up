@@ -66,11 +66,13 @@
 
         <activity
             android:name=".ui.SettingsActivity"
-            android:label="@string/title_activity_settings" >
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".ui.WelcomeActivity">
         </activity>
         <activity
             android:name=".ui.ActivityAppList"
-            android:label="@string/title_activity_app_list" >
+            android:label="@string/title_activity_app_list"
+            android:parentActivityName=".ui.SettingsActivity">
             <intent-filter>
                 <action android:name="codes.simen.l50notifications.activities.AppList.blacklist" />
                 <action android:name="codes.simen.l50notifications.activities.AppList.noshowlist" />
