@@ -27,7 +27,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -518,18 +517,24 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             dismissButton.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    Toast.makeText(context, getText(R.string.blocked_confirmation), Toast.LENGTH_SHORT).show();
                     try {
                         Set<String> blacklist = (Set<String>) ObjectSerializer.deserialize(preferences.getString("blacklist", ""));
                         if (blacklist == null) blacklist = new HashSet<String>();
+
                         final boolean isBlacklistInverted = preferences.getBoolean("blacklist_inverted", false);
+                        Mlog.v(logTag, isBlacklistInverted);
+
                         if (isBlacklistInverted)
-                            if (blacklist.contains(packageName))
-                                blacklist.remove(packageName);
-                        else
-                            blacklist.add(packageName);
+                            if (blacklist.contains(packageName) && blacklist.remove(packageName))
+                                Toast.makeText(context, getText(R.string.blocked_confirmation), Toast.LENGTH_SHORT).show();
+                        else if (blacklist.add(packageName))
+                                Toast.makeText(context, getText(R.string.blocked_confirmation), Toast.LENGTH_SHORT).show();
+
+                        Mlog.v(logTag, blacklist);
+                        final String serialized = ObjectSerializer.serialize((Serializable) blacklist);
+
                         SharedPreferences.Editor editor = preferences.edit();
-                        editor.putString("blacklist", ObjectSerializer.serialize((Serializable) blacklist));
+                        editor.putString("blacklist", serialized);
                         editor.apply();
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -694,12 +699,6 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             doFinish(0);
         }
     };
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        Mlog.v(logTag + "ConfigChange", String.valueOf(newConfig.smallestScreenWidthDp));
-    }
 
     public void doStop(View v) {
         doFinish(1);
