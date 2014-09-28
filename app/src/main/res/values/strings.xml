@@ -135,5 +135,7 @@ For details regarding problems and missing strings in your translation, see http
     <string name="action_help">Help!</string>
     <string name="action_test">Test</string>
     <string name="device_admin_enable_explanation">Enabling this will allow Heads-up to turn off your screen. Only use this if the screen doesn\'t turn off after displaying popups on the lockscreen, or if the pocket detection doesn\'t work properly.\n\nIMPORTANT! You will not be able to uninstall Heads-up while this feature is enabled.</string>
+    <string name="device_admin_alredy_on">Already a device manager.</string>
+    <string name="device_admin_not_available">Device provisioning is not enabled. Stopping.</string>
 
 </resources>

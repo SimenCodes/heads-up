@@ -33,7 +33,7 @@ public class DeviceAdminEnabler extends Activity {
         super.onCreate(savedInstanceState);
 
         if (((DevicePolicyManager) getSystemService(DEVICE_POLICY_SERVICE)).isAdminActive(AdminReceiver.getComponentName(this))) {
-            Toast.makeText(this, "Already a device manager.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.device_admin_alredy_on), Toast.LENGTH_SHORT).show();
             startActivity(new Intent(Settings.ACTION_SECURITY_SETTINGS));
             finish();
             return;
@@ -50,7 +50,7 @@ public class DeviceAdminEnabler extends Activity {
             startActivity(intent);
             finish();
         } else {
-            Toast.makeText(this, "Device provisioning is not enabled. Stopping.",
+            Toast.makeText(this, getString(R.string.device_admin_not_available),
                     Toast.LENGTH_SHORT).show();
             Mlog.w("DeviceAdminEnabler", "Not possible");
         }
