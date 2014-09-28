@@ -85,7 +85,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     public static final int SENSOR_DELAY_MILLIS = 10000;
     public static final int MIN_LINES = 3;
     public static final int FLAG_FLOATING_WINDOW = 0x00002000;
-    private static final Set<String> LOCKSCREEN_APPS = new HashSet<String>(Arrays.asList(new String[]{
+    private static final ArrayList<String> LOCKSCREEN_APPS = new ArrayList<String>(Arrays.asList(new String[]{
             "com.achep.acdisplay",
             "com.silverfinger.lockscreen",
             "com.slidelock",
@@ -119,7 +119,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private DevicePolicyManager policyManager;
     private PowerManager powerManager;
     private PowerManager.WakeLock wLock;
-    private boolean isProximityFar = true;
+    private boolean isProximityClose = true;
     private boolean isDelaying = false;
     boolean isLocked;
 
@@ -286,7 +286,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private final Runnable sensorChecker = new Runnable() {
         @Override
         public void run() {
-            Mlog.d(logTag + "SensorChecker", String.valueOf(isProximityFar));
+            Mlog.d(logTag + "SensorChecker", String.valueOf(isProximityClose));
 
             if (sensorManager != null) {
                 sensorManager.unregisterListener(sensorEventListener, sensor);
@@ -481,8 +481,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                             if (appRes != null) {
                                 try {
                                     icon = appRes.getDrawable(actionIcon);
-                                } catch (Resources.NotFoundException nfe) {
-                                }
+                                } catch (Resources.NotFoundException ignored) {}
                             }
 
                             themeClass.addActionButton(actionButtons, actionTitle, icon, new View.OnClickListener() {
@@ -504,8 +503,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                             themeClass.hideActionButtons(layout);
                     } else
                         themeClass.hideActionButtons(layout);
-                } catch (NullPointerException npe) {//Ikke interessant, skjer som oftest pga manglende ikon
-                } catch (IndexOutOfBoundsException oobe) {
+                } catch (NullPointerException npe) {// Ignored, usually happens in case of missing icons
+                } catch (IndexOutOfBoundsException ignored) {
                 } catch (RuntimeException rte) {
                     reportError(rte, "ThemeActionIcon", getApplicationContext());
                 }
@@ -709,7 +708,6 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     }
 
     public void onPopupClick (View v) {
-        //Mlog.v(logTag, String.valueOf(themeClass.getRootView(layout).getTranslationX()));
         if (themeClass.getRootView(layout).getTranslationX() != 0) return; // Stop if we're currently swiping. Bug 0000034
 
         if (!isCompact)
@@ -902,11 +900,11 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     @Override
     public void onSensorChanged(SensorEvent event) {
         Mlog.v(logTag + "Sensor", String.valueOf(event.values[0]));
-        isProximityFar = ( event.values[0] == sensor.getMaximumRange() );
+        isProximityClose = event.values[0] < 1;
 
 
-        if (isProximityFar) screenOn();
-        else                screenOff();
+        if (isProximityClose) screenOff();
+        else                  screenOn();
     }
 
     @Override
