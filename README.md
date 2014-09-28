@@ -42,14 +42,22 @@ I ran a poll on my [website](http://simen.codes/stuff/future-of-heads-up/) a whi
 
 ##Common issues##
 ####If no popups appear:####
-Please make sure that Heads-up shows up in the list of running services. If it doesn't, make sure you have enabled the service, and then reboot the phone.
-If your device is running Android 4.2 or earlier, and you have other accessibility services running (such as Pushbullet), they might block Heads-up from receiving your notifications. Please try to disable them if Heads-up doesn't work.
+*The universal problemsolver list, fixes 90% of support requests*
+- Make sure the service actually is running. Does it show up under System Settings > Apps > Running?
+- If not, reboot the phone. Does that help?
+- [4.2 and earlier] Do you have any other accessibility services running? Some other services, like Pushbullet, blocks Heads-up from reading notifications.
+- Uninstall the app completely, reboot the phone, and install it again. Make sure you are using the latest version, 1.8.1. After enabling the service inside the app, reboot the phone.
+- Allow more priority levels in the settings.
+- Some phones block Heads-up from displaying popups. Check that "draw on top" or "display popups" is enabled in System Settings > Apps > Heads-up.
 
 ####Huawei, XIAOMI and MIUI users:####
 Please allow Heads-up to display popups under Settings > Apps > Downloaded > Heads-up. It might also be necessary to reset the app data/settings.
+
+####Device talking?####
+This is a bug in Samsung's firmware. See post on my [website](http://simen.codes/stuff/samsung-phone-talking/)
 
 ####Uninstalling:####
 If you find that the uninstall button is disabled, go to Settings > Security > Device administrators > Heads-up, and tap Disable.
 
 ##Contact##
-Problems, feature requests or questions? Feel free to contact me at [sb@simen.codes](mailto:sb@simen.codes), or open an issue on [GitHub](https://github.com/SimenCodes/heads-up/issues/).
+Problems, feature requests or questions? Go to the [Issue tracker](https://github.com/SimenCodes/heads-up/issues/).
