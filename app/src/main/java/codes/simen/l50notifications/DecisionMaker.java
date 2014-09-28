@@ -1,3 +1,18 @@
+/*
+ * This program is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package codes.simen.l50notifications;
 
 import android.annotation.TargetApi;
@@ -13,7 +28,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
-import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -177,9 +191,8 @@ public class DecisionMaker {
                     } catch (IllegalStateException ilse) {
                         try {
                             fullContent(notification, context, texts, text, intent);
-                        } catch (Resources.NotFoundException rnfe) {
-                        } catch (InflateException ifle) {
-                        } catch (RuntimeException rte2) {rte2.printStackTrace();}
+                        // Ignore all errors, we'll survive without the full notification
+                        } catch (Exception ignored) {}
                     }
                 }
             }
