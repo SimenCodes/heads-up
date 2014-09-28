@@ -130,7 +130,8 @@
     <string name="device_admin_enable_explanation">Dette gir Heads-up tilgang til å slå av skjermen. Aktiver hvis skjermen ikke slås av igjen etter at Heads-up har slått på skjermen, eller hvis lommemodusen ikke fungerer ordentlig.\n\nNB! Heads-up kan ikke avinstalleres mens dette er aktivert.</string>
     <string name="device_admin_alredy_on">Heads-up er allerede administrator.</string>
     <string name="device_admin_not_available">Enheten rapporterer at den ikke støtter enhetsadministrasjon.</string>
-    <string name="intro_status_on">Tjenesten er aktivert. Prøv å sende deg selv en melding.\nHvis det ikke virker, start enheten på nytt og prøv igjen. Trykk på Hjelp-knappen hvis du trenger hjelp</string>
-    <string name="intro_status_on_confirmed">Tjenesten kjører. Prøv å sende deg selv en melding.\nTrykk på Hjelp-knappen hvis du trenger hjelp</string>
+    <string name="intro_status_on">Tjenesten er aktivert. Prøv å sende deg selv en melding.\nHvis det ikke virker, start enheten på nytt og prøv igjen. Trykk på Hjelp-knappen hvis du trenger hjelp med å få det til å fungere.</string>
+    <string name="intro_status_on_confirmed">Tjenesten kjører. Prøv å sende deg selv en melding.\nTrykk på Hjelp-knappen hvis du trenger hjelp med å få det til å fungere.</string>
+    <string name="accessibility_service_blocked">%s blokkerer Heads-up fra å få tilgang til varslingene dine. Deaktiver den fra tilgjengelighetsmenten.</string>
 
 </resources>

@@ -36,5 +36,8 @@
     <color name="holo_blue_dark">#ff0099cc</color>
     <color name="holo_blue_darker">#ff0088bb</color>
     <color name="holo_blue_darkest">#ff0077aa</color>
-    <color name="holo_blue_light">#ff33b5e5</color>
+
+    <color name="holo_green_dark">#ff669900</color>
+    <color name="holo_green_darker">#ff558800</color>
+    <color name="holo_green_darkest">#ff447700</color>
 </resources>

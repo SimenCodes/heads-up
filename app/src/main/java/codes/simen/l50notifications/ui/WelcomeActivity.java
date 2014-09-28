@@ -31,6 +31,7 @@ import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,11 +67,13 @@ public class WelcomeActivity extends Activity {
         super.onResume();
         isRunning = true;
         TextView status = (TextView) findViewById(R.id.status);
+        Button enableButton = (Button) findViewById(R.id.notification_open);
         if (
                 ( Build.VERSION.SDK_INT >= 18 && isNotificationListenerEnabled() )
                 || isAccessibilityEnabled()
         ) {
             status.setVisibility(View.VISIBLE);
+            enableButton.setBackgroundResource(R.drawable.button_enable_on);
             checkEnabled();
             if (( Build.VERSION.SDK_INT >= 18 && isNotificationListenerEnabled() )
                     && isAccessibilityEnabled() ) {
@@ -86,7 +89,7 @@ public class WelcomeActivity extends Activity {
                 findViewById(R.id.bothEnabled).setVisibility(View.GONE);
             }
         } else {
-
+            enableButton.setBackgroundResource(R.drawable.button_enable);
             status.setVisibility(View.GONE);
         }
 
@@ -308,8 +311,6 @@ public class WelcomeActivity extends Activity {
         TextUtils.SimpleStringSplitter mStringColonSplitter = new TextUtils.SimpleStringSplitter(':');
 
         if (accessibilityEnabled==1){
-
-
             String settingValue = Settings.Secure.getString(getContentResolver(), Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES);
             Mlog.d(logTag, "Setting: " + settingValue);
             if (settingValue != null) {
@@ -317,9 +318,16 @@ public class WelcomeActivity extends Activity {
                 while (mStringColonSplitter.hasNext()) {
                     String accessibilityService = mStringColonSplitter.next();
                     Mlog.d(logTag, "Setting: " + accessibilityService);
+
                     if (accessibilityService.equalsIgnoreCase(ACCESSIBILITY_SERVICE_NAME)){
                         Mlog.d(logTag, "We've found the correct setting - accessibility is switched on!");
                         return true;
+                    } else if ("com.pushbullet.android/com.pushbullet.android.notifications.mirroring.CompatNotificationMirroringService".equals(accessibilityService)) {
+                        TextView errorDisplay = (TextView) findViewById(R.id.errorDisplay);
+                        // For easier translation in case of other troublesome services
+                        errorDisplay.setText(String.format(getString(R.string.accessibility_service_blocked),
+                                "PushBullet notification mirroring"));
+                        errorDisplay.setVisibility(View.VISIBLE);
                     }
                 }
             }
