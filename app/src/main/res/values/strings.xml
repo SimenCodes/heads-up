@@ -30,7 +30,7 @@ For details regarding problems and missing strings in your translation, see http
     <string name="reader_btn_open">Open</string>
     <string name="reader_btn_dismiss">Dismiss</string>
     <string name="intro_desc">Tap the button below to enable or disable heads-up notifications.</string>
-    <string name="welcome_btn_toggleservice">Enable / Disable heads-up</string>
+    <string name="welcome_btn_toggleservice">Toggle heads-up</string>
     <string name="intro_warning_miui">Are you using MIUI? Before you can use this app, you\'ll probably need to give it some slack when it comes to security.\n1. Go to System Settings > All > Apps > Downloaded > Heads-up notifications.\n2. Toggle the switch that says \'Show popup windows\' (second option).\n3. At the bottom, go to \'Manage permissions\'.\n4. Set \'I trust this app\' to on. </string>
     <string name="site_ad">Like what you see? Check out my other apps as well:</string>
     <string name="site_ad_link">Visit Simen.codes</string>
@@ -44,8 +44,6 @@ For details regarding problems and missing strings in your translation, see http
     <string name="pref_lock_screen_on">Display on lockscreen</string>
     <string name="pref_lock_screen_on_desc">Display the heads-up on the lockscreen.</string>
     <!-- Translators: Please add a note in the next lines asking users to write in English. -->
-    <string name="intro_status_on">The service is enabled. Try sending yourself a message.\nIf it doesn\'t work, please reboot your device and try again.\nTap here if you need help</string>
-    <string name="intro_status_on_confirmed">The service is running. Try sending yourself a message.\nTap here if you need help.</string>
     <string name="bug_report_request">If the app has been misbehaving lately, tap here to report the problem. You don\'t have to do anything if the app is behaving normally.\n\n</string>
     <string name="pref_overlay_display_time">Display time</string>
     <string name="pref_overlay_time_max">Until I dismiss it</string>
@@ -137,5 +135,7 @@ For details regarding problems and missing strings in your translation, see http
     <string name="device_admin_enable_explanation">Enabling this will allow Heads-up to turn off your screen. Only use this if the screen doesn\'t turn off after displaying popups on the lockscreen, or if the pocket detection doesn\'t work properly.\n\nIMPORTANT! You will not be able to uninstall Heads-up while this feature is enabled.</string>
     <string name="device_admin_alredy_on">Already a device manager.</string>
     <string name="device_admin_not_available">Device provisioning is not enabled. Stopping.</string>
+    <string name="intro_status_on">The service is enabled. Try sending yourself a message.\nIf it doesn\'t work, please reboot your device and try again.\nTap here if you need help</string>
+    <string name="intro_status_on_confirmed">The service is running. Try sending yourself a message.\nTap here if you need help.</string>
 
 </resources>

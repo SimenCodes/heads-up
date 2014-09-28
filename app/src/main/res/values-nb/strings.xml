@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This program is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     This program is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <resources
     xmlns:xliff="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -25,8 +40,6 @@
     <string name="pref_header_other">Om</string>
     <string name="pref_lock_screen_on">Vis på låseskjermen</string>
     <string name="pref_lock_screen_on_desc">Vis heads-up-vinduer på låseskjermen.</string>
-    <string name="intro_status_on">Tjenesten er aktivert. Prøv å sende deg selv en melding.\nHvis det ikke virker, start enheten på nytt og prøv igjen. Kontakt meg på sb@simen.codes hvis du ikke får det til å fungere.</string>
-    <string name="intro_status_on_confirmed">Tjenesten kjører. Prøv å sende deg selv en melding.\nKontakt meg på sb@simen.codes hvis du ikke får det til å fungere.</string>
     <!-- Please add a note in the next line asking users to write in English. -->
     <string name="bug_report_request">Hvis appen har oppført seg rart eller krasjet i det siste, trykk her for å rapportere problemet. Du trenger ikke gjøre noe hvis appen fungerer normalt.\n\n</string>
     <string name="pref_overlay_display_time">Visningstid</string>
@@ -104,7 +117,20 @@
     <string name="accessibility_desc">Aktiver dette for at Heads-up skal få tilgang til varslingene dine.\n\nIKKE aktiver dette hvis mobilen din kjører Android 4.3 eller nyere.</string>
     <string name="device_admin_disable_warning">Hvis du deaktiverer dette, vil ikke Heads-up kunne slå av skjermen din. Dette kan føre til at noen funksjoner ikke fungerer ordentlig.</string>
     <string name="title_activity_device_admin_enabler">Aktiver enhetsadministrator</string>
-    <string name="device_admin_enable_explanation">Dette gir Heads-up tilgang til å slå av skjermen. Aktiver hvis skjermen ikke slås av igjen etter at Heads-up har slått på skjermen, eller hvis lommemodusen ikke fungerer ordentlig.</string>
     <string name="pref_device_admin">Fiks \'skjermen er på\'-feilen.</string>
+
+    <!-- Added since 1.8 -->
+    <string name="no_proximity_sensor_error">Ingen avstandsensor ble oppdaget. Lommemodusen vil ikke fungere. IKKE rapporter denne feilen.</string>
+    <string name="pref_keep_screen_on_forever">Behold skjermen på</string>
+    <string name="pref_keep_screen_on_forever_desc">Etter å ha slått på skjermen, behold den på helt til du åpner elker fjerner meldingen.</string>
+
+    <!-- Added/changed since 1.8.1 -->
+    <string name="action_help">Hjelp!</string>
+    <string name="action_test">Test</string>
+    <string name="device_admin_enable_explanation">Dette gir Heads-up tilgang til å slå av skjermen. Aktiver hvis skjermen ikke slås av igjen etter at Heads-up har slått på skjermen, eller hvis lommemodusen ikke fungerer ordentlig.\n\nNB! Heads-up kan ikke avinstalleres mens dette er aktivert.</string>
+    <string name="device_admin_alredy_on">Heads-up er allerede administrator.</string>
+    <string name="device_admin_not_available">Enheten rapporterer at den ikke støtter enhetsadministrasjon.</string>
+    <string name="intro_status_on">Tjenesten er aktivert. Prøv å sende deg selv en melding.\nHvis det ikke virker, start enheten på nytt og prøv igjen. Trykk på Hjelp-knappen hvis du trenger hjelp</string>
+    <string name="intro_status_on_confirmed">Tjenesten kjører. Prøv å sende deg selv en melding.\nTrykk på Hjelp-knappen hvis du trenger hjelp</string>
 
 </resources>
