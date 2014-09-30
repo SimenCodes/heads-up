@@ -147,5 +147,16 @@
         android:text="@string/site_ad_link"
         android:onClick="doOpenSite"/>
 
+    <Button
+        style="@style/Button_Borderless"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/notification_btn_text_color_light"
+        android:text="@string/export_debug_data"
+        android:onClick="doReport"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal|bottom" />
+
 </LinearLayout>
 </ScrollView>

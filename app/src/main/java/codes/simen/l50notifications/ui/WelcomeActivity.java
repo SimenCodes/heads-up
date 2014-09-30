@@ -23,6 +23,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -92,16 +94,6 @@ public class WelcomeActivity extends Activity {
             enableButton.setBackgroundResource(R.drawable.button_enable);
             status.setVisibility(View.GONE);
         }
-
-        String lastBug = preferences.getString("lastBug", null);
-        if (lastBug != null) {
-            if (lastBug.length() > 100) {
-                lastBug = lastBug.substring(0,100);
-            }
-            TextView view = (TextView) findViewById(R.id.errorDisplay);
-            view.setText( getString(R.string.bug_report_request).concat( lastBug ) );
-            view.setVisibility(View.VISIBLE);
-        }
     }
 
     @Override
@@ -152,10 +144,10 @@ public class WelcomeActivity extends Activity {
         intent.putExtra("text", "Thanks for trying Heads-up! If you like it, please leave a review on Play. If you can\'t get it to work, you can get help on the project's GitHub issue page.");
         intent.putExtra("action", PendingIntent.getActivity(this, 0,
                 new Intent(Intent.ACTION_VIEW)
-                        .setData(Uri.parse("https://play.google.com/store/apps/details?id=codes.simen.l50notifications"))
+                        .setData(Uri.parse("http://simen.codes"))
                 , PendingIntent.FLAG_UPDATE_CURRENT));
 
-        /*if (Build.VERSION.SDK_INT >= 11) {
+        if (Build.VERSION.SDK_INT >= 11) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
             intent.putExtra("iconLarge", bitmap);
         }/**/
@@ -168,12 +160,12 @@ public class WelcomeActivity extends Activity {
                 new Intent(getApplicationContext(), SettingsActivity.class),
                 PendingIntent.FLAG_CANCEL_CURRENT));
 
-        intent.putExtra("action2title", getString(R.string.leave_review));
+        /*intent.putExtra("action2title", getString(R.string.leave_review));
         intent.putExtra("action2icon", R.drawable.ic_checkmark);
         intent.putExtra("action2intent", PendingIntent.getActivity(this, 0,
                 new Intent(Intent.ACTION_VIEW)
                         .setData(Uri.parse("https://play.google.com/store/apps/details?id=codes.simen.l50notifications"))
-                , PendingIntent.FLAG_UPDATE_CURRENT));
+                , PendingIntent.FLAG_UPDATE_CURRENT));*/
 
         startService(intent);
 
@@ -187,48 +179,9 @@ public class WelcomeActivity extends Activity {
     }
 
     public void doReport (View view) {
-        Mlog.d(logTag, view.toString());
-
-        /*if (Build.VERSION.SDK_INT >= 14) {
-            try {
-                Exception e = (Exception) ObjectSerializer.deserialize(preferences.getString("lastException", null));
-                ApplicationErrorReport report = new ApplicationErrorReport();
-                report.packageName = report.processName = getPackageName();
-                report.time = System.currentTimeMillis();
-                report.type = ApplicationErrorReport.TYPE_CRASH;
-                report.systemApp = false;
-
-                ApplicationErrorReport.CrashInfo crash = new ApplicationErrorReport.CrashInfo();
-                crash.exceptionClassName = e.getClass().getSimpleName();
-                crash.exceptionMessage = e.getMessage()
-                        + " (Device: " + android.os.Build.MODEL + ")";
-
-                StringWriter writer = new StringWriter();
-                PrintWriter printer = new PrintWriter(writer);
-                e.printStackTrace(printer);
-
-                crash.stackTrace = writer.toString();
-
-                StackTraceElement stack = e.getStackTrace()[0];
-                crash.throwClassName = stack.getClassName();
-                crash.throwFileName = stack.getFileName();
-                crash.throwLineNumber = stack.getLineNumber();
-                crash.throwMethodName = stack.getMethodName();
-
-                report.crashInfo = crash;
-
-                Intent intent = new Intent(Intent.ACTION_APP_ERROR);
-                intent.putExtra(Intent.EXTRA_BUG_REPORT, report);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivityForResult(intent, 0);
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
-        }*/
-
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_SEND);
-        intent.setType("message/rfc822");
+        intent.setType("text/plain");
         try {
             final int versionCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
             intent.putExtra(Intent.EXTRA_TEXT,
@@ -237,7 +190,7 @@ public class WelcomeActivity extends Activity {
                             "--" + preferences.getBoolean("running", false) + " - " +
                             Build.VERSION.SDK_INT + " - " + versionCode + " - " + Build.PRODUCT
             );
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Bug in Heads-up " + versionCode);
+            intent.putExtra(Intent.EXTRA_TITLE, "Bug in Heads-up " + versionCode);
         } catch (PackageManager.NameNotFoundException e) {
             intent.putExtra(Intent.EXTRA_TEXT,
                     preferences
@@ -245,10 +198,9 @@ public class WelcomeActivity extends Activity {
                             "--" + preferences.getBoolean("running", false) + " - " +
                             Build.VERSION.SDK_INT + " - unknown version" + " - " + Build.PRODUCT
             );
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Bug in Heads-up");
+            intent.putExtra(Intent.EXTRA_TITLE, "Bug in Heads-up");
         }
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"sb@simen.codes"});
-        startActivity(Intent.createChooser(intent, "Select your email client:"));
+        startActivity(Intent.createChooser(intent, "Select export location"));
 
         preferences
                 .edit()
@@ -326,7 +278,7 @@ public class WelcomeActivity extends Activity {
                         TextView errorDisplay = (TextView) findViewById(R.id.errorDisplay);
                         // For easier translation in case of other troublesome services
                         errorDisplay.setText(String.format(getString(R.string.accessibility_service_blocked),
-                                "PushBullet notification mirroring"));
+                                "PushBullet Notification Mirroring"));
                         errorDisplay.setVisibility(View.VISIBLE);
                     }
                 }

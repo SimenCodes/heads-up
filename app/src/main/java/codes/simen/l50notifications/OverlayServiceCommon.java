@@ -323,7 +323,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             Bundle extras = intent.getExtras();
 
             handler.removeCallbacks(closeTimer);
-            handler.removeCallbacks(delayStop);
+            //handler.removeCallbacks(delayStop);
 
             text = extras.getString("text");
             String title = extras.getString("title");
@@ -838,14 +838,15 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             stopSelf();
         } else {
             layout.setVisibility(View.GONE);
-            Mlog.v(logTag, "delayStop");
+            /*Mlog.v(logTag, "delayStop");
             isDelaying = true;
-            handler.postDelayed(delayStop, 10000);
+            handler.postDelayed(delayStop, 10000);*/
+            stopSelf();
         }
 
     }
 
-    private final Runnable delayStop = new Runnable() {
+    /*private final Runnable delayStop = new Runnable() {
         @Override
         public void run() {
             if (wLock != null && wLock.isHeld())
@@ -853,7 +854,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             stopSelf();
             isDelaying = false;
         }
-    };
+    };*/
 
     @Override
     public void onDestroy () {
@@ -870,31 +871,6 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         themeClass.destroy(layout);
 
         System.gc();
-    }
-
-    @Override
-    public IBinder onBind(Intent intent) {
-        return null;
-    }
-
-
-    private static void reportError(Exception e, String msg, Context c) {
-        try {
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c.getApplicationContext());
-            SharedPreferences.Editor editor = preferences.edit();
-            if (e != null) {
-                e.printStackTrace();
-                Writer writer = new StringWriter();
-                PrintWriter printWriter = new PrintWriter(writer);
-                e.printStackTrace(printWriter);
-                msg = msg.concat(writer.toString());
-                editor.putString("lastException", ObjectSerializer.serialize(e));
-            }
-            editor.putString("lastBug", msg);
-            editor.apply();
-        } catch (Exception e2) {
-            e2.printStackTrace();
-        }
     }
 
     @Override
@@ -949,6 +925,31 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 Mlog.v(logTag, "ADMIN_ACTIVE");
                 policyManager.lockNow();
             } else Mlog.v(logTag, "ADMIN_NOT_ACTIVE");
+        }
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
+
+
+    private static void reportError(Exception e, String msg, Context c) {
+        try {
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c.getApplicationContext());
+            SharedPreferences.Editor editor = preferences.edit();
+            if (e != null) {
+                e.printStackTrace();
+                Writer writer = new StringWriter();
+                PrintWriter printWriter = new PrintWriter(writer);
+                e.printStackTrace(printWriter);
+                msg = msg.concat(writer.toString());
+                editor.putString("lastException", ObjectSerializer.serialize(e));
+            }
+            editor.putString("lastBug", msg);
+            editor.apply();
+        } catch (Exception e2) {
+            e2.printStackTrace();
         }
     }
 
