@@ -25,7 +25,7 @@
     <string name="action_settings">Innstillinger</string>
     <string name="reader_btn_open">Åpne</string>
     <string name="reader_btn_dismiss">Fjern</string>
-    <string name="intro_desc">Tryk på knappen under for å aktivere og deaktivere Heads-up.</string>
+    <string name="intro_desc">Trykk på knappen under for å aktivere og deaktivere Heads-up.</string>
     <string name="welcome_btn_toggleservice">Aktiver / deaktiver Heads-up</string>
     <string name="intro_warning_miui">Bruker du MIUI? Før du kan bruke denne appen må du justere sikkerhetsinnstillingene.\n1. Gå til systeminnstillinger > Alle > Apper > Lastet ned > Heads-up-varslinger.\n2. Aktiver \'Vis popupvinduer\'.\n3. Gå inn på \'Personvern\' nederst.\n4. Aktiver \'Jeg stoler på denne appen\'. </string>
     <string name="site_ad">Liker du det du ser? Prøv de andre appene mine også:</string>
