@@ -68,13 +68,13 @@ public class WelcomeActivity extends Activity {
     protected void onResume () {
         super.onResume();
         isRunning = true;
-        TextView status = (TextView) findViewById(R.id.status);
+        //TextView status = (TextView) findViewById(R.id.status);
         Button enableButton = (Button) findViewById(R.id.notification_open);
         if (
                 ( Build.VERSION.SDK_INT >= 18 && isNotificationListenerEnabled() )
                 || isAccessibilityEnabled()
         ) {
-            status.setVisibility(View.VISIBLE);
+            //status.setVisibility(View.VISIBLE);
             enableButton.setBackgroundResource(R.drawable.button_enable_on);
             checkEnabled();
             if (( Build.VERSION.SDK_INT >= 18 && isNotificationListenerEnabled() )
@@ -92,7 +92,7 @@ public class WelcomeActivity extends Activity {
             }
         } else {
             enableButton.setBackgroundResource(R.drawable.button_enable);
-            status.setVisibility(View.GONE);
+            //status.setVisibility(View.GONE);
         }
     }
 
