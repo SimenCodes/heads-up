@@ -358,7 +358,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             }
 
             try {
-                appRes = pm.getResourcesForApplication(packageName);
+                if (!packageName.equals("codes.simen.voiceover"))
+                    appRes = pm.getResourcesForApplication(packageName);
             } catch (PackageManager.NameNotFoundException e) {
                 reportError(e, "", getApplicationContext());
             } catch (NullPointerException e) {
@@ -769,6 +770,23 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
     private void doFinish(final int doDismiss) { // 0=ikke fjern 1=fjern 2=åpnet
         handler.removeCallbacks(closeTimer);
+
+        // Integrate with Voiceify
+        if (doDismiss == 1 || doDismiss == 2) {
+            Mlog.d(logTag, "Check for Voiceify");
+            PackageManager packageManager = getPackageManager();
+            Intent intent = new Intent("codes.simen.notificationspeaker.STOP_READING");
+            intent.putExtra("packageName", packageName);
+            intent.putExtra("tag", tag);
+            intent.putExtra("id", id);
+            String resolvePackageName = packageManager.resolveService(intent, 0).serviceInfo.applicationInfo.packageName;
+            Mlog.d(logTag, resolvePackageName);
+            if (resolvePackageName.equals("codes.simen.notificationspeaker")) {
+                Mlog.d(logTag, "Voiceify found and resolved");
+                startService(intent);
+            }
+        }
+
         if (Build.VERSION.SDK_INT >= 12) {
             try {
                 View self = layout.findViewById(R.id.notificationbg);

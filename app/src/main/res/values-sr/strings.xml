@@ -16,13 +16,6 @@
 
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
 
-    <!--
-Hi!, thank you for wanting to help translate Heads-up!
-To begin, download this file to your computer. When you're finished translating, email your file to sb@simen.codes. Please include the word 'translation' in the subject line, as this puts your email in my priority inbox.
-After receiving the translation, I'll send you a testing APK containing your translation.
-For details regarding problems and missing strings in your translation, see http://app.simen.codes/dev/translation/heads-up/ I update this document every time I receive a translation.
-    -->
-
     <string name="app_name">Heads-up notifications</string>
     <string name="app_icon_name">Heads-up</string>
     <string name="title_activity_welcome">Heads-up нотификације</string>

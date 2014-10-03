@@ -1,3 +1,18 @@
+/*
+ * This program is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package codes.simen.l50notifications;
 
 import android.content.BroadcastReceiver;
@@ -104,7 +119,7 @@ public class VoiceOver {
         Intent decideIntent = new Intent();
         decideIntent.setClass(context, OverlayServiceCommon.class);
         decideIntent.setAction("add");
-        decideIntent.putExtra("packageName", context.getPackageName());
+        decideIntent.putExtra("packageName", "codes.simen.voiceover");
         decideIntent.putExtra("title", resources.getString(
                 R.string.music_title, track
         ));
