@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ This program is free software: you can redistribute it and/or modify
   ~     it under the terms of the GNU General Public License as published by
@@ -14,18 +14,15 @@
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="http://schemas.android.com/apk/res-auto" tools:ignore="MissingTranslation">
-<!--
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
 
-    Hi!, thank you for wanting to help translate Heads-up!
+    <!--
+Hi!, thank you for wanting to help translate Heads-up!
+To begin, download this file to your computer. When you're finished translating, email your file to sb@simen.codes. Please include the word 'translation' in the subject line, as this puts your email in my priority inbox.
+After receiving the translation, I'll send you a testing APK containing your translation.
+For details regarding problems and missing strings in your translation, see http://app.simen.codes/dev/translation/heads-up/ I update this document every time I receive a translation.
+    -->
 
-    To begin, download this file to your computer. When you're finished translating, email your file to sb@simen.codes. Please include the word 'translation' in the subject line, as this puts your email in my priority inbox.
-
-    After receiving the translation, I'll send you a testing APK containing your translation.
-
-    For details regarding problems and missing strings in your translation, see http://app.simen.codes/dev/translation/heads-up/ I update this document every time I receive a translation.
-
--->
     <string name="app_name">Heads-up notifications</string>
     <string name="app_icon_name">Heads-up</string>
     <string name="title_activity_welcome">Heads-up notifications</string>
@@ -33,7 +30,7 @@
     <string name="reader_btn_open">Ouvrir</string>
     <string name="reader_btn_dismiss">Rejeter</string>
     <string name="intro_desc">Appuyer ci-dessous pour activer/désactiver les notifications heads-up.</string>
-    <string name="welcome_btn_toggleservice">Activer/Désactiver</string>
+    <string name="welcome_btn_toggleservice">Activer/Désactiver heads-up</string>
     <string name="intro_warning_miui">Vous utilisez MIUI? Avant de pouvoir utiliser cette application, vous devez réduire un peut la sécurité.\n1. Aller à System Settings > All > Apps > Downloaded > Heads-up notifications.\n2. Activer l\'interrupteur \'Show popup windows\' (seconde option).\n3. En bas aller à \'Manage permissions\'.\n4. Sélectionner \'I trust this app\'. </string>
     <string name="site_ad">Vous aimer ce que vous voyez ? Allez voir mes autres applications :</string>
     <string name="site_ad_link">Aller à Simen.codes</string>
@@ -46,16 +43,12 @@
     <string name="pref_header_style">Style</string>
     <string name="pref_lock_screen_on">Montrer sur l\'écran de verrouillage</string>
     <string name="pref_lock_screen_on_desc">Montrer la notification sur l\'écran de verrouillage.</string>
-    <!-- Please add a note in the next lines asking users to write in English. -->
-    <string name="intro_status_on">Le service est actif. Essayez de vous envoyer un message.\nSi cela ne fonctionne pas, redémarrer votre appareil puis ressayez. Contacter moi sb@simen.codes si ça ne fonctionne pas.</string>
-    <string name="intro_status_on_confirmed">Le service est actif. Essayez de vous envoyer un message.\nContacter moi sb@simen.codes si ça ne fonctionne pas.</string>
+    <!-- Translators: Please add a note in the next lines asking users to write in English. -->
     <string name="bug_report_request">Si l\'appli ne fonctionne pas correctement, appuyez ici pour rapporter un problème (support en Anglais). Vous n\'avez rien à faire si tout fonctionne correctement.\n\n</string>
     <string name="pref_overlay_display_time">Délai d\'affichage</string>
     <string name="pref_overlay_time_max">Jusqu\'au rejet</string>
     <string name="title_activity_settings">Paramètres</string>
     <string name="pref_header_general">Filtre</string>
-    <string name="pref_header_other">À propos</string>
-	
 	
     <string-array name="priorityLevel">
         <item name="MAX">Critique et urgent (appels manqués, directions, alertes urgentes)</item>
@@ -85,7 +78,7 @@
     <string name="pref_block_current_app_desc">Cacher les notifications de l\'appli courante à l\'intérieur d\'elle-même</string>
     <string name="pref_header_behaviour">Fonctionnement</string>
     <string name="music_title">Écoute <xliff:g id="track" example="TRACK">%s</xliff:g></string>
-    <string name="music_text">Par <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nde l\'album <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+    <string name="music_text">Par : <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum : <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
     <string name="pref_music_popup">Chanson en lecture</string>
     <string name="pref_music_popup_desc">Montrer les données lors d\'un changement de chanson.\nTous les lecteurs ne sont pas supportés.</string>
     <string name="intro_warning_both_services">Et l\'écoute de notification et le service d\'accessibilité sont en fonctions. Veuillez en désactiver un.</string>
@@ -104,7 +97,8 @@
     <string name="pref_compact_mode_desc">Ne montrer que la première ligne de la notification.</string>
     <string name="pref_font_size">Taille des caractères</string>
     <string name="pref_font_size_desc">Paramétrer la taille des caractères de la notification</string>
-    <string name="leave_review">Donnez votre avis</string>
+    <string name="leave_review">Laisser un avis</string>
+    <string name="pref_header_other">À propos</string>
 
     <string-array name="overlayPosition">
         <item name="aboveStatus">En haut</item>
@@ -117,17 +111,33 @@
         <item name="ldark">Android 5.0 \'L\' foncé</item>
         <item name="holo">Clair normal</item>
         <item name="holodark">Foncé normal</item>
+        <item name="random">Psychédélique (aléatoire)</item>
     </string-array>
-    
-    <!-- New strings since 1.7 -->
+
+    <!-- Added since 1.7 -->
     <string name="pref_only_on_lock_screen">Seulement sur l\'écran de verrouillage</string>
     <string name="pref_only_on_lock_screen_desc">Ne montrer les notifications que sur l\'écran de verrouillage.</string>
     <string name="pref_privacy_on_lockscreen">Mode privée si verrouillage</string>
     <string name="pref_privacy_on_lockscreen_desc">Ne pas montrer le contenu des messages sur l\'écran de verrouillage</string>
-    <string name="accessibility_desc">Activer ce service pour permettre à Heads-up de lire vos notifications.\n\nNE PAS ACTIVER si vous utiliser Android 4.3 ou plus.</string>
+    <string name="accessibility_desc">Activer ce service pour permettre à Heads-up de lire vos notifications.\n\nNE PAS ACTIVER ce service si vous utiliser Android 4.3 ou plus (suivez plutôt les instructions à l'intérieur de l'appli).</string>
     <string name="device_admin_disable_warning">Après la désactivation, certaines fonctionnalités peuvent ne pas fonctionner.</string>
     <string name="title_activity_device_admin_enabler">Activer l\'admin du matériel</string>
-    <string name="device_admin_enable_explanation">L\'activation permet à Heads-up d\'éteindre l\'écran. À utiliser que si l\'écran ne s\'éteint pas lorsqu\'il est verrouillé, ou si la détection de la poche ne fonctionne pas.</string>
     <string name="pref_device_admin">Réparer le bogue \'écran allumé\'.</string>
+
+    <!-- Added since 1.8 -->
+    <string name="no_proximity_sensor_error">Pas de détecteur de proximité. La détection de la poche ne fonctionnera pas. Veuillez NE PAS rapporter ce bogue.</string>
+    <string name="pref_keep_screen_on_forever">Garder l'écran allumé</string>
+    <string name="pref_keep_screen_on_forever_desc">Après avoir allumer l\'écran, le garder ainsi tant que la notification est visible.</string>
+
+    <!-- Added/changed since 1.8.1 -->
+    <string name="action_help">Aide !</string>
+    <string name="action_test">Tester</string>
+    <string name="device_admin_enable_explanation">L\'activation permet à Heads-up d\'éteindre l\'écran. À utiliser que si l\'écran ne s\'éteint pas lorsqu\'il est verrouillé, ou si la détection de la poche ne fonctionne pas.</string>
+    <string name="device_admin_alredy_on">Déjà un gestionnaire de périphérique.</string>
+    <string name="device_admin_not_available">L'administration du périphérique n\'est pas activer. Arrêt.</string>
+    <string name="intro_status_on">Le service fonctionne. Essayez de vous envoyer un message.\nSi cela ne fonctionne pas, redémarrer le périphérique.\nAppuyez ici si vous avez besoin d\'aide</string>
+    <string name="intro_status_on_confirmed">Le service fonctionne. Essayez de vous envoyer un message.\nAppuyez ici si vous avez besoin d\'aide.</string>
+    <string name="accessibility_service_blocked">%s bloque Heads-up. Veuillez le désactiver à partir du menu d'accessibilité.</string>
+    <string name="export_debug_data">Exporter les données de débug</string>
 
 </resources>
