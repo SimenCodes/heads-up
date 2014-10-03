@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ This program is free software: you can redistribute it and/or modify
   ~     it under the terms of the GNU General Public License as published by
@@ -14,18 +14,15 @@
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="http://schemas.android.com/apk/res-auto" tools:ignore="MissingTranslation">
-<!--
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
 
-    Hi!, thank you for wanting to help translate Heads-up!
+    <!--
+Hi!, thank you for wanting to help translate Heads-up!
+To begin, download this file to your computer. When you're finished translating, email your file to sb@simen.codes. Please include the word 'translation' in the subject line, as this puts your email in my priority inbox.
+After receiving the translation, I'll send you a testing APK containing your translation.
+For details regarding problems and missing strings in your translation, see http://app.simen.codes/dev/translation/heads-up/ I update this document every time I receive a translation.
+    -->
 
-    To begin, download this file to your computer. When you're finished translating, email your file to sb@simen.codes. Please include the word 'translation' in the subject line, as this puts your email in my priority inbox.
-
-    After receiving the translation, I'll send you a testing APK containing your translation.
-
-    For details regarding problems and missing strings in your translation, see http://app.simen.codes/dev/translation/heads-up/ I update this document every time I receive a translation.
-
--->
     <string name="app_name">Heads-up notifications</string>
     <string name="app_icon_name">Heads-up</string>
     <string name="title_activity_welcome">Heads-up нотификације</string>
@@ -46,17 +43,13 @@
     <string name="pref_header_style">Стил</string>
     <string name="pref_lock_screen_on">Покажи и када закључано</string>
     <string name="pref_lock_screen_on_desc">Покажи нотификацију на екрану закључивања.</string>
-    <!-- Please add a note in the next lines asking users to write in English. -->
-    <string name="intro_status_on">Сервис је омогућен. Тестирајте слањем поруке самом себи.\n Ако не ради, поново покрените уређај и поновите тест. Уколико ништа не ради контактирајте ме на sb@simen.codes.</string>
-    <string name="intro_status_on_confirmed">Сервис ради. Тестирајте слањем поруке самом себи.\nУколико ништа не ради контактирајте ме на sb@simen.codes.</string>
+    <!-- Translators: Please add a note in the next lines asking users to write in English. -->
     <string name="bug_report_request">Ако апликација не ради добро, пипните овде да би известили проблем (на енгленском).Немате ништа да урадите ако апликација ради нормално.\n\n</string>
     <string name="pref_overlay_display_time">Трајање показивања</string>
     <string name="pref_overlay_time_max">Чекање до одбацивања</string>
     <string name="title_activity_settings">Подешавања</string>
     <string name="pref_header_general">Филтрирање</string>
-	<string name="pref_header_other">О програму</string>
 
-	
     <string-array name="priorityLevel">
         <item name="MAX">Критично и хитно (промашени позиви, смерови, хитна обавештења)</item>
         <item name="HIGH">Важно (комуникације, важне е-поруке)</item>
@@ -85,7 +78,7 @@
     <string name="pref_block_current_app_desc">Не приказуј нотификације за тренутну апликацију унутра ње</string>
     <string name="pref_header_behaviour">Рад</string>
     <string name="music_title">Пуштено <xliff:g id="track" example="TRACK">%s</xliff:g></string>
-    <string name="music_text">Од <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nОд албума <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+    <string name="music_text">Од: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nАлбум: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
     <string name="pref_music_popup">Нотификација тренутне песме</string>
     <string name="pref_music_popup_desc">Покажи податке песме на промену стазе.\nСви плејери нису подржани.</string>
     <string name="intro_warning_both_services">Слушалац обавештења и сервис приступачности су упаљени. Угасите један.</string>
@@ -105,6 +98,7 @@
     <string name="pref_font_size">Величина слова</string>
     <string name="pref_font_size_desc">Подеси величину слова нотификације</string>
     <string name="leave_review">Напиши рецензију</string>
+    <string name="pref_header_other">О програму</string>
 
     <string-array name="overlayPosition">
         <item name="aboveStatus">На врху</item>
@@ -117,9 +111,10 @@
         <item name="ldark">Android 5.0 \'L\' тамно</item>
         <item name="holo">Обично светло</item>
         <item name="holodark">Обично тамно</item>
+        <item name="random">Психоделичан (случајан)</item>
     </string-array>
-    
-    <!-- New strings since 1.7 -->
+
+    <!-- Added since 1.7 -->
     <string name="pref_only_on_lock_screen">Само на екран блокирања</string>
     <string name="pref_only_on_lock_screen_desc">Покажи нотификације само када је екран блокиран.</string>
     <string name="pref_privacy_on_lockscreen">Приватност када блокирано</string>
@@ -127,7 +122,22 @@
     <string name="accessibility_desc">Упалити сервис да би Heads-up могао да чита Ваше нотификације.\n\nНЕ УПАЛИТИ ако уређај има Android 4.3 или новије.</string>
     <string name="device_admin_disable_warning">После гашења сервиса, неке способности могу да не раде како треба.</string>
     <string name="title_activity_device_admin_enabler">Упали администратор уређаја</string>
-    <string name="device_admin_enable_explanation">Дозвољава да Heads-up угаси екран. Употребити ако се екран не гаси после показивања нотификације када је екран блокиран, или ако детектор џепа не ради како треба.</string>
     <string name="pref_device_admin">Проблем \'упаљеног екрана\'.</string>
+
+    <!-- Added since 1.8 -->
+    <string name="no_proximity_sensor_error">Нисам нашао сенсора близине. Налазивање џепа неће радити. Немојте да известите о овој гршци.</string>
+    <string name="pref_keep_screen_on_forever">Задржи екран упаљен</string>
+    <string name="pref_keep_screen_on_forever_desc">После паљења екрана, оставига упаљен све док је нотификација видљива.</string>
+
+    <!-- Added/changed since 1.8.1 -->
+    <string name="action_help">Помоћ!</string>
+    <string name="action_test">Проба</string>
+    <string name="device_admin_enable_explanation">Дозвољава да Heads-up угаси екран. Употребити ако се екран не гаси после показивања нотификације када је екран блокиран, или ако детектор џепа не ради како треба.</string>
+    <string name="device_admin_alredy_on">Већ је менаџер.</string>
+    <string name="device_admin_not_available">Менаџерство није доступно. Заустављам.</string>
+    <string name="intro_status_on">Сервис је омогућен. Тестирајте слањем поруке самом себи.\n Ако не ради, поново покрените уређај и поновите тест. Уколико ништа не ради контактирајте ме на sb@simen.codes.</string>
+    <string name="intro_status_on_confirmed">Сервис ради. Тестирајте слањем поруке самом себи.\nУколико ништа не ради контактирајте ме на sb@simen.codes.</string>
+    <string name="accessibility_service_blocked">%s блокира Heads-up од нотификације. Онемиогућте програм из менија приступачности.</string>
+    <string name="export_debug_data">Извоз податке дебага</string>
 
 </resources>
