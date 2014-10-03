@@ -16,13 +16,6 @@
 
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
 
-    <!--
-Hi!, thank you for wanting to help translate Heads-up!
-To begin, download this file to your computer. When you're finished translating, email your file to sb@simen.codes. Please include the word 'translation' in the subject line, as this puts your email in my priority inbox.
-After receiving the translation, I'll send you a testing APK containing your translation.
-For details regarding problems and missing strings in your translation, see http://app.simen.codes/dev/translation/heads-up/ I update this document every time I receive a translation.
-    -->
-
     <string name="app_name">Heads-up notifications</string>
     <string name="app_icon_name">Heads-up</string>
     <string name="title_activity_welcome">Heads-up notifications</string>
@@ -119,14 +112,14 @@ For details regarding problems and missing strings in your translation, see http
     <string name="pref_only_on_lock_screen_desc">Ne montrer les notifications que sur l\'écran de verrouillage.</string>
     <string name="pref_privacy_on_lockscreen">Mode privée si verrouillage</string>
     <string name="pref_privacy_on_lockscreen_desc">Ne pas montrer le contenu des messages sur l\'écran de verrouillage</string>
-    <string name="accessibility_desc">Activer ce service pour permettre à Heads-up de lire vos notifications.\n\nNE PAS ACTIVER ce service si vous utiliser Android 4.3 ou plus (suivez plutôt les instructions à l'intérieur de l'appli).</string>
+    <string name="accessibility_desc">Activer ce service pour permettre à Heads-up de lire vos notifications.\n\nNE PAS ACTIVER ce service si vous utiliser Android 4.3 ou plus (suivez plutôt les instructions à l\'intérieur de l\'appli).</string>
     <string name="device_admin_disable_warning">Après la désactivation, certaines fonctionnalités peuvent ne pas fonctionner.</string>
     <string name="title_activity_device_admin_enabler">Activer l\'admin du matériel</string>
     <string name="pref_device_admin">Réparer le bogue \'écran allumé\'.</string>
 
     <!-- Added since 1.8 -->
     <string name="no_proximity_sensor_error">Pas de détecteur de proximité. La détection de la poche ne fonctionnera pas. Veuillez NE PAS rapporter ce bogue.</string>
-    <string name="pref_keep_screen_on_forever">Garder l'écran allumé</string>
+    <string name="pref_keep_screen_on_forever">Garder l\'écran allumé</string>
     <string name="pref_keep_screen_on_forever_desc">Après avoir allumer l\'écran, le garder ainsi tant que la notification est visible.</string>
 
     <!-- Added/changed since 1.8.1 -->
@@ -134,10 +127,10 @@ For details regarding problems and missing strings in your translation, see http
     <string name="action_test">Tester</string>
     <string name="device_admin_enable_explanation">L\'activation permet à Heads-up d\'éteindre l\'écran. À utiliser que si l\'écran ne s\'éteint pas lorsqu\'il est verrouillé, ou si la détection de la poche ne fonctionne pas.</string>
     <string name="device_admin_alredy_on">Déjà un gestionnaire de périphérique.</string>
-    <string name="device_admin_not_available">L'administration du périphérique n\'est pas activer. Arrêt.</string>
+    <string name="device_admin_not_available">L\'administration du périphérique n\'est pas activer. Arrêt.</string>
     <string name="intro_status_on">Le service fonctionne. Essayez de vous envoyer un message.\nSi cela ne fonctionne pas, redémarrer le périphérique.\nAppuyez ici si vous avez besoin d\'aide</string>
     <string name="intro_status_on_confirmed">Le service fonctionne. Essayez de vous envoyer un message.\nAppuyez ici si vous avez besoin d\'aide.</string>
-    <string name="accessibility_service_blocked">%s bloque Heads-up. Veuillez le désactiver à partir du menu d'accessibilité.</string>
+    <string name="accessibility_service_blocked">%s bloque Heads-up. Veuillez le désactiver à partir du menu d\'accessibilité.</string>
     <string name="export_debug_data">Exporter les données de débug</string>
 
 </resources>
