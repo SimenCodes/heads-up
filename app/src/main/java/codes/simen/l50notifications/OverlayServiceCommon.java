@@ -44,6 +44,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -146,6 +147,17 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             inflater.inflate(R.layout.activity_read, layout);
             layout.setVisibility(View.GONE);
             ViewStub stub = (ViewStub) layout.findViewById(R.id.viewStub);
+
+            if (!getResources().getBoolean(R.bool.is_tablet)) {
+                final DisplayMetrics metrics = getResources().getDisplayMetrics();
+                final ViewGroup.LayoutParams stubLayoutParams = stub.getLayoutParams();
+                if (metrics.widthPixels <= metrics.heightPixels)
+                    stubLayoutParams.width = metrics.widthPixels;
+                else
+                    //noinspection SuspiciousNameCombination
+                    stubLayoutParams.width = metrics.heightPixels;
+                stub.setLayoutParams(stubLayoutParams);
+            }
 
             final int theme = Integer.parseInt(preferences.getString("overlay_style", "0"));
             switch (theme) {

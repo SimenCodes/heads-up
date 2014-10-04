@@ -42,7 +42,7 @@ android {
             //noinspection GroovyAssignabilityCheck
             signingConfig signingConfigs.release
             runProguard true
-            proguardFiles '/home/simen/adt-bundle-linux-x86_64-20130522/sdk/tools/proguard/proguard-android-optimize.txt', 'proguard-rules.pro'
+            proguardFiles '/home/simen/.apps/android-studio/sdk/tools/proguard/proguard-android-optimize.txt', 'proguard-rules.pro'
         }
         debug {
             debuggable true
