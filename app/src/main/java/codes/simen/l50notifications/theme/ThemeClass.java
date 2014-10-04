@@ -128,11 +128,8 @@ public class ThemeClass {
     public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons) {
         if (bitmap == null) return;
         if (round_icons) {
-            final float diagonal = imageView.getContext().getResources().
-                    getDimension(R.dimen.notification_ic_size);
-            final double cos45 = Math.cos(Math.toRadians(45));
-            final double minimumWidthForRoundIcon = diagonal / (2 * cos45);
-
+            final double minimumWidthForRoundIcon = imageView.getContext().getResources().
+                    getDimension(R.dimen.notification_ic_size) / (2 * Math.cos(Math.toRadians(45)));
             int bitmapWidth = bitmap.getWidth();
             Mlog.v(bitmapWidth, minimumWidthForRoundIcon);
 
