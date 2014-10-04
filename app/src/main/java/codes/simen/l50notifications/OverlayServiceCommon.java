@@ -184,7 +184,9 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     WindowManager.LayoutParams.MATCH_PARENT,
                     WindowManager.LayoutParams.WRAP_CONTENT,
                     WindowManager.LayoutParams.TYPE_PRIORITY_PHONE,
-                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
+                    WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
+                    WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH,
                     PixelFormat.TRANSLUCENT
             );
             position = Integer.valueOf( preferences.getString("overlay_vertical_position", "1") );
@@ -583,6 +585,11 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                             reportError(e, "", getApplicationContext());
                         }
                     }
+
+                    @Override
+                    public void outside() {
+                        doFinish(3);
+                    }
                 }
                 );
                 self.setClipChildren(false);
@@ -782,7 +789,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         }
     }
 
-    private void doFinish(final int doDismiss) { // 0=ikke fjern 1=fjern 2=åpnet
+    private void doFinish(final int doDismiss) { // 0=ikke fjern 1=fjern 2=åpnet, 3=don't remove, backwards animation
         handler.removeCallbacks(closeTimer);
 
         // Integrate with Voiceify
@@ -824,7 +831,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                             }
                         });
                 if (doDismiss == 1) animator.translationX(400);
-                else if (doDismiss == 0) {
+                else if (doDismiss == 0)
                     switch (position) {
                         case 2:
                         case 1:
@@ -834,7 +841,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                             animator.translationY(300);
                             break;
                     }
-                }
+                else if (doDismiss == 3)
+                    animator.translationY(300);
             } catch (Exception e) {
                 reportError(e, "", getApplicationContext());
                 e.printStackTrace();

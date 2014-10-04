@@ -104,6 +104,8 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
          * @param token The optional token passed to this object's constructor.
          */
         void onDismiss(View view, Object token);
+
+        void outside();
     }
 
     /**
@@ -258,6 +260,13 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                     return true;
                 }
                 break;
+            }
+            case MotionEvent.ACTION_OUTSIDE: {
+                Mlog.d("Outside", motionEvent.getY());
+                if (motionEvent.getY() == 0) {
+                    mCallbacks.outside();
+                }
+                return true;
             }
         }
         return false;

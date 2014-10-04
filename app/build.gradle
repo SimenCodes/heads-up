@@ -61,7 +61,7 @@ android {
 }
 
 task askForPasswords << {
-    System.console().readLine("\n\nREMINDER: UPDATE VERSION NUMBERS (" + android.defaultConfig.versionCode + " - " + android.defaultConfig.versionName + ")\n")
+    System.console().readLine("\n\nREMINDER: UPDATE VERSION NUMBERS (" + android.defaultConfig.versionCode + " - " + android.defaultConfig.versionName + ")")
     // Must create String because System.readPassword() returns char[]
     def storePw = new String(System.console().readPassword("Keystore password: "))
     def keyPw = storePw //new String(System.console().readPassword("Key password: "))

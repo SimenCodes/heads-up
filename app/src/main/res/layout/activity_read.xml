@@ -22,7 +22,7 @@
     android:orientation="vertical"
     android:fitsSystemWindows="false"
     android:baselineAligned="false"
-    tools:context=".OverlayService"
+    tools:context=".OverlayServiceCommon"
     style="@style/ReadTheme.Transparent"
     android:onClick="doHide"
     android:theme="@style/ReadTheme.Transparent">
