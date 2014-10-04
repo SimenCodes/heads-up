@@ -1,3 +1,18 @@
+/*
+ * This program is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package codes.simen.l50notifications.theme;
 
 import android.graphics.Bitmap;
@@ -14,7 +29,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import codes.simen.l50notifications.R;
-import codes.simen.l50notifications.util.RoundDrawable;
 
 /**
  * Created by simen on 17.07.14.
@@ -51,23 +65,8 @@ public class HoloLight extends ThemeClass {
     public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons) {
         if (bitmap == null) return;
         if (round_icons) {
-            final float width = imageView.getContext().getResources().getDimension(R.dimen.notification_ic_size);
-            //Mlog.v(density, width);
-            //Mlog.v(bitmap.getWidth(), width);
-            if (bitmap.getWidth() >= width) {
-                try {
-                    RoundDrawable roundedDrawable = new RoundDrawable(bitmap);
-                    imageView.setImageDrawable(roundedDrawable);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    imageView.setImageBitmap(bitmap);
-                }
-            } else {
-                imageView.setImageBitmap(bitmap);
-            }
             imageView.setBackgroundResource(R.drawable.circle_grey);
-        } else
-            imageView.setImageBitmap(bitmap);
+        }
     }
 
     @Override

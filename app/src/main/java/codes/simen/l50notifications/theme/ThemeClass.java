@@ -1,3 +1,18 @@
+/*
+ * This program is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package codes.simen.l50notifications.theme;
 
 import android.graphics.Bitmap;
@@ -113,13 +128,19 @@ public class ThemeClass {
     public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons) {
         if (bitmap == null) return;
         if (round_icons) {
-            final float width = imageView.getContext().getResources().getDimension(R.dimen.notification_ic_size);
-            //Mlog.v(density, width);
-            //Mlog.v(bitmap.getWidth(), width);
-            if (bitmap.getWidth() >= width) {
+            final float diagonal = imageView.getContext().getResources().
+                    getDimension(R.dimen.notification_ic_size);
+            final double cos45 = Math.cos(Math.toRadians(45));
+            final double minimumWidthForRoundIcon = diagonal / (2 * cos45);
+
+            int bitmapWidth = bitmap.getWidth();
+            Mlog.v(bitmapWidth, minimumWidthForRoundIcon);
+
+            if (bitmapWidth >= minimumWidthForRoundIcon) {
                 try {
                     RoundDrawable roundedDrawable = new RoundDrawable(bitmap);
                     imageView.setImageDrawable(roundedDrawable);
+                    imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 } catch (Exception e) {
                     e.printStackTrace();
                     imageView.setImageBitmap(bitmap);
