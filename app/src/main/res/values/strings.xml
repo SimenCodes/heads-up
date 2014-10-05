@@ -139,5 +139,7 @@ For details regarding problems and missing strings in your translation, see http
     <string name="intro_status_on_confirmed">The service is running. Try sending yourself a message.\nTap here if you need help.</string>
     <string name="accessibility_service_blocked">%s is blocking Heads-up from accessing your notifications. Please disable it from the accessibility menu.</string>
     <string name="export_debug_data">Export debug data</string>
+    <string name="pref_close_on_outside_touch">Dismiss on outside touch</string>
+    <string name="pref_close_on_outside_touch_desc">Clsoe the popup when you touch outside the heads-up</string>
 
 </resources>

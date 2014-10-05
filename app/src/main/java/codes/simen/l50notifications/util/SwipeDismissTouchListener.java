@@ -262,10 +262,8 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                 break;
             }
             case MotionEvent.ACTION_OUTSIDE: {
-                Mlog.d("Outside", motionEvent.getY());
-                if (motionEvent.getY() == 0) {
-                    mCallbacks.outside();
-                }
+                // We won't get X and Y for outside touches
+                mCallbacks.outside();
                 return true;
             }
         }

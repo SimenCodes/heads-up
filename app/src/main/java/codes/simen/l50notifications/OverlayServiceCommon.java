@@ -27,6 +27,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -529,8 +530,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 themeClass.hideActionButtons(layout);
             }
 
-            final Context context = this;
-            dismissButton.setOnLongClickListener(new View.OnLongClickListener() {
+            View.OnLongClickListener dismissButtonLongClickListener = new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
                     try {
@@ -542,9 +542,9 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
                         if (isBlacklistInverted)
                             if (blacklist.contains(packageName) && blacklist.remove(packageName))
-                                Toast.makeText(context, getText(R.string.blocked_confirmation), Toast.LENGTH_SHORT).show();
-                        else if (blacklist.add(packageName))
-                                Toast.makeText(context, getText(R.string.blocked_confirmation), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getText(R.string.blocked_confirmation), Toast.LENGTH_SHORT).show();
+                            else if (blacklist.add(packageName))
+                                Toast.makeText(getApplicationContext(), getText(R.string.blocked_confirmation), Toast.LENGTH_SHORT).show();
 
                         Mlog.v(logTag, blacklist);
                         final String serialized = ObjectSerializer.serialize((Serializable) blacklist);
@@ -560,7 +560,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     doFinish(1);
                     return true;
                 }
-            });
+            };
+            dismissButton.setOnLongClickListener(dismissButtonLongClickListener);
 
             if (Build.VERSION.SDK_INT >= 12) {
                 ViewGroup self = themeClass.getRootView(layout);
@@ -588,7 +589,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
                     @Override
                     public void outside() {
-                        doFinish(3);
+                        if (preferences.getBoolean("close_on_outside_touch", false))
+                            doFinish(3);
                     }
                 }
                 );
@@ -721,10 +723,12 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         }
     };
 
+    @SuppressWarnings("UnusedDeclaration")
     public void doStop(View v) {
         doFinish(1);
     }
 
+    @SuppressWarnings("UnusedDeclaration")
     public void doHide(View v) {
         doFinish(0);
     }
@@ -799,10 +803,10 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             intent.putExtra("packageName", packageName);
             intent.putExtra("tag", tag);
             intent.putExtra("id", id);
+            intent.setPackage("codes.simen.notificationspeaker");
             try {
-                String resolvePackageName = packageManager.resolveService(intent, 0).
-                        serviceInfo.applicationInfo.packageName;
-                if (resolvePackageName.equals("codes.simen.notificationspeaker")) {
+                ResolveInfo resolveInfo= packageManager.resolveService(intent, 0);
+                if (resolveInfo.serviceInfo != null) {
                     Mlog.d(logTag, "Voiceify found and resolved");
                     startService(intent);
                 }
@@ -815,6 +819,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 ViewPropertyAnimator animator = self.animate()
                         .setDuration(300)
                         .alpha(0.0f)
+                        .scaleX(0.8f)
+                        .scaleY(0.8f)
                         .setListener(new AnimatorListenerAdapter() {
                             @Override
                             public void onAnimationEnd(Animator animation) {
@@ -830,8 +836,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                                 }
                             }
                         });
-                if (doDismiss == 1) animator.translationX(400);
-                else if (doDismiss == 0)
+                if (doDismiss == 1) animator.translationX(-400);
+                else if (doDismiss == 0 || doDismiss == 3)
                     switch (position) {
                         case 2:
                         case 1:
@@ -841,8 +847,6 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                             animator.translationY(300);
                             break;
                     }
-                else if (doDismiss == 3)
-                    animator.translationY(300);
             } catch (Exception e) {
                 reportError(e, "", getApplicationContext());
                 e.printStackTrace();
