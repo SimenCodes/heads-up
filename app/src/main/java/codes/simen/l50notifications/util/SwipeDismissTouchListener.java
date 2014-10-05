@@ -66,6 +66,11 @@ import android.view.ViewGroup;
  */
 @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
 public class SwipeDismissTouchListener implements View.OnTouchListener {
+    public static final int DIRECTION_LEFT  = 0;
+    public static final int DIRECTION_RIGHT = 1;
+    public static final int DIRECTION_UP    = 2;
+    public static final int DIRECTION_DOWN  = 3;
+
     // Cached ViewConfiguration and system-wide constant values
     private int mSlop;
     private int mMinFlingVelocity;
@@ -76,16 +81,20 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
     private View mView;
     private DismissCallbacks mCallbacks;
     private int mViewWidth = 1; // 1 and not 0 to prevent dividing by zero
+    private int mViewHeight = 1;
 
     // Transient properties
     private float mDownX;
     private float mDownY;
     private boolean mSwiping;
     private boolean mWasSwiping;
+    private boolean mSwipingVertical;
+    private boolean mWasSwipingVertical;
     private int mSwipingSlop;
     private Object mToken;
     private VelocityTracker mVelocityTracker;
     private float mTranslationX;
+    private float mTranslationY;
 
     /**
      * The callback interface used by {@link SwipeDismissTouchListener} to inform its client
@@ -100,10 +109,11 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
         /**
          * Called when the user has indicated they she would like to dismiss the view.
          *
-         * @param view  The originating {@link android.view.View} to be dismissed.
-         * @param token The optional token passed to this object's constructor.
+         * @param view      The originating {@link android.view.View} to be dismissed.
+         * @param token     The optional token passed to this object's constructor.
+         * @param direction The direction the view was swiped
          */
-        void onDismiss(View view, Object token);
+        void onDismiss(View view, Object token, int direction);
 
         void outside();
     }
@@ -131,12 +141,15 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
         // offset because the view is translated during swipe
-        motionEvent.offsetLocation(mTranslationX, 0);
+        motionEvent.offsetLocation(mTranslationX, mTranslationY);
 
         if (mViewWidth < 2) {
             mViewWidth = mView.getWidth();
             if (mViewWidth > 491)
                 mViewWidth = 491;
+        }
+        if (mViewHeight < 2) {
+            mViewHeight = mView.getHeight();
         }
 
         switch (motionEvent.getActionMasked()) {
@@ -164,20 +177,36 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                 float velocityY = mVelocityTracker.getYVelocity();
                 float absVelocityX = Math.abs(velocityX);
                 float absVelocityY = Math.abs(velocityY);
-                boolean dismiss = false;
+                boolean dismissLeft = false;
                 boolean dismissRight = false;
+                boolean dismissUp = false;
+                boolean dismissDown = false;
+
                 if (Math.abs(deltaX) > mViewWidth / 2 && mSwiping) {
-                    dismiss = true;
+                    dismissLeft = true;
                     dismissRight = deltaX > 0;
                 } else if (mMinFlingVelocity <= absVelocityX && absVelocityX <= mMaxFlingVelocity
                         && absVelocityY < absVelocityX
                         && absVelocityY < absVelocityX && mSwiping) {
                     // dismiss only if flinging in the same direction as dragging
-                    dismiss = (velocityX < 0) == (deltaX < 0);
+                    dismissLeft = (velocityX < 0) == (deltaX < 0);
                     dismissRight = mVelocityTracker.getXVelocity() > 0;
                 }
-                if (dismiss) {
+
+                if (Math.abs(deltaY) > mViewHeight / 2 && mSwipingVertical) {
+                    dismissUp = true;
+                    dismissDown = deltaY > 0;
+                } else if (mMinFlingVelocity <= absVelocityY && absVelocityY <= mMaxFlingVelocity
+                        && absVelocityX < absVelocityY
+                        && absVelocityX < absVelocityY && mSwipingVertical) {
+                    // dismiss only if flinging in the same direction as dragging
+                    dismissUp = (velocityY < 0) == (deltaY < 0);
+                    dismissDown = mVelocityTracker.getYVelocity() > 0;
+                }
+
+                if (dismissLeft) {
                     // dismiss
+                    final boolean finalDismissRight = dismissRight;
                     mView.animate()
                             .translationX(dismissRight ? mViewWidth*2 : -mViewWidth*2)
                             .alpha(0)
@@ -185,13 +214,29 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                             .setListener(new AnimatorListenerAdapter() {
                                 @Override
                                 public void onAnimationEnd(Animator animation) {
-                                    performDismiss();
+                                    if (finalDismissRight) performDismiss(DIRECTION_RIGHT);
+                                    else                   performDismiss(DIRECTION_LEFT);
                                 }
                             });
-                } else if (mSwiping) {
+                } else if (dismissUp) {
+                    // dismiss
+                    final boolean finalDismissDown = dismissDown;
+                    mView.animate()
+                            .translationY(dismissDown ? mViewHeight * 2 : -mViewHeight * 2)
+                            .alpha(0)
+                            .setDuration(mAnimationTime)
+                            .setListener(new AnimatorListenerAdapter() {
+                                @Override
+                                public void onAnimationEnd(Animator animation) {
+                                    if (finalDismissDown) performDismiss(DIRECTION_DOWN);
+                                    else                  performDismiss(DIRECTION_UP);
+                                }
+                            });
+                } else if (mSwiping || mSwipingVertical) {
                     // cancel
                     mView.animate()
                             .translationX(0)
+                            .translationY(0)
                             .alpha(1)
                             .setDuration(mAnimationTime)
                             .setListener(null);
@@ -199,9 +244,11 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                 mVelocityTracker.recycle();
                 mVelocityTracker = null;
                 mTranslationX = 0;
+                mTranslationY = 0;
                 mDownX = 0;
                 mDownY = 0;
                 mSwiping = false;
+                mSwipingVertical = false;
                 break;
             }
 
@@ -212,15 +259,18 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
 
                 mView.animate()
                         .translationX(0)
+                        .translationY(0)
                         .alpha(1)
                         .setDuration(mAnimationTime)
                         .setListener(null);
                 mVelocityTracker.recycle();
                 mVelocityTracker = null;
                 mTranslationX = 0;
+                mTranslationY = 0;
                 mDownX = 0;
                 mDownY = 0;
                 mSwiping = false;
+                mSwipingVertical = false;
                 break;
             }
 
@@ -229,11 +279,12 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                     break;
                 }
                 mWasSwiping = mSwiping;
+                mWasSwipingVertical = mSwipingVertical;
 
                 mVelocityTracker.addMovement(motionEvent);
                 float deltaX = motionEvent.getRawX() - mDownX;
                 float deltaY = motionEvent.getRawY() - mDownY;
-                if (Math.abs(deltaX) > mSlop && Math.abs(deltaY) < Math.abs(deltaX) / 2) {
+                if (Math.abs(deltaX) > mSlop && Math.abs(deltaY) < Math.abs(deltaX) / 2 && !mSwipingVertical) {
                     mSwiping = true;
                     mSwipingSlop = (deltaX > 0 ? mSlop : -mSlop);
                     mView.getParent().requestDisallowInterceptTouchEvent(true);
@@ -251,12 +302,42 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                     }
                 }
 
+                if (Math.abs(deltaY) > mSlop && Math.abs(deltaX) < Math.abs(deltaY) / 2 && !mSwiping) {
+                    mSwipingVertical = true;
+                    mSwipingSlop = (deltaY > 0 ? mSlop : -mSlop);
+                    mView.getParent().requestDisallowInterceptTouchEvent(true);
+
+                    // Cancel listview's touch
+                    MotionEvent cancelEvent = MotionEvent.obtain(motionEvent);
+                    cancelEvent.setAction(MotionEvent.ACTION_CANCEL |
+                            (motionEvent.getActionIndex() <<
+                                    MotionEvent.ACTION_POINTER_INDEX_SHIFT));
+                    mView.onTouchEvent(cancelEvent);
+                    cancelEvent.recycle();
+
+                    if (!mWasSwipingVertical) {
+                        //mView.setPadding(mViewWidth, 0, mViewWidth, 0);
+                    }
+                }
+
                 if (mSwiping) {
                     mTranslationX = deltaX;
                     mView.setTranslationX(deltaX - mSwipingSlop);
 
                     mView.setAlpha(Math.max(0f, Math.min(1f,
-                            1f - 1f * Math.abs(deltaX) / (mViewWidth*2) )));
+                            1f - 1f * Math.abs(deltaX) / (mViewWidth * 2))));
+                    return true;
+                }
+
+                if (mSwipingVertical) {
+                    mTranslationY = deltaY;
+                    mView.setTranslationY(deltaY - mSwipingSlop);
+
+                    if (deltaY > 0) {
+                        mView.setAlpha(Math.max(0f, Math.min(1f,
+                                1f - 1f * Math.abs(deltaY) / (mViewWidth * 2))));
+                    }
+
                     return true;
                 }
                 break;
@@ -270,7 +351,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
         return false;
     }
 
-    private void performDismiss() {
+    private void performDismiss(final int direction) {
         // Animate the dismissed view to zero-height and then fire the dismiss callback.
         // This triggers layout on each animation frame; in the future we may want to do something
         // smarter and more performant.
@@ -283,7 +364,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
         animator.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
-                mCallbacks.onDismiss(mView, mToken);
+                mCallbacks.onDismiss(mView, mToken, direction);
                 // Reset view presentation
                 mView.setAlpha(1f);
                 mView.setTranslationX(0);

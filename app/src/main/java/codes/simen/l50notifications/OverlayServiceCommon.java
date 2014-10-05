@@ -19,6 +19,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.ActivityManager;
+import android.app.AlarmManager;
 import android.app.KeyguardManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -44,6 +45,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
+import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -83,6 +85,8 @@ import codes.simen.l50notifications.util.SwipeDismissTouchListener;
 public class OverlayServiceCommon extends Service implements SensorEventListener {
     final static String logTag = "Overlay";
     public static final int MAX_DISPLAY_TIME = 60000;
+    public static final int MAX_REMINDER_TIME = 3600000;
+    public static final int MIN_REMINDER_TIME = 6000;
     public static final int MAX_LINES = 12;
     public static final int SENSOR_DELAY_MILLIS = 10000;
     public static final int MIN_LINES = 3;
@@ -105,7 +109,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private boolean isViewAdded = false;
     private ThemeClass themeClass = new ThemeClass();
 
-    private SharedPreferences preferences = null;
+    SharedPreferences preferences = null;
 
     private static String text = "Something went wrong";
     private PendingIntent pendingIntent;
@@ -335,7 +339,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             displayWindow();
             PackageManager pm = getPackageManager();
             Resources appRes = null;
-            Bundle extras = intent.getExtras();
+            final Bundle extras = intent.getExtras();
 
             handler.removeCallbacks(closeTimer);
             //handler.removeCallbacks(delayStop);
@@ -575,22 +579,32 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     }
 
                     @Override
-                    public void onDismiss(View view, Object token) {
-                        view.setVisibility(View.GONE);
-                        try {
-                            if (preferences.getBoolean("dismiss_on_swipe", true))
-                                doFinish(1);
-                            else
+                    public void onDismiss(View view, Object token, int direction) {
+                        Mlog.v(logTag, "DIR" + direction);
+                        switch (direction) {
+                            case SwipeDismissTouchListener.DIRECTION_LEFT:
+                            case SwipeDismissTouchListener.DIRECTION_RIGHT:
+                                if (preferences.getBoolean("dismiss_on_swipe", true)) doFinish(1);
+                                else                                                  doFinish(0);
+                                break;
+                            case SwipeDismissTouchListener.DIRECTION_UP:
+                                setTimer(extras);
                                 doFinish(0);
-                        } catch (Exception e) {
-                            reportError(e, "", getApplicationContext());
+                                break;
+                            case SwipeDismissTouchListener.DIRECTION_DOWN:
+                                doFinish(1);
+                                break;
+                            default:
+                                Mlog.e(logTag, "Unknown direction: " + direction);
+                                break;
                         }
+                        view.setVisibility(View.GONE);
                     }
 
                     @Override
                     public void outside() {
                         if (preferences.getBoolean("close_on_outside_touch", false))
-                            doFinish(3);
+                            doFinish(0);
                     }
                 }
                 );
@@ -661,6 +675,22 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         }
 
         return START_NOT_STICKY;
+    }
+
+    public void setTimer(Bundle extras) {
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+        Intent intent = new Intent(getApplicationContext(), OverlayServiceCommon.class);
+        intent.setAction("ACTION_REMIND");
+        intent.putExtras(extras);
+
+        PendingIntent pending = PendingIntent.getService(getApplicationContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        final long triggerAt = SystemClock.elapsedRealtime() + preferences.getInt("reminder_delay", 5000);
+
+        if (Build.VERSION.SDK_INT >= 19)
+            alarmManager.setExact(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAt, pending);
+        else     alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAt, pending);
     }
 
     private static Bitmap drawableToBitmap(Drawable drawable) {
@@ -793,7 +823,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         }
     }
 
-    private void doFinish(final int doDismiss) { // 0=ikke fjern 1=fjern 2=åpnet, 3=don't remove, backwards animation
+    private void doFinish(final int doDismiss) { // 0=ikke fjern 1=fjern 2=åpnet
+        Mlog.v(logTag + "DoFinish", doDismiss);
         handler.removeCallbacks(closeTimer);
 
         // Integrate with Voiceify
@@ -825,11 +856,13 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                             @Override
                             public void onAnimationEnd(Animator animation) {
                                 layout.setVisibility(View.GONE);
-                                if (doDismiss == 1)
+                                if (doDismiss == 1) {
+                                    Mlog.v(logTag, "doDismiss 1");
                                     doDismiss(true);
-                                else if (doDismiss == 2)
+                                } else if (doDismiss == 2)
                                     doDismiss(false);
                                 else {
+                                    Mlog.v(logTag, "doDismiss != 1,2");
                                     if (wLock != null && wLock.isHeld())
                                         wLock.release();
                                     stopSelf();
@@ -837,7 +870,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                             }
                         });
                 if (doDismiss == 1) animator.translationX(-400);
-                else if (doDismiss == 0 || doDismiss == 3)
+                else if (doDismiss == 0)
                     switch (position) {
                         case 2:
                         case 1:

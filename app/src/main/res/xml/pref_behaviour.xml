@@ -53,4 +53,10 @@
         android:defaultValue="false"
         />
 
+    <codes.simen.l50notifications.ui.ReminderDelayPreference
+        android:key="reminder_delay"
+        android:title="@string/pref_reminder_delay"
+        android:defaultValue="6000"
+        />
+
 </PreferenceScreen>
