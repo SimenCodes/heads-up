@@ -177,6 +177,5 @@ public class ThemeClass {
      In case you need to do something when stopping. Called after the view is removed from the window manager.
      */
     public void destroy(LinearLayout layout) {
-        Mlog.v("blah", layout.findViewById(R.id.notification_icon).getWidth());
     }
 }

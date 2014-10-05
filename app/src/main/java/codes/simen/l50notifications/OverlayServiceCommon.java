@@ -571,8 +571,9 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 ViewGroup self = themeClass.getRootView(layout);
 
                 // Init swipe listener
+                ImageView reminder_icon = (ImageView) layout.findViewById(R.id.reminderIcon);
                 final SwipeDismissTouchListener dismissTouchListener = new SwipeDismissTouchListener(
-                        self, null, new SwipeDismissTouchListener.DismissCallbacks() {
+                        self, reminder_icon, null, new SwipeDismissTouchListener.DismissCallbacks() {
                     @Override
                     public boolean canDismiss(Object token) {
                         return true;
@@ -856,13 +857,11 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                             @Override
                             public void onAnimationEnd(Animator animation) {
                                 layout.setVisibility(View.GONE);
-                                if (doDismiss == 1) {
-                                    Mlog.v(logTag, "doDismiss 1");
+                                if (doDismiss == 1)
                                     doDismiss(true);
-                                } else if (doDismiss == 2)
+                                else if (doDismiss == 2)
                                     doDismiss(false);
                                 else {
-                                    Mlog.v(logTag, "doDismiss != 1,2");
                                     if (wLock != null && wLock.isHeld())
                                         wLock.release();
                                     stopSelf();
