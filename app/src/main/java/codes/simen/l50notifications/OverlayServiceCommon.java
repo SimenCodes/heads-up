@@ -534,38 +534,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 themeClass.hideActionButtons(layout);
             }
 
-            View.OnLongClickListener dismissButtonLongClickListener = new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    try {
-                        Set<String> blacklist = (Set<String>) ObjectSerializer.deserialize(preferences.getString("blacklist", ""));
-                        if (blacklist == null) blacklist = new HashSet<String>();
-
-                        final boolean isBlacklistInverted = preferences.getBoolean("blacklist_inverted", false);
-                        Mlog.v(logTag, isBlacklistInverted);
-
-                        if (isBlacklistInverted)
-                            if (blacklist.contains(packageName) && blacklist.remove(packageName))
-                                Toast.makeText(getApplicationContext(), getText(R.string.blocked_confirmation), Toast.LENGTH_SHORT).show();
-                            else if (blacklist.add(packageName))
-                                Toast.makeText(getApplicationContext(), getText(R.string.blocked_confirmation), Toast.LENGTH_SHORT).show();
-
-                        Mlog.v(logTag, blacklist);
-                        final String serialized = ObjectSerializer.serialize((Serializable) blacklist);
-
-                        SharedPreferences.Editor editor = preferences.edit();
-                        editor.putString("blacklist", serialized);
-                        editor.apply();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (ClassNotFoundException e) {
-                        e.printStackTrace();
-                    }
-                    doFinish(1);
-                    return true;
-                }
-            };
-            dismissButton.setOnLongClickListener(dismissButtonLongClickListener);
+            dismissButton.setOnLongClickListener(blockTouchListener);
 
             if (Build.VERSION.SDK_INT >= 12) {
                 ViewGroup self = themeClass.getRootView(layout);
@@ -808,6 +777,38 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             doFinish(0);
         }
     }
+
+    final View.OnLongClickListener blockTouchListener = new View.OnLongClickListener() {
+        @Override
+        public boolean onLongClick(View v) {
+            try {
+                Set<String> blacklist = (Set<String>) ObjectSerializer.deserialize(preferences.getString("blacklist", ""));
+                if (blacklist == null) blacklist = new HashSet<String>();
+
+                final boolean isBlacklistInverted = preferences.getBoolean("blacklist_inverted", false);
+                Mlog.v(logTag, isBlacklistInverted);
+
+                if (isBlacklistInverted) {
+                    if (blacklist.contains(packageName) && blacklist.remove(packageName))
+                        Toast.makeText(getApplicationContext(), getText(R.string.blocked_confirmation), Toast.LENGTH_SHORT).show();
+                } else if (blacklist.add(packageName))
+                    Toast.makeText(getApplicationContext(), getText(R.string.blocked_confirmation), Toast.LENGTH_SHORT).show();
+
+                Mlog.v(logTag, blacklist);
+                final String serialized = ObjectSerializer.serialize((Serializable) blacklist);
+
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("blacklist", serialized);
+                editor.apply();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            doFinish(1);
+            return true;
+        }
+    };
 
     void dismissKeyguard() {
         if (Build.VERSION.SDK_INT >= 16) {
