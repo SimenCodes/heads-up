@@ -15,15 +15,10 @@
 
 package codes.simen.l50notifications;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.os.Build;
-import android.os.Bundle;
 import android.os.IBinder;
-import android.os.SystemClock;
 
 import codes.simen.l50notifications.util.Mlog;
 
@@ -41,10 +36,13 @@ public class OverlayService extends OverlayServiceCommon {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        if (intent.getAction().equals("ACTION_REMIND")) {
+        if (intent.getAction().equals(ReminderService.ACTION_REMIND)) {
+            Mlog.d(logTag, "Reminder");
             packageName = intent.getStringExtra("packageName");
             tag = intent.getStringExtra("tag");
             id = intent.getIntExtra("id", 0);
+
+            Mlog.d(packageName, tag + " " + id);
 
             mIntent = intent;
             mFlags = flags;
@@ -77,23 +75,6 @@ public class OverlayService extends OverlayServiceCommon {
         bindService(intent, mConnection, BIND_AUTO_CREATE);
     }
 
-    @Override
-    public void setTimer(Bundle extras) {
-        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-
-        Intent intent = new Intent(getApplicationContext(), OverlayService.class);
-        intent.setAction("ACTION_REMIND");
-        intent.putExtras(extras);
-
-        PendingIntent pending = PendingIntent.getService(getApplicationContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        final long triggerAt = SystemClock.elapsedRealtime() + preferences.getInt("reminder_delay", 5000);
-
-        if (Build.VERSION.SDK_INT >= 19)
-            alarmManager.setExact(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAt, pending);
-        else     alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAt, pending);
-    }
-
     private ServiceConnection mConnection = new ServiceConnection() {
 
         @Override
@@ -111,8 +92,10 @@ public class OverlayService extends OverlayServiceCommon {
                     break;
                 case 2:
                     if (listenerService.isNotificationValid(packageName, tag, id)) {
+                        Mlog.d(logTag, "Still valid");
                         commonStartCommand(mIntent, mFlags, mStartId);
                     } else {
+                        Mlog.d(logTag, "NOT valid");
                         stopSelf();
                     }
                     unbindService(mConnection);

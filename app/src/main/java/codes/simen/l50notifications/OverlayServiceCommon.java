@@ -45,7 +45,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
-import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -650,17 +649,10 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     public void setTimer(Bundle extras) {
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
-        Intent intent = new Intent(getApplicationContext(), OverlayServiceCommon.class);
-        intent.setAction("ACTION_REMIND");
+        Intent intent = new Intent(getApplicationContext(), ReminderService.class);
+        intent.setAction(ReminderService.ACTION_REMIND);
         intent.putExtras(extras);
-
-        PendingIntent pending = PendingIntent.getService(getApplicationContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        final long triggerAt = SystemClock.elapsedRealtime() + preferences.getInt("reminder_delay", 5000);
-
-        if (Build.VERSION.SDK_INT >= 19)
-            alarmManager.setExact(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAt, pending);
-        else     alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAt, pending);
+        startService(intent);
     }
 
     private static Bitmap drawableToBitmap(Drawable drawable) {
