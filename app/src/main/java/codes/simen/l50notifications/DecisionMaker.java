@@ -198,6 +198,10 @@ public class DecisionMaker {
             }
         }
 
+        if (preferences.getBoolean("broadcast_notifications", false)) {
+            context.sendBroadcast(intent, "codes.simen.permission.RECEIVE_NOTIFICATIONS");
+        }
+
         intent.addFlags(
                 Intent.FLAG_ACTIVITY_NEW_TASK +
                         Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS +
