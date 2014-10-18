@@ -26,9 +26,10 @@
     <!-- Turn the screen on. Not kept for longer than one minute unless "keep screen on" is enabled -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <permission android:name="codes.simen.permission.RECEIVE_NOTIFICATIONS"
-        android:protectionLevel="signature"
-        android:label="Receive notifications" />
+    <permission android:name="codes.simen.permission.NOTIFICATIONS"
+        android:protectionLevel="dangerous"
+        android:label="Notifications" />
+    <uses-permission android:name="codes.simen.permission.NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -41,8 +42,11 @@
             android:label="@string/app_icon_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="codes.simen.l50notifications.ui.WelcomeActivity" />
+                <category android:name="android.intent.category.ALTERNATIVE" />
             </intent-filter>
         </activity>
 

@@ -77,7 +77,7 @@ For details regarding problems and missing strings in your translation, see http
     <string name="pref_block_current_app">Block current app</string>
     <string name="pref_block_current_app_desc">Don\'t display heads-up for notifications from the current app</string>
     <string name="pref_header_behaviour">Behaviour</string>
-    <string name="music_title">Playing <xliff:g id="track" example="TRACK">%s</xliff:g></string>
+    <string name="music_title">Playing: <xliff:g id="track" example="TRACK">%s</xliff:g></string>
     <string name="music_text">By: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
     <string name="pref_music_popup">Current song popup</string>
     <string name="pref_music_popup_desc">Display song metadata on track change.\nNote: not all music players are supported.</string>

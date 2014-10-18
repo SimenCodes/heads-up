@@ -123,7 +123,7 @@ public class DecisionMaker {
 
         // Make an intent
         Intent intent = new Intent();
-        intent.setAction("ADD");
+        intent.setAction(ACTION_ADD);
 
         if ("listener".equals(src)) intent.setClass(context, OverlayService.class);
         else                        intent.setClass(context, OverlayServiceCommon.class);
@@ -198,8 +198,11 @@ public class DecisionMaker {
             }
         }
 
-        if (preferences.getBoolean("broadcast_notifications", false)) {
-            context.sendBroadcast(intent, "codes.simen.permission.RECEIVE_NOTIFICATIONS");
+        if (preferences != null && preferences.getBoolean("broadcast_notifications", false)) {
+            Mlog.d(logTag, "broadcast");
+            context.sendBroadcast(
+                    new Intent(ACTION_ADD).putExtras(intent.getExtras()),
+                    "codes.simen.permission.NOTIFICATIONS");
         }
 
         intent.addFlags(

@@ -29,7 +29,6 @@ import codes.simen.l50notifications.util.Mlog;
 public class VoiceOver {
     private final String logTag = "VoiceOver";
     private long lastId = -1;
-    private boolean isBusy = false;
     private Resources resources;
     private Context context;
 
@@ -59,8 +58,7 @@ public class VoiceOver {
     private final BroadcastReceiver musicReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (!doReceive(context, intent))
-                isBusy = false;
+            doReceive(context, intent);
         }
     };
 
@@ -75,7 +73,8 @@ public class VoiceOver {
         if (!playing) return false;
 
         long id = -1;
-        if ( action.equals("com.spotify.mobile.android.metadatachanged") ) {
+        if ( action.equals("com.spotify.music.metadatachanged") ) {
+            // TODO: Fix problem with Spotify sending metachanged when not playing music
             // In Spotify, the ID is a String
             String idStr = intent.getStringExtra("id");
             if (idStr != null)
