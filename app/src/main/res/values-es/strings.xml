@@ -108,6 +108,7 @@ zx
         <item name="ldark">Android 5.0 \"L\" oscuro</item>
         <item name="holo">Blanco normal</item>
         <item name="holodark">Oscuro normal</item>
+        <item name="random">Psychedelic (random)</item>
     </string-array>
 
     <!-- Added after 1.7 - you don't have to translate these if you don't want to -->

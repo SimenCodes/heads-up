@@ -16,8 +16,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '19.1'
+    compileSdkVersion 21
+    buildToolsVersion '21.0.1'
 
     signingConfigs {
         release {
@@ -31,7 +31,7 @@ android {
     defaultConfig {
         applicationId "codes.simen.l50notifications"
         minSdkVersion 11
-        targetSdkVersion 19
+        targetSdkVersion 21
         versionCode 42
         versionName "1.8.2"
     }
@@ -78,5 +78,5 @@ tasks.whenTaskAdded { theTask ->
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:19.0.0'
+    compile 'com.android.support:appcompat-v7:21.0.0'
 }

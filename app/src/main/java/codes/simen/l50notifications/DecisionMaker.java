@@ -64,7 +64,7 @@ public class DecisionMaker {
 
     public static final String logTag = "DecisionMaker";
 
-    public void handleActionAdd(Notification notification, String packageName, String tag, int id, Context context, String src) {
+    public void handleActionAdd(Notification notification, String packageName, String tag, int id, String key, Context context, String src) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
         // Package filter
@@ -98,27 +98,66 @@ public class DecisionMaker {
             }
         }
 
-        // Get the text
-        List<String> texts = null;
-        try {
-            texts = getText(notification);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        if (texts == null) {
-            return;
-        }
+        String title = null;
         String text = null;
-        if (texts.size() > 1) {
-            Mlog.d(logTag, texts.toString());
-            text = texts.get(1);
+
+
+        // Get the text
+        if (Build.VERSION.SDK_INT >= 21) {
+            title = notification.extras.getString("android.title");
+            text = notification.extras.getString("android.text");
+            final String bigText = notification.extras.getString("android.bigText");
+            if (bigText != null && bigText.length() > text.length()) {
+                text = bigText;
+            }
+        } else {
+            // Old, hacky way. Close your eyes and skip this section.
+            List<String> texts = null;
+            try {
+                texts = getText(notification);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            if (texts == null) {
+                return;
+            }
+            if (texts.size() > 1) {
+                Mlog.d(logTag, texts.toString());
+                text = texts.get(1);
+            }
+            if (text == null)
+                text = String.valueOf(notification.tickerText);
+            if (texts.size() == 0)
+                texts.add(text);
+            if (text == null || text.equals("null"))
+                return;
+
+            title = texts.get(0);
+
+
+            // Get the full content in older Android versions. Really ugly.
+            if (Build.VERSION.SDK_INT >= 16) {
+                if (notification.bigContentView != null) {
+                    try {
+                        Mlog.d(logTag, "bigView");
+                        final String fullContent = fullContent(notification, context, texts, text);
+                        if (fullContent != null) text = fullContent;
+                    } catch (Resources.NotFoundException rnfe) {
+                    } catch (RuntimeException rte) {
+                        try {
+                            Looper.prepareMainLooper();
+                        } catch (IllegalStateException ilse) {
+                            try {
+                                fullContent(notification, context, texts, text);
+                                final String fullContent = fullContent(notification, context, texts, text);
+                                if (fullContent != null) text = fullContent;
+                                // Ignore all errors, we'll survive without the full notification
+                            } catch (Exception ignored) {}
+                        }
+                    }
+                }
+            }
         }
-        if (text == null)
-            text = String.valueOf(notification.tickerText);
-        if (texts.size() == 0)
-            texts.add(text);
-        if ( text == null || text.equals("null") )
-            return;
 
 
         // Make an intent
@@ -128,9 +167,10 @@ public class DecisionMaker {
         if ("listener".equals(src)) intent.setClass(context, OverlayService.class);
         else                        intent.setClass(context, OverlayServiceCommon.class);
 
+        Mlog.d(title, text);
 
         intent.putExtra("packageName", packageName);
-        intent.putExtra("title", texts.get(0));
+        intent.putExtra("title", title);
         intent.putExtra("text", text);
         intent.putExtra("action", notification.contentIntent);
 
@@ -140,9 +180,10 @@ public class DecisionMaker {
 
         intent.putExtra("tag", tag);
         intent.putExtra("id", id);
+        intent.putExtra("key", key);
 
 
-        if (Build.VERSION.SDK_INT >= 16) {
+        if (Build.VERSION.SDK_INT >= 19) {
             try {
                 Notification.Action[] actions = notification.actions;
                 if (actions != null) {
@@ -152,7 +193,7 @@ public class DecisionMaker {
                     int i = actions.length;
                     for (Notification.Action action : actions) {
                         if (i < 0) break; //No infinite loops, has happened once
-                        Mlog.d(logTag, (String) action.title);
+                        Mlog.d(logTag, action.title);
                         intent.putExtra("action" + i + "icon", action.icon);
                         intent.putExtra("action" + i + "title", action.title);
                         intent.putExtra("action" + i + "intent", action.actionIntent);
@@ -178,24 +219,6 @@ public class DecisionMaker {
                     e1.printStackTrace();
                 }
             }
-
-            // Full content
-            if (notification.bigContentView != null) {
-                try {
-                    Mlog.d(logTag, "bigView");
-                    fullContent(notification, context, texts, text, intent);
-                } catch (Resources.NotFoundException rnfe) {
-                } catch (RuntimeException rte) {
-                    try {
-                        Looper.prepareMainLooper();
-                    } catch (IllegalStateException ilse) {
-                        try {
-                            fullContent(notification, context, texts, text, intent);
-                        // Ignore all errors, we'll survive without the full notification
-                        } catch (Exception ignored) {}
-                    }
-                }
-            }
         }
 
         if (preferences != null && preferences.getBoolean("broadcast_notifications", false)) {
@@ -215,7 +238,7 @@ public class DecisionMaker {
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-    private void fullContent(Notification notification, Context context, List<String> texts, String text, Intent intent) {
+    private String fullContent(Notification notification, Context context, List<String> texts, String text) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         ViewGroup localView = (ViewGroup) inflater.inflate(notification.bigContentView.getLayoutId(), null);
         notification.bigContentView.reapply(context.getApplicationContext(), localView);
@@ -251,8 +274,9 @@ public class DecisionMaker {
             if (viewTexts.startsWith("\n"))
                 viewTexts = viewTexts.substring("\n".length());
             Mlog.d(logTag, viewTexts);
-            intent.putExtra("text", viewTexts.substring(0, viewTexts.length() - 1));
+            return viewTexts.substring(0, viewTexts.length() - 1);
         }
+        return null;
     }
 
     public void handleActionRemove(String packageName, String tag, int id, Context applicationContext) {

@@ -134,4 +134,11 @@
     <string name="intro_status_on_confirmed">Tjenesten kjører. Prøv å sende deg selv en melding.\nTrykk på Hjelp-knappen hvis du trenger hjelp med å få det til å fungere.</string>
     <string name="accessibility_service_blocked">%s blokkerer Heads-up fra å få tilgang til varslingene dine. Deaktiver den fra tilgjengelighetsmenten.</string>
 
+    <!-- Added since 1.8.2 -->
+    <string name="pref_close_on_outside_touch">Lukk ved trykk utenfor</string>
+    <string name="pref_close_on_outside_touch_desc">Lukk popup-vinduet når du trykker et annet sted på skjermen.</string>
+    <string name="pref_reminder_delay">Påminnelsestid</string>
+    <string name="pref_reminder_delay_desc">Hvis du sveiper heads-up-meldingen oppover, vil den dukke opp igjen etter tiden du angir her.\nADVARSEL: Eksperimentell, ustabil funksjon. Ikke forvent at den virker. Sett til null for å deaktivere.</string>
+    <string name="pref_reminder_delay_counter">Remind me after <xliff:g id="time" example="7">%s</xliff:g> minutes</string>
+
 </resources>

@@ -113,6 +113,7 @@
         <item name="ldark">Android 5.0 \'L\' escuro</item>
         <item name="holo">Plano claro</item>
         <item name="holodark">Plano escuro</item>
+        <item name="random">Psychedelic (random)</item>
     </string-array>
     
     <!-- New strings since 1.7 - Novos comandos desde a versão 1.7 -->

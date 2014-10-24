@@ -71,6 +71,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
     public static final int DIRECTION_RIGHT = 1;
     public static final int DIRECTION_UP    = 2;
     public static final int DIRECTION_DOWN  = 3;
+    public static final int DIRECTION_UP_TIMER = 4;
 
     // Cached ViewConfiguration and system-wide constant values
     private int mSlop;
@@ -97,6 +98,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
     private VelocityTracker mVelocityTracker;
     private float mTranslationX;
     private float mTranslationY;
+    private boolean reminderEnabled;
 
     /**
      * The callback interface used by {@link SwipeDismissTouchListener} to inform its client
@@ -137,6 +139,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                 android.R.integer.config_shortAnimTime);
         mView = view;
         mReminderIcon = reminderIcon;
+        reminderEnabled = reminderIcon != null;
         mToken = token;
         mCallbacks = callbacks;
     }
@@ -231,12 +234,13 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                             .setListener(new AnimatorListenerAdapter() {
                                 @Override
                                 public void onAnimationEnd(Animator animation) {
-                                    if (finalDismissDown) performDismiss(DIRECTION_DOWN);
-                                    else                  performDismiss(DIRECTION_UP);
+                                    if (finalDismissDown)     performDismiss(DIRECTION_DOWN);
+                                    else if (reminderEnabled) performDismiss(DIRECTION_UP_TIMER);
+                                    else                      performDismiss(DIRECTION_UP);
                                 }
                             });
-
-                    mReminderIcon.animate().scaleX(1).scaleY(1);
+                    if (reminderEnabled)
+                        mReminderIcon.animate().scaleX(1).scaleY(1);
                 } else if (mSwiping || mSwipingVertical) {
                     // cancel
                     mView.animate()
@@ -246,7 +250,8 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                             .setDuration(mAnimationTime)
                             .setListener(null);
 
-                    mReminderIcon.setVisibility(View.GONE);
+                    if (reminderEnabled)
+                        mReminderIcon.setVisibility(View.GONE);
                 }
                 mVelocityTracker.recycle();
                 mVelocityTracker = null;
@@ -271,7 +276,8 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                         .setDuration(mAnimationTime)
                         .setListener(null);
 
-                mReminderIcon.setVisibility(View.GONE);
+                if (reminderEnabled)
+                    mReminderIcon.setVisibility(View.GONE);
 
                 mVelocityTracker.recycle();
                 mVelocityTracker = null;
@@ -346,7 +352,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                     if (deltaY > 0) {
                         mView.setAlpha(Math.max(0f, Math.min(1f,
                                 1f - 1f * Math.abs(deltaY) / (mViewHeight * 2))));
-                    } else {
+                    } else if (reminderEnabled) {
                         mReminderIcon.setVisibility(View.VISIBLE);
                         final float value = Math.max(0f, Math.min(1f,
                                 Math.abs(deltaY) / (mViewHeight * 2)));

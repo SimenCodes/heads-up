@@ -65,6 +65,7 @@ public class NotificationListenerAccessibilityService extends AccessibilityServi
                         accessibilityEvent.getPackageName().toString(),
                         null,
                         0,
+                        null,
                         getApplicationContext(),
                         "accessibility");
 

@@ -18,6 +18,7 @@ package codes.simen.l50notifications;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.os.Build;
 import android.os.IBinder;
 
 import codes.simen.l50notifications.util.Mlog;
@@ -86,7 +87,8 @@ public class OverlayService extends OverlayServiceCommon {
 
             switch (onBindAction) {
                 case 1:
-                    listenerService.doRemove(packageName, tag, id);
+                    if (Build.VERSION.SDK_INT >= 20) listenerService.doRemove(key);
+                    else                             listenerService.doRemove(packageName, tag, id);
                     unbindService(mConnection);
                     stopSelf();
                     break;

@@ -118,6 +118,7 @@
         <item name="ldark">安卓5.0 \"L\" 暗色主题</item>
         <item name="holo">扁平亮色主题</item>
         <item name="holodark">扁平暗色主题</item>
+        <item name="random">Psychedelic (random)</item>
     </string-array>
 
     <!-- New in 1.8 -->

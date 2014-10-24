@@ -78,11 +78,16 @@ public class NotificationListenerService extends android.service.notification.No
 
             if (NotificationListenerAccessibilityService.doLoadSettings) doLoadSettings();
 
+            String statusBarNotificationKey = null;
+            if (Build.VERSION.SDK_INT >= 20) statusBarNotificationKey = statusBarNotification.getKey();
+
             DecisionMaker decisionMaker = new DecisionMaker();
+
             decisionMaker.handleActionAdd(statusBarNotification.getNotification(),
                     statusBarNotification.getPackageName(),
                     statusBarNotification.getTag(),
                     statusBarNotification.getId(),
+                    statusBarNotificationKey,
                     getApplicationContext(),
                     "listener");
         } catch (NullPointerException e) {
@@ -134,6 +139,27 @@ public class NotificationListenerService extends android.service.notification.No
         Mlog.d(logTag, pkg + tag + id);
         try {
             cancelNotification(pkg, tag, id);
+        } catch (SecurityException e) {
+            try {
+                String report = e.getMessage();
+                Writer writer = new StringWriter();
+                PrintWriter printWriter = new PrintWriter(writer);
+                e.printStackTrace(printWriter);
+                report = report.concat( writer.toString() );
+                SharedPreferences.Editor editor =
+                        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit();
+                editor.putString("lastBug", report);
+                editor.apply();
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+    }
+
+    public void doRemove (String key) {
+        Mlog.d(logTag, key);
+        try {
+            cancelNotification(key);
         } catch (SecurityException e) {
             try {
                 String report = e.getMessage();
