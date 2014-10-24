@@ -59,7 +59,7 @@ For details regarding problems and missing strings in your translation, see http
     </string-array>
 
     <string name="pref_overlay_display_time_counter"><xliff:g id="time" example="7">%s</xliff:g> seconds</string>
-    <string name="pref_top_margin">Popup position</string>
+    <string name="pref_top_margin">Popup position when unlocked</string>
     <string name="pref_turn_screen_on">Turn screen on</string>
     <string name="pref_turn_screen_on_desc">Turn the screen on when you get a notification</string>
     <string name="pref_opacity">Opacity</string>
@@ -146,5 +146,6 @@ For details regarding problems and missing strings in your translation, see http
     <string name="pref_reminder_delay">Reminder time</string>
     <string name="pref_reminder_delay_desc">If you swipe the heads-up upwards, Heads-up will re-display it after the number of minutes you specify here. Set to zero to disable.\nWARNING: Experimental, unstable feature. Don\'t rely on it to work.</string>
     <string name="pref_reminder_delay_counter">Remind me after <xliff:g id="time" example="7">%s</xliff:g> minutes</string>
+    <string name="pref_top_margin_locked">Popup position on lock screen</string>
 
 </resources>

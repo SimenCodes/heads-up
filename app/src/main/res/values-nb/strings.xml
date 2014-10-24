@@ -55,7 +55,7 @@
     <string name="pref_overlay_display_time_counter">Vis i <xliff:g id="time" example="7" >%s</xliff:g> sekunder</string>
     <string name="pref_overlay_time_max">Vis i all evighet</string>
 
-    <string name="pref_top_margin">Posisjon</string>
+    <string name="pref_top_margin">Posisjon (når enheten er i bruk)</string>
     <string name="pref_turn_screen_on">Slå på skjermen</string>
     <string name="pref_turn_screen_on_desc">Slå på skjermen når du får en varsling</string>
     <string name="pref_opacity">Synlighet</string>
@@ -140,5 +140,6 @@
     <string name="pref_reminder_delay">Påminnelsestid</string>
     <string name="pref_reminder_delay_desc">Hvis du sveiper heads-up-meldingen oppover, vil den dukke opp igjen etter tiden du angir her.\nADVARSEL: Eksperimentell, ustabil funksjon. Ikke forvent at den virker. Sett til null for å deaktivere.</string>
     <string name="pref_reminder_delay_counter">Remind me after <xliff:g id="time" example="7">%s</xliff:g> minutes</string>
+    <string name="pref_top_margin_locked">Posisjon (på låseskjermen)</string>
 
 </resources>

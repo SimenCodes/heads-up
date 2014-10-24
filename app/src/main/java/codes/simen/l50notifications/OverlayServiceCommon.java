@@ -197,7 +197,10 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH,
                     PixelFormat.TRANSLUCENT
             );
-            position = Integer.valueOf( preferences.getString("overlay_vertical_position", "1") );
+            if (isLocked)
+                position = Integer.valueOf(preferences.getString("overlay_vertical_position_locked", "1"));
+            if (!isLocked)
+                position = Integer.valueOf( preferences.getString("overlay_vertical_position", "1") );
             switch (position) {
                 case 2:
                     layoutParams.flags |= WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
@@ -562,7 +565,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                         switch (direction) {
                             case SwipeDismissTouchListener.DIRECTION_LEFT:
                             case SwipeDismissTouchListener.DIRECTION_RIGHT:
-                                if (preferences.getBoolean("dismiss_on_swipe", true)) doFinish(1);
+                                if (preferences.getBoolean("dismiss_on_swipe", false)) doFinish(1);
                                 else                                                  doFinish(0);
                                 break;
                             case SwipeDismissTouchListener.DIRECTION_UP_TIMER:
