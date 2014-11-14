@@ -30,7 +30,7 @@ import codes.simen.l50notifications.BuildConfig;
 
 public class UpdateReceiver extends BroadcastReceiver {
 
-    public static final int LATEST_VERSION = BuildConfig.VERSION_CODE;
+    private static final int LATEST_VERSION = BuildConfig.VERSION_CODE;
 
     public UpdateReceiver() {
     }

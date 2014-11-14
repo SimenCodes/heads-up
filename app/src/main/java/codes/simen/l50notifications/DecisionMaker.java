@@ -52,7 +52,7 @@ import codes.simen.l50notifications.util.ObjectSerializer;
  * An {@link IntentService} subclass for handling asynchronous task requests in
  * a service on a separate handler thread.
  */
-public class DecisionMaker {
+class DecisionMaker {
     public static final String ACTION_ADD = "codes.simen.l50notifications.action.ADD";
     public static final String ACTION_REMOVE = "codes.simen.l50notifications.action.REMOVE";
 
@@ -151,7 +151,7 @@ public class DecisionMaker {
                         Mlog.d(logTag, "bigView");
                         final String fullContent = fullContent(notification, context, texts, text);
                         if (fullContent != null) text = fullContent;
-                    } catch (Resources.NotFoundException rnfe) {
+                    } catch (Resources.NotFoundException ignored) {
                     } catch (RuntimeException rte) {
                         try {
                             Looper.prepareMainLooper();
@@ -301,7 +301,7 @@ public class DecisionMaker {
         applicationContext.startService(intent);
     }
 
-    public static List<String> getText(Notification notification) {
+    private static List<String> getText(Notification notification) {
         RemoteViews contentView = notification.contentView;
         /*if (Build.VERSION.SDK_INT >= 16) {
             contentView = notification.bigContentView;

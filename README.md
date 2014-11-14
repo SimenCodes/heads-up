@@ -46,12 +46,19 @@ I ran a poll on my [website](http://simen.codes/stuff/future-of-heads-up/) a whi
 - Make sure the service actually is running. Does it show up under System Settings > Apps > Running?
 - If not, reboot the phone. Does that help?
 - [4.2 and earlier] Do you have any other accessibility services running? Some other services, like Pushbullet, blocks Heads-up from reading notifications.
-- Uninstall the app completely, reboot the phone, and install it again. Make sure you are using the latest version, 1.8.1. After enabling the service inside the app, reboot the phone.
+- Uninstall the app completely, reboot the phone, and install it again. Make sure you are using the [latest version](https://play.google.com/store/apps/details?id=codes.simen.l50notifications). After enabling the service inside the app, reboot the phone.
 - Allow more priority levels in the settings.
 - Some phones block Heads-up from displaying popups. Check that "draw on top" or "display popups" is enabled in System Settings > Apps > Heads-up.
 
-####Huawei, XIAOMI and MIUI users:####
-Please allow Heads-up to display popups under Settings > Apps > Downloaded > Heads-up. It might also be necessary to reset the app data/settings.
+####Huawei, XIAOMI, ZTE and MIUI users:####
+Before you can use this app, you\'ll probably need to give it some slack when it comes to security.
+
+1. Go to System Settings > All > Apps > Downloaded > Heads-up notifications.
+2. Toggle the switch that says \'Show popup windows\' (second option).
+3. At the bottom, go to \'Manage permissions\'.
+4. Set \'I trust this app\' to on.
+
+*It might also be necessary to reset the app data/settings.*
 
 ####Device talking?####
 This is a bug in Samsung's firmware. See post on my [website](http://simen.codes/stuff/samsung-phone-talking/)
@@ -59,5 +66,10 @@ This is a bug in Samsung's firmware. See post on my [website](http://simen.codes
 ####Uninstalling:####
 If you find that the uninstall button is disabled, go to Settings > Security > Device administrators > Heads-up, and tap Disable.
 
+####Something else?####
+Something I haven't covered here? I answer all kinds questions in the [issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue).
+If your question hasn't been answered there already, feel free to ask!
+*PS: Let me know that you've tried the steps here when asking qustions. If you don't, the first thing you'll get is a link to this list.*
+
 ##Contact##
-Problems, feature requests or questions? Go to the [Issue tracker](https://github.com/SimenCodes/heads-up/issues/).
+Problems, feature requests or questions? Go to the [Issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue). You can also [email](mailto:sb@simen.codes) me, but I'm slower to answer emails.

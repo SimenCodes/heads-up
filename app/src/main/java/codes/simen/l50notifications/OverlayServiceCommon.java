@@ -17,9 +17,7 @@ package codes.simen.l50notifications;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
 import android.app.ActivityManager;
-import android.app.AlarmManager;
 import android.app.KeyguardManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -86,10 +84,10 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     public static final int MAX_DISPLAY_TIME = 60000;
     public static final int MAX_REMINDER_TIME = 1200000;
     public static final int MIN_REMINDER_TIME = 6000;
-    public static final int MAX_LINES = 12;
-    public static final int SENSOR_DELAY_MILLIS = 10000;
-    public static final int MIN_LINES = 3;
-    public static final int FLAG_FLOATING_WINDOW = 0x00002000;
+    private static final int MAX_LINES = 12;
+    private static final int SENSOR_DELAY_MILLIS = 10000;
+    private static final int MIN_LINES = 3;
+    private static final int FLAG_FLOATING_WINDOW = 0x00002000;
     private static final ArrayList<String> LOCKSCREEN_APPS = new ArrayList<String>(Arrays.asList(new String[]{
             "com.achep.acdisplay",
             "com.silverfinger.lockscreen",
@@ -107,13 +105,12 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
     private WindowManager windowManager;
     private WindowManager.LayoutParams layoutParams;
-    LinearLayout layout;
+    private LinearLayout layout;
     private boolean isViewAdded = false;
     private ThemeClass themeClass = new ThemeClass();
 
-    SharedPreferences preferences = null;
+    private SharedPreferences preferences = null;
 
-    private static String text = "Something went wrong";
     private PendingIntent pendingIntent;
     private int displayTime = 15000;
     private int position = 1;
@@ -128,8 +125,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private PowerManager powerManager;
     private PowerManager.WakeLock wLock;
     private boolean isProximityClose = true;
-    private boolean isDelaying = false;
-    boolean isLocked;
+    private boolean isLocked;
 
     String packageName = "";
     String tag = "";
@@ -320,7 +316,6 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         }
     };
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public int onStartCommand(final Intent intent, int flags, int startId) {
         super.onStartCommand(intent, flags, startId);
@@ -332,6 +327,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                             && tag.equals(intent.getStringExtra("tag"))
                             && id == intent.getIntExtra("id", 0)) {
                         Mlog.d(logTag, "remove");
+                        boolean isDelaying = false;
                         if (!isDelaying)
                             doFinish(0);
                     }
@@ -350,7 +346,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             handler.removeCallbacks(closeTimer);
             //handler.removeCallbacks(delayStop);
 
-            text = extras.getString("text");
+            String text = extras.getString("text");
             String title = extras.getString("title");
             packageName = extras.getString("packageName");
             key = extras.getString("key");
@@ -554,7 +550,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
                 // Init swipe listener
                 final SwipeDismissTouchListener dismissTouchListener = new SwipeDismissTouchListener(
-                        self, reminder_icon, null, new SwipeDismissTouchListener.DismissCallbacks() {
+                        self, reminder_icon, new SwipeDismissTouchListener.DismissCallbacks() {
                     @Override
                     public boolean canDismiss() {
                         return true;
@@ -665,9 +661,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         return START_NOT_STICKY;
     }
 
-    public void setTimer(Bundle extras) {
-        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-
+    void setTimer(Bundle extras) {
         Intent intent = new Intent(getApplicationContext(), ReminderService.class);
         intent.setAction(ReminderService.ACTION_REMIND);
         intent.putExtras(extras);
@@ -710,7 +704,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         return result;
     }
 
-    final Handler handler = new Handler();
+    private final Handler handler = new Handler();
     private final Runnable closeTimer = new Runnable() {
         @Override
         public void run() {
@@ -744,7 +738,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         doFinish(0);
     }
 
-    public void onPopupClick (View v) {
+    void onPopupClick(View v) {
         if (themeClass.getRootView(layout).getTranslationX() != 0) return; // Stop if we're currently swiping. Bug 0000034
 
         if (!expand()) openIntent(pendingIntent, false);
@@ -773,7 +767,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         }
     }
 
-    public void openIntent (PendingIntent mPendingIntent, boolean isFloating) {
+    void openIntent(PendingIntent mPendingIntent, boolean isFloating) {
         try {
             dismissKeyguard();
             Mlog.d(logTag, "sendPending");
@@ -797,7 +791,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         }
     }
 
-    final View.OnLongClickListener blockTouchListener = new View.OnLongClickListener() {
+    private final View.OnLongClickListener blockTouchListener = new View.OnLongClickListener() {
         @Override
         public boolean onLongClick(View v) {
             try {
@@ -985,7 +979,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         Mlog.v(logTag + "SensorAccuracy", String.valueOf(accuracy));
     }
 
-    public void createWLock() {
+    void createWLock() {
         if (powerManager == null)
             powerManager = (PowerManager) getSystemService(POWER_SERVICE);
 
@@ -994,7 +988,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 "heads-up");
     }
 
-    public void screenOn() {
+    void screenOn() {
         if (wLock == null) {
             createWLock();
         }
@@ -1010,7 +1004,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             }
         }
     }
-    public void screenOff() {
+    void screenOff() {
         if (wLock != null && wLock.isHeld()) wLock.release();
 
         if (powerManager == null)

@@ -300,7 +300,7 @@ public class ActivityAppList extends ListActivity {
             }
         //}
         editor.putBoolean(type + "_inverted", invertedList);
-        editor.commit();
+        editor.apply();
         //Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_SHORT).show();
         Mlog.v(logTag, "Saved " + type + " " + blacklisted.toString() + " - " + String.valueOf(invertedList));
     }

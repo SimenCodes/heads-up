@@ -28,11 +28,10 @@ import codes.simen.l50notifications.util.Mlog;
 /**
  * VoiceOver, like on iPods
  */
-public class VoiceOver {
+class VoiceOver {
     private final String logTag = "VoiceOver";
     private long lastId = -1;
     private Resources resources;
-    private Context context;
     private boolean broadcastNotifications = false;
 
     /*
@@ -44,9 +43,8 @@ public class VoiceOver {
     public VoiceOver () {
     }
 
-    public void enableVoiceOver (Context mContext) {
+    public void enableVoiceOver (Context context) {
         Mlog.d(logTag, "start");
-        context = mContext;
         resources = context.getResources();
 
         IntentFilter intentFilter = new IntentFilter();
@@ -72,9 +70,9 @@ public class VoiceOver {
         }
     };
 
-    private boolean doReceive (final Context context, final Intent intent) {
+    private void doReceive(final Context context, final Intent intent) {
         String action = intent.getAction();
-        if (action == null) return false;
+        if (action == null) return;
         Mlog.d(logTag, action);
 
         final Bundle extras = intent.getExtras();
@@ -88,14 +86,14 @@ public class VoiceOver {
 
         if (action.equals("com.spotify.music.playbackstatechanged")) {
             spotifyPlaying = playing;
-            return false;
+            return;
         }
 
         //boolean isfavorite = intent.getBooleanExtra("isfavorite", false);
 
         long id = -1;
         if ( action.equals("com.spotify.music.metadatachanged") ) {
-            if (!spotifyPlaying) return false;
+            if (!spotifyPlaying) return;
 
             // In Spotify, the ID is a String
             String idStr = intent.getStringExtra("id");
@@ -106,24 +104,24 @@ public class VoiceOver {
             int length = intent.getIntExtra("length", -1);
             if (length < 60) {
                 Mlog.d(logTag, "Too short, just " + String.valueOf(length));
-                return false;
+                return;
             }
 
         } else {
-            if (!playing) return false;
+            if (!playing) return;
             id = intent.getLongExtra("id", -1);
         }
 
         Mlog.d(String.valueOf(id), String.valueOf(lastId));
-        if (id == lastId) return false;
+        if (id == lastId) return;
         if (action.equals("com.android.music.metachanged") && id == -1) {
             Mlog.d(logTag, "com.android.music interfering, ignored");
-            return false; // This app keeps interfering
+            return;
         }
         if (lastId == -1) {
             lastId = id;
             Mlog.d(logTag, "last id was -1");
-            return false;
+            return;
         }
         lastId = id;
 
@@ -162,7 +160,6 @@ public class VoiceOver {
                     "codes.simen.permission.NOTIFICATIONS");
         }
 
-        return true;
     }
 
     /*

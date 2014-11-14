@@ -31,7 +31,7 @@ import android.widget.LinearLayout;
 import codes.simen.l50notifications.R;
 
 /**
- * Created by simen on 17.07.14.
+ * Dark Holo theme. Useful on slow devices
  */
 public class HoloLight extends ThemeClass {
 

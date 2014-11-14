@@ -74,15 +74,15 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
     public static final int DIRECTION_UP_TIMER = 4;
 
     // Cached ViewConfiguration and system-wide constant values
-    private int mSlop;
-    private int mMinFlingVelocity;
-    private int mMaxFlingVelocity;
-    private long mAnimationTime;
+    private final int mSlop;
+    private final int mMinFlingVelocity;
+    private final int mMaxFlingVelocity;
+    private final long mAnimationTime;
 
     // Fixed properties
-    private View mView;
-    private ImageView mReminderIcon;
-    private DismissCallbacks mCallbacks;
+    private final View mView;
+    private final ImageView mReminderIcon;
+    private final DismissCallbacks mCallbacks;
     private int mViewWidth = 1; // 1 and not 0 to prevent dividing by zero
     private int mViewHeight = 1;
 
@@ -94,11 +94,11 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
     private boolean mSwipingVertical;
     private boolean mWasSwipingVertical;
     private int mSwipingSlop;
-    private Object mToken;
+    private final Object mToken;
     private VelocityTracker mVelocityTracker;
     private float mTranslationX;
     private float mTranslationY;
-    private boolean reminderEnabled;
+    private final boolean reminderEnabled;
 
     /**
      * The callback interface used by {@link SwipeDismissTouchListener} to inform its client
@@ -128,13 +128,10 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
 
     /**
      * Constructs a new swipe-to-dismiss touch listener for the given view.
-     *
-     * @param view     The view to make dismissable.
-     * @param token    An optional token/cookie object to be passed through to the callback.
+     *  @param view     The view to make dismissable.
      * @param callbacks The callback to trigger when the user has indicated that she would like to
-     *                 dismiss this view.
      */
-    public SwipeDismissTouchListener(View view, ImageView reminderIcon, Object token, DismissCallbacks callbacks) {
+    public SwipeDismissTouchListener(View view, ImageView reminderIcon, DismissCallbacks callbacks) {
         ViewConfiguration vc = ViewConfiguration.get(view.getContext());
         mSlop = vc.getScaledTouchSlop();
         mMinFlingVelocity = vc.getScaledMinimumFlingVelocity() * 4;
@@ -144,7 +141,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
         mView = view;
         mReminderIcon = reminderIcon;
         reminderEnabled = reminderIcon != null;
-        mToken = token;
+        mToken = null;
         mCallbacks = callbacks;
     }
 

@@ -41,8 +41,8 @@ public class ReminderService extends Service {
     public ReminderService() {
     }
 
-    private HashMap<Long, Bundle> reminders = new HashMap<Long, Bundle>();
-    private Handler handler = new Handler();
+    private final HashMap<Long, Bundle> reminders = new HashMap<Long, Bundle>();
+    private final Handler handler = new Handler();
     private NotificationCompat.Builder builder;
 
     @Override

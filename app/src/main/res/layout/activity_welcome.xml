@@ -66,7 +66,8 @@
             android:drawableLeft="@drawable/ic_action_settings"
             android:text="@string/action_settings"
             android:onClick="doOpenSettings"
-            android:textAlignment="textStart" />
+            android:textAlignment="textStart"
+            android:layout_gravity="start" />
 
         <View
             android:layout_width="1dp"
@@ -84,7 +85,8 @@
             android:drawableLeft="@drawable/ic_play"
             android:text="@string/action_test"
             android:onClick="doSendTest"
-            android:textAlignment="textStart" />
+            android:textAlignment="textStart"
+            android:layout_gravity="start" />
 
         <View
             android:layout_width="1dp"
@@ -102,7 +104,8 @@
             android:drawableLeft="@drawable/ic_action_help"
             android:text="@string/action_help"
             android:onClick="getHelp"
-            android:textAlignment="textStart" />
+            android:textAlignment="textStart"
+            android:layout_gravity="start" />
     </LinearLayout>
 
     <TextView

@@ -28,7 +28,7 @@ import android.widget.Button;
 import codes.simen.l50notifications.R;
 
 /**
- * Created by simen on 17.07.14.
+ * Android L theme
  */
 public class L5Light extends ThemeClass {
 

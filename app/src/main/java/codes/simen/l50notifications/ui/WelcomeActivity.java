@@ -43,7 +43,7 @@ import codes.simen.l50notifications.util.Mlog;
 
 public class WelcomeActivity extends Activity {
     public static final String ACCESSIBILITY_SERVICE_NAME = "codes.simen.l50notifications/codes.simen.l50notifications.NotificationListenerAccessibilityService";
-    public static final int REQUEST_CODE = 654;
+    private static final int REQUEST_CODE = 654;
     private final String logTag = "Heads-up";
     private static boolean isRunning = false;
     private SharedPreferences preferences = null;
@@ -174,7 +174,7 @@ public class WelcomeActivity extends Activity {
 
     public void getHelp (View v) {
         startActivity(new Intent(
-                Intent.ACTION_VIEW, Uri.parse("https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue")
+                Intent.ACTION_VIEW, Uri.parse("https://github.com/SimenCodes/heads-up/blob/master/README.md#common-issues")
         ));
     }
 

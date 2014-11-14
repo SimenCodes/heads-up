@@ -28,7 +28,6 @@ import codes.simen.l50notifications.util.Mlog;
  * load classes containing references to NotificationListener
  */
 public class OverlayService extends OverlayServiceCommon {
-    private boolean stopNow = true;
     private int onBindAction = 0; // 0=nothing, 1=remove, 2=check existence
 
     private Intent mIntent;
@@ -66,7 +65,6 @@ public class OverlayService extends OverlayServiceCommon {
 
     @Override
     public void doDismiss (boolean mStopNow) {
-        stopNow = mStopNow;
         Mlog.d(logTag, packageName + tag + id);
 
         onBindAction = 1;
@@ -76,7 +74,7 @@ public class OverlayService extends OverlayServiceCommon {
         bindService(intent, mConnection, BIND_AUTO_CREATE);
     }
 
-    private ServiceConnection mConnection = new ServiceConnection() {
+    private final ServiceConnection mConnection = new ServiceConnection() {
 
         @Override
         public void onServiceConnected(ComponentName className,
