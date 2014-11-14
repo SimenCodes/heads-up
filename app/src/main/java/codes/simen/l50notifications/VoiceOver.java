@@ -20,6 +20,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
 
 import codes.simen.l50notifications.util.Mlog;
 
@@ -31,6 +33,13 @@ public class VoiceOver {
     private long lastId = -1;
     private Resources resources;
     private Context context;
+    private boolean broadcastNotifications = false;
+
+    /*
+    Used to keep Spotify from spamming users hours
+    after they stopped listening to Spotify.
+     */
+    private boolean spotifyPlaying = true;
 
     public VoiceOver () {
     }
@@ -49,6 +58,7 @@ public class VoiceOver {
 
         context.registerReceiver(musicReceiver, intentFilter);
 
+        broadcastNotifications = PreferenceManager.getDefaultSharedPreferences(context).getBoolean("broadcast_notifications", false);
     }
 
     public void disableVoiceOver (Context context) {
@@ -67,20 +77,32 @@ public class VoiceOver {
         if (action == null) return false;
         Mlog.d(logTag, action);
 
-        boolean playing = intent.getBooleanExtra("playing", true);
-        //boolean isfavorite = intent.getBooleanExtra("isfavorite", false);
+        final Bundle extras = intent.getExtras();
 
-        if (!playing) return false;
+        // Debug code for finding fields when adding app support
+        for (String str : extras.keySet()) {
+            Mlog.v(logTag + " " + str, extras.get(str));
+        }
+
+        boolean playing = intent.getBooleanExtra("playing", true);
+
+        if (action.equals("com.spotify.music.playbackstatechanged")) {
+            spotifyPlaying = playing;
+            return false;
+        }
+
+        //boolean isfavorite = intent.getBooleanExtra("isfavorite", false);
 
         long id = -1;
         if ( action.equals("com.spotify.music.metadatachanged") ) {
-            // TODO: Fix problem with Spotify sending metachanged when not playing music
+            if (!spotifyPlaying) return false;
+
             // In Spotify, the ID is a String
             String idStr = intent.getStringExtra("id");
             if (idStr != null)
                 id = (long) idStr.hashCode();
 
-            // Let's not read their ads
+            // Let's skip their ads
             int length = intent.getIntExtra("length", -1);
             if (length < 60) {
                 Mlog.d(logTag, "Too short, just " + String.valueOf(length));
@@ -88,6 +110,7 @@ public class VoiceOver {
             }
 
         } else {
+            if (!playing) return false;
             id = intent.getLongExtra("id", -1);
         }
 
@@ -109,11 +132,6 @@ public class VoiceOver {
         String album = intent.getStringExtra("album");
         String track = intent.getStringExtra("track");
 
-        // Debug code for finding fields when adding app support
-        /*for (String str : intent.getExtras().keySet()) {
-            Mlog.v(logTag + " " + action, str);
-        }*/
-
 
         Intent decideIntent = new Intent();
         decideIntent.setClass(context, OverlayServiceCommon.class);
@@ -132,6 +150,17 @@ public class VoiceOver {
         decideIntent.putExtra("icon", R.drawable.abc_ic_voice_search_api_mtrl_alpha);
         context.startService(decideIntent);
         Mlog.d(logTag, "started");
+
+        if (broadcastNotifications) {
+            Mlog.d(logTag, "broadcast");
+            context.sendBroadcast(
+                    new Intent(DecisionMaker.ACTION_ADD)
+                        .putExtras(decideIntent.getExtras())
+                        .putExtra("artist", artist)
+                        .putExtra("album", album)
+                        .putExtra("track", track),
+                    "codes.simen.permission.NOTIFICATIONS");
+        }
 
         return true;
     }

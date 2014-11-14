@@ -72,7 +72,7 @@
         android:key="hide_dismiss_button"
         android:title="@string/pref_hide_dismiss_button"
         android:summary="@string/pref_hide_dismiss_button_desc"
-        android:defaultValue="false"
+        android:defaultValue="true"
         />
 
     <Preference

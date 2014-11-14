@@ -144,7 +144,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         try {
             Mlog.d(logTag, "Create");
             preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-            displayTime = preferences.getInt("overlay_display_time", 15000);
+            displayTime = preferences.getInt("overlay_display_time", 8000);
             windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
             LayoutInflater inflater = LayoutInflater.from(this);
 
@@ -218,7 +218,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     break;
             }
 
-            isCompact = preferences.getBoolean("compact_mode", false);
+            isCompact = preferences.getBoolean("compact_mode", true);
 
         } catch (VerifyError ve) {
             Mlog.w(logTag, ve.getMessage());
@@ -360,6 +360,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
             Mlog.v(logTag, currentPackage);
             if ( preferences.getBoolean("block_current_app", true)
+              && !isLocked
               && packageName.equals(currentPackage)
               && !packageName.equals("codes.simen.l50notifications")
             ) {
@@ -395,7 +396,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             }
 
             View dismissButton = themeClass.getDismissButton(layout);
-            if (preferences.getBoolean("hide_dismiss_button", false))
+            if (preferences.getBoolean("hide_dismiss_button", true))
                 themeClass.hideDismissButton(dismissButton);
 
             try {
@@ -548,7 +549,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
                 // Enable reminders if the time is set to more than ten seconds
                 ImageView reminder_icon = null;
-                if (preferences.getInt("reminder_delay", 5000) > 10000)
+                if (preferences.getInt("reminder_delay", 0) > 10000)
                     reminder_icon = (ImageView) layout.findViewById(R.id.reminderIcon);
 
                 // Init swipe listener
@@ -570,8 +571,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                         switch (direction) {
                             case SwipeDismissTouchListener.DIRECTION_LEFT:
                             case SwipeDismissTouchListener.DIRECTION_RIGHT:
-                                if (preferences.getBoolean("dismiss_on_swipe", false)) doFinish(1);
-                                else                                                   doFinish(0);
+                                if (preferences.getBoolean("dismiss_on_swipe", true)) doFinish(1);
+                                else                                                  doFinish(0);
                                 break;
                             case SwipeDismissTouchListener.DIRECTION_UP_TIMER:
                                 setTimer(extras);

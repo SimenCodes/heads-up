@@ -27,7 +27,7 @@
         android:key="dismiss_on_swipe"
         android:title="@string/pref_dismiss_on_swipe"
         android:summary="@string/pref_dismiss_on_swipe_desc"
-        android:defaultValue="false"
+        android:defaultValue="@bool/is_sdk_18"
         android:enabled="@bool/is_sdk_18"
         />
 
@@ -57,7 +57,7 @@
         android:key="reminder_delay"
         android:title="@string/pref_reminder_delay"
         android:summary="@string/pref_reminder_delay_desc"
-        android:defaultValue="300000"
+        android:defaultValue="0"
         />
 
 </PreferenceScreen>

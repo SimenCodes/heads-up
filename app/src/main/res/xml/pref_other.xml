@@ -17,5 +17,5 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <Preference
-        android:title="v43 - 1.9 BETA" />
+        android:title="v44 - 1.9 BETA 2" />
 </PreferenceScreen>
