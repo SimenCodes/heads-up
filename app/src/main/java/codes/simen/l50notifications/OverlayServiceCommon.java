@@ -555,8 +555,13 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 final SwipeDismissTouchListener dismissTouchListener = new SwipeDismissTouchListener(
                         self, reminder_icon, null, new SwipeDismissTouchListener.DismissCallbacks() {
                     @Override
-                    public boolean canDismiss(Object token) {
+                    public boolean canDismiss() {
                         return true;
+                    }
+
+                    @Override
+                    public boolean canExpand() {
+                        return isCompact;
                     }
 
                     @Override
@@ -566,7 +571,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                             case SwipeDismissTouchListener.DIRECTION_LEFT:
                             case SwipeDismissTouchListener.DIRECTION_RIGHT:
                                 if (preferences.getBoolean("dismiss_on_swipe", false)) doFinish(1);
-                                else                                                  doFinish(0);
+                                else                                                   doFinish(0);
                                 break;
                             case SwipeDismissTouchListener.DIRECTION_UP_TIMER:
                                 setTimer(extras);
@@ -574,8 +579,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                                 doFinish(0);
                                 break;
                             case SwipeDismissTouchListener.DIRECTION_DOWN:
-                                doFinish(1);
-                                break;
+                                expand();
+                                return;
                             default:
                                 Mlog.e(logTag, "Unknown direction: " + direction);
                                 break;
@@ -741,12 +746,19 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     public void onPopupClick (View v) {
         if (themeClass.getRootView(layout).getTranslationX() != 0) return; // Stop if we're currently swiping. Bug 0000034
 
+        if (!expand()) openIntent(pendingIntent, false);
+    }
+
+    /*
+     * Expand the heads-up. Returns true if the heads-up was expanded, false if it was expanded before calling this method.
+     */
+    private boolean expand() {
         if (!isCompact)
-            openIntent(pendingIntent, false);
+            return false;
         else {
             TextView subtitle = (TextView) layout.findViewById(R.id.notification_subtitle);
             if ( (subtitle.getLineCount() <= MIN_LINES && subtitle.length() < 120) && !isActionButtons) {
-                openIntent(pendingIntent, false);
+                return false;
             }
             isCompact = false;
             subtitle.setMaxLines(MAX_LINES);
@@ -756,6 +768,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 handler.removeCallbacks(closeTimer);
                 handler.postDelayed(closeTimer, displayTime);
             }
+            return true;
         }
     }
 

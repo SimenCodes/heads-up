@@ -108,7 +108,11 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
         /**
          * Called to determine whether the view can be dismissed.
          */
-        boolean canDismiss(Object token);
+        boolean canDismiss();
+        /**
+         * Called to determine whether the view can be expanded.
+         */
+        boolean canExpand();
 
         /**
          * Called when the user has indicated they she would like to dismiss the view.
@@ -160,10 +164,9 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
 
         switch (motionEvent.getActionMasked()) {
             case MotionEvent.ACTION_DOWN: {
-                // TODO: ensure this is a finger, and set a flag
                 mDownX = motionEvent.getRawX();
                 mDownY = motionEvent.getRawY();
-                if (mCallbacks.canDismiss(mToken)) {
+                if (mCallbacks.canDismiss()) {
                     mVelocityTracker = VelocityTracker.obtain();
                     mVelocityTracker.addMovement(motionEvent);
                 }
@@ -228,8 +231,8 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                     // dismiss
                     final boolean finalDismissDown = dismissDown;
                     mView.animate()
-                            .translationY(dismissDown ? mViewHeight * 2 : -mViewHeight * 2)
-                            .alpha(0)
+                            .translationY(dismissDown ? 0 : -mViewHeight * 2)
+                            .alpha(dismissDown ? 1 : 0)
                             .setDuration(mAnimationTime)
                             .setListener(new AnimatorListenerAdapter() {
                                 @Override
@@ -332,7 +335,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                     cancelEvent.recycle();
 
                     if (!mWasSwipingVertical) {
-                        //mView.setPadding(mViewWidth, 0, mViewWidth, 0);
+                        //mView.setPadding(0, mViewHeight, 0, mViewHeight);
                     }
                 }
 
@@ -346,13 +349,14 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                 }
 
                 if (mSwipingVertical) {
+                    if (deltaY > 0) {
+                        if (deltaY > 50 && mCallbacks.canExpand()) performDismiss(DIRECTION_DOWN);
+                        deltaY = (float) (deltaY * 0.1 + mSwipingSlop);
+                    }
                     mTranslationY = deltaY;
                     mView.setTranslationY(deltaY - mSwipingSlop);
 
-                    if (deltaY > 0) {
-                        mView.setAlpha(Math.max(0f, Math.min(1f,
-                                1f - 1f * Math.abs(deltaY) / (mViewHeight * 2))));
-                    } else if (reminderEnabled) {
+                    if (reminderEnabled && deltaY < 0) {
                         mReminderIcon.setVisibility(View.VISIBLE);
                         final float value = Math.max(0f, Math.min(1f,
                                 Math.abs(deltaY) / (mViewHeight * 2)));
@@ -374,6 +378,15 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
     }
 
     private void performDismiss(final int direction) {
+
+        if (DIRECTION_DOWN == direction) {
+            mCallbacks.onDismiss(mView, mToken, direction);
+            // Reset view presentation
+            mView.setAlpha(1f);
+            mView.setTranslationX(0);
+            return;
+        }
+
         // Animate the dismissed view to zero-height and then fire the dismiss callback.
         // This triggers layout on each animation frame; in the future we may want to do something
         // smarter and more performant.

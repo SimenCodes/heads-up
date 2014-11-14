@@ -19,7 +19,7 @@
     tools:context="codes.simen.l50notifications.OverlayServiceCommon"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/notification_background_light"
+    android:background="@drawable/card_white"
     android:id="@+id/linearLayout"
     android:orientation="vertical"
     android:layout_below="@+id/status_bar_filler"
