@@ -17,7 +17,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion '21.0.1'
+    buildToolsVersion '21.1.1'
 
     signingConfigs {
         release {
@@ -32,8 +32,8 @@ android {
         applicationId "codes.simen.l50notifications"
         minSdkVersion 11
         targetSdkVersion 21
-        versionCode 42
-        versionName "1.8.2"
+        versionCode 43
+        versionName "1.9 BETA"
     }
 
     buildTypes {
@@ -41,17 +41,23 @@ android {
             debuggable false
             //noinspection GroovyAssignabilityCheck
             signingConfig signingConfigs.release
-            runProguard true
-            proguardFiles '/home/simen/.apps/android-studio/sdk/tools/proguard/proguard-android-optimize.txt', 'proguard-rules.pro'
+            minifyEnabled true
+            proguardFiles '/home/simen/.apps/sdk/tools/proguard/proguard-android-optimize.txt', 'proguard-rules.pro'
         }
         debug {
             debuggable true
-            runProguard false
+            minifyEnabled false
         }
         testing {
             debuggable false
             signingConfig signingConfigs.release
-            runProguard false
+            minifyEnabled false
+        }
+    }
+
+    sourceSets {
+        main {
+            renderscript.srcDirs = ['src']
         }
     }
 

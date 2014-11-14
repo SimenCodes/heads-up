@@ -147,5 +147,7 @@ For details regarding problems and missing strings in your translation, see http
     <string name="pref_reminder_delay_desc">If you swipe the heads-up upwards, Heads-up will re-display it after the number of minutes you specify here. Set to zero to disable.\nWARNING: Experimental, unstable feature. Don\'t rely on it to work.</string>
     <string name="pref_reminder_delay_counter">Remind me after <xliff:g id="time" example="7">%s</xliff:g> minutes</string>
     <string name="pref_top_margin_locked">Popup position on lock screen</string>
+    <!-- Note to translators: please keep this text as short as possible -->
+    <string name="pref_dont_disturb_error">Warning: Google removed the ability to get running tasks in Android 5.0, so this will not work properly. From the docs:\ngetRecentTasks() —  As of LOLLIPOP, this method is no longer available to third party applications: the introduction of document-centric recents means it can leak personal information. For backwards compatibility, it will still return a small subset of its data: the caller\'s own tasks, and possibly some other tasks such as home that are known to not be sensitive.</string>
 
 </resources>

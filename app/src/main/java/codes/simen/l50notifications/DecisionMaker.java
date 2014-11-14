@@ -104,9 +104,18 @@ public class DecisionMaker {
 
         // Get the text
         if (Build.VERSION.SDK_INT >= 21) {
+            // Uncomment to test which extras a given notification contains
+            /*for (String extraKey : notification.extras.keySet()) {
+                Mlog.d(logTag, extraKey + "=" + notification.extras.get(extraKey));
+            }*/
             title = notification.extras.getString("android.title");
-            text = notification.extras.getString("android.text");
-            final String bigText = notification.extras.getString("android.bigText");
+            text = notification.extras.get("android.text").toString();
+
+            String bigText = null;
+            try {
+                bigText = notification.extras.get("android.bigText").toString();
+            } catch (Exception ignored) {}
+
             if (bigText != null && bigText.length() > text.length()) {
                 text = bigText;
             }

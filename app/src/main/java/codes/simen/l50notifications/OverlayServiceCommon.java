@@ -959,7 +959,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     @Override
     public void onSensorChanged(SensorEvent event) {
         Mlog.v(logTag + "Sensor", String.valueOf(event.values[0]));
-        isProximityClose = event.values[0] < 1;
+        isProximityClose = ( event.values[0] != sensor.getMaximumRange() );
 
 
         if (isProximityClose) screenOff();
