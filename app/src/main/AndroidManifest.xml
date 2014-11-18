@@ -46,7 +46,7 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="codes.simen.l50notifications.ui.WelcomeActivity" />
-                <category android:name="android.intent.category.ALTERNATIVE" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 

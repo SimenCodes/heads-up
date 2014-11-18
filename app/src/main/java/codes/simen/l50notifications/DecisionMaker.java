@@ -116,7 +116,7 @@ class DecisionMaker {
                 bigText = notification.extras.get("android.bigText").toString();
             } catch (Exception ignored) {}
 
-            if (bigText != null && bigText.length() > text.length()) {
+            if (bigText != null && bigText.length() > 3) {
                 text = bigText;
             }
         } else {

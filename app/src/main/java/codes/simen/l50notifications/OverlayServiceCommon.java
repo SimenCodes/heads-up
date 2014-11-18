@@ -738,7 +738,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         doFinish(0);
     }
 
-    void onPopupClick(View v) {
+    public void onPopupClick(View v) {
         if (themeClass.getRootView(layout).getTranslationX() != 0) return; // Stop if we're currently swiping. Bug 0000034
 
         if (!expand()) openIntent(pendingIntent, false);
