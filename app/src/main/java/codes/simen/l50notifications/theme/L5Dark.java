@@ -15,6 +15,7 @@
 
 package codes.simen.l50notifications.theme;
 
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -24,6 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import codes.simen.l50notifications.R;
 
@@ -35,6 +37,13 @@ public class L5Dark extends ThemeClass {
     public L5Dark(ViewStub stub) {
         super(stub);
         stub.setLayoutResource(R.layout.activity_read_inner_dark);
+    }
+
+    @Override
+    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons) {
+        super.setIcon(imageView, bitmap, round_icons);
+        if (round_icons)
+            imageView.setBackgroundResource(R.drawable.circle);
     }
 
     @Override

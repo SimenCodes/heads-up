@@ -15,6 +15,7 @@
 
 package codes.simen.l50notifications.theme;
 
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -39,6 +40,13 @@ public class HoloDark extends ThemeClass {
         stub.setLayoutResource(R.layout.activity_read_inner_holo);
     }
     public HoloDark(){super();}
+
+    @Override
+    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons) {
+        super.setIcon(imageView, bitmap, round_icons);
+        if (round_icons)
+            imageView.setBackgroundResource(R.drawable.circle);
+    }
 
     @Override
     public void addActionButton(ViewGroup actionButtons, String actionTitle, Drawable icon, View.OnClickListener clickListener, float fontMultiplier) {

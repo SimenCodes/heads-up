@@ -53,11 +53,13 @@
         android:defaultValue="false"
         />
 
+    <!--
+    Removed due to stability issues
     <codes.simen.l50notifications.ui.ReminderDelayPreference
         android:key="reminder_delay"
         android:title="@string/pref_reminder_delay"
         android:summary="@string/pref_reminder_delay_desc"
         android:defaultValue="0"
-        />
+        />-->
 
 </PreferenceScreen>

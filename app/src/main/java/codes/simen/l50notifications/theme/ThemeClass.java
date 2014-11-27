@@ -145,7 +145,7 @@ public class ThemeClass {
             } else {
                 imageView.setImageBitmap(bitmap);
             }
-            imageView.setBackgroundResource(R.drawable.circle);
+            imageView.setBackgroundResource(R.drawable.circle_grey);
         } else
             imageView.setImageBitmap(bitmap);
     }

@@ -42,7 +42,6 @@ import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 /**
  * A {@link android.view.View.OnTouchListener} that makes any {@link android.view.View} dismissable when the
@@ -81,7 +80,6 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
 
     // Fixed properties
     private final View mView;
-    private final ImageView mReminderIcon;
     private final DismissCallbacks mCallbacks;
     private int mViewWidth = 1; // 1 and not 0 to prevent dividing by zero
     private int mViewHeight = 1;
@@ -98,7 +96,6 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
     private VelocityTracker mVelocityTracker;
     private float mTranslationX;
     private float mTranslationY;
-    private final boolean reminderEnabled;
 
     /**
      * The callback interface used by {@link SwipeDismissTouchListener} to inform its client
@@ -128,10 +125,10 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
 
     /**
      * Constructs a new swipe-to-dismiss touch listener for the given view.
-     *  @param view     The view to make dismissable.
+     * @param view     The view to make dismissable.
      * @param callbacks The callback to trigger when the user has indicated that she would like to
      */
-    public SwipeDismissTouchListener(View view, ImageView reminderIcon, DismissCallbacks callbacks) {
+    public SwipeDismissTouchListener(View view, DismissCallbacks callbacks) {
         ViewConfiguration vc = ViewConfiguration.get(view.getContext());
         mSlop = vc.getScaledTouchSlop();
         mMinFlingVelocity = vc.getScaledMinimumFlingVelocity() * 4;
@@ -139,8 +136,6 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
         mAnimationTime = view.getContext().getResources().getInteger(
                 android.R.integer.config_shortAnimTime);
         mView = view;
-        mReminderIcon = reminderIcon;
-        reminderEnabled = reminderIcon != null;
         mToken = null;
         mCallbacks = callbacks;
     }
@@ -235,12 +230,9 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                                 @Override
                                 public void onAnimationEnd(Animator animation) {
                                     if (finalDismissDown)     performDismiss(DIRECTION_DOWN);
-                                    else if (reminderEnabled) performDismiss(DIRECTION_UP_TIMER);
                                     else                      performDismiss(DIRECTION_UP);
                                 }
                             });
-                    if (reminderEnabled)
-                        mReminderIcon.animate().scaleX(1).scaleY(1);
                 } else if (mSwiping || mSwipingVertical) {
                     // cancel
                     mView.animate()
@@ -249,9 +241,6 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                             .alpha(1)
                             .setDuration(mAnimationTime)
                             .setListener(null);
-
-                    if (reminderEnabled)
-                        mReminderIcon.setVisibility(View.GONE);
                 }
                 mVelocityTracker.recycle();
                 mVelocityTracker = null;
@@ -275,9 +264,6 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                         .alpha(1)
                         .setDuration(mAnimationTime)
                         .setListener(null);
-
-                if (reminderEnabled)
-                    mReminderIcon.setVisibility(View.GONE);
 
                 mVelocityTracker.recycle();
                 mVelocityTracker = null;
@@ -352,14 +338,6 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                     }
                     mTranslationY = deltaY;
                     mView.setTranslationY(deltaY - mSwipingSlop);
-
-                    if (reminderEnabled && deltaY < 0) {
-                        mReminderIcon.setVisibility(View.VISIBLE);
-                        final float value = Math.max(0f, Math.min(1f,
-                                Math.abs(deltaY) / (mViewHeight * 2)));
-                        mReminderIcon.setScaleX(value);
-                        mReminderIcon.setScaleY(value);
-                    }
 
                     return true;
                 }

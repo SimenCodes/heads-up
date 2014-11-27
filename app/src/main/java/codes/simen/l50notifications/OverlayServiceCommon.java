@@ -543,14 +543,9 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             if (Build.VERSION.SDK_INT >= 12) {
                 ViewGroup self = themeClass.getRootView(layout);
 
-                // Enable reminders if the time is set to more than ten seconds
-                ImageView reminder_icon = null;
-                if (preferences.getInt("reminder_delay", 0) > 10000)
-                    reminder_icon = (ImageView) layout.findViewById(R.id.reminderIcon);
-
                 // Init swipe listener
                 final SwipeDismissTouchListener dismissTouchListener = new SwipeDismissTouchListener(
-                        self, reminder_icon, new SwipeDismissTouchListener.DismissCallbacks() {
+                        self, new SwipeDismissTouchListener.DismissCallbacks() {
                     @Override
                     public boolean canDismiss() {
                         return true;

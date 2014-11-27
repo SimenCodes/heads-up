@@ -60,7 +60,7 @@
                     android:id="@+id/notification_icon_small"
                     android:layout_gravity="right|bottom"
                     android:src="@drawable/ic_stat_headsup"
-                    android:background="@drawable/circle"
+                    android:background="@drawable/circle_grey"
                     android:padding="2dp" />
             </FrameLayout>
 

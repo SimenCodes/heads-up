@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This program is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     This program is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <resources
     xmlns:xliff="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -24,8 +39,6 @@
     <string name="pref_header_style">Motywy</string>
     <string name="pref_lock_screen_on">Wyświetlaj na ekranie blokady</string>
     <string name="pref_lock_screen_on_desc">Pokazuj powiadomienia \'heads-up\' na ekranie blokady.</string>
-    <string name="intro_status_on">Usługa jest aktywna. Spróbuj wysłać sobie wiadomość.\nJeśli nie działa, zrestartuj urządzenie i spróbuj ponownie. Jeśli nie możesz sobie poradzić z konfiguracją, napisz do mnie na sb@simen.codes</string>
-    <string name="intro_status_on_confirmed">Usługa jest uruchomiona. Spróbuj wysłać sobie wiadomość.\nJeśli nie możesz sobie poradzić z konfiguracją, napisz do mnie na sb@simen.codes</string>
     <!-- Please add a note in the next line asking users to write in English. -->
     <string name="bug_report_request">Jeśli aplikacja nie działa tak jak powinna, naciśnij tutaj aby zgłosić problem. Proszę pisać w języku angielskim.\n\n</string>
     <string name="pref_overlay_display_time">Czas wyświetlania</string>

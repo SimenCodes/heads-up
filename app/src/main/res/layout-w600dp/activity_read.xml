@@ -24,15 +24,6 @@
     android:onClick="doHide"
     android:clickable="false">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/reminderIcon"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_reminder"
-            android:animateLayoutChanges="true"
-            android:visibility="gone" />
-
         <ViewStub
             android:layout_width="420dp"
             android:layout_height="wrap_content"
