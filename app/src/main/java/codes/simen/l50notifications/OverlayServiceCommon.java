@@ -385,9 +385,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     appRes = getResources();
                 else
                     appRes = pm.getResourcesForApplication(packageName);
-            } catch (PackageManager.NameNotFoundException e) {
-                reportError(e, "", getApplicationContext());
-            } catch (NullPointerException e) {
+            } catch (PackageManager.NameNotFoundException | NullPointerException e) {
                 reportError(e, "", getApplicationContext());
             }
 
@@ -429,9 +427,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     } else {
                         try {
                             drawable = pm.getApplicationIcon(packageName);
-                        } catch (PackageManager.NameNotFoundException e) {
-                            //reportError(e, "", getApplicationContext());
-                        } catch (NullPointerException e) {
+                        } catch (PackageManager.NameNotFoundException | NullPointerException e) {
                             //reportError(e, "", getApplicationContext());
                         }
                     }
@@ -462,9 +458,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             if (title.equals("")) {
                 try {
                     title = (String) pm.getApplicationLabel(pm.getApplicationInfo(packageName, 0));
-                } catch (PackageManager.NameNotFoundException e) {
-                    reportError(e, "", getApplicationContext());
-                } catch (NullPointerException e) {
+                } catch (PackageManager.NameNotFoundException | NullPointerException e) {
                     reportError(e, "", getApplicationContext());
                 }
             }
@@ -591,9 +585,11 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 );
                 self.setClipChildren(false);
                 self.setClipToPadding(false);
-                for (View v : getAllChildren(layout)) {
-                    v.setOnTouchListener(dismissTouchListener);
-                }
+                final ArrayList<View> allChildren = getAllChildren(layout);
+                if (allChildren.size() > 0)
+                    for (View v : allChildren) {
+                        v.setOnTouchListener(dismissTouchListener);
+                    }
 
                 // Animate in
                 if (!prevPackageName.equals(packageName)) {

@@ -163,6 +163,7 @@ public class ActivityAppList extends ListActivity {
         } catch (OutOfMemoryError outOfMemoryError) {
             adapter.clear();
             adapter = new AppAdapter(pm, pkgs, false);
+            setListAdapter(adapter);
         }
     }
 
