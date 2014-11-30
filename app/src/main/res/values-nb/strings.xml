@@ -63,7 +63,6 @@
     <string name="pref_keep_on_lock_screen">Bli værende på låseskjermen</string>
     <string name="pref_keep_on_lock_screen_desc">Behold varslinger på låseskjermen til du sveiper de vekk.</string>
     <string name="pref_dismiss_on_swipe">Fjern ved sveip</string>
-    <string name="pref_dismiss_on_swipe_desc">Fjern varslinger fra varselsenteret når du sveiper dem vekk. Hvis du deaktiverer dette, vil du fortsatt kunne bruke X-knappen for å fjerne varselet.</string>
     <string name="title_activity_noshow_list">Ikke forstyrr</string>
     <string name="pref_round_icons">Runde ikoner</string>
     <string name="pref_round_icons_desc">Bruks Ls runde ikoner i stedet for de firkantede ikonene fra tidligere versjoner.</string>
@@ -88,7 +87,6 @@
     <string name="pref_hide_dismiss_button">Skjul fjern-knappen</string>
     <string name="pref_hide_dismiss_button_desc">Skjul knappen for å skjule varselet. Du kan fortsatt sveipe vekk varslingen.</string>
     <string name="pref_dismiss_keyguard">Lås opp enheten</string>
-    <string name="pref_dismiss_keyguard_desc">Lås opp mobilen automatisk når du trykker på en varsling.\nADVARSEL! Dette gjør at HVEM SOM HELST vil kunne låse opp mobilen din, uavhengig av sikkerhetsinnstillingene.</string>
     <string name="pref_compact_mode">Kompakt modus</string>
     <string name="pref_compact_mode_desc">Bare vis den første linjen i varslingene.</string>
     <string name="pref_font_size">Skriftstørrelse</string>
@@ -141,5 +139,10 @@
     <string name="pref_reminder_delay_desc">Hvis du sveiper heads-up-meldingen oppover, vil den dukke opp igjen etter tiden du angir her.\nADVARSEL: Eksperimentell, ustabil funksjon. Ikke forvent at den virker. Sett til null for å deaktivere.</string>
     <string name="pref_reminder_delay_counter">Remind me after <xliff:g id="time" example="7">%s</xliff:g> minutes</string>
     <string name="pref_top_margin_locked">Posisjon (på låseskjermen)</string>
+
+    <!-- Changed since 1.9 -->
+    <string name="pref_dismiss_on_swipe_desc">Fjern varslinger fra varselsenteret når du sveiper dem vekk. Hvis du deaktiverer dette, vil du fortsatt kunne bruke X-knappen for å fjerne varselet.\nKrever Android 4.3</string>
+    <string name="pref_dismiss_keyguard_desc">Lås opp mobilen automatisk når du trykker på en varsling.\nADVARSEL! Dette gjør at HVEM SOM HELST vil kunne låse opp mobilen din, uavhengig av sikkerhetsinnstillingene.\nÅ låse opp telefonen støttes egentlig ikke lenger av Android, og dette vil ikke fungere på alle telefoner.</string>
+
 
 </resources>

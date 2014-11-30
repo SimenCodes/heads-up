@@ -67,7 +67,6 @@ For details regarding problems and missing strings in your translation, see http
     <string name="pref_keep_on_lock_screen">Keep on lockscreen</string>
     <string name="pref_keep_on_lock_screen_desc">Keep notifications on the lockscreen until you dismiss them</string>
     <string name="pref_dismiss_on_swipe">Dismiss on swipe</string>
-    <string name="pref_dismiss_on_swipe_desc">Remove notifications from the drawer when you swipe them away horizontally. You can still tap the X to dismiss from the drawer.</string>
     <string name="title_activity_noshow_list">Don\'t disturb</string>
     <string name="pref_round_icons">Round icons</string>
     <string name="pref_round_icons_desc">Use L\'s round icons instead of the squared icons from earlier releases</string>
@@ -92,7 +91,6 @@ For details regarding problems and missing strings in your translation, see http
     <string name="pref_hide_dismiss_button">Hide dismiss button</string>
     <string name="pref_hide_dismiss_button_desc">Hide the dismiss button from the notifications</string>
     <string name="pref_dismiss_keyguard">Unlock phone</string>
-    <string name="pref_dismiss_keyguard_desc">Automatically unlock the phone when you open a notification.\nWARNING! This will allow ANYONE to unlock your phone, regardless of your security settings.</string>
     <string name="pref_compact_mode">Compact mode</string>
     <string name="pref_compact_mode_desc">Only display the first line of the notification.</string>
     <string name="pref_font_size">Font size</string>
@@ -149,5 +147,9 @@ For details regarding problems and missing strings in your translation, see http
     <string name="pref_top_margin_locked">Popup position on lock screen</string>
     <!-- Note to translators: you don't have to translate the full text, just make sure the user understands that the feature will not work in 5.0 -->
     <string name="pref_dont_disturb_error">Warning: Google removed the ability to get running tasks in Android 5.0, so this will not work properly. From the docs:\ngetRecentTasks() —  As of LOLLIPOP, this method is no longer available to third party applications: the introduction of document-centric recents means it can leak personal information. For backwards compatibility, it will still return a small subset of its data: the caller\'s own tasks, and possibly some other tasks such as home that are known to not be sensitive.</string>
+
+    <!-- Changed since 1.9 -->
+    <string name="pref_dismiss_on_swipe_desc">Remove notifications from the drawer when you swipe them away horizontally. You can still tap the X to dismiss from the drawer.\nRequires Android 4.3</string>
+    <string name="pref_dismiss_keyguard_desc">Automatically unlock the phone when you open a notification.\nWARNING! This will allow ANYONE to unlock your phone, regardless of your security settings.\nThis is also deprecated in Android, and may not work properly.</string>
 
 </resources>

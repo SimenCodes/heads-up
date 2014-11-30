@@ -23,6 +23,8 @@
     android:fitsSystemWindows="false"
     android:animateLayoutChanges="true"
     android:baselineAligned="false"
+    android:clipChildren="false"
+    android:clipToPadding="false"
     tools:context=".OverlayServiceCommon"
     android:onClick="doHide" >
 

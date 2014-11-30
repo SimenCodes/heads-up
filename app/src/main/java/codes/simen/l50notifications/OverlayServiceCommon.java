@@ -545,7 +545,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
                 // Init swipe listener
                 final SwipeDismissTouchListener dismissTouchListener = new SwipeDismissTouchListener(
-                        self, new SwipeDismissTouchListener.DismissCallbacks() {
+                        self, position == 2 || position == 1, new SwipeDismissTouchListener.DismissCallbacks() {
                     @Override
                     public boolean canDismiss() {
                         return true;
@@ -583,6 +583,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     @Override
                     public void outside() {
                         if (preferences.getBoolean("close_on_outside_touch", false))
+                            doFinish(0);
+                        if (isLocked && !isLocked())
                             doFinish(0);
                     }
                 }

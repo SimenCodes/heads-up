@@ -2,6 +2,8 @@
 With this app, any device can get the heads-up notifications introduced in the new Android 5.0 “L Developer Preview”, no root required. And the popups actually look like those in Android L.
 But according to Addictivetips (and a lot of the users), this app “has done more than just replicate a feature of Android L. Even if you aren’t dying to try Android L and some of its new features, this app is worth a try“.
 
+*Looking for help? Scroll down to "Common Issues"*
+
 ## Features ##
 - Displays notifications as a floating popup
 - Easily control which notifications to display
@@ -40,8 +42,8 @@ I ran a poll on my [website](http://simen.codes/stuff/future-of-heads-up/) a whi
 - The remaining users opted for something else, or keeping the app as it is.
 
 
-##Common issues##
-####If no popups appear:####
+## Common issues ##
+#### If no popups appear: ####
 *The universal problemsolver list, fixes 90% of support requests*
 - Make sure the service actually is running. Does it show up under System Settings > Apps > Running?
 - If not, reboot the phone. Does that help?
@@ -50,7 +52,7 @@ I ran a poll on my [website](http://simen.codes/stuff/future-of-heads-up/) a whi
 - Allow more priority levels in the settings.
 - Some phones block Heads-up from displaying popups. Check that "draw on top" or "display popups" is enabled in System Settings > Apps > Heads-up.
 
-####Huawei, XIAOMI, ZTE and MIUI users:####
+#### Huawei, XIAOMI, ZTE and MIUI users: ####
 Before you can use this app, you\'ll probably need to give it some slack when it comes to security.
 
 1. Go to System Settings > All > Apps > Downloaded > Heads-up notifications.
@@ -60,16 +62,16 @@ Before you can use this app, you\'ll probably need to give it some slack when it
 
 *It might also be necessary to reset the app data/settings.*
 
-####Device talking?####
+#### Device talking? ####
 This is a bug in Samsung's firmware. See post on my [website](http://simen.codes/stuff/samsung-phone-talking/)
 
-####Uninstalling:####
+#### Uninstalling: ####
 If you find that the uninstall button is disabled, go to Settings > Security > Device administrators > Heads-up, and tap Disable.
 
-####Something else?####
+#### Something else? ####
 Something I haven't covered here? I answer all kinds questions in the [issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue).
 If your question hasn't been answered there already, feel free to ask!
 *PS: Let me know that you've tried the steps here when asking qustions. If you don't, the first thing you'll get is a link to this list.*
 
-##Contact##
+## Contact ##
 Problems, feature requests or questions? Go to the [Issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue). You can also [email](mailto:sb@simen.codes) me, but I'm slower to answer emails.

@@ -18,3 +18,4 @@
 
 -keep class codes.simen.l50notifications.ui.SettingsActivity { *; }
 -keep class codes.simen.l50notifications.ui.SettingsActivity** { *; }
+-keep class codes.simen.l50notifications.OverlayServiceCommon { *; }

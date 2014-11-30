@@ -41,7 +41,7 @@ import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
-import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 /**
  * A {@link android.view.View.OnTouchListener} that makes any {@link android.view.View} dismissable when the
@@ -96,6 +96,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
     private VelocityTracker mVelocityTracker;
     private float mTranslationX;
     private float mTranslationY;
+    private boolean mIsTop;
 
     /**
      * The callback interface used by {@link SwipeDismissTouchListener} to inform its client
@@ -126,9 +127,11 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
     /**
      * Constructs a new swipe-to-dismiss touch listener for the given view.
      * @param view     The view to make dismissable.
+     * @param isTop     Whether the view is in the top position.
+     *                  If it is, we'll use a dirty hack to remove the "invisible line".
      * @param callbacks The callback to trigger when the user has indicated that she would like to
      */
-    public SwipeDismissTouchListener(View view, DismissCallbacks callbacks) {
+    public SwipeDismissTouchListener(View view, boolean isTop, DismissCallbacks callbacks) {
         ViewConfiguration vc = ViewConfiguration.get(view.getContext());
         mSlop = vc.getScaledTouchSlop();
         mMinFlingVelocity = vc.getScaledMinimumFlingVelocity() * 4;
@@ -136,6 +139,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
         mAnimationTime = view.getContext().getResources().getInteger(
                 android.R.integer.config_shortAnimTime);
         mView = view;
+        mIsTop = isTop;
         mToken = null;
         mCallbacks = callbacks;
     }
@@ -161,6 +165,12 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                 if (mCallbacks.canDismiss()) {
                     mVelocityTracker = VelocityTracker.obtain();
                     mVelocityTracker.addMovement(motionEvent);
+
+                    if (mIsTop) {
+                        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) mView.getLayoutParams();
+                        layoutParams.setMargins(0, 0, 0, 200);
+                        mView.setLayoutParams(layoutParams);
+                    }
                 }
                 return false;
             }
@@ -229,6 +239,10 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                             .setListener(new AnimatorListenerAdapter() {
                                 @Override
                                 public void onAnimationEnd(Animator animation) {
+                                    FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) mView.getLayoutParams();
+                                    layoutParams.setMargins(0,0,0,0);
+                                    mView.setLayoutParams(layoutParams);
+
                                     if (finalDismissDown)     performDismiss(DIRECTION_DOWN);
                                     else                      performDismiss(DIRECTION_UP);
                                 }
@@ -240,7 +254,14 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                             .translationY(0)
                             .alpha(1)
                             .setDuration(mAnimationTime)
-                            .setListener(null);
+                            .setListener(new AnimatorListenerAdapter() {
+                                @Override
+                                public void onAnimationEnd(Animator animation) {
+                                    FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) mView.getLayoutParams();
+                                    layoutParams.setMargins(0,0,0,0);
+                                    mView.setLayoutParams(layoutParams);
+                                }
+                            });
                 }
                 mVelocityTracker.recycle();
                 mVelocityTracker = null;
@@ -250,6 +271,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                 mDownY = 0;
                 mSwiping = false;
                 mSwipingVertical = false;
+
                 break;
             }
 
@@ -263,7 +285,14 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                         .translationY(0)
                         .alpha(1)
                         .setDuration(mAnimationTime)
-                        .setListener(null);
+                        .setListener(new AnimatorListenerAdapter() {
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) mView.getLayoutParams();
+                                layoutParams.setMargins(0,0,0,0);
+                                mView.setLayoutParams(layoutParams);
+                            }
+                        });
 
                 mVelocityTracker.recycle();
                 mVelocityTracker = null;
@@ -366,7 +395,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
         // This triggers layout on each animation frame; in the future we may want to do something
         // smarter and more performant.
 
-        final ViewGroup.LayoutParams lp = mView.getLayoutParams();
+        final FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) mView.getLayoutParams();
         final int originalHeight = mView.getHeight();
 
         ValueAnimator animator = ValueAnimator.ofInt(originalHeight, 1).setDuration(mAnimationTime);
@@ -379,6 +408,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                 mView.setAlpha(1f);
                 mView.setTranslationX(0);
                 lp.height = originalHeight;
+                lp.setMargins(0, 0, 0, 0);
                 mView.setLayoutParams(lp);
             }
         });
