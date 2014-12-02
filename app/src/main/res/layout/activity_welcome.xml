@@ -45,7 +45,6 @@
         android:id="@+id/notification_open"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        style="@android:style/Widget.Holo.Button"
         android:textColor="@android:color/white"
         android:text="@string/welcome_btn_toggleservice"
         android:singleLine="true"
@@ -142,6 +141,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/site_ad"/>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

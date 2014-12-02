@@ -428,7 +428,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                         try {
                             drawable = pm.getApplicationIcon(packageName);
                         } catch (PackageManager.NameNotFoundException | NullPointerException e) {
-                            //reportError(e, "", getApplicationContext());
+                            reportError(e, "", getApplicationContext());
                         }
                     }
                     ImageView smallIconView = themeClass.getSmallIconView(layout);
@@ -450,9 +450,6 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                         bitmap = ThumbnailUtils.extractThumbnail(bitmap, shortestSide, shortestSide, ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
                         themeClass.setIcon( imageView, bitmap, preferences.getBoolean("round_icons", true) );
                     }
-                    //noinspection UnusedAssignment
-                    drawable = null;
-                    bitmap = null;
                 }
             } catch (Exception e) {e.printStackTrace();}
             if (title.equals("")) {
@@ -552,7 +549,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
                     @Override
                     public void onDismiss(View view, Object token, int direction) {
-                        Mlog.v(logTag, "DIR" + direction);
+                        //Mlog.v(logTag, "DIR" + direction);
                         switch (direction) {
                             case SwipeDismissTouchListener.DIRECTION_LEFT:
                             case SwipeDismissTouchListener.DIRECTION_RIGHT:
@@ -710,7 +707,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
                 Mlog.v(logTag, "not locked - removing notification");
             }
-            if (themeClass.getRootView(layout).getTranslationX() != 0) {
+            final ViewGroup rootView = themeClass.getRootView(layout);
+            if (rootView.getTranslationX() != 0 || rootView.getTranslationY() != 0) {
                 handler.postDelayed(closeTimer, displayTime);
                 return; // Stop if we're currently swiping.
             }
@@ -732,7 +730,9 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     }
 
     public void onPopupClick(View v) {
-        if (themeClass.getRootView(layout).getTranslationX() != 0) return; // Stop if we're currently swiping. Bug 0000034
+        final ViewGroup rootView = themeClass.getRootView(layout);
+        if (rootView.getTranslationX() != 0 || rootView.getTranslationY() != 0)
+            return; // Stop if we're currently swiping. Bug 0000034
 
         if (!expand()) openIntent(pendingIntent, false);
     }
@@ -858,8 +858,6 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 ViewPropertyAnimator animator = self.animate()
                         .setDuration(300)
                         .alpha(0.0f)
-                        .scaleX(0.8f)
-                        .scaleY(0.8f)
                         .setListener(new AnimatorListenerAdapter() {
                             @Override
                             public void onAnimationEnd(Animator animation) {

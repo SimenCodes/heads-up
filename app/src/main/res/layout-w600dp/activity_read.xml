@@ -14,20 +14,21 @@
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/notificationbg"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:fitsSystemWindows="false"
     android:baselineAligned="false"
-    android:onClick="doHide"
+    android:clipChildren="false"
+    android:clipToPadding="false"
     android:clickable="false">
 
-        <ViewStub
-            android:layout_width="420dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/viewStub" />
+    <ViewStub
+        android:layout_width="420dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/viewStub" />
 
-</LinearLayout>
+</FrameLayout>

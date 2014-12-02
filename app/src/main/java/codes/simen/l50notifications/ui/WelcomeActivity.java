@@ -153,7 +153,7 @@ public class WelcomeActivity extends Activity {
         }/**/
         intent.putExtra("icon", R.drawable.ic_stat_headsup);
 
-        intent.putExtra("actionCount", 2);
+        intent.putExtra("actionCount", 1);
         intent.putExtra("action1title", getString(R.string.action_settings));
         intent.putExtra("action1icon", R.drawable.ic_action_settings);
         intent.putExtra("action1intent", PendingIntent.getActivity(this, 0,

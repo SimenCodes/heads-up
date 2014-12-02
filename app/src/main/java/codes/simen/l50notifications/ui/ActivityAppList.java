@@ -100,7 +100,7 @@ public class ActivityAppList extends ListActivity {
             //finish();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(), "CNF " + e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "CNFe " + e.getMessage(), Toast.LENGTH_LONG).show();
             blacklisted = new HashSet<String>();
             //finish();
         }

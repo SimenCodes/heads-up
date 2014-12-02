@@ -15,9 +15,8 @@
   -->
 
 <resources>
-    <color name="primary">#238ab6</color>
     
-    <color name="holo_orange_dark">#ff8800</color>
+    <color name="holo_orange_dark">#F57C00</color>
     <color name="notification_ic_background">#0a242e</color>
     <color name="notification_ic_small_background">#a3a3a3</color>
     <color name="notification_btn_text_color">#eee</color>
@@ -35,11 +34,11 @@
     <color name="text_color_light">#FFFFFF</color>
     <color name="error_highlight_text">#ffcc0000</color>
 
-    <color name="holo_blue_dark">#ff0099cc</color>
-    <color name="holo_blue_darker">#ff0088bb</color>
-    <color name="holo_blue_darkest">#ff0077aa</color>
+    <color name="primary">#2196F3</color>
+    <color name="primaryDark">#1E88E5</color>
+    <color name="primaryDarker">#1976D2</color>
 
-    <color name="holo_green_dark">#ff669900</color>
-    <color name="holo_green_darker">#ff558800</color>
-    <color name="holo_green_darkest">#ff447700</color>
+    <color name="holo_green_dark">#4CAF50</color>
+    <color name="holo_green_darker">#43A047</color>
+    <color name="holo_green_darkest">#388E3C</color>
 </resources>

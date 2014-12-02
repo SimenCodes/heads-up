@@ -57,11 +57,11 @@
         android:visibility="gone"/>
 
     <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="fill_parent"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/progressBar"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
         android:indeterminate="true" />
 
     <ListView
