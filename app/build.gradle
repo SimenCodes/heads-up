@@ -32,7 +32,7 @@ android {
         applicationId "codes.simen.l50notifications"
         minSdkVersion 11
         targetSdkVersion 21
-        versionCode 47
+        versionCode 48
         versionName '1.9.1'
     }
     buildTypes {
@@ -77,5 +77,5 @@ tasks.whenTaskAdded { theTask ->
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.0'
+    compile 'com.android.support:appcompat-v7:21.0.2'
 }

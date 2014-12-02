@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
   ~ This program is free software: you can redistribute it and/or modify
   ~     it under the terms of the GNU General Public License as published by
@@ -15,7 +14,10 @@
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <Preference
-        android:title="v48 - 1.9.1" />
-</PreferenceScreen>
+<resources>
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:colorAccent">@color/primaryDark</item>
+    </style>
+</resources>
