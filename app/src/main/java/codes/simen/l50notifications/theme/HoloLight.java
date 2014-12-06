@@ -42,7 +42,15 @@ public class HoloLight extends ThemeClass {
     public HoloLight(){super();}
 
     @Override
+    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons) {
+        super.setIcon(imageView, bitmap, round_icons);
+        if (round_icons)
+            imageView.setBackgroundResource(R.drawable.circle_grey);
+    }
+
+    @Override
     public void addActionButton(ViewGroup actionButtons, String actionTitle, Drawable icon, View.OnClickListener clickListener, float fontMultiplier) {
+
         LayoutInflater inflater = LayoutInflater.from(actionButtons.getContext());
         ViewGroup v = (ViewGroup) inflater.inflate(
                 R.layout.button_notification, actionButtons);
@@ -52,21 +60,10 @@ public class HoloLight extends ThemeClass {
         button.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontMultiplier * button.getTextSize());
         button.setTextColor(Color.BLACK);
         if (icon != null) {
-            icon.mutate().setColorFilter(Color.DKGRAY, PorterDuff.Mode.MULTIPLY);
+            icon.mutate().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
             button.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null);
         }
         button.setOnClickListener(clickListener);
-    }
-
-    /*
-     Set the notification icon from a bitmap.
-     */
-    @Override
-    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons) {
-        if (bitmap == null) return;
-        if (round_icons) {
-            imageView.setBackgroundResource(R.drawable.circle_grey);
-        }
     }
 
     @Override

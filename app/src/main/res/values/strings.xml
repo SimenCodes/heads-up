@@ -152,5 +152,7 @@ For details regarding problems and missing strings in your translation, see http
     <string name="pref_dismiss_keyguard_desc">Automatically unlock the phone when you open a notification.\nWARNING! This will allow ANYONE to unlock your phone, regardless of your security settings.\nThis is also deprecated in Android, and may not work properly.</string>
     <string name="pref_broadcast_notifications">Broadcast notifications</string>
     <string name="pref_broadcast_notifications_desc">Give my other apps access to your notifications. This will reduce RAM usage if you use an app like Voiceify. Keep it off unless one of my apps ask you to enable it.</string>
+    <string name="title_broadcast_request">Notification access</string>
+    <string name="content_broadcast_request">This will give %s access to your notifications. Are you sure this is what you want?</string>
 
 </resources>

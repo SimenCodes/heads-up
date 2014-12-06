@@ -71,13 +71,13 @@ public class WelcomeActivity extends Activity {
         //TextView status = (TextView) findViewById(R.id.status);
         Button enableButton = (Button) findViewById(R.id.notification_open);
         if (
-                ( Build.VERSION.SDK_INT >= 18 && isNotificationListenerEnabled() )
+                ( Build.VERSION.SDK_INT >= 18 && isNotificationListenerEnabled(this) )
                 || isAccessibilityEnabled()
         ) {
             //status.setVisibility(View.VISIBLE);
             enableButton.setBackgroundResource(R.drawable.button_enable_on);
             checkEnabled();
-            if (( Build.VERSION.SDK_INT >= 18 && isNotificationListenerEnabled() )
+            if (( Build.VERSION.SDK_INT >= 18 && isNotificationListenerEnabled(this) )
                     && isAccessibilityEnabled() ) {
                 final View bothEnabled = findViewById(R.id.bothEnabled);
                 bothEnabled.setVisibility(View.VISIBLE);
@@ -219,7 +219,7 @@ public class WelcomeActivity extends Activity {
     void gotoNotifyservice() {
         try {
             Intent intent = new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS");
-            if (isNotificationListenerEnabled())
+            if (isNotificationListenerEnabled(this))
                 startActivity(intent);
             else
                 startActivityForResult(intent, REQUEST_CODE);
@@ -291,8 +291,7 @@ public class WelcomeActivity extends Activity {
         return false;
     }
 
-    boolean isNotificationListenerEnabled() {
-        Context context = getApplicationContext();
+    public static boolean isNotificationListenerEnabled(Context context) {
         try {
             //noinspection ConstantConditions
             ContentResolver contentResolver = context.getContentResolver();

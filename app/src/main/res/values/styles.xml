@@ -16,9 +16,9 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="@android:style/Theme.Holo.Light">
-        <!-- Customize your theme here. -->
-    </style>
+    <style name="AppTheme" parent="@android:style/Theme.Holo.Light"/>
+
+    <style name="Dialog" parent="@android:style/Theme.Holo.Light.Dialog"/>
 
     <style name="ReadTheme.Transparent" parent="@style/AppTheme">
         <item name="android:windowIsTranslucent">true</item>

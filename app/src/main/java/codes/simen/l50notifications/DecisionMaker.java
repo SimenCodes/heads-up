@@ -233,7 +233,7 @@ class DecisionMaker {
         if (preferences != null && preferences.getBoolean("broadcast_notifications", false)) {
             Mlog.d(logTag, "broadcast");
             context.sendBroadcast(
-                    new Intent(ACTION_ADD).putExtras(intent.getExtras()),
+                    new Intent(ACTION_ADD).putExtras(intent.getExtras()).putExtra("priority",notification.priority),
                     "codes.simen.permission.NOTIFICATIONS");
         }
 
