@@ -122,7 +122,7 @@ public class NotificationListenerAccessibilityService extends AccessibilityServi
                 intent.putExtra("text", getString(R.string.intro_warning_both_services));
             else {
                 final String str = getString(R.string.accessibility_desc);
-                intent.putExtra("text", str.substring(str.lastIndexOf("\n")+1));
+                intent.putExtra("text", str.substring(str.lastIndexOf("\n") + 1));
             }
             intent.putExtra("action", PendingIntent.getActivity(getApplicationContext(), 0, new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS), 0));
 

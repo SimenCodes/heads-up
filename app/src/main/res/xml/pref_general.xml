@@ -57,8 +57,8 @@
 
     <CheckBoxPreference
         android:key="broadcast_notifications"
-        android:title="Broadcast notifications"
-        android:summary="Give my other apps access to your notifications. This will conserve battery when using plugins."
+        android:title="@string/pref_broadcast_notifications"
+        android:summary="@string/pref_broadcast_notifications_desc"
         android:defaultValue="false"
         />
 

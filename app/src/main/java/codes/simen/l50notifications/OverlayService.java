@@ -30,39 +30,6 @@ import codes.simen.l50notifications.util.Mlog;
 public class OverlayService extends OverlayServiceCommon {
     private int onBindAction = 0; // 0=nothing, 1=remove, 2=check existence
 
-    private Intent mIntent;
-    private int mFlags;
-    private int mStartId;
-
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        if (intent.getAction().equals(ReminderService.ACTION_REMIND)) {
-            Mlog.d(logTag, "Reminder");
-            packageName = intent.getStringExtra("packageName");
-            tag = intent.getStringExtra("tag");
-            id = intent.getIntExtra("id", 0);
-
-            Mlog.d(packageName, tag + " " + id);
-
-            mIntent = intent;
-            mFlags = flags;
-            mStartId = startId;
-
-            onBindAction = 2;
-            Intent listenerIntent = new Intent(this, NotificationListenerService.class);
-            listenerIntent.setAction(NotificationListenerService.ACTION_CUSTOM);
-            bindService(listenerIntent, mConnection, BIND_AUTO_CREATE);
-
-            return START_NOT_STICKY;
-        } else {
-            return super.onStartCommand(intent, flags, startId);
-        }
-    }
-
-    public void commonStartCommand(Intent intent, int flags, int startId) {
-        super.onStartCommand(intent, flags, startId);
-    }
-
     @Override
     public void doDismiss (boolean mStopNow) {
         Mlog.d(logTag, packageName + tag + id);
@@ -90,15 +57,6 @@ public class OverlayService extends OverlayServiceCommon {
                     unbindService(mConnection);
                     stopSelf();
                     break;
-                case 2:
-                    if (listenerService.isNotificationValid(packageName, tag, id)) {
-                        Mlog.d(logTag, "Still valid");
-                        commonStartCommand(mIntent, mFlags, mStartId);
-                    } else {
-                        Mlog.d(logTag, "NOT valid");
-                        stopSelf();
-                    }
-                    unbindService(mConnection);
             }
 
         }

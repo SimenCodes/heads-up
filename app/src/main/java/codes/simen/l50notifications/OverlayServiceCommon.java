@@ -556,8 +556,6 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                                 if (preferences.getBoolean("dismiss_on_swipe", true)) doFinish(1);
                                 else                                                  doFinish(0);
                                 break;
-                            case SwipeDismissTouchListener.DIRECTION_UP_TIMER:
-                                setTimer(extras);
                             case SwipeDismissTouchListener.DIRECTION_UP:
                                 doFinish(0);
                                 break;
@@ -649,13 +647,6 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         }
 
         return START_NOT_STICKY;
-    }
-
-    void setTimer(Bundle extras) {
-        Intent intent = new Intent(getApplicationContext(), ReminderService.class);
-        intent.setAction(ReminderService.ACTION_REMIND);
-        intent.putExtras(extras);
-        startService(intent);
     }
 
     private static Bitmap drawableToBitmap(Drawable drawable) {

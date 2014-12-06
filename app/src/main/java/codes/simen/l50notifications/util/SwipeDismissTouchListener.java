@@ -70,7 +70,6 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
     public static final int DIRECTION_RIGHT = 1;
     public static final int DIRECTION_UP    = 2;
     public static final int DIRECTION_DOWN  = 3;
-    public static final int DIRECTION_UP_TIMER = 4;
 
     // Cached ViewConfiguration and system-wide constant values
     private final int mSlop;

@@ -152,7 +152,7 @@ class VoiceOver {
             decideIntent.setPackage(intent.getPackage());
             decideIntent.setAction(Intent.ACTION_VIEW);
 
-            decideIntent.putExtra("icon", R.drawable.abc_ic_voice_search_api_mtrl_alpha);
+            decideIntent.putExtra("icon", R.drawable.ic_av_radio);
             context.startService(decideIntent);
             Mlog.d(logTag, "started");
 
