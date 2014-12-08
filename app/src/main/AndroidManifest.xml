@@ -162,6 +162,27 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui.LLandActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="codes.simen.l50notifications.LLAND" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            </activity>
+
+        <activity-alias
+            android:name=".ui.LLandActivitySys"
+            android:label="LLand"
+            android:icon="@drawable/pop_vortex2"
+            android:targetActivity=".ui.LLandActivity"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.android.internal.category.PLATLOGO" />
+            </intent-filter>
+        </activity-alias>
     </application>
 
 </manifest>

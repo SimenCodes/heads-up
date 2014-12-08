@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+~ This program is free software: you can redistribute it and/or modify
+~ it under the terms of the GNU General Public License as published by
+~ the Free Software Foundation, either version 3 of the License, or
+~ (at your option) any later version.
+~
+~ This program is distributed in the hope that it will be useful,
+~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+~ GNU General Public License for more details.
+~
+~ You should have received a copy of the GNU General Public License
+~ along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+    <!--
+    Hi!, thank you for wanting to help translate Heads-up!
+    To begin, download this file to your computer. When you're finished translating, email your file to sb@simen.codes. Please include the word 'translation' in the subject line, as this puts your email in my priority inbox.
+    After receiving the translation, I'll send you a testing APK containing your translation.
+    For details regarding problems and missing strings in your translation, see http://app.simen.codes/dev/translation/heads-up/ I update this document every time I receive a translation.
+    -->
+    <string name="app_name">Heads-up notifications</string>
+    <string name="app_icon_name">Heads-up</string>
+    <string name="title_activity_welcome">Heads-up notifications</string>
+    <string name="action_settings">Pengaturan</string>
+    <string name="reader_btn_open">Buka</string>
+    <string name="reader_btn_dismiss">Abaikan</string>
+    <string name="intro_desc">Ketuk tombol dibawah untuk mengaktifkan atau mematikan heads-up notifications.</string>
+    <string name="welcome_btn_toggleservice">Nyalakan heads-up</string>
+    <string name="intro_warning_miui">Apakah anda menggunakan MIUI? Sebelum anda dapat menggunakan aplikasi ini, anda mungkin harus memberinya beberapa kekenduran untuk keamanan.\n1. Pergi ke Pengaturan Sistem > Semua > Aplikas > Diunduh > Heads-up notifications.\n2. Nyalakan tombol yang berbunyi \'Tampilkan popup\' (opsi kedua).\n3. Di bawah, pergi ke \'Atur izin\'.\n4. Atur \'Saya mempercayai aplikasi ini\' untuk menyalakan. </string>
+    <string name="site_ad">Suka apa yang anda lihat? Lihatlah aplikasi saya yang lainnya:</string>
+    <string name="site_ad_link">Kunjungi Simen.codes</string>
+    <string name="title_activity_app_list">Filter aplikasi</string>
+    <string name="pref_priority_title">Prioritas pemberitahuan</string>
+    <string name="pref_priority_summary">Filter pemberitahuan berdasarkan prioritasnya.\nMemerlukan Android 4.1</string>
+    <string name="applist_desc">Hapus centang pada aplikasi untuk mematikan pemberitahuannya. Anda juga dapat mengetuk dan menahan tombol X di heads-up untuk mematikan pemberitahuan aplikasi.</string>
+    <string name="blocklist_desc">Centang aplikasi agar heads-up tidak mengganggu anda ketika anda menggunakannya.</string>
+    <string name="blocked_confirmation">Aplikasi terblokir</string>
+    <string name="pref_header_style">Style</string>
+    <string name="pref_lock_screen_on">Munculkan di layar kunci</string>
+    <string name="pref_lock_screen_on_desc">Munculkan heads-up di layar kunci.</string>
+    <!-- Translators: Please add a note in the next lines asking users to write in English. -->
+    <string name="bug_report_request">Jika aplikasi telah berbuat tidak pantas, ketuk disini untuk melaporkan masalah. Anda tidak harus melakukan sesuatu jika aplikasi ini bekerja dengan normal. Tolong tulis dengan bahasa inggris.\n\n</string>
+    <string name="pref_overlay_display_time">Durasi tampak</string>
+    <string name="pref_overlay_time_max">Sampai saya mengabaikannya</string>
+    <string name="title_activity_settings">Pengaturan</string>
+    <string name="pref_header_general">Pemfilteran</string>
+    <string-array name="priorityLevel">
+        <item name="MAX">Kritis dan mendesak (Panggilan tak terjawab, petunjuk jalan, tanda darurat)</item>
+        <item name="HIGH">Penting (Komunikasi, email penting)</item>
+        <item name="NORMAL">Normal (Pemberitahuan dari aplikasi lama)</item>
+        <item name="LOW">Tidak penting (Pembaharuan aplikasi, email sampah)</item>
+        <item name="MIN">Kontekstual dan informasi background (Cuaca, agenda kadaluarsa, anjuran)</item>
+    </string-array>
+    <string name="pref_overlay_display_time_counter"><xliff:g id="time" example="7">%s</xliff:g> detik</string>
+    <string name="pref_top_margin">Posisi popup saat perangkat terbuka</string>
+    <string name="pref_turn_screen_on">Nyalakan layar</string>
+    <string name="pref_turn_screen_on_desc">Nyalakan layar saat anda mendapatkan pemberitahuan</string>
+    <string name="pref_opacity">Opasitas</string>
+    <string name="pref_overlay_style">Tema</string>
+    <string name="pref_keep_on_lock_screen">Jaga di layar kunci</string>
+    <string name="pref_keep_on_lock_screen_desc">Jangan tutup pemberitahuan pada layar kunci sampai anda mengabaikannya</string>
+    <string name="pref_dismiss_on_swipe">Abaikan saat digeser</string>
+    <string name="title_activity_noshow_list">Mode \'Don\'t Disturb\'</string>
+    <string name="pref_round_icons">Ikon bulat</string>
+    <string name="pref_round_icons_desc">Gunakan ikon bulat Android L daripada ikon kotak</string>
+    <string name="pref_use_proximity">Deteksi saku</string>
+    <string name="pref_use_proximity_desc">Jangan nyalakan layar saat perangkat di dalam saku atau terbalik kebawah di atas meja.</string>
+    <string name="pref_header_lockscreen">Layar kunci</string>
+    BELUM <string name="pref_block_current_app">Blokir aplikasi yang sedang dijalankan</string>
+    <string name="pref_block_current_app_desc">Jangan tampilkan pemeberitahuan heads-up pada aplikasi yang sedang dijalankan</string>
+    <string name="pref_header_behaviour">Tingkah laku</string>
+    <string name="music_title">Memainkan: <xliff:g id="track" example="TRACK">%s</xliff:g></string>
+    <string name="music_text">Dari: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+    <string name="pref_music_popup">Lagu yang dimainkan</string>
+    <string name="pref_music_popup_desc">Tampilkan informasi lagu saat mengganti lagu.\nCatatan: Tidak semua music player mendukung.</string>
+    <string name="intro_warning_both_services">Akses pemberitahuan dan layanan aksesibilitas diaktifkan. Tolong matikan salah satu.</string>
+    <string name="notification_listener_not_found_detour">Pilih \'Akses pemberitahuan\' dan nyalakan \'Heads-up notifications\'</string>
+    <string name="accessibility_not_found_detour"><![CDATA[Pergi ke \'Aksesibilitas\' > \'Heads-up notifications\']]></string>
+    <string name="accessibility_toast">Pilih \'Heads-up notifications\' untuk menyalakan layanan</string>
+    <string name="pref_floating_window">Buka sebagai \'floating window\'</string>
+    <string name="pref_floating_window_desc">Ketuk dan tahan ikon untuk membuka pemberitahuan sebagai \'floating window\'. Fitur eksperimen, hanya bekerja pada OmniRom dan XHaloFloatingWindow.</string>
+    <string name="pendingintent_cancel_exception">Aplikasi telah membatalkan tindakan</string>
+    <string name="pendingintent_null_exception">Aplikasi tidak menegaskan tindakan apapun</string>
+    <string name="pref_hide_dismiss_button">Sembunyikan tombol abaikan \'X\'</string>
+    <string name="pref_hide_dismiss_button_desc">Semunyikan tombol abaikan dari pemberitahuan</string>
+    <string name="pref_dismiss_keyguard">Buka kunci perangkat</string>
+    <string name="pref_compact_mode">Mode praktis</string>
+    <string name="pref_compact_mode_desc">Hanya tampilkan baris pertama dari pemberitahuan.</string>
+    <string name="pref_font_size">Ukuran huruf</string>
+    <string name="pref_font_size_desc">Atur ukuran huruf di popup</string>
+    <string name="leave_review">Berikan kritik dan saran</string>
+    <string name="pref_header_other">Tentang</string>
+    <string-array name="overlayPosition">
+        <item name="aboveStatus">Atas</item>
+        <item name="top">Dibawah status bar</item>
+        <item name="center">Tengah</item>
+        <item name="bottom">Bawah</item>
+    </string-array>
+    <string-array name="overlayStyles">
+        <item name="l">Android 5.0 \'L\' cerah</item>
+        <item name="ldark">Android 5.0 \'L\' gelap</item>
+        <item name="holo">Cerah polos</item>
+        <item name="holodark">Gelap polos</item>
+        <item name="random">Psychedelic (Acak)</item>
+    </string-array>
+    <!-- Added since 1.7 -->
+    <string name="pref_only_on_lock_screen">Hanya di layar kunci</string>
+    <string name="pref_only_on_lock_screen_desc">Hanya tampilkan popup di layar kunci.</string>
+    <string name="pref_privacy_on_lockscreen">Mode privasi di layar kunci</string>
+    <string name="pref_privacy_on_lockscreen_desc">Jangan tampilkan konten pesan di layar kunci</string>
+    <string name="accessibility_desc">Nyalakan layanan ini untuk menngizinkan Heads-up untuk membaca pemberitahuan anda.\n\nJANGAN nyalakan layanan ini jika perangkat anda menggunakan Android 4.3 atau lebih baru (Ikuti instruksi di dalam aplikasi).</string>
+    <string name="device_admin_disable_warning">Setelah mematikan layanan ini, beberapa fitur di Heads-up mungkin tidak bekerja dengan baik.</string>
+    <string name="title_activity_device_admin_enabler">Nyalakan admin perangkat</string>
+    <string name="pref_device_admin">Layar anda tetap menyala?</string>
+    <!-- Added since 1.8 -->
+    <string name="no_proximity_sensor_error">Tidak ada sensor proximity. Deteksi saku tidak akan bekerja. Tolong jangan laporkan masalah ini.</string>
+    <string name="pref_keep_screen_on_forever">Biarkan layar tetap menyala</string>
+    <string name="pref_keep_screen_on_forever_desc">Setelah menyalakan layar, biarkan layar menyala selama pemberitahuan heads-up tampak.</string>
+    <!-- Added/changed since 1.8.1 -->
+    <string name="action_help">Bantuan!</string>
+    <string name="action_test">Tes</string>
+    <string name="device_admin_enable_explanation">Jika iya, nyalakan layanan ini. Menyalakan ini akan mengizinkan Heads-up untuk mematikan layar anda. Hanya gunakan saat layar tidak mati setelah menampilkan popup di layar kunci, atau jika pendeteksi saku tidak bekerja dengan baik.\n\nPENTING! Anda tidak akan dapat menghapus Heads-up di saat fitur ini menyala.</string>
+    <string name="device_admin_alredy_on">Telah menjadi admin.</string>
+    BELUM <string name="device_admin_not_available">Device provisioning is not enabled. Stopping.</string>
+    <string name="intro_status_on">Layanan sedang menyala. Coba mengirim pesan ke diri anda sendiri.\nJika tidak bekerja, Tolong nyalakan ulang perangkat anda dan coba lagi.\nKetuk disini jika anda memerlukan bantuan</string>
+    <string name="intro_status_on_confirmed">Layanan sedang menyala. Coba mengirim pesan ke diri anda sendiri.\nKetuk disini jika anda memerlukan bantuan.</string>
+    <string name="accessibility_service_blocked">%s telah memblokir Heads-up untuk mengakses pemberitahuan anda. Tolong matikan di menu aksesibilitas.</string>
+    <string name="export_debug_data">Export data debug</string>
+    <!-- Added since 1.8.2 -->
+    <string name="pref_close_on_outside_touch">Tutup jika mengetuk diluar</string>
+    <string name="pref_close_on_outside_touch_desc">Tutup popup jika anda mengetuk di luar area popup heads-up</string>
+    <string name="pref_reminder_delay">Durasi pengingat</string>
+    <string name="pref_reminder_delay_desc">Jika anda menggeser heads-up keatas, Heads-up akan menampilkan itu lagi setelah beberapa menit yang anda masukkan disini. Atur sebagai nol untuk mematikan.\nPERINGATAN: Eksperiman, fitur tidak stabil. Jangan terlalu percaya itu akan bekerja.</string>
+    <string name="pref_reminder_delay_counter">Ingatkan saya kembali setelah <xliff:g id="time" example="7">%s</xliff:g> menit</string>
+    <string name="pref_top_margin_locked">Posisi popup di layar kunci</string>
+    <!-- Note to translators: you don't have to translate the full text, just make sure the user understands that the feature will not work in 5.0 -->
+    <string name="pref_dont_disturb_error">Peringatan: Fitur ini tidak bekerja di Android 5.0.</string>
+    <!-- Changed since 1.9 -->
+    <string name="pref_dismiss_on_swipe_desc">Hilangkan pemberitahuan jika anda menggesernya secara horizontal. Anda tetap dapat mengetuk tombol X untuk mengabaikannya.\nMemerlukan Android 4.3</string>
+    <string name="pref_dismiss_keyguard_desc">Perangkat akan menyala secara otomatis saat anda membuka notifikasi.\nPERINGATAN! Ini akan membiarkan setiap orang untuk membuka perangkat anda, tanpa menghiraukan pengaturan keamanan anda.\nIni juga merupakan kutukan di Android, dan mungkin tidak bekerja dengan baik.</string>
+    <string name="pref_broadcast_notifications">Broadcast pemberitahuan</string>
+    <string name="pref_broadcast_notifications_desc">Izinkan aplikasi saya yang lain untuk mengakses pemberitahuan anda. Ini akan mengurangi penggunaan RAM jika anda menggunakan aplikasi seperti Voiceify. Biarkan tetap mati kecuali salah satu dari aplikasi saya meminta anda untuk menyalakannya.</string>
+    <string name="title_broadcast_request">Akses pemberitahuan</string>
+    <string name="content_broadcast_request">Ini akan memberi %s akses kepada pemberitahuan anda. Apakah anda yakin ini yang anda inginkan?</string>
+</resources>
