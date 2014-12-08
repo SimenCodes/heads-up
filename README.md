@@ -24,7 +24,7 @@ But according to Addictivetips (and a lot of the users), this app “has done mo
 ## So... why is this app on GitHub? ##
 As of now, the app has over 100,000 downloads on the Play store, and a 4.5 average rating. And that's really awesome! Honestly, I never thought this thing would make it past 50 downloads, so I'm still recovering after seeing the statistics page on the Play store.
 
-Unfortunately, I don't have time to work on Heads-up, so I decided to open-source it. I'll keep updating the app every now and then, but I just can't keep up with all those great suggestions for new features. And that's where you come in: if you're a developer, designer, translator, or just "some guy", feel free to download the code, make as many changes as you wish, and be sure to send a pull request when you're finished, so everyone else gets to enjoy your improvements. 
+Unfortunately, I don't have time to work on Heads-up, so I decided to open-source it. I'll keep updating the app every now and then, but I just can't keep up with all those great suggestions for new features. And that's where you come in: if you're a developer, designer, translator, or just "some guy", feel free to download the code, make as many changes as you wish, and be sure to send a pull request when you're finished, so everyone else gets to enjoy your improvements.
 
 ### Popular feature requests ###
 - Answer SMS directly from the popup
@@ -40,6 +40,10 @@ I ran a poll on my [website](http://simen.codes/stuff/future-of-heads-up/) a whi
 - Then, 25% voted for quick reply to messages. While I specified reply to SMS, many asked for the same feature for other apps as well. AFAIK, most other apps doesn't allow this. If you know how to do this, please share!
 - About 10% wanted more advanced theming and customisation. Choosing colors, crating themes, sharing them with friends through the app, etc. Also, some people ask for a separate position on the lock screen.
 - The remaining users opted for something else, or keeping the app as it is.
+
+## Translating ##
+If you speak another language, I'd appreciate if you could help us translate this the app!
+[Go to the Crowdin page](https://crowdin.com/project/heads-up)
 
 
 ## Common issues ##
