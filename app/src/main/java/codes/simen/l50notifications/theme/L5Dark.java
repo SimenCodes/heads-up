@@ -1,5 +1,21 @@
+/*
+ * This program is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package codes.simen.l50notifications.theme;
 
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -9,17 +25,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import codes.simen.l50notifications.R;
 
 /**
- * Created by simen on 17.07.14.
+ * Android L theme
  */
 public class L5Dark extends ThemeClass {
 
     public L5Dark(ViewStub stub) {
         super(stub);
         stub.setLayoutResource(R.layout.activity_read_inner_dark);
+    }
+
+    @Override
+    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons) {
+        super.setIcon(imageView, bitmap, round_icons);
+        if (round_icons)
+            imageView.setBackgroundResource(R.drawable.circle);
     }
 
     @Override

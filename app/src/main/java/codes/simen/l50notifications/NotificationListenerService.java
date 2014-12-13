@@ -1,3 +1,18 @@
+/*
+ * This program is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package codes.simen.l50notifications;
 
 import android.annotation.SuppressLint;
@@ -63,11 +78,16 @@ public class NotificationListenerService extends android.service.notification.No
 
             if (NotificationListenerAccessibilityService.doLoadSettings) doLoadSettings();
 
+            String statusBarNotificationKey = null;
+            if (Build.VERSION.SDK_INT >= 20) statusBarNotificationKey = statusBarNotification.getKey();
+
             DecisionMaker decisionMaker = new DecisionMaker();
+
             decisionMaker.handleActionAdd(statusBarNotification.getNotification(),
                     statusBarNotification.getPackageName(),
                     statusBarNotification.getTag(),
                     statusBarNotification.getId(),
+                    statusBarNotificationKey,
                     getApplicationContext(),
                     "listener");
         } catch (NullPointerException e) {
@@ -134,6 +154,45 @@ public class NotificationListenerService extends android.service.notification.No
                 e2.printStackTrace();
             }
         }
+    }
+
+    public void doRemove (String key) {
+        Mlog.d(logTag, key);
+        try {
+            cancelNotification(key);
+        } catch (SecurityException e) {
+            try {
+                String report = e.getMessage();
+                Writer writer = new StringWriter();
+                PrintWriter printWriter = new PrintWriter(writer);
+                e.printStackTrace(printWriter);
+                report = report.concat( writer.toString() );
+                SharedPreferences.Editor editor =
+                        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit();
+                editor.putString("lastBug", report);
+                editor.apply();
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+    }
+
+    public boolean isNotificationValid(String pkg, String tag, int id) {
+        final StatusBarNotification[] activeNotifications = getActiveNotifications();
+        for (StatusBarNotification statusBarNotification : activeNotifications) {
+            final String statusBarNotificationTag = statusBarNotification.getTag();
+            final String statusBarNotificationPackageName = statusBarNotification.getPackageName();
+            final int statusBarNotificationId = statusBarNotification.getId();
+            if (statusBarNotificationPackageName.equals(pkg)
+                    && statusBarNotificationId == id) {
+                if (tag == null && statusBarNotificationTag == null)
+                    return true;
+                if (tag != null && statusBarNotificationTag != null)
+                    if (statusBarNotificationTag.equals(tag))
+                        return true;
+            }
+        }
+        return false;
     }
 
     /*

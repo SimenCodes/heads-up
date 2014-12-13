@@ -2,6 +2,8 @@
 With this app, any device can get the heads-up notifications introduced in the new Android 5.0 “L Developer Preview”, no root required. And the popups actually look like those in Android L.
 But according to Addictivetips (and a lot of the users), this app “has done more than just replicate a feature of Android L. Even if you aren’t dying to try Android L and some of its new features, this app is worth a try“.
 
+*Looking for help? Scroll down to "Common Issues"*
+
 ## Features ##
 - Displays notifications as a floating popup
 - Easily control which notifications to display
@@ -22,7 +24,7 @@ But according to Addictivetips (and a lot of the users), this app “has done mo
 ## So... why is this app on GitHub? ##
 As of now, the app has over 100,000 downloads on the Play store, and a 4.5 average rating. And that's really awesome! Honestly, I never thought this thing would make it past 50 downloads, so I'm still recovering after seeing the statistics page on the Play store.
 
-Unfortunately, I don't have time to work on Heads-up, so I decided to open-source it. I'll keep updating the app every now and then, but I just can't keep up with all those great suggestions for new features. And that's where you come in: if you're a developer, designer, translator, or just "some guy", feel free to download the code, make as many changes as you wish, and be sure to send a pull request when you're finished, so everyone else gets to enjoy your improvements. 
+Unfortunately, I don't have time to work on Heads-up, so I decided to open-source it. I'll keep updating the app every now and then, but I just can't keep up with all those great suggestions for new features. And that's where you come in: if you're a developer, designer, translator, or just "some guy", feel free to download the code, make as many changes as you wish, and be sure to send a pull request when you're finished, so everyone else gets to enjoy your improvements.
 
 ### Popular feature requests ###
 - Answer SMS directly from the popup
@@ -39,17 +41,44 @@ I ran a poll on my [website](http://simen.codes/stuff/future-of-heads-up/) a whi
 - About 10% wanted more advanced theming and customisation. Choosing colors, crating themes, sharing them with friends through the app, etc. Also, some people ask for a separate position on the lock screen.
 - The remaining users opted for something else, or keeping the app as it is.
 
+## Translating ##
+If you speak another language, I'd appreciate if you could help us translate this the app!
+[Go to the Crowdin page](https://crowdin.com/project/heads-up)
 
-##Common issues##
-####If no popups appear:####
-Please make sure that Heads-up shows up in the list of running services. If it doesn't, make sure you have enabled the service, and then reboot the phone.
-If your device is running Android 4.2 or earlier, and you have other accessibility services running (such as Pushbullet), they might block Heads-up from receiving your notifications. Please try to disable them if Heads-up doesn't work.
 
-####Huawei, XIAOMI and MIUI users:####
-Please allow Heads-up to display popups under Settings > Apps > Downloaded > Heads-up. It might also be necessary to reset the app data/settings.
+## Common issues ##
+#### If no popups appear: ####
+*The universal problemsolver list, fixes 90% of support requests*
+- Make sure the service actually is running. Does it show up under System Settings > Apps > Running?
+- If not, reboot the phone. Does that help?
+- [4.2 and earlier] Do you have any other accessibility services running? Some other services, like Pushbullet, blocks Heads-up from reading notifications.
+- Uninstall the app completely, reboot the phone, and install it again. Make sure you are using the [latest version](https://play.google.com/store/apps/details?id=codes.simen.l50notifications). After enabling the service inside the app, reboot the phone.
+- Allow more priority levels in the settings.
+- Some phones block Heads-up from displaying popups. Check that "draw on top" or "display popups" is enabled in System Settings > Apps > Heads-up.
 
-####Uninstalling:####
+#### Huawei, XIAOMI, ZTE and MIUI users: ####
+Before you can use this app, you\'ll probably need to give it some slack when it comes to security.
+
+1. Go to System Settings > All > Apps > Downloaded > Heads-up notifications.
+2. Toggle the switch that says \'Show popup windows\' (second option).
+3. At the bottom, go to \'Manage permissions\'.
+4. Set \'I trust this app\' to on.
+
+*It might also be necessary to reset the app data/settings.*
+
+#### Device talking? ####
+This is a bug in Samsung's firmware. See post on my [website](http://simen.codes/stuff/samsung-phone-talking/)
+
+#### Uninstalling: ####
 If you find that the uninstall button is disabled, go to Settings > Security > Device administrators > Heads-up, and tap Disable.
 
-##Contact##
-Problems, feature requests or questions? Feel free to contact me at [sb@simen.codes](mailto:sb@simen.codes), or open an issue on [GitHub](https://github.com/SimenCodes/heads-up/issues/).
+#### Something else? ####
+Something I haven't covered here? I answer all kinds questions in the [issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue).
+If your question hasn't been answered there already, feel free to ask!
+*PS: Let me know that you've tried the steps here when asking qustions. If you don't, the first thing you'll get is a link to this list.*
+
+## Contact ##
+Problems, feature requests or questions? Go to the [Issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue). You can also [email](mailto:sb@simen.codes) me, but I'm slower to answer emails.
+
+*PS: Want to try the newest version before everyone else? [Download the very latest build here](http://app.simen.codes/dev/translation/heads-up/testing.apk).
+Please note that it might not work at all, and you have to check for updates manually*

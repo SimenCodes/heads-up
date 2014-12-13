@@ -1,3 +1,18 @@
+/*
+ * This program is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package codes.simen.l50notifications;
 
 import android.annotation.TargetApi;
@@ -13,7 +28,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
-import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +52,7 @@ import codes.simen.l50notifications.util.ObjectSerializer;
  * An {@link IntentService} subclass for handling asynchronous task requests in
  * a service on a separate handler thread.
  */
-public class DecisionMaker {
+class DecisionMaker {
     public static final String ACTION_ADD = "codes.simen.l50notifications.action.ADD";
     public static final String ACTION_REMOVE = "codes.simen.l50notifications.action.REMOVE";
 
@@ -50,7 +64,7 @@ public class DecisionMaker {
 
     public static final String logTag = "DecisionMaker";
 
-    public void handleActionAdd(Notification notification, String packageName, String tag, int id, Context context, String src) {
+    public void handleActionAdd(Notification notification, String packageName, String tag, int id, String key, Context context, String src) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
         // Package filter
@@ -84,39 +98,88 @@ public class DecisionMaker {
             }
         }
 
-        // Get the text
-        List<String> texts = null;
-        try {
-            texts = getText(notification);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        if (texts == null) {
-            return;
-        }
+        String title = null;
         String text = null;
-        if (texts.size() > 1) {
-            Mlog.d(logTag, texts.toString());
-            text = texts.get(1);
+
+
+        // Get the text
+        if (Build.VERSION.SDK_INT >= 21) {
+            // Uncomment to test which extras a given notification contains
+            /*for (String extraKey : notification.extras.keySet()) {
+                Mlog.d(logTag, extraKey + "=" + notification.extras.get(extraKey));
+            }*/
+            title = notification.extras.getString("android.title");
+            text = notification.extras.get("android.text").toString();
+
+            String bigText = null;
+            try {
+                bigText = notification.extras.get("android.bigText").toString();
+            } catch (Exception ignored) {}
+
+            if (bigText != null && bigText.length() > 3) {
+                text = bigText;
+            }
+        } else {
+            // Old, hacky way. Close your eyes and skip this section.
+            List<String> texts = null;
+            try {
+                texts = getText(notification);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            if (texts == null) {
+                return;
+            }
+            if (texts.size() > 1) {
+                Mlog.d(logTag, texts.toString());
+                text = texts.get(1);
+            }
+            if (text == null)
+                text = String.valueOf(notification.tickerText);
+            if (texts.size() == 0)
+                texts.add(text);
+            if (text == null || text.equals("null"))
+                return;
+
+            title = texts.get(0);
+
+
+            // Get the full content in older Android versions. Really ugly.
+            if (Build.VERSION.SDK_INT >= 16) {
+                if (notification.bigContentView != null) {
+                    try {
+                        Mlog.d(logTag, "bigView");
+                        final String fullContent = fullContent(notification, context, texts, text);
+                        if (fullContent != null) text = fullContent;
+                    } catch (Resources.NotFoundException ignored) {
+                    } catch (RuntimeException rte) {
+                        try {
+                            Looper.prepareMainLooper();
+                        } catch (IllegalStateException ilse) {
+                            try {
+                                fullContent(notification, context, texts, text);
+                                final String fullContent = fullContent(notification, context, texts, text);
+                                if (fullContent != null) text = fullContent;
+                                // Ignore all errors, we'll survive without the full notification
+                            } catch (Exception ignored) {}
+                        }
+                    }
+                }
+            }
         }
-        if (text == null)
-            text = String.valueOf(notification.tickerText);
-        if (texts.size() == 0)
-            texts.add(text);
-        if ( text == null || text.equals("null") )
-            return;
 
 
         // Make an intent
         Intent intent = new Intent();
-        intent.setAction("ADD");
+        intent.setAction(ACTION_ADD);
 
         if ("listener".equals(src)) intent.setClass(context, OverlayService.class);
         else                        intent.setClass(context, OverlayServiceCommon.class);
 
+        Mlog.d(title, text);
 
         intent.putExtra("packageName", packageName);
-        intent.putExtra("title", texts.get(0));
+        intent.putExtra("title", title);
         intent.putExtra("text", text);
         intent.putExtra("action", notification.contentIntent);
 
@@ -126,9 +189,10 @@ public class DecisionMaker {
 
         intent.putExtra("tag", tag);
         intent.putExtra("id", id);
+        intent.putExtra("key", key);
 
 
-        if (Build.VERSION.SDK_INT >= 16) {
+        if (Build.VERSION.SDK_INT >= 19) {
             try {
                 Notification.Action[] actions = notification.actions;
                 if (actions != null) {
@@ -138,7 +202,7 @@ public class DecisionMaker {
                     int i = actions.length;
                     for (Notification.Action action : actions) {
                         if (i < 0) break; //No infinite loops, has happened once
-                        Mlog.d(logTag, (String) action.title);
+                        Mlog.d(logTag, action.title);
                         intent.putExtra("action" + i + "icon", action.icon);
                         intent.putExtra("action" + i + "title", action.title);
                         intent.putExtra("action" + i + "intent", action.actionIntent);
@@ -164,25 +228,13 @@ public class DecisionMaker {
                     e1.printStackTrace();
                 }
             }
+        }
 
-            // Full content
-            if (notification.bigContentView != null) {
-                try {
-                    Mlog.d(logTag, "bigView");
-                    fullContent(notification, context, texts, text, intent);
-                } catch (Resources.NotFoundException rnfe) {
-                } catch (RuntimeException rte) {
-                    try {
-                        Looper.prepareMainLooper();
-                    } catch (IllegalStateException ilse) {
-                        try {
-                            fullContent(notification, context, texts, text, intent);
-                        } catch (Resources.NotFoundException rnfe) {
-                        } catch (InflateException ifle) {
-                        } catch (RuntimeException rte2) {rte2.printStackTrace();}
-                    }
-                }
-            }
+        if (preferences != null && preferences.getBoolean("broadcast_notifications", false)) {
+            Mlog.d(logTag, "broadcast");
+            context.sendBroadcast(
+                    new Intent(ACTION_ADD).putExtras(intent.getExtras()).putExtra("priority",notification.priority),
+                    "codes.simen.permission.NOTIFICATIONS");
         }
 
         intent.addFlags(
@@ -195,7 +247,7 @@ public class DecisionMaker {
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-    private void fullContent(Notification notification, Context context, List<String> texts, String text, Intent intent) {
+    private String fullContent(Notification notification, Context context, List<String> texts, String text) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         ViewGroup localView = (ViewGroup) inflater.inflate(notification.bigContentView.getLayoutId(), null);
         notification.bigContentView.reapply(context.getApplicationContext(), localView);
@@ -231,8 +283,9 @@ public class DecisionMaker {
             if (viewTexts.startsWith("\n"))
                 viewTexts = viewTexts.substring("\n".length());
             Mlog.d(logTag, viewTexts);
-            intent.putExtra("text", viewTexts.substring(0, viewTexts.length() - 1));
+            return viewTexts.substring(0, viewTexts.length() - 1);
         }
+        return null;
     }
 
     public void handleActionRemove(String packageName, String tag, int id, Context applicationContext) {
@@ -248,7 +301,7 @@ public class DecisionMaker {
         applicationContext.startService(intent);
     }
 
-    public static List<String> getText(Notification notification) {
+    private static List<String> getText(Notification notification) {
         RemoteViews contentView = notification.contentView;
         /*if (Build.VERSION.SDK_INT >= 16) {
             contentView = notification.bigContentView;

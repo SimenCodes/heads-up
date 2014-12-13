@@ -1,3 +1,18 @@
+<!--
+  ~ This program is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     This program is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -26,35 +41,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/notification_open"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@android:color/white"
+        android:text="@string/welcome_btn_toggleservice"
+        android:singleLine="true"
+        android:onClick="onClick"
+        android:layout_margin="5dp"
+        android:background="@drawable/button_enable" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <Button
-            android:id="@+id/notification_open"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            style="@style/Button_Borderless"
-            android:textColor="@android:color/primary_text_light"
-            android:text="@string/welcome_btn_toggleservice"
-            android:singleLine="true"
-            android:onClick="onClick"
-            android:layout_weight="1" />
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
-            android:background="#33333333" />
-
-        <ImageButton
-            android:layout_width="48dp"
-            android:layout_height="match_parent"
+            android:layout_weight="1"
             style="@style/Button_Borderless"
             android:id="@+id/settings_button"
-            android:src="@drawable/ic_action_settings"
-            android:contentDescription="@string/action_settings"
-            android:onClick="doOpenSettings" />
+            android:drawableLeft="@drawable/ic_action_settings"
+            android:text="@string/action_settings"
+            android:onClick="doOpenSettings"
+            android:textAlignment="textStart"
+            android:layout_gravity="start" />
 
         <View
             android:layout_width="1dp"
@@ -63,14 +75,36 @@
             android:layout_marginBottom="12dp"
             android:background="#33333333" />
 
-        <ImageButton
+        <Button
             style="@style/Button_Borderless"
-            android:layout_width="48dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:id="@+id/test_button"
-            android:src="@drawable/ic_play"
-            android:contentDescription="Test"
-            android:onClick="doSendTest" />
+            android:drawableLeft="@drawable/ic_play"
+            android:text="@string/action_test"
+            android:onClick="doSendTest"
+            android:textAlignment="textStart"
+            android:layout_gravity="start" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="#33333333" />
+
+        <Button
+            style="@style/Button_Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/help_button"
+            android:drawableLeft="@drawable/ic_action_help"
+            android:text="@string/action_help"
+            android:onClick="getHelp"
+            android:textAlignment="textStart"
+            android:layout_gravity="start" />
     </LinearLayout>
 
     <TextView
@@ -107,6 +141,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/site_ad"/>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -114,6 +149,17 @@
         android:textColor="@color/notification_btn_text_color_light"
         android:text="@string/site_ad_link"
         android:onClick="doOpenSite"/>
+
+    <Button
+        style="@style/Button_Borderless"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/notification_btn_text_color_light"
+        android:text="@string/export_debug_data"
+        android:onClick="doReport"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal|bottom" />
 
 </LinearLayout>
 </ScrollView>

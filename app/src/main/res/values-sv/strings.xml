@@ -113,6 +113,7 @@ For details regarding problems and missing strings in your translation, see http
         <item name="ldark">Android 5.0 \'L\' mörk</item>
         <item name="holo">Fullt ljust</item>
         <item name="holodark">Fullt mörkt</item>
+        <item name="random">Psychedelic (random)</item>
     </string-array>
     
     <!-- New strings since 1.7 -->

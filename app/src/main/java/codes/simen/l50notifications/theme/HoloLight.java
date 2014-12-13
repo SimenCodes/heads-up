@@ -1,3 +1,18 @@
+/*
+ * This program is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package codes.simen.l50notifications.theme;
 
 import android.graphics.Bitmap;
@@ -14,10 +29,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import codes.simen.l50notifications.R;
-import codes.simen.l50notifications.util.RoundDrawable;
 
 /**
- * Created by simen on 17.07.14.
+ * Dark Holo theme. Useful on slow devices
  */
 public class HoloLight extends ThemeClass {
 
@@ -28,7 +42,15 @@ public class HoloLight extends ThemeClass {
     public HoloLight(){super();}
 
     @Override
+    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons) {
+        super.setIcon(imageView, bitmap, round_icons);
+        if (round_icons)
+            imageView.setBackgroundResource(R.drawable.circle_grey);
+    }
+
+    @Override
     public void addActionButton(ViewGroup actionButtons, String actionTitle, Drawable icon, View.OnClickListener clickListener, float fontMultiplier) {
+
         LayoutInflater inflater = LayoutInflater.from(actionButtons.getContext());
         ViewGroup v = (ViewGroup) inflater.inflate(
                 R.layout.button_notification, actionButtons);
@@ -38,36 +60,10 @@ public class HoloLight extends ThemeClass {
         button.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontMultiplier * button.getTextSize());
         button.setTextColor(Color.BLACK);
         if (icon != null) {
-            icon.mutate().setColorFilter(Color.DKGRAY, PorterDuff.Mode.MULTIPLY);
+            icon.mutate().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
             button.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null);
         }
         button.setOnClickListener(clickListener);
-    }
-
-    /*
-     Set the notification icon from a bitmap.
-     */
-    @Override
-    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons) {
-        if (bitmap == null) return;
-        if (round_icons) {
-            final float width = imageView.getContext().getResources().getDimension(R.dimen.notification_ic_size);
-            //Mlog.v(density, width);
-            //Mlog.v(bitmap.getWidth(), width);
-            if (bitmap.getWidth() >= width) {
-                try {
-                    RoundDrawable roundedDrawable = new RoundDrawable(bitmap);
-                    imageView.setImageDrawable(roundedDrawable);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    imageView.setImageBitmap(bitmap);
-                }
-            } else {
-                imageView.setImageBitmap(bitmap);
-            }
-            imageView.setBackgroundResource(R.drawable.circle_grey);
-        } else
-            imageView.setImageBitmap(bitmap);
     }
 
     @Override

@@ -32,7 +32,7 @@ import codes.simen.l50notifications.util.Mlog;
  * Consider it a weird easter egg.
  */
 public class Random extends HoloDark {
-    ThemeClass subTheme;
+    private ThemeClass subTheme;
 
     public Random(ViewStub stub) {
         super(stub);
