@@ -17,9 +17,8 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <Preference
-        android:title="v49 - 1.9.2">
+        android:title="v50 - 1.9.2">
         <intent android:targetPackage="codes.simen.l50notifications"
-            android:action="codes.simen.l50notifications.LLAND"
-            />
+            android:action="codes.simen.l50notifications.LLAND"/>
     </Preference>
 </PreferenceScreen>

@@ -86,7 +86,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     public static final int MIN_REMINDER_TIME = 6000;
     private static final int MAX_LINES = 12;
     private static final int SENSOR_DELAY_MILLIS = 10000;
-    private static final int MIN_LINES = 3;
+    private static final int MIN_LINES = 2;
     private static final int FLAG_FLOATING_WINDOW = 0x00002000;
     private static final ArrayList<String> LOCKSCREEN_APPS = new ArrayList<String>(Arrays.asList(new String[]{
             "com.achep.acdisplay",

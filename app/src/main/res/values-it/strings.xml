@@ -14,70 +14,126 @@
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<resources
-    xmlns:xliff="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingTranslation">
-    <string name="app_name">Notifiche Heads-up</string>
-    <string name="app_icon_name">Heads-up</string>
-    <string name="title_activity_welcome">Notifiche Heads-up</string>
-    <string name="action_settings">Impostazioni</string>
-    <string name="reader_btn_open">Apri</string>
-    <string name="reader_btn_dismiss">Scarta</string>
-    <string name="intro_desc">Clicca il tasto qui sotto per attivare o disattivare le notifiche heads-up.</string>
-    <string name="welcome_btn_toggleservice">Attiva / Disattiva heads-up</string>
-    <string name="intro_warning_miui">Utilizzi la ROM MIUI? Prima di poter utilizzare quest\'app, dovrai probabilmente seguire questi passaggi per via della troppa sicurezza.\n1. Vai su Impostazioni di sistema > Tutte > Apps > Scaricate > Notifiche Heads-up.\n2. Attiva la seconda opzione \"Mostra finestre popup\".\n3. In basso, vai su \"Gestisci autorizzazioni\".\n 4. Imposta \"Mi fido di quest \'app\" su ON. </string>
-    <string name="site_ad">Ti piace? Visita altre mie app:</string>
-    <string name="site_ad_link">Visita Simen.codes</string>
-    <string name="title_activity_app_list">Filtro applicazioni</string>
-    <string name="pref_priority_title">Priorita\' notifiche</string>
-    <string name="pref_priority_summary">Filtra le notifiche in base alla loro priorità.\nRichiede Android 4.1</string>
-    <string name="applist_desc">Deseleziona un app per silenziarla. Puoi anche tener premuto sul tasto \'Scarta\' nella notifica heads-up dell\'app desiderata per silenziarla.</string>
-    <string name="blocked_confirmation">App bloccata</string>
-    <string name="pref_header_style">Stile</string>
-    <string name="pref_lock_screen_on">Visualizza sulla lockscreen</string>
-    <string name="pref_lock_screen_on_desc">Visualizza le notifiche heads-up sulla schermata di sblocco.</string>
-    <string name="intro_status_on">Il servizio è attivo. Prova inviandoti un messaggio.\nSe non funziona correttamente riavvia il dispositivo e prova di nuovo. Contattami a sb@simen.codes se non riesci a far funzionare l\'app come vorrseti (scrivimi in lingua inglese).</string>
-    <string name="intro_status_on_confirmed">Il servizio è in funzione. Prova inviandoti un messaggio.\n Contattami a sb@simen.codes se non riesci a far funzionare correttamente l\'app (scrivimi in lingua inglese).</string>
-    <!-- Please add a note in the next line asking users to write in English. -->
-    <string name="bug_report_request">Se l\'app non funziona come dovrebbe, clicca qui per segnalare il problema.\n\n</string>
-    <string name="pref_overlay_display_time">Durata visualizzazione heads-up</string>
-    <string name="pref_overlay_time_max">Finche\' non la scarto</string>
-    <string name="title_activity_settings">Impostazioni</string>
-    <string name="pref_header_general">Generale</string>
-    <string-array name="priorityLevel">
-        <item name="MAX">Urgenti (chiamate in arrivo, avvertenze, avvisi d\'emergenza)</item>
-        <item name="HIGH">Importanti (comunicazioni, email importanti)</item>
-        <item name="NORMAL">Normali (+notificate da app vecchie)</item>
-        <item name="LOW">Non importanti (aggiornamenti software, email irrilevanti)</item>
-        <item name="MIN">Informazioni contestuali e di background (meteo, eventi passati, suggerimenti)</item>
-    </string-array>
-    <string name="pref_overlay_display_time_counter">
-        <xliff:g id="time" example="7" >%s</xliff:g> secondi
-    </string>
-		<string name="pref_top_margin">Posizione popup</string>
-    <string name="pref_turn_screen_on">Attiva lo schermo</string>
-    <string name="pref_turn_screen_on_desc">Attiva lo schermo quando si riceve una notifica.</string>
-    <string name="pref_opacity">Opacità</string>
-    <string name="pref_overlay_style">Tema</string>
-    <string name="pref_keep_on_lock_screen">Mantieni sulla lockscreen</string>
-    <string name="pref_keep_on_lock_screen_desc">Mantieni le notifiche sulla lockscreen finchè non le scarti</string>
-    <string name="pref_dismiss_on_swipe">Scarta con swipe</string>
-    <string name="pref_dismiss_on_swipe_desc">Rimuove la notifica dal centro notifiche quando la scarti con uno swipe. (Puoi comunque cliccare sulla X per scartarla dal centro notifiche)</string>
-    <string name="pref_compact_mode">Compact mode</string>
-    <string name="leave_review">Leave review</string>
-    <string-array name="overlayPosition">
-        <item name="aboveStatus">Sopra</item>
-        <item name="top">Below status bar</item>
-        <item name="center">In centro</item>
-        <item name="bottom">Sotto</item>
-    </string-array>
-    <string-array name="overlayStyles">
-        <item name="l">Android 5.0 \"L\" chiaro</item>
-        <item name="ldark">Android 5.0 \"L\" scuro</item>
-        <item name="holo">Holo chiaro</item>
-        <item name="holodark">Holo scuro</item>
-        <item name="random">Psychedelic (random)</item>
-    </string-array>
-</resources>
+<!--Generated by crowdin.com-->
 
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+  <string name="app_name">Notifiche Heads-up</string>
+  <string name="app_icon_name">Heads-up</string>
+  <string name="title_activity_welcome">Notifiche Heads-up</string>
+  <string name="action_settings">Impostazioni</string>
+  <string name="reader_btn_open">Apri</string>
+  <string name="reader_btn_dismiss">Rimuovi</string>
+  <string name="intro_desc">Clicca il tasto qui sotto per attivare o disattivare le notifiche heads-up.</string>
+  <string name="welcome_btn_toggleservice">Attiva / Disattiva heads-up</string>
+  <string name="intro_warning_miui">Utilizzi la ROM MIUI? Prima di poter utilizzare quest\'app, dovrai probabilmente seguire questi passaggi per via della troppa sicurezza.\n1. Vai su Impostazioni di sistema &gt; Tutte &gt; Apps &gt; Scaricate &gt; Notifiche Heads-up.\n2. Attiva la seconda opzione \"Mostra finestre popup\".\n3. In basso, vai su \"Gestisci autorizzazioni\".\n 4. Imposta \"Mi fido di quest \'app\" su ON. </string>
+  <string name="site_ad">Ti piace? Visita le altre mie app:</string>
+  <string name="site_ad_link">Visita Simen.codes</string>
+  <string name="title_activity_app_list">Filtro applicazioni</string>
+  <string name="pref_priority_title">Priorita\' notifiche</string>
+  <string name="pref_priority_summary">Filtra le notifiche in base alla loro priorità.\nRichiede Android 4.1</string>
+  <string name="applist_desc">Deseleziona un\'app per silenziarla. Puoi anche tenere premuto sul tasto \'Rimuovi\' nella notifica heads-up dell\'app desiderata per silenziarla.</string>
+  <string name="blocklist_desc">Selezionare l\'applicazione sulla quale l\'heads-up non interferisce mentre la stai utilizzando.</string>
+  <string name="blocked_confirmation">App bloccata</string>
+  <string name="pref_header_style">Stile</string>
+  <string name="pref_lock_screen_on">Visualizza sulla schermata di blocco</string>
+  <string name="pref_lock_screen_on_desc">Visualizza le notifiche heads-up sulla schermata di sblocco.</string>
+  <string name="bug_report_request">Se l\'app non funziona come dovrebbe, clicca qui per segnalare il problema.\n\n</string>
+  <string name="pref_overlay_display_time">Durata visualizzazione heads-up</string>
+  <string name="pref_overlay_time_max">Finche\' non la rimuovo</string>
+  <string name="title_activity_settings">Impostazioni</string>
+  <string name="pref_header_general">Generale</string>
+  <string-array name="priorityLevel">
+    <item name="MAX">Urgenti (chiamate in arrivo, avvertenze, avvisi d\'emergenza)</item>
+    <item name="HIGH">Importanti (comunicazioni, email importanti)</item>
+    <item name="NORMAL">Normali (+notificate da app vecchie)</item>
+    <item name="LOW">Non importanti (aggiornamenti software, email irrilevanti)</item>
+    <item name="MIN">Informazioni contestuali e di background (meteo, eventi passati, suggerimenti)</item>
+  </string-array>
+  <string name="pref_overlay_display_time_counter">
+        <xliff:g id="time" example="7">%s</xliff:g> secondi
+    </string>
+  <string name="pref_top_margin">Posizione popup</string>
+  <string name="pref_turn_screen_on">Accendi lo schermo</string>
+  <string name="pref_turn_screen_on_desc">Accendi lo schermo quando si riceve una notifica.</string>
+  <string name="pref_opacity">Opacità</string>
+  <string name="pref_overlay_style">Tema</string>
+  <string name="pref_keep_on_lock_screen">Mantieni sulla schermata di blocco</string>
+  <string name="pref_keep_on_lock_screen_desc">Mantieni le notifiche sulla schermata di blocco finchè non le rimuovi</string>
+  <string name="pref_dismiss_on_swipe">Rimuovi con uno swipe</string>
+  <string name="title_activity_noshow_list">Non disturbare</string>
+  <string name="pref_round_icons">Icone rotonde</string>
+  <string name="pref_round_icons_desc">Usa le icone rotonde in stile Android L invece di quelle squadrate delle precedenti versioni</string>
+  <string name="pref_use_proximity">Rilevazione della tasca</string>
+  <string name="pref_use_proximity_desc">Non accendere lo schermo se il telefono è in una tasca o capovolto su un tavolo.</string>
+  <string name="pref_header_lockscreen">Schermata di blocco</string>
+  <string name="pref_block_current_app">Blocca l\'applicazione corrente</string>
+  <string name="pref_block_current_app_desc">Non mostrare le notifiche heads-up per l\'applicazione corrente</string>
+  <string name="pref_header_behaviour">Comportamento</string>
+  <string name="music_title">Riproducendo: <xliff:g id="track" example="TRACK">%s</xliff:g></string>
+  <string name="music_text">Di: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+  <string name="pref_music_popup">Popup della canzone corrente</string>
+  <string name="pref_music_popup_desc">Mostra i metadata delle canzoni quando cambia traccia.\nNota: non tutti i lettori musicali sono supportati.</string>
+  <string name="intro_warning_both_services">Accesso alle notifiche e accesso facilitato sono entrambi abilitati. Per favore, disabilita uno dei due.</string>
+  <string name="notification_listener_not_found_detour">Seleziona \'Accesso alle notifiche\' e attiva \'Notifiche Heads-up\'</string>
+  <string name="accessibility_not_found_detour"><![CDATA[Vai su \'Accessibilità\' > \'Notifiche Heads-up\']]></string>
+  <string name="accessibility_toast">Seleziona \'Notifiche Heads-up\' per attivare il servizio</string>
+  <string name="pref_floating_window">Apri come finestra flottante</string>
+  <string name="pref_floating_window_desc">Tieni premuto sull\'icona per aprire la notifica in una finestra flottante. Caratterisica sperimentale, funziona con OmniRom e XhaloFloatingWindow.</string>
+  <string name="pendingintent_cancel_exception">L\'applicazione ha annullato l\'azione</string>
+  <string name="pendingintent_null_exception">L\'applicazione non ha definito alcuna azione</string>
+  <string name="pref_hide_dismiss_button">Nascondi il bottone rimuovi</string>
+  <string name="pref_hide_dismiss_button_desc">Nascondi il bottone rimuovi dalle notifiche</string>
+  <string name="pref_dismiss_keyguard">Sblocca il dispositivo</string>
+  <string name="pref_compact_mode">Modalità compatta</string>
+  <string name="pref_compact_mode_desc">Mostra solo la prima linea della notifica.</string>
+  <string name="pref_font_size">Dimensione testo</string>
+  <string name="pref_font_size_desc">Correggi la dimensione del testo nei popup</string>
+  <string name="leave_review">Lascia una recensione</string>
+  <string name="pref_header_other">Info</string>
+  <string-array name="overlayPosition">
+    <item name="aboveStatus">Sopra</item>
+    <item name="top">Sotto alla barra di stato</item>
+    <item name="center">Al centro</item>
+    <item name="bottom">Sotto</item>
+  </string-array>
+  <string-array name="overlayStyles">
+    <item name="l">Android 5.0 \"L\" chiaro</item>
+    <item name="ldark">Android 5.0 \"L\" scuro</item>
+    <item name="holo">Holo chiaro</item>
+    <item name="holodark">Holo scuro</item>
+    <item name="random">Psichedelico (casuale)</item>
+  </string-array>
+  <string name="pref_only_on_lock_screen">Solo sulla schermata di blocco</string>
+  <string name="pref_only_on_lock_screen_desc">Mostra i popup solo nella schermata di blocco.</string>
+  <string name="pref_privacy_on_lockscreen">Privacy nella schermata di blocco</string>
+  <string name="pref_privacy_on_lockscreen_desc">Non mostrare il contenuto dei messaggi nella schermata di blocco</string>
+  <string name="accessibility_desc">Abilita questo servizio per permettere a Heads-up di leggere le tue notifiche.\n\nNON abilitare l\'accesso facilitato se il tuo dispositivo possiede Android 4.3 o successivi (segui le istruzioni dentro l\'applicazione).</string>
+  <string name="device_admin_disable_warning">Dopo aver disabilitato questo servizio, alcune caratteristiche in Heads-up potrebbero non funzionare correttamente.</string>
+  <string name="title_activity_device_admin_enabler">Abilita amministratore dispositivo</string>
+  <string name="pref_device_admin">Risolvi il bug \'il display rimane acceso\'.</string>
+  <string name="no_proximity_sensor_error">Il sensore di prossimità non è stato rilevato. La rilevazione della tasca non funzionerà. Per favore, NON segnalarlo come bug.</string>
+  <string name="pref_keep_screen_on_forever">Mantieni il display acceso</string>
+  <string name="pref_keep_screen_on_forever_desc">Dopo aver acceso lo schermo, mantienilo acceso fino a quando l\'heads-up è visibile.</string>
+  <string name="action_help">Aiuto!</string>
+  <string name="action_test">Test</string>
+  <string name="device_admin_enable_explanation">Abilitando questa opzione permetterai a Heads-up di spegnere il display. Usala solo se lo schermo non si spegne automaticamente dopo aver ricevuto un popup nella schermata di blocco, altrimenti la rilevazione col sensore di prossimità non funzionerà correttamente.\n\nIMPORTANTE! Non potrai disinstallare Heads-up finché questa opzione è attiva.</string>
+  <string name="device_admin_alredy_on">Amministratore dispositivo è già attivo.</string>
+  <string name="device_admin_not_available">Amministratore dispositivo non è abilitato. Arresto.</string>
+  <string name="intro_status_on">Il servizio è attivo. Prova inviandoti un messaggio.\nSe non funziona correttamente riavvia il dispositivo e prova di nuovo. Contattami a sb@simen.codes se non riesci a far funzionare l\'app come vorresti (scrivimi in lingua inglese).</string>
+  <string name="intro_status_on_confirmed">Il servizio è in funzione. Prova inviandoti un messaggio.\n Contattami a sb@simen.codes se non riesci a far funzionare correttamente l\'app (scrivimi in lingua inglese).</string>
+  <string name="accessibility_service_blocked">%s sta bloccando Heads-up nell\'accedere alle tue notifiche. Per favore disabilitato dal menù accessibilità.</string>
+  <string name="export_debug_data">Esporta i dati di debug</string>
+  <string name="pref_close_on_outside_touch">Chiudi con un tocco all\'esterno</string>
+  <string name="pref_close_on_outside_touch_desc">Rimuovi il popup quando tocchi al di fuori dell\'heads-up</string>
+  <string name="pref_reminder_delay">Ritardo promemoria</string>
+  <string name="pref_reminder_delay_desc">Se effettui lo swipe dell\'heads-up verso l\'alto, Heads-up lo mostrerà di nuovo dopo il numero di minuti che indichi qui. Imposta 0 per disabilitare.\nATTENZIONE: Sperimentale, caratteristica instabile. Non è detto che funzioni.</string>
+  <string name="pref_reminder_delay_counter">Ricordamelo dopo <xliff:g id="time" example="7">%s</xliff:g> minuti</string>
+  <string name="pref_top_margin_locked">Posizione del popup nella schermata di blocco</string>
+  <string name="pref_dont_disturb_error">Attenzione: Google ha rimosso la possibilità di mantenere attività in esecuzione in Android 5.0, quindi non funzionerà correttamente.</string>
+  <string name="pref_dismiss_on_swipe_desc">Rimuovi le notifiche dal centro notifiche quando la scarti con uno swipe orizzontale. (Puoi comunque cliccare sulla X per rimuoverle dal centro notifiche).\nRichiede Android 4.3</string>
+  <string name="pref_dismiss_keyguard_desc">Sbocca automaticamente il dispositivo quando apri una notifica.\nATTENZIONE! Questo premetterà a tutti di sbloccare il dispositivo, indipendentemente dalle impostazioni di sicurezza.\nQuesto non è neanche approvato in Android, e potrebbe non funzionare correttamente.</string>
+  <string name="pref_broadcast_notifications">Notifiche broadcast</string>
+  <string name="pref_broadcast_notifications_desc">Dai l\'accesso alle notifiche alle altre mie applicazioni. Questo ridurrà la RAM utilizzata se utilizzi un\'app come Voiceify. Mantienilo disabilitato fino a quando una delle mie app ti chiede di abilitarlo.</string>
+  <string name="title_broadcast_request">Accesso alle notifiche</string>
+  <string name="content_broadcast_request">Questo darà a %s accesso alle tue notifiche. Sei sicuro di volerlo?</string>
+</resources>

@@ -18,7 +18,6 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 21
     buildToolsVersion '21.1.1'
-
     signingConfigs {
         release {
             storeFile file('/home/simen/workspace/keystore/keys')
@@ -27,16 +26,16 @@ android {
             keyPassword 'blah' //System.console().readLine("\n\$ Enter key password: ")
         }
     }
-
     defaultConfig {
         applicationId "codes.simen.l50notifications"
         minSdkVersion 11
         targetSdkVersion 21
-        versionCode 49
+        versionCode 50
         versionName '1.9.2'
     }
     buildTypes {
         release {
+            // For release to Play
             debuggable false
             //noinspection GroovyAssignabilityCheck
             signingConfig signingConfigs.release
@@ -44,18 +43,21 @@ android {
             proguardFiles '/home/simen/.apps/sdk/tools/proguard/proguard-android-optimize.txt', 'proguard-rules.pro'
         }
         debug {
+            // Development
             debuggable true
             minifyEnabled false
         }
         testing {
-            debuggable false
+            // Signed APK, but debuggable
+            debuggable true
             signingConfig signingConfigs.release
             minifyEnabled false
         }
     }
-
     lintOptions {
         warning 'MissingTranslation'
+    }
+    productFlavors {
     }
 }
 
