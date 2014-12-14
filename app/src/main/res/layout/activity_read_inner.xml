@@ -119,6 +119,33 @@
     </FrameLayout>
 
     <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/messageReply"
+        android:visibility="gone">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textShortMessage|textImeMultiLine|textMultiLine|textCapSentences|textAutoComplete|textAutoCorrect"
+            android:textColor="@android:color/primary_text_light"
+            android:id="@+id/editText"
+            android:layout_weight="1"
+            android:hint="Type to answer" />
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:id="@+id/sendButton"
+            android:src="@drawable/ic_action_send"
+            style="@style/Button_Borderless"
+            android:scaleType="fitCenter"
+            android:contentDescription="Send" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -131,31 +158,6 @@
             android:layout_height="1dp"
             android:layout_marginTop="5dp"
             android:background="#33333333"/>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:inputType="textShortMessage|textImeMultiLine|textMultiLine|textCapSentences|textAutoComplete|textAutoCorrect"
-                android:ems="10"
-                android:id="@+id/editText"
-                android:layout_weight="1"
-                android:hint="Type to answer" />
-
-            <ImageButton
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:id="@+id/imageButton"
-                android:src="@drawable/ic_action_send"
-                style="@style/Button_Borderless"
-                android:scaleType="fitCenter" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

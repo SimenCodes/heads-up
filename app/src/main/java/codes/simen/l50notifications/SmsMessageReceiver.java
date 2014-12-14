@@ -39,6 +39,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.telephony.SmsMessage;
@@ -49,7 +50,7 @@ import codes.simen.l50notifications.util.Mlog;
 
 public class SmsMessageReceiver extends BroadcastReceiver {
     private static final String LOG_TAG = "SmsMessageReceiver";
-    private Bitmap contactimg;
+    private Bitmap contactImg;
     private int contactId = 0;
 
     @Override
@@ -78,18 +79,19 @@ public class SmsMessageReceiver extends BroadcastReceiver {
     }
 
     private void displayPopup(Context context, String from, String name, String message) {
-        Intent di = new Intent(context, OverlayServiceMsg.class);
+        Intent intent = new Intent(context, OverlayService.class);
+        if (Build.VERSION.SDK_INT >= 18) intent.setClass(context, OverlayService.class);
+        else                             intent.setClass(context, OverlayServiceCommon.class);
 
-        di.putExtra("title", name);
-        di.putExtra("number", from);
-        di.putExtra("text", message);
+        intent.setAction("SMSFORREPLY");
 
-        di.putExtra("iconLarge", contactimg);
-        di.putExtra("icon", android.R.drawable.ic_dialog_alert);
+        intent.putExtra("title", name);
+        intent.putExtra("number", from);
+        intent.putExtra("text", message);
 
-        di.putExtra("tag", "SMSFORREPLY");
+        intent.putExtra("tag", "SMSFORREPLY");
 
-        context.startService(di);
+        context.startService(intent);
     }
 
     private String getContact(Context context, String number) {
@@ -120,7 +122,7 @@ public class SmsMessageReceiver extends BroadcastReceiver {
     	    
         	// Decode photo and store in variable if it was found
         	if (input != null) {
-        	    contactimg = BitmapFactory.decodeStream(input);
+        	    contactImg = BitmapFactory.decodeStream(input);
         	    Mlog.v(LOG_TAG, "Photo found, id = " + contactId + " name = " + name);
         	}
     	    return name;

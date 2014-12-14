@@ -22,6 +22,7 @@ import android.app.KeyguardManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.app.admin.DevicePolicyManager;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -38,13 +39,16 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.ThumbnailUtils;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
+import android.telephony.SmsManager;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -87,7 +91,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private static final int MAX_LINES = 12;
     private static final int SENSOR_DELAY_MILLIS = 10000;
     private static final int MIN_LINES = 2;
-    private static final int FLAG_FLOATING_WINDOW = 0x00002000;
+    public static final int FLAG_FLOATING_WINDOW = 0x00002000;
     private static final ArrayList<String> LOCKSCREEN_APPS = new ArrayList<String>(Arrays.asList(new String[]{
             "com.achep.acdisplay",
             "com.silverfinger.lockscreen",
@@ -103,11 +107,11 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             "com.hi.locker"
     }));
 
-    private WindowManager windowManager;
-    private WindowManager.LayoutParams layoutParams;
-    private LinearLayout layout;
+    public WindowManager windowManager;
+    public WindowManager.LayoutParams layoutParams;
+    LinearLayout layout;
     private boolean isViewAdded = false;
-    private ThemeClass themeClass = new ThemeClass();
+    ThemeClass themeClass = new ThemeClass();
 
     private SharedPreferences preferences = null;
 
@@ -321,7 +325,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         super.onStartCommand(intent, flags, startId);
         Mlog.d(logTag, "Start");
         try {
-            if (intent.getAction().equals("REMOVE")) {
+            final String action = intent.getAction();
+            if (action.equals("REMOVE")) {
                 try {
                     if (packageName.equals(intent.getStringExtra("packageName"))
                             && tag.equals(intent.getStringExtra("tag"))
@@ -336,6 +341,9 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     stopSelf();
                 }
                 if (packageName.equals("")) stopSelf();
+                return START_NOT_STICKY;
+            } else if (action.equals("SMSFORREPLY")) {
+                setupQuickReply(intent.getStringExtra("number"));
                 return START_NOT_STICKY;
             }
             displayWindow();
@@ -592,7 +600,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                         @Override
                         public void onAnimationEnd(Animator animation) {
                             super.onAnimationEnd(animation);
-                            if (displayTime < MAX_DISPLAY_TIME || !intent.getAction().equals("STAY")) {
+                            if (displayTime < MAX_DISPLAY_TIME || !action.equals("STAY")) {
                                 handler.postDelayed(closeTimer, displayTime);
                                 System.gc();
                             }
@@ -623,18 +631,18 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                                 .setListener(listener);
                     } catch (NullPointerException npe) {
                         reportError(npe, "", getApplicationContext());
-                        if (displayTime < MAX_DISPLAY_TIME || !intent.getAction().equals("STAY"))
+                        if (displayTime < MAX_DISPLAY_TIME || !action.equals("STAY"))
                             handler.postDelayed(closeTimer, displayTime);
                     }
                     prevPackageName = packageName;
                 } else {
-                    if (displayTime < MAX_DISPLAY_TIME || !intent.getAction().equals("STAY")) {
+                    if (displayTime < MAX_DISPLAY_TIME || !action.equals("STAY")) {
                         handler.postDelayed(closeTimer, displayTime);
                     }
                 }
             } else {
                 textView.setMaxLines(MAX_LINES);
-                if (displayTime < MAX_DISPLAY_TIME || !intent.getAction().equals("STAY")) {
+                if (displayTime < MAX_DISPLAY_TIME || !action.equals("STAY")) {
                     handler.postDelayed(closeTimer, displayTime);
                 }
             }
@@ -647,6 +655,71 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         }
 
         return START_NOT_STICKY;
+    }
+
+    private void setupQuickReply(final String fromNumber) {
+        layoutParams.flags &= ~ WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
+        themeClass.setupQuickReply(layout, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Mlog.v(logTag, "StartEditing");
+                layoutParams.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
+                layoutParams.flags &= ~ WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+
+                if (layoutParams.type != WindowManager.LayoutParams.TYPE_PRIORITY_PHONE) {
+                    layoutParams.type = WindowManager.LayoutParams.TYPE_PRIORITY_PHONE;
+                    windowManager.removeView(layout);
+                    windowManager.addView(layout, layoutParams);
+                    displayTime = MAX_DISPLAY_TIME;
+                } else {
+                    windowManager.updateViewLayout(layout, layoutParams);
+                }
+            }
+        }, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                doSend(fromNumber);
+            }
+        });
+    }
+
+    private void doSend(String fromNumber) {
+        String message = themeClass.getQuickReplyText(layout);
+        if (!message.isEmpty()) {
+            try {
+                SmsManager sms = SmsManager.getDefault();
+                sms.sendTextMessage(fromNumber, null, message, null, null);
+            } catch (Exception e) {
+                Log.d(logTag, "openMainSMS");
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setType("vnd.android-dir/mms-sms");
+                intent.putExtra("address", fromNumber);
+                intent.putExtra("sms_body", message);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+
+            if (Build.VERSION.SDK_INT < 19) {
+                Context c = getApplicationContext();
+                ContentValues v = new ContentValues();
+                v.put("address", fromNumber);
+                v.put("body", message);
+                addSms(c, v);
+            }
+            doFinish(2);
+        }
+    }
+
+    public void addSms(final Context c, final ContentValues v) {
+        try {
+            c.getContentResolver().insert(Uri.parse("content://sms/sent"), v);
+        } catch (Exception e) {
+            Toast toast = Toast.makeText(c, "SMS NOT SENT", Toast.LENGTH_SHORT);
+            toast.show();
+        } finally {
+            Toast toast = Toast.makeText(c, "SMS sent", Toast.LENGTH_LONG);
+            toast.show();
+        }
     }
 
     private static Bitmap drawableToBitmap(Drawable drawable) {
@@ -757,9 +830,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             Mlog.d(logTag, "sendPending");
 
             Intent intent = new Intent();
-            if (isFloating) {
-                intent.addFlags(FLAG_FLOATING_WINDOW);
-            }
+            if (isFloating) intent.addFlags(FLAG_FLOATING_WINDOW);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             mPendingIntent.send(getApplicationContext(), 0, intent);
 
@@ -822,7 +893,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         }
     }
 
-    private void doFinish(final int doDismiss) { // 0=ikke fjern 1=fjern 2=åpnet
+    public void doFinish(final int doDismiss) { // 0=ikke fjern 1=fjern 2=åpnet
         Mlog.v(logTag + "DoFinish", doDismiss);
         handler.removeCallbacks(closeTimer);
 
