@@ -57,12 +57,12 @@ If you speak another language, I'd appreciate if you could help us translate thi
 - Some phones block Heads-up from displaying popups. Check that "draw on top" or "display popups" is enabled in System Settings > Apps > Heads-up.
 
 #### Huawei, XIAOMI, ZTE and MIUI users: ####
-Before you can use this app, you\'ll probably need to give it some slack when it comes to security.
+Before you can use this app, you'll probably need to give it some slack when it comes to security.
 
 1. Go to System Settings > All > Apps > Downloaded > Heads-up notifications.
-2. Toggle the switch that says \'Show popup windows\' (second option).
-3. At the bottom, go to \'Manage permissions\'.
-4. Set \'I trust this app\' to on.
+2. Toggle the switch that says 'Show popup windows' (second option).
+3. At the bottom, go to 'Manage permissions'.
+4. Set 'I trust this app' to on.
 
 *It might also be necessary to reset the app data/settings.*
 
