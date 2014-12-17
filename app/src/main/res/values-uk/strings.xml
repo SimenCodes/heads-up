@@ -20,22 +20,22 @@
   <string name="app_name">Heads-Up сповіщення</string>
   <string name="app_icon_name">Heads-Up</string>
   <string name="title_activity_welcome">Heads-Up сповіщення</string>
-  <string name="action_settings">Параметри</string>
+  <string name="action_settings">Налаштування</string>
   <string name="reader_btn_open">Вiдкрити</string>
   <string name="reader_btn_dismiss">Відмінити</string>
   <string name="intro_desc">Натисніть кнопку нижче, щоб дозволити або заборонити надсилання сповіщень Heads-Up.</string>
-  <string name="welcome_btn_toggleservice">Перемикач Heads-Up</string>
+  <string name="welcome_btn_toggleservice">Увімкнути Heads-Up</string>
   <string name="intro_warning_miui">Ви використовуєте MIUI? Перед використанням цього застосунку, можливо потрібно буде дати їй деякі послаблення, коли іде мова про безпеку. \n1. Виберіть система установки &gt; всі &gt; застосунки &gt; завантаження &gt; Heads-Up сповіщення. \n2. Увімкнути або вимкнути перемикач,  \'Показувати спливаючі вікна\' (другий варіант). \n3. Внизу, перейдіть до меню «Керування дозволами\'. \n4. Значення \"я довіряю цьому додаткові\" Увімкнути. </string>
-  <string name="site_ad">Вам подобається те що ви бачите? Перевірте мої інші програми:</string>
+  <string name="site_ad">Вам подобається те що ви бачите? Спробуйте мої інші програми:</string>
   <string name="site_ad_link">Відвідайте Simen.codes</string>
   <string name="title_activity_app_list">Фільтр програм</string>
   <string name="pref_priority_title">Пріоритет повідомлення</string>
   <string name="pref_priority_summary">Фільтр повідомлень базується на основі їх пріоритету. \nПотрібен Android 4.1</string>
-  <string name="applist_desc">Зніміть галку, щоб вимкнути програму. Також можна натиснути і утримувати кнопку X в Heads-Up для відключення застосунку.</string>
+  <string name="applist_desc">Зніміть позначку, щоб вимкнути програму. Також можна натиснути і утримувати кнопку виділення усіх програм в Heads-Up для відключення застосунку.</string>
   <string name="blocklist_desc">Перегляньте програми, щоб запобігти надокучливим повідомленням під час використання Heads-Up.</string>
   <string name="blocked_confirmation">Заблоковані програми</string>
   <string name="pref_header_style">Стиль</string>
-  <string name="pref_lock_screen_on">Відображення на Екрані блокування</string>
+  <string name="pref_lock_screen_on">Відображення на екрані блокування</string>
   <string name="pref_lock_screen_on_desc">Відображати за Heads-Up на екрані блокування.</string>
   <string name="bug_report_request">Якщо додаток працює некоректно , то натисніть повідомити про проблему. Ви не повинні робити нічого, якщо застосунок веде себе нормально.\n\n</string>
   <string name="pref_overlay_display_time">Відображення часу</string>
@@ -44,7 +44,7 @@
   <string name="pref_header_general">Фільтрація</string>
   <string-array name="priorityLevel">
     <item name="MAX">Важливі і негайні (пропущені дзвінки, напрямки, аварійні сповіщення)</item>
-    <item name="HIGH">Важливі (комунікації, важливі повідомленя)</item>
+    <item name="HIGH">Важливі (комунікація, важливі повідомленя)</item>
     <item name="NORMAL">Звичайний (+ сповіщення від старих програм)</item>
     <item name="LOW">Не важливі (оновлення програмного забезпечення, небажана пошта)</item>
     <item name="MIN">Контекстна і фонова інформація (погода, старі події, пропозиції)</item>
@@ -52,15 +52,15 @@
   <string name="pref_overlay_display_time_counter"><xliff:g id="time" example="7">%s </xliff:g> секунд</string>
   <string name="pref_top_margin">Спливаючі повідомлення, коли телефон розблокований</string>
   <string name="pref_turn_screen_on">Увімкніть екран</string>
-  <string name="pref_turn_screen_on_desc">Повернути екран коли ви отримуєте сповіщення</string>
+  <string name="pref_turn_screen_on_desc">Повернути екран коли отримуєте сповіщення</string>
   <string name="pref_opacity">Прозорість</string>
   <string name="pref_overlay_style"> Тема</string>
-  <string name="pref_keep_on_lock_screen">Залишит на екрані блокування</string>
-  <string name="pref_keep_on_lock_screen_desc">Тримати сповіщення на екрані блокування, поки ви не видалите їх</string>
+  <string name="pref_keep_on_lock_screen">Залишити на екрані блокування</string>
+  <string name="pref_keep_on_lock_screen_desc">Залишати сповіщення на екрані блокування, поки не видалите їх</string>
   <string name="pref_dismiss_on_swipe">Видалити свайпом</string>
   <string name="title_activity_noshow_list">Не турбувати</string>
   <string name="pref_round_icons">Круглі іконки</string>
-  <string name="pref_round_icons_desc">Використовувати круглі іконки (Android L) замість квадратних іконок з попередньої версії</string>
+  <string name="pref_round_icons_desc">Використовувати круглі іконки (Android L) замість квадратних іконок з попередніх версії Android</string>
   <string name="pref_use_proximity">Виявлення телефону в кишені</string>
   <string name="pref_use_proximity_desc">Не включати екран якщо телефон знаходиться в кишені або лежить перевернутим на столі.</string>
   <string name="pref_header_lockscreen">Екран блокування</string>
@@ -68,13 +68,13 @@
   <string name="pref_block_current_app_desc">Не відображати Heads-Up для сповіщення із поточної програми</string>
   <string name="pref_header_behaviour">Поведінка</string>
   <string name="music_title">Грає: <xliff:g id="track" example="TRACK">%s </xliff:g></string>
-  <string name="music_text">Автор: <xliff:g id="artist" example="ARTIST">%s </xliff:g> \nAlbum: <xliff:g id="album" example="ALBUM"> %s </xliff:g></string>
-  <string name="pref_music_popup">Поточна спливаюча пісня</string>
-  <string name="pref_music_popup_desc">Змінити відображення даних про трек. \nNote: не всі музичні програвачі підтримується.</string>
+  <string name="music_text">Автор: <xliff:g id="artist" example="ARTIST">%s </xliff:g> \nАльбом: <xliff:g id="album" example="ALBUM"> %s </xliff:g></string>
+  <string name="pref_music_popup">Поточна пісня</string>
+  <string name="pref_music_popup_desc">Змінити відображення даних про трек. \nУвага: не всі музичні програвачі підтримуються.</string>
   <string name="intro_warning_both_services">Сповіщення і доступність служби активовано. Будь ласка, вимкніть один з них.</string>
   <string name="notification_listener_not_found_detour">Виберіть \'Сповіщень слухачів\' і перемикання \"Heads-Up сповіщення\"</string>
   <string name="accessibility_not_found_detour"><![CDATA[Перейти до \'Доступність\' > \'Heads-up повідомлення\']]></string>
-  <string name="accessibility_toast">Виберіть \"Heads-Up сповіщення\" для перемикання послуги</string>
+  <string name="accessibility_toast">Виберіть \"Heads-Up сповіщення\" для увімкнення/вимкнення послуги</string>
   <string name="pref_floating_window">Відкрити як пливуче вікно</string>
   <string name="pref_floating_window_desc">Довгий натиск піктограми для відкриття повідомлення у плаваючому вікні. Експериментальна функція, працює з OmniRom і XHaloFloatingWindow.</string>
   <string name="pendingintent_cancel_exception">Програма скасувала дії</string>
@@ -87,37 +87,37 @@
   <string name="pref_font_size">Розмір шрифту</string>
   <string name="pref_font_size_desc">Настроїти розмір шрифту спливаючого вікна,</string>
   <string name="leave_review">Залишити відгук</string>
-  <string name="pref_header_other">Про нас</string>
+  <string name="pref_header_other">Інфо:</string>
   <string-array name="overlayPosition">
-    <item name="aboveStatus">Догори</item>
+    <item name="aboveStatus">Вгорі</item>
     <item name="top">Нижче рядоку стану</item>
     <item name="center">По-центрі</item>
     <item name="bottom">Внизу</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'L\' світлий</item>
-    <item name="ldark">Android 5.0 \'L\' темний</item>
-    <item name="holo">Просто світле</item>
-    <item name="holodark">Просто темне</item>
-    <item name="random">Психоделічний (випадковий)</item>
+    <item name="l">Android 5.0 \'L\' біла</item>
+    <item name="ldark">Android 5.0 \'L\' темна</item>
+    <item name="holo">Просто біла</item>
+    <item name="holodark">Просто темна</item>
+    <item name="random">Випадкова</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Тільки на екрані блокування</string>
   <string name="pref_only_on_lock_screen_desc">Відображати тільки спливаючі вікна на екрані блокування.</string>
-  <string name="pref_privacy_on_lockscreen">Конфіденційність екрану блокуавння</string>
+  <string name="pref_privacy_on_lockscreen">Конфіденційність екрану блокування</string>
   <string name="pref_privacy_on_lockscreen_desc">Не відображати вміст повідомлення на екрані блокування</string>
   <string name="accessibility_desc">Увімкнути цю послугу, щоб дозволити Heads-Up читати ваші повідомлення.\n\nНе включайте цієї функції, якщо ваш пристрій працює під управлінням Android 4.3 або новішій (слідувати інструкції всередині програми замість цього).</string>
   <string name="device_admin_disable_warning">Після відключення цієї служби, деякі функції в Heads-Up можуть не працювати належним чином.</string>
   <string name="title_activity_device_admin_enabler">Увімкнути активний режим</string>
-  <string name="pref_device_admin">Виправити помилку \'екран залишається включеним\'.</string>
-  <string name="no_proximity_sensor_error">Безконтактний датчик не виявлено. Функція \"телефон у кишені\" не буде працювати. Будь ласка не повідомляти про цю помилку.</string>
-  <string name="pref_keep_screen_on_forever">Зберігати екран включеним</string>
+  <string name="pref_device_admin">Виправити помилку \'екран не виключається\'.</string>
+  <string name="no_proximity_sensor_error">Безконтактний датчик не виявлено. Функція \"телефон у кишені\" не буде працювати. Будь ласка не повідомляйте про цю помилку.</string>
+  <string name="pref_keep_screen_on_forever">Залишати екран включеним</string>
   <string name="pref_keep_screen_on_forever_desc">Після включення екрану, тримайте телефон до тих пір, поки  Heads-Up є видимими.</string>
   <string name="action_help">Допоможіть!</string>
   <string name="action_test">Перевірка</string>
-  <string name="device_admin_enable_explanation">Включення цього дозволу дозволить Heads-Up вимкнення екрану. Використовуйте цей дозвіл, якщо екран не вимикається після відображення спливаючого вікна на екрані блокування чи виявлення \"телефона у кишені\" не працює правильно.\n\nВАЖЛИВО! Не можна видаляти Heads-Up, коли він включений, перед видаленням видаліть його.</string>
+  <string name="device_admin_enable_explanation">Включення цього дозволу дозволить Heads-Up вимкнення екрану. Використовуйте цей дозвіл, якщо екран не вимикається після відображення спливаючого вікна на екрані блокування чи виявлення \"телефона у кишені\" не працює правильно.\n\nВАЖЛИВО! Не можна видаляти Heads-Up, коли він включений, перед видаленням виключіть його.</string>
   <string name="device_admin_alredy_on">Диспетчер пристроїв.</string>
   <string name="device_admin_not_available">Ініціалізація пристрою не ввімкнута. Зупинка.</string>
-  <string name="intro_status_on">Ці служба активовна. Спробуйте відправити собі повідомлення. \nЯкщо вона не працює, будь ласка перезавантажте пристрій та повторіть спробу. \nНажміть тут, якщо вам потрібна допомога</string>
+  <string name="intro_status_on">Служба активовна. Спробуйте відправити собі повідомлення. \nЯкщо вона не працює, будь ласка перезавантажте пристрій та повторіть спробу. \nНажміть тут, якщо вам потрібна допомога</string>
   <string name="intro_status_on_confirmed">Послуга працює. Спробуйте відправити собі повідомлення. \nНажміть тут якщо вам потрібна допомога.</string>
   <string name="accessibility_service_blocked">%s блокує Heads-Up доступ до вашого повідомлення. Будь ласка, вимкніть його з меню доступності.</string>
   <string name="export_debug_data">Експортувати дані налагодження</string>
@@ -128,8 +128,8 @@
   <string name="pref_reminder_delay_counter">Нагадайте мені за <xliff:g id="time" example="7">%s </xliff:g> хвилин</string>
   <string name="pref_top_margin_locked">Спливаючі повідомлення на екрані блокування</string>
   <string name="pref_dont_disturb_error">УВАГА: Google видалив можливість отримувати  повідомлення Heads-up під управлінням Android 5.0, так що програма може працювати не коректно.</string>
-  <string name="pref_dismiss_on_swipe_desc">Видалити сповіщення з рядку можна, провести пальцем горизонтально. Ще можна натиснути кнопку X, щоб очистити. \nRequires Android 4.3</string>
-  <string name="pref_dismiss_keyguard_desc">Автоматичне розблокування телефону під час відкриття повідомлення. \nУВАГА! Це дозволить всім бажаючим розблокувати ваш телефон, незалежно від настройок безпеки. \nЦе також вважається застарілим в Android, і може не працювати належним чином.</string>
+  <string name="pref_dismiss_on_swipe_desc">Видалити сповіщення з рядку, можна провівши пальцем горизонтально. Також можна натиснути кнопку X, щоб очистити. \nПотрібний Android 4.3</string>
+  <string name="pref_dismiss_keyguard_desc">Автоматичне розблокування телефону під час відкриття повідомлення. \nУВАГА! Це дозволить всім бажаючим розблокувати ваш телефон, незалежно від настройок безпеки. \nЦе також вважається застарілим в Android, і може працювати не належним чином.</string>
   <string name="pref_broadcast_notifications">Широкомовне повідомлення</string>
   <string name="pref_broadcast_notifications_desc">Дозвольте іншим моїм додаткам доступ до сповіщень. Це дозволить скоротити використання оперативної пам\'яті, у разі використання застосунку, подібного для Voiceify. Залишайте його вимкнути, тільки якщо одина з моїх програм не просить вас включити її.</string>
   <string name="title_broadcast_request">Доступ до сповіщень</string>
