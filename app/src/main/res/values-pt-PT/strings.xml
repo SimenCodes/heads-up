@@ -109,9 +109,15 @@
   <string name="device_admin_disable_warning">Depois de desabilitar esta função, algumas características do Heads-up podem não funcionar adequamente.</string>
   <string name="title_activity_device_admin_enabler">Habilitar administração do aparelho</string>
   <string name="pref_device_admin">Consertar erro da \'tela ligada\'.</string>
+  <string name="pref_keep_screen_on_forever_desc">Depois de ligar o ecrã, mantenha-o ligado enquanto o Heads-up for visível.</string>
+  <string name="action_help">Ajuda!</string>
+  <string name="action_test">Testar</string>
   <string name="device_admin_enable_explanation">Habilitando esta função, o Heads-up poderá desligar a tela. Use se a tela não desligar após mostrar os popups na tela de bloqueio, ou se a detecção de bolso não está funcionando adequadamente.</string>
   <string name="intro_status_on">O serviço está habilitado. Tente enviar uma mensagem a você mesmo.\nSe não funcionar, por favor, reinicie seu aparelho e tente novamente. Contate-me através do email sb@simen.codes se não funcionar. Por favor, deixe seu comentário em inglês.</string>
   <string name="intro_status_on_confirmed">O serviço está em execução. Tente enviar uma mensagem a você mesmo.\nContate-me através do email sb@simen.codes se não funcionar. Por favor, deixe seu comentário em inglês.</string>
+  <string name="pref_close_on_outside_touch_desc">Remover pop-up quando clicar fora de Heads-up</string>
+  <string name="pref_reminder_delay_counter">Lembrar-me após <xliff:g id="time" example="7">%s</xliff:g> minutos</string>
   <string name="pref_dismiss_on_swipe_desc">Remover notificações do drawer ao deslizá-los. Você ainda pode tocar no X para fechar a partir do drawer.</string>
   <string name="pref_dismiss_keyguard_desc">Desbloqueia automaticamente o aparelho quando você abre a notificação.\nAVISO! Isto permitirá a qualquer um desbloquear seu aparelho, independentemente das suas configurações de segurança.</string>
+  <string name="pref_broadcast_notifications_desc">Deixar que as minhas outras apps tenham acesso às suas notificações. Isto reduzirá o uso da RAM se você utiliza uma app como o Voiceify. Mantenha-a desligada excepto se uma das minhas aplicações lhe pedir para ser activada.</string>
 </resources>

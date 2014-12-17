@@ -109,9 +109,13 @@
   <string name="device_admin_disable_warning">Al desactivar este servicio, algunas funciones de Heads-up pueden no funcionar correctamente.</string>
   <string name="title_activity_device_admin_enabler">Activar como Administrador de Dispositivo</string>
   <string name="pref_device_admin">Forzar Apagar pantalla</string>
+  <string name="action_help">Ayuda!</string>
+  <string name="action_test">Prueba</string>
   <string name="device_admin_enable_explanation">Activar esto permite a Heads-up apagar tu pantalla. Usar si la pantalla no se apaga tras mostrar un heads-up en la pantalla de bloqueo, o si la detección de bolsillo no funciona correctamente.</string>
+  <string name="device_admin_alredy_on">Ya eres administrador de dispositivos.</string>
   <string name="intro_status_on">El servicio se está ejecutando. Pruébalo enviando un mensaje a tu mismo.\nContáctame a sb@simen.codes si no puedes hacerlo funcionar.\nPor favor escríbeme en inglés.</string>
   <string name="intro_status_on_confirmed">El servicio se está ejecutando. Pruébalo enviando un mensaje a tu mismo.\nContáctame a sb@simen.codes si no puedes hacerlo funcionar.\nPor favor escríbeme en inglés.</string>
+  <string name="pref_reminder_delay">Tiempo de recordatorio</string>
   <string name="pref_dismiss_on_swipe_desc"> Al descartar un heads-up deslizando, remover también la notificación en la barra de notificaciones. Igual puedes presionar la X para descartar notificaciones en la barra.</string>
   <string name="pref_dismiss_keyguard_desc">Desbloquear automáticamente cuando abras una notificación.\nCuidado! Esto permitirá que CUALQUIER PERSONA pueda desbloquear el teléfono, independiente de la configuración de seguridad.</string>
 </resources>
