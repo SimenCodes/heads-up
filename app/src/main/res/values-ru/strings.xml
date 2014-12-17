@@ -18,7 +18,7 @@
 
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
   <string name="app_name">Heads-up notifications</string>
-  <string name="app_icon_name">Головы вверх</string>
+  <string name="app_icon_name">Heads-up</string>
   <string name="title_activity_welcome">Heads-up notifications</string>
   <string name="action_settings">Настройки</string>
   <string name="reader_btn_open">Открыть</string>
@@ -117,9 +117,23 @@
   <string name="action_help">Помогите!</string>
   <string name="action_test">Тест</string>
   <string name="device_admin_enable_explanation">Используйте это, если экран не выключается после уведомления на экрана блокировки, или если карманный режим не работает должным образом.</string>
+  <string name="device_admin_alredy_on">Уже администратор устройства.</string>
+  <string name="device_admin_not_available">Нет прав администратора. Остановка.</string>
   <string name="intro_status_on">Служба включена. Попробуйте отправить себе сообщение.\nЕсли уведомление не работает, пожалуйста, перезагрузите устройство и попробуйте еще раз. Свяжитесь со мной sb@simen.codes если уведомление не работает.</string>
+  <string name="intro_status_on_confirmed">Сервис запущен. Попробуйте отправить себе сообщение.\nНажмите здесь если нужна помощь.</string>
+  <string name="accessibility_service_blocked">%s блокирует доступ Heads-up к уведомлениям. Пожалуйста отключите его в меню доступа.</string>
+  <string name="export_debug_data">Экспорт данных для отладки</string>
+  <string name="pref_close_on_outside_touch">Закрыть по внешнему касанию</string>
+  <string name="pref_close_on_outside_touch_desc">Закрыть всплывающее окно при касании вне heads-up</string>
   <string name="pref_reminder_delay">Время напоминания</string>
+  <string name="pref_reminder_delay_desc">Если вы смахиваете heads-up свайпом вверх, Heads-up снова появится  через период времени указанный здесь. Укажите ноль чтобы отключить. \nПРЕДУПРЕЖДЕНИЕ: Экспериментальная и нестабильная функция Не надейтесь, что будет работать.</string>
   <string name="pref_reminder_delay_counter">Напомнить мне после <xliff:g id="time" example="7">%s</xliff:g> минут</string>
+  <string name="pref_top_margin_locked">Позиция всплывающего окна на экране блокировки</string>
+  <string name="pref_dont_disturb_error">Предупреждение: Google удалила возможность получать доступ к запущенным приложениям  в Android 5.0, поэтому эта функция будет работать неправильно. Из документов:\ngetRecentTasks() —  В LOLLIPOP, этот метод больше не доступен сторонним приложениям: введение  document-centric recents может привести к потере персональных данных. При  совместимости с предыдущими версиями она будет возвращать небольшое подмножество данных: приложения пользователя, и возможно и другие не очень важные запущенные приложения такие как домашний экран .</string>
   <string name="pref_dismiss_on_swipe_desc">Удаляет уведомления из строки состояния, когда Вы проводите жестом по всплывающему уведомлению. (Вы все еще можете нажать на X, чтоб удалить.)</string>
   <string name="pref_dismiss_keyguard_desc">Автоматически разблокировать телефон при открытии уведомления. \nВНИМАНИЕ! Это позволит всем желающим разблокировать телефон, независимо от настроек безопасности.</string>
+  <string name="pref_broadcast_notifications">Широковещательные уведомления</string>
+  <string name="pref_broadcast_notifications_desc">Дать другим моим приложениям доступ к уведомлениям. Это уменьшит использование оперативной памяти, если вы используете такие приложения, как Voiceify. Не включайте, пока приложение не попросит включить эту функцию.</string>
+  <string name="title_broadcast_request">Доступ к уведомлениям</string>
+  <string name="content_broadcast_request">Это даст %s доступ к вашим уведомлениям. Вы уверены что хотите это сделать?</string>
 </resources>

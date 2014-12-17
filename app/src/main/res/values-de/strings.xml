@@ -111,6 +111,7 @@
   <string name="device_admin_disable_warning">Wenn Sie diesen Dienst abschalten, dann werden einige Funktionen von Heads-Up möglicherweise nicht mehr korrekt arbeiten.</string>
   <string name="title_activity_device_admin_enabler">Geräte-Administration einschalten</string>
   <string name="pref_device_admin">\'Bildschirm-An\'-Fehler beheben.</string>
+  <string name="action_help">Hilfe !</string>
   <string name="device_admin_enable_explanation">Dies Einstellung erlaubt Heads-Up, den Bildschirm Ihres Geräts abzuschalten. Verwenden Sie das, falls der Schirm nach der Anzeige von Popups auf dem Sperrbildschirm nicht abgeschaltet wird oder falls die Hosentaschen-Erkennung nicht richtig funktioniert.</string>
   <string name="intro_status_on">Der Dienst ist eingeschaltet.. Versuchen Sie, sich selbst eine Nachricht zu senden (SMS, E-Mail).\nFalls das nicht funktioniert, starten Sie bitte Ihr Gerät neu. Lassen Sie es mich über eine Mail an sb@simen.codes auf Englisch wissen, falls Sie die App nicht in Gang bringen können.</string>
   <string name="intro_status_on_confirmed">Der Dienst ist eingeschaltet.. Versuchen Sie, sich selbst eine Nachricht zu senden (SMS, E-Mail).\nFalls das nicht funktioniert, starten Sie bitte Ihr Gerät neu. Lassen Sie es mich über eine Mail an sb@simen.codes auf  Englisch wissen, falls Sie die App nicht in Gang bringen können.</string>
