@@ -121,6 +121,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private String currentPackage = "";
     private boolean isCompact = false;
     private boolean isActionButtons = false;
+    private boolean isQuickReply = false;
 
     private SensorManager sensorManager = null;
     private Sensor sensor;
@@ -346,6 +347,10 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 setupQuickReply(intent.getStringExtra("number"));
                 return START_NOT_STICKY;
             }
+            if (isQuickReply && !themeClass.getQuickReplyText(layout).isEmpty()) {
+                // Don't disturb the user while writing a reply
+                return START_NOT_STICKY;
+            }
             displayWindow();
             PackageManager pm = getPackageManager();
             Resources appRes = null;
@@ -528,8 +533,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                             themeClass.hideActionButtons(layout);
                     } else
                         themeClass.hideActionButtons(layout);
-                } catch (NullPointerException npe) {// Ignored, usually happens in case of missing icons
-                } catch (IndexOutOfBoundsException ignored) {
+                } catch (NullPointerException | IndexOutOfBoundsException e) {
+                    reportError(e, "ThemeActionIcon", getApplicationContext());
                 } catch (RuntimeException rte) {
                     reportError(rte, "ThemeActionIcon", getApplicationContext());
                 }
@@ -672,7 +677,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     windowManager.addView(layout, layoutParams);
                     displayTime = MAX_DISPLAY_TIME;
                 } else {
-                    windowManager.updateViewLayout(layout, layoutParams);
+                    //windowManager.updateViewLayout(layout, layoutParams);
                 }
             }
         }, new View.OnClickListener() {
@@ -681,6 +686,9 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 doSend(fromNumber);
             }
         });
+        if (!isCompact)
+            themeClass.showQuickReply(layout);
+        isQuickReply = true;
     }
 
     private void doSend(String fromNumber) {
@@ -809,13 +817,15 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             return false;
         else {
             TextView subtitle = (TextView) layout.findViewById(R.id.notification_subtitle);
-            if ( (subtitle.getLineCount() <= MIN_LINES && subtitle.length() < 120) && !isActionButtons) {
+            if ( (subtitle.getLineCount() <= MIN_LINES && subtitle.length() < 120) && !isActionButtons && !isQuickReply) {
                 return false;
             }
             isCompact = false;
             subtitle.setMaxLines(MAX_LINES);
             if (isActionButtons)
                 themeClass.showActionButtons(layout, -1);
+            if (isQuickReply)
+                themeClass.showQuickReply(layout);
             if (displayTime < MAX_DISPLAY_TIME) {
                 handler.removeCallbacks(closeTimer);
                 handler.postDelayed(closeTimer, displayTime);

@@ -132,7 +132,7 @@
             android:textColor="@android:color/primary_text_light"
             android:id="@+id/editText"
             android:layout_weight="1"
-            android:hint="Type to answer" />
+            android:hint="Type to reply" />
 
         <ImageButton
             android:layout_width="48dp"

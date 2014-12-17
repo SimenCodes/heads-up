@@ -36,8 +36,6 @@ import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -50,11 +48,10 @@ import codes.simen.l50notifications.util.Mlog;
 
 public class SmsMessageReceiver extends BroadcastReceiver {
     private static final String LOG_TAG = "SmsMessageReceiver";
-    private Bitmap contactImg;
-    private int contactId = 0;
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        if (!isInitialStickyBroadcast()) return;
         Bundle extras = intent.getExtras();
         Mlog.i(LOG_TAG, "onReceive");
         if (extras == null)
@@ -109,7 +106,7 @@ public class SmsMessageReceiver extends BroadcastReceiver {
 
     	if (cursor.moveToFirst()) {
     	    // Get values
-    	    contactId = cursor.getInt(cursor.getColumnIndex(ContactsContract.PhoneLookup._ID));
+            int contactId = cursor.getInt(cursor.getColumnIndex(ContactsContract.PhoneLookup._ID));
     	    name =      cursor.getString(cursor.getColumnIndex(ContactsContract.PhoneLookup.DISPLAY_NAME));
 
     	    // Get photo as input stream:
@@ -119,12 +116,6 @@ public class SmsMessageReceiver extends BroadcastReceiver {
     	    Mlog.v(LOG_TAG, "Contact Found @ " + number);
     	    Mlog.v(LOG_TAG, "Contact name  = " + name);
     	    Mlog.v(LOG_TAG, "Contact id    = " + contactId);
-    	    
-        	// Decode photo and store in variable if it was found
-        	if (input != null) {
-        	    contactImg = BitmapFactory.decodeStream(input);
-        	    Mlog.v(LOG_TAG, "Photo found, id = " + contactId + " name = " + name);
-        	}
     	    return name;
     	} else {
 

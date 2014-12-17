@@ -163,6 +163,41 @@ public class ThemeClass {
     }
 
     /*
+     This heads-up will offer quick reply. Return false if this theme doesn't support it.
+     */
+    public boolean setupQuickReply(LinearLayout layout,
+                                View.OnClickListener startEditClickListener,
+                                View.OnClickListener sendButtonClickListener
+    ) {
+        final ImageButton sendButton = (ImageButton) layout.findViewById(R.id.sendButton);
+        sendButton.setOnClickListener(sendButtonClickListener);
+
+        final EditText editText = (EditText) layout.findViewById(R.id.editText);
+        editText.setOnClickListener(startEditClickListener);
+
+        editText.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+                sendButton.setEnabled(s.length() > 0);
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+        return true;
+    }
+
+    /*
+     Show the quick reply fields. (EditText, send button, etc.)
+     */
+    public void showQuickReply(LinearLayout layout) {
+        layout.findViewById(R.id.messageReply).setVisibility(View.VISIBLE);
+    }
+
+    public String getQuickReplyText(LinearLayout layout) {
+        return ((EditText) layout.findViewById(R.id.editText)).getText().toString();
+    }
+
+    /*
      Fetch the dismiss button.
      */
     public View getDismissButton(LinearLayout layout) {
@@ -181,37 +216,5 @@ public class ThemeClass {
      In case you need to do something when stopping. Called after the view is removed from the window manager.
      */
     public void destroy(LinearLayout layout) {
-    }
-
-    /*
-     This heads-up will offer quick reply. Show EditText fields, etc.
-     */
-    public void setupQuickReply(LinearLayout layout,
-                                View.OnClickListener startEditClickListener,
-                                View.OnClickListener sendButtonClickListener
-    ) {
-        layout.findViewById(R.id.messageReply).setVisibility(View.VISIBLE);
-        final ImageButton sendButton = (ImageButton) layout.findViewById(R.id.sendButton);
-        sendButton.setOnClickListener(sendButtonClickListener);
-
-        final EditText editText = (EditText) layout.findViewById(R.id.editText);
-        editText.setOnClickListener(startEditClickListener);
-
-        editText.addTextChangedListener(new TextWatcher() {
-            public void afterTextChanged(Editable s) {
-                if (s.length() == 0) sendButton.setVisibility(Button.GONE);
-                else                 sendButton.setVisibility(Button.VISIBLE);
-            }
-
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-        });
-    }
-
-    public String getQuickReplyText(LinearLayout layout) {
-        return ((EditText) layout.findViewById(R.id.editText)).getText().toString();
     }
 }
