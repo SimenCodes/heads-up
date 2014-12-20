@@ -274,7 +274,7 @@ public class WelcomeActivity extends Activity {
                     if (accessibilityService.equalsIgnoreCase(ACCESSIBILITY_SERVICE_NAME)){
                         Mlog.d(logTag, "We've found the correct setting - accessibility is switched on!");
                         return true;
-                    } else if ("com.pushbullet.android/com.pushbullet.android.notifications.mirroring.CompatNotificationMirroringService".equals(accessibilityService)) {
+                    } else if (Build.VERSION.SDK_INT < 18 && "com.pushbullet.android/com.pushbullet.android.notifications.mirroring.CompatNotificationMirroringService".equals(accessibilityService)) {
                         TextView errorDisplay = (TextView) findViewById(R.id.errorDisplay);
                         // For easier translation in case of other troublesome services
                         errorDisplay.setText(String.format(getString(R.string.accessibility_service_blocked),

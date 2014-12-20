@@ -82,7 +82,7 @@
 ملاحظة: لا يتم دعم جميع مشغلات الموسيقى.\"</string>
   <string name="intro_warning_both_services">يتم تمكين كل من المستمع الإشعارات والخدمات إمكانية الوصول. يرجى تعطيل احد منهم.</string>
   <string name="notification_listener_not_found_detour">تحديد \'مستمعين الإشعارات\' وتبديل \'إشعارات التطبيق</string>
-  <string name="accessibility_not_found_detour"><![CDATA[اذهب إلى \'الوصول\'&gt; \'البرنامج الإشعارات\']]></string>
+  <string name="accessibility_not_found_detour"><![CDATA[اذهب إلى 'الوصول'&gt; 'البرنامج الإشعارات']]></string>
   <string name="accessibility_toast">حدد \'إشعارات البرنامج\' تبديل الخدمة</string>
   <string name="pref_floating_window">حيث تفتح نافذة عائمة</string>
   <string name="pref_floating_window_desc">اضغط ضغطة طويله على أيقونة لفتح إشعارات باعتبارها نافذة عائمة. ميزة تجريبية، يعمل مع نافذة عائمة أومني روم وX هالو.</string>

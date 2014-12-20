@@ -134,7 +134,7 @@ For details regarding problems and missing strings in your translation, see http
     <string name="device_admin_not_available">Device provisioning is not enabled. Stopping.</string>
     <string name="intro_status_on">The service is enabled. Try sending yourself a message.\nIf it doesn\'t work, please reboot your device and try again.\nTap here if you need help</string>
     <string name="intro_status_on_confirmed">The service is running. Try sending yourself a message.\nTap here if you need help.</string>
-    <string name="accessibility_service_blocked">%s is blocking Heads-up from accessing your notifications. Please disable it from the accessibility menu.</string>
+    <string name="accessibility_service_blocked">%s might be blocking Heads-up from accessing your notifications. Please disable it from the accessibility menu.</string>
     <string name="export_debug_data">Export debug data</string>
 
     <!-- Added since 1.8.2 -->
