@@ -48,7 +48,8 @@ If you speak another language, I'd appreciate if you could help us translate thi
 
 ## Common issues ##
 #### If no popups appear: ####
-*The universal problemsolver list, fixes 90% of support requests*
+*The universal problemsolver list*
+- Did you remember to enable the service by pressing the "Enable/disable" button and then setting Heads-up to ON in the next screen?
 - Make sure the service actually is running. Does it show up under System Settings > Apps > Running?
 - If not, reboot the phone. Does that help?
 - [4.2 and earlier] Do you have any other accessibility services running? Some other services, like Pushbullet, blocks Heads-up from reading notifications.
@@ -75,7 +76,7 @@ If you find that the uninstall button is disabled, go to Settings > Security > D
 #### Something else? ####
 Something I haven't covered here? I answer all kinds questions in the [issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue).
 If your question hasn't been answered there already, feel free to ask!
-*PS: Let me know that you've tried the steps here when asking qustions. If you don't, the first thing you'll get is a link to this list.*
+*Let me know that you've tried the steps here when asking qustions. If you don't, the first thing you'll get is a link to this list.*
 
 ## Contact ##
 Problems, feature requests or questions? Go to the [Issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue). You can also [email](mailto:sb@simen.codes) me, but I'm slower to answer emails.
