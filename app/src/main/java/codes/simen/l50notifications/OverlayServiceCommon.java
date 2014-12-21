@@ -225,7 +225,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         try {
             ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
             currentPackage = am.getRunningTasks(1).get(0).topActivity.getPackageName();
-        } catch (SecurityException e) {
+        } catch (SecurityException | IndexOutOfBoundsException e) {
             reportError(e, "Please allow Heads-up to get running tasks", getApplicationContext());
         }
     }
