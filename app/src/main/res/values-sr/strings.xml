@@ -121,6 +121,16 @@
   <string name="intro_status_on_confirmed">Сервис ради. Тестирајте слањем поруке самом себи.\nУколико ништа не ради контактирајте ме на sb@simen.codes.</string>
   <string name="accessibility_service_blocked">%s блокира Heads-up од нотификације. Онемиогућте програм из менија приступачности.</string>
   <string name="export_debug_data">Извоз податке дебага</string>
+  <string name="pref_close_on_outside_touch">Затвори на пипање ван</string>
+  <string name="pref_close_on_outside_touch_desc">Затвори нотификацију када пипнете ван ње</string>
+  <string name="pref_reminder_delay">Напомена</string>
+  <string name="pref_reminder_delay_desc">Ако одбаците нотификацију на горе, Heads-up ће је опет показати после оволико минута. 0 за дезактивацију.\nПАЖЊА: Пробна, нестабилна функциналност. Не очекујте да ради.</string>
+  <string name="pref_reminder_delay_counter">Потсети ме после <xliff:g id="time" example="7">%s</xliff:g> минута</string>
+  <string name="pref_top_margin_locked">Смештај на екран блокирања</string>
   <string name="pref_dismiss_on_swipe_desc">Уклони нотификације са фијоке када их превучете. Можете и да употребите X.</string>
   <string name="pref_dismiss_keyguard_desc">Ауто-деблокирај телефон на отварање нотификације.\nПАЖЊА! то дозвољава да БИЛО ко деблокира Ваш телефон.</string>
+  <string name="pref_broadcast_notifications">Емитуј нотификације</string>
+  <string name="pref_broadcast_notifications_desc">Допустите да моје друге апликације корите нотификације. То це умањити употребу меморије. Држите угашено осим ако нека апликација тражи да упалите.</string>
+  <string name="title_broadcast_request">Приступ нотификацији</string>
+  <string name="content_broadcast_request">Допушта %s да приступи нотификацијама. Сигурно то да се уради?</string>
 </resources>
