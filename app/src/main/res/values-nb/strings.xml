@@ -95,8 +95,9 @@
     <item name="bottom">Nederst</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'L\' lys</item>
-    <item name="ldark">Android 5.0 \'L\' mørk</item>
+    <item name="l">Android 5.0 \'Lollipop\' lys</item>
+    <item name="ldark">Android 5.0 \'Lollipop\' mørk</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' svart</item>
     <item name="holo">Enkel lys</item>
     <item name="holodark">Enkel mørk</item>
     <item name="random">Fargerik (tilfeldig)</item>

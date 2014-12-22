@@ -95,8 +95,9 @@
     <item name="bottom">Bawah</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'L\' cerah</item>
-    <item name="ldark">Android 5.0 \'L\' gelap</item>
+    <item name="l">Android 5.0 \'Lollipop\' cerah</item>
+    <item name="ldark">Android 5.0 \'Lollipop\' gelap</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">Cerah polos</item>
     <item name="holodark">Gelap polos</item>
     <item name="random">Psychedelic (Acak)</item>

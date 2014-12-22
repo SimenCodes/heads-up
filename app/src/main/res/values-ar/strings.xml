@@ -106,6 +106,7 @@
   <string-array name="overlayStyles">
     <item name="l">أندرويد 5.0 \'المصّاص\' الأبيض</item>
     <item name="ldark">أندرويد 5.0 \'المصّاص\' الأسود</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">أبيض سادة</item>
     <item name="holodark">اسود سادة</item>
     <item name="random">عشوائي</item>

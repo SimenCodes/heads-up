@@ -95,8 +95,9 @@
     <item name="bottom">Inferior</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'L\' claro</item>
-    <item name="ldark">Android 5.0 \'L\' escuro</item>
+    <item name="l">Android 5.0 \'Lollipop\' claro</item>
+    <item name="ldark">Android 5.0 \'Lollipop\' escuro</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">Plano claro</item>
     <item name="holodark">Plano escuro</item>
     <item name="random">Psychedelic (random)</item>

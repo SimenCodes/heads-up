@@ -97,6 +97,7 @@
   <string-array name="overlayStyles">
     <item name="l">Android 5.0 \"L\" jasny</item>
     <item name="ldark">Android 5.0 \"L\" ciemny</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">Zwykły jasny</item>
     <item name="holodark">Zwykły ciemny</item>
     <item name="random">Psychodeliczny (losowy)</item>

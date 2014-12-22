@@ -95,8 +95,9 @@
     <item name="bottom">Basse</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'L\' clair</item>
-    <item name="ldark">Android 5.0 \'L\' foncé</item>
+    <item name="l">Android 5.0 \'Lollipop\' clair</item>
+    <item name="ldark">Android 5.0 \'Lollipop\' foncé</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">Clair normal</item>
     <item name="holodark">Foncé normal</item>
     <item name="random">Psychédélique (aléatoire)</item>

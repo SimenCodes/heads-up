@@ -95,8 +95,9 @@
     <item name="bottom">Долу</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'L\' light</item>
-    <item name="ldark">Android 5.0 \'L\' dark</item>
+    <item name="l">Android 5.0 \'Lollipop\' light</item>
+    <item name="ldark">Android 5.0 \'Lollipop\' dark</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">Чисто бяло</item>
     <item name="holodark">Чисто черно</item>
     <item name="random">Psychedelic (random)</item>

@@ -97,8 +97,9 @@
     <item name="bottom">Unten</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'L\' hell</item>
-    <item name="ldark">Android 5.0 \'L\' dunkel</item>
+    <item name="l">Android 5.0 \'Lollipop\' hell</item>
+    <item name="ldark">Android 5.0 \'Lollipop\' dunkel</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">Holo Hell</item>
     <item name="holodark">Holo Dunkel</item>
     <item name="random">Psychedelic (random)</item>

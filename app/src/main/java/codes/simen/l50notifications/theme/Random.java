@@ -60,6 +60,8 @@ public class Random extends HoloDark {
         }
         else {
             subTheme = new HoloDark();
+            ((TextView)linearLayout.findViewById(R.id.notification_title)).setTextColor(Color.WHITE);
+            ((TextView)linearLayout.findViewById(R.id.notification_subtitle)).setTextColor(Color.WHITE);
         }
     }
 

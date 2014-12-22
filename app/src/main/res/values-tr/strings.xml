@@ -95,8 +95,9 @@
     <item name="bottom">Altta</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'L\' aydınlık</item>
-    <item name="ldark">Android 5.0 \'L\' karanlık</item>
+    <item name="l">Android 5.0 \'Lollipop\' aydınlık</item>
+    <item name="ldark">Android 5.0 \'Lollipop\' karanlık</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">Sade aydınlık</item>
     <item name="holodark">Sade karanlık</item>
     <item name="random">Psychedelic (rastgele)</item>

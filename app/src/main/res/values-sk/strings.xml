@@ -95,8 +95,9 @@
     <item name="bottom">Dole</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'L\' svetlý</item>
-    <item name="ldark">Android 5.0 \'L\' tmavý</item>
+    <item name="l">Android 5.0 \'Lollipop\' svetlý</item>
+    <item name="ldark">Android 5.0 \'Lollipop\' tmavý</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">Jednoduchý svetlý</item>
     <item name="holodark">Jednoduchý tmavý</item>
     <item name="random">Náhodný</item>

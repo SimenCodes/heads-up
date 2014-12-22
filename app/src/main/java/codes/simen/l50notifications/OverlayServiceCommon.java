@@ -71,6 +71,7 @@ import java.util.Set;
 import codes.simen.l50notifications.admin.AdminReceiver;
 import codes.simen.l50notifications.theme.HoloDark;
 import codes.simen.l50notifications.theme.HoloLight;
+import codes.simen.l50notifications.theme.L5Black;
 import codes.simen.l50notifications.theme.L5Dark;
 import codes.simen.l50notifications.theme.L5Light;
 import codes.simen.l50notifications.theme.Random;
@@ -170,6 +171,9 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     break;
                 case 1: // L Dark
                     themeClass = new L5Dark(stub);
+                    break;
+                case 5: // L Black
+                    themeClass = new L5Black(stub);
                     break;
                 case 2: // Holo Light
                     themeClass = new HoloLight(stub);
