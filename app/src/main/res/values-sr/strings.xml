@@ -101,6 +101,7 @@
     <item name="holo">Обично светло</item>
     <item name="holodark">Обично тамно</item>
     <item name="random">Психоделичан (случајан)</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Само на екран блокирања</string>
   <string name="pref_only_on_lock_screen_desc">Покажи нотификације само када је екран блокиран.</string>

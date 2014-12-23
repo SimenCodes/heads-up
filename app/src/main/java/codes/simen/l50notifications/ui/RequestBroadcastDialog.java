@@ -57,7 +57,7 @@ public class RequestBroadcastDialog extends Activity {
             return;
         }
 
-        if (!WelcomeActivity.isNotificationListenerEnabled(getApplicationContext())) {
+        if (!WelcomeActivity.isNotificationListenerEnabled(getApplicationContext()) && !WelcomeActivity.isAccessibilityEnabled(getApplicationContext())) {
             showErrorDialog();
             return;
         }

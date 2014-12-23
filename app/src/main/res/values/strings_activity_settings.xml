@@ -43,6 +43,7 @@
         <item name="holo">2</item>
         <item name="holodark">3</item>
         <item name="random">4</item>
+        <item name="ubuntu">6</item>
     </string-array>
 
     <!-- Do not translate these -->

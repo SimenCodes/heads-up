@@ -103,6 +103,7 @@
     <item name="holo">Holo Hell</item>
     <item name="holodark">Holo Dunkel</item>
     <item name="random">Psychedelic (random)</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Nur auf dem Sperrbildschirm</string>
   <string name="pref_only_on_lock_screen_desc">Zeigt Popups nur auf dem Sperrbildschirm an.</string>

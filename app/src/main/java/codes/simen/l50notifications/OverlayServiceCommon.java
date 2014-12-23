@@ -76,6 +76,7 @@ import codes.simen.l50notifications.theme.L5Dark;
 import codes.simen.l50notifications.theme.L5Light;
 import codes.simen.l50notifications.theme.Random;
 import codes.simen.l50notifications.theme.ThemeClass;
+import codes.simen.l50notifications.theme.Ubuntu;
 import codes.simen.l50notifications.util.Mlog;
 import codes.simen.l50notifications.util.ObjectSerializer;
 import codes.simen.l50notifications.util.SwipeDismissTouchListener;
@@ -181,8 +182,11 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 case 3: // Holo
                     themeClass = new HoloDark(stub);
                     break;
-                case 4: //Random
+                case 4: // Random
                     themeClass = new Random(stub);
+                    break;
+                case 6: // Ubuntu
+                    themeClass = new Ubuntu(stub);
                     break;
             }
             stub.inflate();
@@ -740,7 +744,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             return false;
         else {
             TextView subtitle = (TextView) layout.findViewById(R.id.notification_subtitle);
-            if ( (subtitle.getLineCount() <= MIN_LINES && subtitle.length() < 120) && !isActionButtons) {
+            if ( (subtitle.getLineCount() <= MIN_LINES && subtitle.length() < 80) && !isActionButtons) {
                 return false;
             }
             isCompact = false;

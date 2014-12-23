@@ -110,6 +110,7 @@
     <item name="holo">أبيض سادة</item>
     <item name="holodark">اسود سادة</item>
     <item name="random">عشوائي</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">فقط بوضع قفل الشاشة</string>
   <string name="pref_only_on_lock_screen_desc">عرض النوافذ المنبقة بوضع قفل الشاشة فقط.</string>

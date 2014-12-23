@@ -101,6 +101,7 @@
     <item name="holo">Blanco normal</item>
     <item name="holodark">Oscuro normal</item>
     <item name="random">Psychedelic (random)</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Solo estando bloqueado</string>
   <string name="pref_only_on_lock_screen_desc">Solo mostrar heads-ups en la pantalla de bloqueo.</string>

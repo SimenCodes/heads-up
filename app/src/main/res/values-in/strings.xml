@@ -101,6 +101,7 @@
     <item name="holo">Cerah polos</item>
     <item name="holodark">Gelap polos</item>
     <item name="random">Psychedelic (Acak)</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Hanya di layar kunci</string>
   <string name="pref_only_on_lock_screen_desc">Hanya tampilkan popup di layar kunci.</string>

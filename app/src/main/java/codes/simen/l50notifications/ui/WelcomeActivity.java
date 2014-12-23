@@ -44,7 +44,7 @@ import codes.simen.l50notifications.util.Mlog;
 public class WelcomeActivity extends Activity {
     public static final String ACCESSIBILITY_SERVICE_NAME = "codes.simen.l50notifications/codes.simen.l50notifications.NotificationListenerAccessibilityService";
     private static final int REQUEST_CODE = 654;
-    private final String logTag = "Heads-up";
+    private static final String logTag = "Heads-up";
     private static boolean isRunning = false;
     private SharedPreferences preferences = null;
 
@@ -72,13 +72,13 @@ public class WelcomeActivity extends Activity {
         Button enableButton = (Button) findViewById(R.id.notification_open);
         if (
                 ( Build.VERSION.SDK_INT >= 18 && isNotificationListenerEnabled(this) )
-                || isAccessibilityEnabled()
+                || isAccessibilityEnabled(getApplicationContext())
         ) {
             //status.setVisibility(View.VISIBLE);
             enableButton.setBackgroundResource(R.drawable.button_enable_on);
             checkEnabled();
             if (( Build.VERSION.SDK_INT >= 18 && isNotificationListenerEnabled(this) )
-                    && isAccessibilityEnabled() ) {
+                    && isAccessibilityEnabled(getApplicationContext()) ) {
                 final View bothEnabled = findViewById(R.id.bothEnabled);
                 bothEnabled.setVisibility(View.VISIBLE);
                 bothEnabled.setOnClickListener(new View.OnClickListener() {
@@ -251,10 +251,10 @@ public class WelcomeActivity extends Activity {
     }
 
 
-    boolean isAccessibilityEnabled(){
+    public static boolean isAccessibilityEnabled(Context context){
         int accessibilityEnabled = 0;
         try {
-            accessibilityEnabled = Settings.Secure.getInt(this.getContentResolver(),android.provider.Settings.Secure.ACCESSIBILITY_ENABLED);
+            accessibilityEnabled = Settings.Secure.getInt(context.getContentResolver(),android.provider.Settings.Secure.ACCESSIBILITY_ENABLED);
             Mlog.d(logTag, "ACCESSIBILITY: " + accessibilityEnabled);
         } catch (Settings.SettingNotFoundException e) {
             Mlog.d(logTag, "Error finding setting, default accessibility to not found: " + e.getMessage());
@@ -263,7 +263,7 @@ public class WelcomeActivity extends Activity {
         TextUtils.SimpleStringSplitter mStringColonSplitter = new TextUtils.SimpleStringSplitter(':');
 
         if (accessibilityEnabled==1){
-            String settingValue = Settings.Secure.getString(getContentResolver(), Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES);
+            String settingValue = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES);
             Mlog.d(logTag, "Setting: " + settingValue);
             if (settingValue != null) {
                 mStringColonSplitter.setString(settingValue);
@@ -275,11 +275,9 @@ public class WelcomeActivity extends Activity {
                         Mlog.d(logTag, "We've found the correct setting - accessibility is switched on!");
                         return true;
                     } else if (Build.VERSION.SDK_INT < 18 && "com.pushbullet.android/com.pushbullet.android.notifications.mirroring.CompatNotificationMirroringService".equals(accessibilityService)) {
-                        TextView errorDisplay = (TextView) findViewById(R.id.errorDisplay);
                         // For easier translation in case of other troublesome services
-                        errorDisplay.setText(String.format(getString(R.string.accessibility_service_blocked),
-                                "PushBullet Notification Mirroring"));
-                        errorDisplay.setVisibility(View.VISIBLE);
+                        Toast.makeText(context, String.format(context.getString(R.string.accessibility_service_blocked),
+                                "PushBullet Notification Mirroring"), Toast.LENGTH_LONG).show();
                     }
                 }
             }

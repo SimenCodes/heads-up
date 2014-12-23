@@ -101,6 +101,7 @@
     <item name="holo">Απλό ανοικτό</item>
     <item name="holodark">Απλό σκοτεινό</item>
     <item name="random">Psychedelic (random)</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Μόνο στην οθόνη κλειδώματος</string>
   <string name="pref_only_on_lock_screen_desc">Εμφάνιση αναδυόμενων παραθύρων μόνο στην οθόνη κλειδώματος.</string>

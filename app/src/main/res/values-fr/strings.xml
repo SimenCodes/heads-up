@@ -101,6 +101,7 @@
     <item name="holo">Clair normal</item>
     <item name="holodark">Foncé normal</item>
     <item name="random">Psychédélique (aléatoire)</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Seulement sur l\'écran de verrouillage</string>
   <string name="pref_only_on_lock_screen_desc">Ne montrer les notifications que sur l\'écran de verrouillage.</string>

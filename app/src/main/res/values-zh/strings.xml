@@ -103,6 +103,7 @@
     <item name="holo">扁平亮色主题</item>
     <item name="holodark">扁平暗色主题</item>
     <item name="random">Psychedelic (random)</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">只在锁屏显示</string>
   <string name="pref_only_on_lock_screen_desc">尽在锁屏界面显示弹窗</string>
