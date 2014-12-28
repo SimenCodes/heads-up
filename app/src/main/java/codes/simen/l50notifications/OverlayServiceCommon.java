@@ -411,20 +411,10 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    onPopupClick(v);
+                    onPopupClick(v, preferences.getBoolean("floating_window", false));
                 }
             });
-            if (preferences.getBoolean("floating_window", false)) {
-                Mlog.d(logTag, "floating window");
-                imageView.setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
-                        Mlog.d(logTag, "open as floating");
-                        openIntent(pendingIntent, true);
-                        return true;
-                    }
-                });
-            }
+
             try {
                 if (Build.VERSION.SDK_INT >= 11) {
                     Drawable drawable = null;
@@ -728,12 +718,12 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         doFinish(0);
     }
 
-    public void onPopupClick(View v) {
+    public void onPopupClick(View v, boolean isFloating) {
         final ViewGroup rootView = themeClass.getRootView(layout);
         if (rootView.getTranslationX() != 0 || rootView.getTranslationY() != 0)
             return; // Stop if we're currently swiping. Bug 0000034
 
-        if (!expand()) openIntent(pendingIntent, false);
+        if (!expand()) openIntent(pendingIntent, isFloating);
     }
 
     /*

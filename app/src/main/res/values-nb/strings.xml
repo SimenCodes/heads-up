@@ -76,7 +76,7 @@
   <string name="accessibility_not_found_detour"><![CDATA[Gå til \'Tilgjengelighet\' > \'Heads-up-varsler\']]></string>
   <string name="accessibility_toast">Velg \'Heads-up-varsler\' for å aktivere/deaktivere tjenesten.</string>
   <string name="pref_floating_window">Åpne som flytende vindu</string>
-  <string name="pref_floating_window_desc">Langt trykk på ikonet til varselet åpner appen som et flytende vindu. Funksjonen er eksperimentell, og fungerer kun med OmniRom og XHaloFloatingWindow.</string>
+  <string name="pref_floating_window_desc">Et trykk på ikonet til varselet åpner appen som et flytende vindu. Funksjonen er eksperimentell, og fungerer kun med OmniRom og XHaloFloatingWindow.</string>
   <string name="pendingintent_cancel_exception">Appen har avbrutt varselet</string>
   <string name="pendingintent_null_exception">Appen har ikke definert noen handling</string>
   <string name="pref_hide_dismiss_button">Skjul fjern-knappen</string>

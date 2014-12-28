@@ -84,7 +84,7 @@ For details regarding problems and missing strings in your translation, see http
     <string name="accessibility_not_found_detour"><![CDATA[Go to \'Accessibility\' > \'Heads-up notifications\']]></string>
     <string name="accessibility_toast">Select \'Heads-up notifications\' to toggle the service</string>
     <string name="pref_floating_window">Open as floating window</string>
-    <string name="pref_floating_window_desc">Long-tap the icon to open the notification as a floating window. Experimental feature, works with OmniRom and XHaloFloatingWindow.</string>
+    <string name="pref_floating_window_desc">Tap the icon to open the notification as a floating window. Experimental feature, works with OmniRom and XHaloFloatingWindow.</string>
     <string name="pendingintent_cancel_exception">App has canceled action</string>
     <string name="pendingintent_null_exception">App didn\'t define any action</string>
     <string name="pref_hide_dismiss_button">Hide dismiss button</string>
