@@ -127,7 +127,7 @@
   <string name="pref_close_on_outside_touch_desc">Supprimer le pop-up quand vous touchez en dehors de la notification heads-up</string>
   <string name="pref_reminder_delay">Heure de rappel</string>
   <string name="pref_reminder_delay_desc">Si vous glissez la notification vers le haut, elle ré-apparaîtra après le temps que vous spécifiez ici. Réglez sur zéro pour le désactiver.\nATTENTION: Expérimental, fonctionnalité instable. Ne comptez pas dessus pour travailler.</string>
-  <string name="pref_reminder_delay_counter">Rappelez moi après <xliff:g id="time" example="7">%s</xliff:g> minutes</string>
+  <string name="pref_reminder_delay_counter">Rappelez-moi après <xliff:g id="time" example="7">%s</xliff:g> minutes</string>
   <string name="pref_top_margin_locked">Position de la fenêtre sur l\'écran de verrouillage</string>
   <string name="pref_dont_disturb_error">Attention: Google à retiré la possibilité d\'obtenir la liste des tâches en cours d\'exécution dans Android 5.0, donc cela ne fonctionnera pas correctement.</string>
   <string name="pref_dismiss_on_swipe_desc">Enlever la notification quand vous la balayer. Vous pouvez toujours utiliser le bouton X.</string>
