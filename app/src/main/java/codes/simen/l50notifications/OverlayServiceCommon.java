@@ -197,14 +197,14 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     WindowManager.LayoutParams.WRAP_CONTENT,
                     WindowManager.LayoutParams.TYPE_PRIORITY_PHONE,
                     WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
-                    WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
+                    //WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
                     WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH,
                     PixelFormat.TRANSLUCENT
             );
             if (isLocked)
-                position = Integer.valueOf(preferences.getString("overlay_vertical_position_locked", "1"));
-            if (!isLocked)
-                position = Integer.valueOf( preferences.getString("overlay_vertical_position", "1") );
+                position = Integer.valueOf(preferences.getString("overlay_vertical_position_locked", "-10"));
+            if (!isLocked || position == -10)
+                position = Integer.valueOf(preferences.getString("overlay_vertical_position", "1"));
             switch (position) {
                 case 2:
                     layoutParams.flags |= WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
@@ -716,6 +716,10 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     @SuppressWarnings("UnusedDeclaration")
     public void doHide(View v) {
         doFinish(0);
+    }
+
+    public void onPopupClick(View v) {
+        onPopupClick(v, false);
     }
 
     public void onPopupClick(View v, boolean isFloating) {

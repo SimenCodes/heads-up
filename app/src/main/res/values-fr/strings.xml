@@ -97,7 +97,7 @@
   <string-array name="overlayStyles">
     <item name="l">Android 5.0 \'Lollipop\' clair</item>
     <item name="ldark">Android 5.0 \'Lollipop\' foncé</item>
-    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' noir</item>
     <item name="holo">Clair normal</item>
     <item name="holodark">Foncé normal</item>
     <item name="random">Psychédélique (aléatoire)</item>
@@ -126,13 +126,14 @@
   <string name="pref_close_on_outside_touch">Cliquer hors de la fenêtre pour fermer</string>
   <string name="pref_close_on_outside_touch_desc">Supprimer le pop-up quand vous touchez en dehors de la notification heads-up</string>
   <string name="pref_reminder_delay">Heure de rappel</string>
-  <string name="pref_reminder_delay_desc">Si vous swipez la heads-up vers le haut, Heads-up ré-apparaitra après le temps que vous avez spécifiez ici. Réglez sur zéro pour le désactiver.\nATTENTION: Expérimental, fonctionnalité instable. Ne comptez pas dessus pour travailler.</string>
+  <string name="pref_reminder_delay_desc">Si vous glissez la notification vers le haut, elle ré-apparaîtra après le temps que vous spécifiez ici. Réglez sur zéro pour le désactiver.\nATTENTION: Expérimental, fonctionnalité instable. Ne comptez pas dessus pour travailler.</string>
   <string name="pref_reminder_delay_counter">Rappelez moi après <xliff:g id="time" example="7">%s</xliff:g> minutes</string>
   <string name="pref_top_margin_locked">Position de la fenêtre sur l\'écran de verrouillage</string>
+  <string name="pref_dont_disturb_error">Attention: Google à retiré la possibilité d\'obtenir la liste des tâches en cours d\'exécution dans Android 5.0, donc cela ne fonctionnera pas correctement.</string>
   <string name="pref_dismiss_on_swipe_desc">Enlever la notification quand vous la balayer. Vous pouvez toujours utiliser le bouton X.</string>
   <string name="pref_dismiss_keyguard_desc">Débloquer le téléphone lors de l\'ouverture d\'une notification.\nATTENTION! N\'importe qui pourra débloquer votre téléphone, peut importe les paramétrages de sécurité.</string>
   <string name="pref_broadcast_notifications">Diffuser les notifications</string>
-  <string name="pref_broadcast_notifications_desc">Laisser mes autres applications accéder à vos notifications. Ceci réduira l\'utilisation de la RAM lors de l\'usage d\'applications comme Voiceify. Laisser inactif sauf si une de mes applications me demande de l\'activer.</string>
+  <string name="pref_broadcast_notifications_desc">Laisser mes autres applications accéder à vos notifications. Ceci réduira l\'utilisation de la RAM lors de l\'usage d\'applications comme Voiceify. Laisser inactif sauf si une de mes applications vous demande de l\'activer.</string>
   <string name="title_broadcast_request">Accès aux notifications</string>
   <string name="content_broadcast_request">Cela donnera %s accès à vos notifications. Êtes vous sur que c\'est ce que vous souhaitez ?</string>
 </resources>
