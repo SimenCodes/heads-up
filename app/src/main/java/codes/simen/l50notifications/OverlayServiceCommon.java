@@ -22,6 +22,7 @@ import android.app.KeyguardManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.app.admin.DevicePolicyManager;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -38,13 +39,16 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.ThumbnailUtils;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
+import android.telephony.SmsManager;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -71,10 +75,12 @@ import java.util.Set;
 import codes.simen.l50notifications.admin.AdminReceiver;
 import codes.simen.l50notifications.theme.HoloDark;
 import codes.simen.l50notifications.theme.HoloLight;
+import codes.simen.l50notifications.theme.L5Black;
 import codes.simen.l50notifications.theme.L5Dark;
 import codes.simen.l50notifications.theme.L5Light;
 import codes.simen.l50notifications.theme.Random;
 import codes.simen.l50notifications.theme.ThemeClass;
+import codes.simen.l50notifications.theme.Ubuntu;
 import codes.simen.l50notifications.util.Mlog;
 import codes.simen.l50notifications.util.ObjectSerializer;
 import codes.simen.l50notifications.util.SwipeDismissTouchListener;
@@ -88,7 +94,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private static final int SENSOR_DELAY_MILLIS = 10000;
     private static final int MIN_LINES = 2;
     private static final int FLAG_FLOATING_WINDOW = 0x00002000;
-    private static final ArrayList<String> LOCKSCREEN_APPS = new ArrayList<String>(Arrays.asList(new String[]{
+    private static final ArrayList<String> LOCKSCREEN_APPS = new ArrayList<>(Arrays.asList(new String[]{
             "com.achep.acdisplay",
             "com.silverfinger.lockscreen",
             "com.slidelock",
@@ -379,6 +385,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 stopSelf();
                 return START_NOT_STICKY;
             }
+            //noinspection unchecked
             Set<String> blockedApps = (Set<String>) ObjectSerializer.deserialize(preferences.getString("noshowlist", ""));
             if (blockedApps != null && blockedApps.size() > 0) {
                 final boolean isBlacklistInverted = preferences.getBoolean("noshowlist_inverted", false);
@@ -418,7 +425,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    onPopupClick(v, preferences.getBoolean("floating_window", false));
+                    onPopupClick(preferences.getBoolean("floating_window", false));
                 }
             });
 
@@ -525,8 +532,6 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                             themeClass.hideActionButtons(layout);
                     } else
                         themeClass.hideActionButtons(layout);
-                } catch (NullPointerException | IndexOutOfBoundsException e) {
-                    reportError(e, "ThemeActionIcon", getApplicationContext());
                 } catch (RuntimeException rte) {
                     reportError(rte, "ThemeActionIcon", getApplicationContext());
                 }
@@ -737,19 +742,19 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
     private ArrayList<View> getAllChildren(View v) {
         if (!(v instanceof ViewGroup)) {
-            ArrayList<View> viewArrayList = new ArrayList<View>();
+            ArrayList<View> viewArrayList = new ArrayList<>();
             viewArrayList.add(v);
             return viewArrayList;
         }
 
-        ArrayList<View> result = new ArrayList<View>();
+        ArrayList<View> result = new ArrayList<>();
 
         ViewGroup viewGroup = (ViewGroup) v;
         for (int i = 0; i < viewGroup.getChildCount(); i++) {
 
             View child = viewGroup.getChildAt(i);
 
-            ArrayList<View> viewArrayList = new ArrayList<View>();
+            ArrayList<View> viewArrayList = new ArrayList<>();
             viewArrayList.add(v);
             viewArrayList.addAll(getAllChildren(child));
 
@@ -794,10 +799,10 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     }
 
     public void onPopupClick(View v) {
-        onPopupClick(v, false);
+        onPopupClick(false);
     }
 
-    public void onPopupClick(View v, boolean isFloating) {
+    public void onPopupClick(boolean isFloating) {
         final ViewGroup rootView = themeClass.getRootView(layout);
         if (rootView.getTranslationX() != 0 || rootView.getTranslationY() != 0)
             return; // Stop if we're currently swiping. Bug 0000034
@@ -856,8 +861,9 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         @Override
         public boolean onLongClick(View v) {
             try {
+                //noinspection unchecked
                 Set<String> blacklist = (Set<String>) ObjectSerializer.deserialize(preferences.getString("blacklist", ""));
-                if (blacklist == null) blacklist = new HashSet<String>();
+                if (blacklist == null) blacklist = new HashSet<>();
 
                 final boolean isBlacklistInverted = preferences.getBoolean("blacklist_inverted", false);
                 Mlog.v(logTag, isBlacklistInverted);
@@ -874,9 +880,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("blacklist", serialized);
                 editor.apply();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
+            } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
             }
             doFinish(1);
