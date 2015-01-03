@@ -57,7 +57,7 @@ If you speak another language, I'd appreciate if you could help us translate thi
 - Allow more priority levels in the settings.
 - Some phones block Heads-up from displaying popups. Check that "draw on top" or "display popups" is enabled in System Settings > Apps > Heads-up.
 
-#### Huawei, XIAOMI, ZTE and MIUI users: ####
+#### XIAOMI, ZTE and MIUI users: ####
 Before you can use this app, you'll probably need to give it some slack when it comes to security.
 
 1. Go to System Settings > All > Apps > Downloaded > Heads-up notifications.
@@ -66,6 +66,13 @@ Before you can use this app, you'll probably need to give it some slack when it 
 4. Set 'I trust this app' to on.
 
 *It might also be necessary to reset the app data/settings.*
+
+#### Huawei users: ####
+*While I don't have any Huawei devices to test this with, a user said the following works on Huawei Ascend P7:*
+
+Open the app 'phone manager', click settings in the top right corner. Select "dropzone management" and give the app permission.
+
+If this doesn't work, try the instructions for XIAOMI/ZTE/MIUI users.
 
 #### Device talking? ####
 This is a bug in Samsung's firmware. See post on my [website](http://simen.codes/stuff/samsung-phone-talking/)
