@@ -51,7 +51,6 @@ public class SmsMessageReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (!isInitialStickyBroadcast()) return;
         Bundle extras = intent.getExtras();
         Mlog.i(LOG_TAG, "onReceive");
         if (extras == null)
@@ -70,19 +69,19 @@ public class SmsMessageReceiver extends BroadcastReceiver {
             from = fromAddress;
 
         }
-	    String name = getContact(context, from);
+	    //String name = getContact(context, from);
         //addNotification(context, from, name, fullmessage);
-        displayPopup(context, from, name, fullmessage);
+        displayPopup(context, from, fullmessage);
     }
 
-    private void displayPopup(Context context, String from, String name, String message) {
+    private void displayPopup(Context context, String from, String message) {
         Intent intent = new Intent(context, OverlayService.class);
         if (Build.VERSION.SDK_INT >= 18) intent.setClass(context, OverlayService.class);
         else                             intent.setClass(context, OverlayServiceCommon.class);
 
         intent.setAction("SMSFORREPLY");
 
-        intent.putExtra("title", name);
+        intent.putExtra("title", from);
         intent.putExtra("number", from);
         intent.putExtra("text", message);
 

@@ -22,7 +22,6 @@ import android.app.KeyguardManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.app.admin.DevicePolicyManager;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -39,16 +38,13 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.ThumbnailUtils;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
-import android.telephony.SmsManager;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -83,6 +79,7 @@ import codes.simen.l50notifications.theme.ThemeClass;
 import codes.simen.l50notifications.theme.Ubuntu;
 import codes.simen.l50notifications.util.Mlog;
 import codes.simen.l50notifications.util.ObjectSerializer;
+import codes.simen.l50notifications.util.SmsSender;
 import codes.simen.l50notifications.util.SwipeDismissTouchListener;
 
 public class OverlayServiceCommon extends Service implements SensorEventListener {
@@ -691,39 +688,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private void doSend(String fromNumber) {
         String message = themeClass.getQuickReplyText(layout);
         if (!message.isEmpty()) {
-            try {
-                SmsManager sms = SmsManager.getDefault();
-                sms.sendTextMessage(fromNumber, null, message, null, null);
-            } catch (Exception e) {
-                Log.d(logTag, "openMainSMS");
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setType("vnd.android-dir/mms-sms");
-                intent.putExtra("address", fromNumber);
-                intent.putExtra("sms_body", message);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            }
-
-            if (Build.VERSION.SDK_INT < 19) {
-                Context c = getApplicationContext();
-                ContentValues v = new ContentValues();
-                v.put("address", fromNumber);
-                v.put("body", message);
-                addSms(c, v);
-            }
+            SmsSender.sendSmsWithService(getApplicationContext(), fromNumber, message);
             doFinish(2);
-        }
-    }
-
-    public void addSms(final Context c, final ContentValues v) {
-        try {
-            c.getContentResolver().insert(Uri.parse("content://sms/sent"), v);
-        } catch (Exception e) {
-            Toast toast = Toast.makeText(c, "SMS NOT SENT", Toast.LENGTH_SHORT);
-            toast.show();
-        } finally {
-            Toast toast = Toast.makeText(c, "SMS sent", Toast.LENGTH_LONG);
-            toast.show();
         }
     }
 

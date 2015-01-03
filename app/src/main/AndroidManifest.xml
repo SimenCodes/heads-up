@@ -31,7 +31,7 @@
     <uses-permission android:name="android.permission.WRITE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <!-- Fetch contact name and images for the popup -->
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!--<uses-permission android:name="android.permission.READ_CONTACTS"/>-->
 
     <permission
         android:name="codes.simen.permission.NOTIFICATIONS"
@@ -112,13 +112,7 @@
             android:exported="false">
         </service>
 
-        <service
-            android:name=".OverlayServiceMsg"
-            android:enabled="true"
-            android:exported="false">
-        </service>
-
-        <receiver android:name=".SmsMessageReceiver">
+        <receiver android:name="codes.simen.l50notifications.SmsMessageReceiver">
             <intent-filter android:priority="100000">
                 <action android:name="android.provider.Telephony.SMS_RECEIVED_ACTION" />
             </intent-filter>
@@ -126,6 +120,11 @@
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
+        <service
+            android:name="codes.simen.l50notifications.util.SmsSender"
+            android:enabled="true"
+            android:exported="false">
+        </service>
 
         <activity
             android:name="codes.simen.l50notifications.ui.SetLocaleActivity"
