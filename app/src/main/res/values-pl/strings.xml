@@ -97,9 +97,11 @@
   <string-array name="overlayStyles">
     <item name="l">Android 5.0 \"L\" jasny</item>
     <item name="ldark">Android 5.0 \"L\" ciemny</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">Zwykły jasny</item>
     <item name="holodark">Zwykły ciemny</item>
     <item name="random">Psychodeliczny (losowy)</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Tylko na ekranie blokady</string>
   <string name="pref_only_on_lock_screen_desc">Pokazuj powiadomienia jedynie na ekranie blokady</string>
@@ -131,7 +133,7 @@
   <string name="pref_dismiss_on_swipe_desc">Usuń powiadomienie przesuwając je palcem w bok. (Nadal możesz wcisnąć X by odrzucić powiadomienie).</string>
   <string name="pref_dismiss_keyguard_desc">Automatycznie odblokuj telefon po kliknięciu powiadomienia.\nUWAGA! To pozwoli każdemu odblokować Twój telefon, niezależnie od Twoich ustawień zabezpieczeń.</string>
   <string name="pref_broadcast_notifications">Nadawanie powiadomienia</string>
-  <string name="pref_broadcast_notifications_desc">Daj mi innych aplikacji dostęp do powiadomień. Pozwoli to zmniejszyć zużycie pamięci RAM w przypadku korzystania z aplikacji, takich jak Voiceify. Utrzymać ją chyba jeden z moich aplikacji poprosi ją włączyć.</string>
+  <string name="pref_broadcast_notifications_desc">Daj moim innym aplikacjom dostęp do powiadomień. Pozwoli to zmniejszyć zużycie pamięci RAM w przypadku korzystania z aplikacji, takich jak Voiceify. Nie włączaj tego, chyba że jedna z moich aplikacji poprosi o włączenie.</string>
   <string name="title_broadcast_request">Dostęp do powiadomień</string>
   <string name="content_broadcast_request">To daje %s dostęp do powiadomień. Czy jesteś pewien, że to, co chcesz?</string>
 </resources>

@@ -95,11 +95,13 @@
     <item name="bottom">Inferior</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'L\' claro</item>
-    <item name="ldark">Android 5.0 \'L\' escuro</item>
+    <item name="l">Android 5.0 \'Lollipop\' claro</item>
+    <item name="ldark">Android 5.0 \'Lollipop\' escuro</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">Plano claro</item>
     <item name="holodark">Plano escuro</item>
     <item name="random">Psychedelic (random)</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Somente na tela de bloqueio</string>
   <string name="pref_only_on_lock_screen_desc">Mostra os popus apenas na tela de bloqueio.</string>
@@ -109,15 +111,28 @@
   <string name="device_admin_disable_warning">Depois de desabilitar esta função, algumas características do Heads-up podem não funcionar adequamente.</string>
   <string name="title_activity_device_admin_enabler">Habilitar administração do aparelho</string>
   <string name="pref_device_admin">Consertar erro da \'tela ligada\'.</string>
-  <string name="pref_keep_screen_on_forever_desc">Depois de ligar o ecrã, mantenha-o ligado enquanto o Heads-up for visível.</string>
+  <string name="no_proximity_sensor_error">Nenhum sensor de proximidade detectado. Detector de bolso não irá funcionar. Por favor não reporte esse bug.</string>
+  <string name="pref_keep_screen_on_forever">Manter a tela ligada</string>
+  <string name="pref_keep_screen_on_forever_desc">Depois de ligar a tela, mantenha-o ligado enquanto o Heads-up for visível.</string>
   <string name="action_help">Ajuda!</string>
-  <string name="action_test">Testar</string>
+  <string name="action_test">Teste</string>
   <string name="device_admin_enable_explanation">Habilitando esta função, o Heads-up poderá desligar a tela. Use se a tela não desligar após mostrar os popups na tela de bloqueio, ou se a detecção de bolso não está funcionando adequadamente.</string>
+  <string name="device_admin_alredy_on">Já é um administrador do dispositivo.</string>
+  <string name="device_admin_not_available">Provisionamento de dispositivo não está habilitado. Parando.</string>
   <string name="intro_status_on">O serviço está habilitado. Tente enviar uma mensagem a você mesmo.\nSe não funcionar, por favor, reinicie seu aparelho e tente novamente. Contate-me através do email sb@simen.codes se não funcionar. Por favor, deixe seu comentário em inglês.</string>
   <string name="intro_status_on_confirmed">O serviço está em execução. Tente enviar uma mensagem a você mesmo.\nContate-me através do email sb@simen.codes se não funcionar. Por favor, deixe seu comentário em inglês.</string>
-  <string name="pref_close_on_outside_touch_desc">Remover pop-up quando clicar fora de Heads-up</string>
+  <string name="accessibility_service_blocked">%s pode estar bloqueando o heads-up de acessar suas notificações. Favor desativá-lo no menu de acessibilidade.</string>
+  <string name="export_debug_data">Exportar dados do debug</string>
+  <string name="pref_close_on_outside_touch">Fechar quando tocado externamente</string>
+  <string name="pref_close_on_outside_touch_desc">Remover pop-up quando clicar fora do Heads-up</string>
+  <string name="pref_reminder_delay">Lembrete de tempo</string>
+  <string name="pref_reminder_delay_desc">Se você deslizar o heads-up para cima, o heads-up re-irá exibi-la após o número de minutos que você especificar aqui. Defina como zero para desativar.\nAVISO: caraterística experimental e instável. Não confie nela para trabalhar.</string>
   <string name="pref_reminder_delay_counter">Lembrar-me após <xliff:g id="time" example="7">%s</xliff:g> minutos</string>
+  <string name="pref_top_margin_locked">Localização do popup na tela de desbloqueio</string>
   <string name="pref_dismiss_on_swipe_desc">Remover notificações do drawer ao deslizá-los. Você ainda pode tocar no X para fechar a partir do drawer.</string>
   <string name="pref_dismiss_keyguard_desc">Desbloqueia automaticamente o aparelho quando você abre a notificação.\nAVISO! Isto permitirá a qualquer um desbloquear seu aparelho, independentemente das suas configurações de segurança.</string>
+  <string name="pref_broadcast_notifications">Notificações de transmissão</string>
   <string name="pref_broadcast_notifications_desc">Deixar que as minhas outras apps tenham acesso às suas notificações. Isto reduzirá o uso da RAM se você utiliza uma app como o Voiceify. Mantenha-a desligada excepto se uma das minhas aplicações lhe pedir para ser activada.</string>
+  <string name="title_broadcast_request">Acesso à notificação</string>
+  <string name="content_broadcast_request">Isto dará acesso %s para suas notificações. Tem certeza que isto é o que você quer?</string>
 </resources>

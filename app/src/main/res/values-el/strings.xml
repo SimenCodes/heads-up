@@ -95,11 +95,13 @@
     <item name="bottom">Στον πάτο</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'L\' light</item>
-    <item name="ldark">Android 5.0 \'L\' dark</item>
+    <item name="l">Android 5.0 \'Lollipop\' light</item>
+    <item name="ldark">Android 5.0 \'Lollipop\' dark</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">Απλό ανοικτό</item>
     <item name="holodark">Απλό σκοτεινό</item>
     <item name="random">Psychedelic (random)</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Μόνο στην οθόνη κλειδώματος</string>
   <string name="pref_only_on_lock_screen_desc">Εμφάνιση αναδυόμενων παραθύρων μόνο στην οθόνη κλειδώματος.</string>

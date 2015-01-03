@@ -22,7 +22,6 @@ import android.app.KeyguardManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.app.admin.DevicePolicyManager;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -39,16 +38,13 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.ThumbnailUtils;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
-import android.telephony.SmsManager;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -91,7 +87,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private static final int MAX_LINES = 12;
     private static final int SENSOR_DELAY_MILLIS = 10000;
     private static final int MIN_LINES = 2;
-    public static final int FLAG_FLOATING_WINDOW = 0x00002000;
+    private static final int FLAG_FLOATING_WINDOW = 0x00002000;
     private static final ArrayList<String> LOCKSCREEN_APPS = new ArrayList<String>(Arrays.asList(new String[]{
             "com.achep.acdisplay",
             "com.silverfinger.lockscreen",
@@ -176,14 +172,20 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 case 1: // L Dark
                     themeClass = new L5Dark(stub);
                     break;
+                case 5: // L Black
+                    themeClass = new L5Black(stub);
+                    break;
                 case 2: // Holo Light
                     themeClass = new HoloLight(stub);
                     break;
                 case 3: // Holo
                     themeClass = new HoloDark(stub);
                     break;
-                case 4: //Random
+                case 4: // Random
                     themeClass = new Random(stub);
+                    break;
+                case 6: // Ubuntu
+                    themeClass = new Ubuntu(stub);
                     break;
             }
             stub.inflate();
@@ -194,14 +196,14 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     WindowManager.LayoutParams.WRAP_CONTENT,
                     WindowManager.LayoutParams.TYPE_PRIORITY_PHONE,
                     WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
-                    WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
+                    //WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
                     WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH,
                     PixelFormat.TRANSLUCENT
             );
             if (isLocked)
-                position = Integer.valueOf(preferences.getString("overlay_vertical_position_locked", "1"));
-            if (!isLocked)
-                position = Integer.valueOf( preferences.getString("overlay_vertical_position", "1") );
+                position = Integer.valueOf(preferences.getString("overlay_vertical_position_locked", "-10"));
+            if (!isLocked || position == -10)
+                position = Integer.valueOf(preferences.getString("overlay_vertical_position", "1"));
             switch (position) {
                 case 2:
                     layoutParams.flags |= WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
@@ -230,7 +232,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         try {
             ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
             currentPackage = am.getRunningTasks(1).get(0).topActivity.getPackageName();
-        } catch (SecurityException e) {
+        } catch (SecurityException | IndexOutOfBoundsException e) {
             reportError(e, "Please allow Heads-up to get running tasks", getApplicationContext());
         }
     }
@@ -416,20 +418,10 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    onPopupClick(v);
+                    onPopupClick(v, preferences.getBoolean("floating_window", false));
                 }
             });
-            if (preferences.getBoolean("floating_window", false)) {
-                Mlog.d(logTag, "floating window");
-                imageView.setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
-                        Mlog.d(logTag, "open as floating");
-                        openIntent(pendingIntent, true);
-                        return true;
-                    }
-                });
-            }
+
             try {
                 if (Build.VERSION.SDK_INT >= 11) {
                     Drawable drawable = null;
@@ -802,11 +794,15 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     }
 
     public void onPopupClick(View v) {
+        onPopupClick(v, false);
+    }
+
+    public void onPopupClick(View v, boolean isFloating) {
         final ViewGroup rootView = themeClass.getRootView(layout);
         if (rootView.getTranslationX() != 0 || rootView.getTranslationY() != 0)
             return; // Stop if we're currently swiping. Bug 0000034
 
-        if (!expand()) openIntent(pendingIntent, false);
+        if (!expand()) openIntent(pendingIntent, isFloating);
     }
 
     /*
@@ -817,7 +813,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             return false;
         else {
             TextView subtitle = (TextView) layout.findViewById(R.id.notification_subtitle);
-            if ( (subtitle.getLineCount() <= MIN_LINES && subtitle.length() < 120) && !isActionButtons && !isQuickReply) {
+            if ( (subtitle.getLineCount() <= MIN_LINES && subtitle.length() < 80) && !isActionButtons && !isQuickReply) {
                 return false;
             }
             isCompact = false;
@@ -903,7 +899,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         }
     }
 
-    public void doFinish(final int doDismiss) { // 0=ikke fjern 1=fjern 2=åpnet
+    private void doFinish(final int doDismiss) { // 0=ikke fjern 1=fjern 2=åpnet
         Mlog.v(logTag + "DoFinish", doDismiss);
         handler.removeCallbacks(closeTimer);
 

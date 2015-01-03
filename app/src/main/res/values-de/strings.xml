@@ -97,11 +97,13 @@
     <item name="bottom">Unten</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'L\' hell</item>
-    <item name="ldark">Android 5.0 \'L\' dunkel</item>
+    <item name="l">Android 5.0 \'Lollipop\' hell</item>
+    <item name="ldark">Android 5.0 \'Lollipop\' dunkel</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' schwarz</item>
     <item name="holo">Holo Hell</item>
     <item name="holodark">Holo Dunkel</item>
-    <item name="random">Psychedelic (random)</item>
+    <item name="random">Psychedelisch (zufällig)</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Nur auf dem Sperrbildschirm</string>
   <string name="pref_only_on_lock_screen_desc">Zeigt Popups nur auf dem Sperrbildschirm an.</string>
@@ -111,10 +113,29 @@
   <string name="device_admin_disable_warning">Wenn Sie diesen Dienst abschalten, dann werden einige Funktionen von Heads-Up möglicherweise nicht mehr korrekt arbeiten.</string>
   <string name="title_activity_device_admin_enabler">Geräte-Administration einschalten</string>
   <string name="pref_device_admin">\'Bildschirm-An\'-Fehler beheben.</string>
-  <string name="action_help">Hilfe !</string>
+  <string name="no_proximity_sensor_error">Kein Näherungssensor erkannt. Hosentaschenerkennung wird nicht funktionieren. Bitte melden Sie diesen Fehler NICHT.</string>
+  <string name="pref_keep_screen_on_forever">Bildschirm angeschaltet lassen</string>
+  <string name="pref_keep_screen_on_forever_desc">Nach Einschalten des Bildschirms solange anlassen, wie Heads-up sichtbar ist.</string>
+  <string name="action_help">Hilfe!</string>
+  <string name="action_test">Test</string>
   <string name="device_admin_enable_explanation">Dies Einstellung erlaubt Heads-Up, den Bildschirm Ihres Geräts abzuschalten. Verwenden Sie das, falls der Schirm nach der Anzeige von Popups auf dem Sperrbildschirm nicht abgeschaltet wird oder falls die Hosentaschen-Erkennung nicht richtig funktioniert.</string>
+  <string name="device_admin_alredy_on">Bereits ein Geräteadministrator.</string>
+  <string name="device_admin_not_available">Gerätebereitstellung ist nicht aktiviert. Stoppe.</string>
   <string name="intro_status_on">Der Dienst ist eingeschaltet.. Versuchen Sie, sich selbst eine Nachricht zu senden (SMS, E-Mail).\nFalls das nicht funktioniert, starten Sie bitte Ihr Gerät neu. Lassen Sie es mich über eine Mail an sb@simen.codes auf Englisch wissen, falls Sie die App nicht in Gang bringen können.</string>
   <string name="intro_status_on_confirmed">Der Dienst ist eingeschaltet.. Versuchen Sie, sich selbst eine Nachricht zu senden (SMS, E-Mail).\nFalls das nicht funktioniert, starten Sie bitte Ihr Gerät neu. Lassen Sie es mich über eine Mail an sb@simen.codes auf  Englisch wissen, falls Sie die App nicht in Gang bringen können.</string>
+  <string name="accessibility_service_blocked">%s hindert Heads-up am Zugriff auf Ihre Benachrichtigungen. Bitte deaktivieren Sie es im Menü \"Eingabehilfen\".</string>
+  <string name="export_debug_data">Debugdaten exportieren</string>
+  <string name="pref_close_on_outside_touch">Schließe bei Berührung außerhalb</string>
+  <string name="pref_close_on_outside_touch_desc">Schließe das Popup wenn Sie außerhalb der Heads-up Benachrichtigung drücken</string>
+  <string name="pref_reminder_delay">Erinnerungszeit</string>
+  <string name="pref_reminder_delay_desc">Wenn Sie die Heads-up Benachrichtigung nach oben schieben, wird Sie nach der hier eingestellten Zeit in Minuten wieder erscheinen. Setzen Sie den Wert auf 0, um die Funktion zu deaktivieren.\nWARNUNG: Experimentell, instabiles Feature. Verlassen Sie sich auf diese Funktion.</string>
+  <string name="pref_reminder_delay_counter">Erinnere mich nach <xliff:g id="time" example="7">%s</xliff:g> Minuten</string>
+  <string name="pref_top_margin_locked">Position des Popups auf dem Sperrbildschirm</string>
+  <string name="pref_dont_disturb_error">Warnung: Google hat in Android 5.0 die Möglichkeit entfernt, die laufenden Prozesse auszulesen. Aus der Dokumentation:\ngetRecentTasks() —  Seit LOLLIPOP ist diese Methode aus Datenschutzgründen nicht mehr für Drittanbieterapps verfügbar. Für Abwärtskompatibilität wird nur noch ein Teil der Daten zurückgegeben.</string>
   <string name="pref_dismiss_on_swipe_desc">Benachrichtigungen durch Wischen entfernen. Sie können dies nach wie vor auch über einen Tipp auf das X erreichen..</string>
   <string name="pref_dismiss_keyguard_desc">Entsperrt das Gerät automatisch, wenn Sie eine Benachrichtigung öffnen.\nACHTUNG! Damit erhalten Dritte mit physischem Zugriff auf Ihr Gerät auch Zugriff auf Ihre Daten, unabhängig von allen sonstigen Sicherheitseinstellungen!</string>
+  <string name="pref_broadcast_notifications">Benachrichtigungen broadcasten</string>
+  <string name="pref_broadcast_notifications_desc">Gewährt meinen anderen Apps Zugriff auf Ihre Benachrichtigungen. Dies wird den RAM Verbrauch reduzieren, wenn sie Apps wie Voiceify verwenden. Lassen Sie es deaktiviert, außer eine meiner Apps fordert Sie auf, es zu aktivieren.</string>
+  <string name="title_broadcast_request">Benachrichtigungszugriff</string>
+  <string name="content_broadcast_request">Dies wird %s Zugriff auf Ihre Benachrichtigungen gewähren. Sind Sie sicher, dass Sie das wollen?</string>
 </resources>

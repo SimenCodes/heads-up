@@ -95,11 +95,13 @@
     <item name="bottom">I Botten</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'L\' ljus</item>
-    <item name="ldark">Android 5.0 \'L\' mörk</item>
+    <item name="l">Android 5.0 \'Lollipop\' ljus</item>
+    <item name="ldark">Android 5.0 \'Lollipop\' mörk</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">Fullt ljust</item>
     <item name="holodark">Fullt mörkt</item>
     <item name="random">Psychedelic (random)</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Endast på låsskärmen</string>
   <string name="pref_only_on_lock_screen_desc">Visa endast popups på låsskärmen.</string>

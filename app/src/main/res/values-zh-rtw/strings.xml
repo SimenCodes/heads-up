@@ -95,11 +95,13 @@
     <item name="bottom">底處</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'L\' 明亮</item>
-    <item name="ldark">Android 5.0 \'L\' 灰暗</item>
+    <item name="l">Android 5.0 \'Lollipop\' 明亮</item>
+    <item name="ldark">Android 5.0 \'Lollipop\' 灰暗</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">明亮</item>
     <item name="holodark">灰暗</item>
     <item name="random">Psychedelic (random)</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">僅在鎖屏上顯示</string>
   <string name="pref_only_on_lock_screen_desc">僅在鎖屏上顯示浮動通知</string>

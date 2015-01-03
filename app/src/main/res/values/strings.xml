@@ -84,7 +84,7 @@ For details regarding problems and missing strings in your translation, see http
     <string name="accessibility_not_found_detour"><![CDATA[Go to \'Accessibility\' > \'Heads-up notifications\']]></string>
     <string name="accessibility_toast">Select \'Heads-up notifications\' to toggle the service</string>
     <string name="pref_floating_window">Open as floating window</string>
-    <string name="pref_floating_window_desc">Long-tap the icon to open the notification as a floating window. Experimental feature, works with OmniRom and XHaloFloatingWindow.</string>
+    <string name="pref_floating_window_desc">Tap the icon to open the notification as a floating window. Experimental feature, works with OmniRom and XHaloFloatingWindow.</string>
     <string name="pendingintent_cancel_exception">App has canceled action</string>
     <string name="pendingintent_null_exception">App didn\'t define any action</string>
     <string name="pref_hide_dismiss_button">Hide dismiss button</string>
@@ -104,11 +104,14 @@ For details regarding problems and missing strings in your translation, see http
         <item name="bottom">Bottom</item>
     </string-array>
     <string-array name="overlayStyles">
-        <item name="l">Android 5.0 \'L\' light</item>
-        <item name="ldark">Android 5.0 \'L\' dark</item>
+        <item name="l">Android 5.0 \'Lollipop\' light</item>
+        <item name="ldark">Android 5.0 \'Lollipop\' dark</item>
+        <item name="lblack">Android 5.0 \'Lollipop\' black</item>
         <item name="holo">Plain light</item>
         <item name="holodark">Plain dark</item>
         <item name="random">Psychedelic (random)</item>
+        <!-- Do not translate this one -->
+        <item name="ubuntu">Ubuntu</item>
     </string-array>
 
     <!-- Added since 1.7 -->
@@ -134,7 +137,7 @@ For details regarding problems and missing strings in your translation, see http
     <string name="device_admin_not_available">Device provisioning is not enabled. Stopping.</string>
     <string name="intro_status_on">The service is enabled. Try sending yourself a message.\nIf it doesn\'t work, please reboot your device and try again.\nTap here if you need help</string>
     <string name="intro_status_on_confirmed">The service is running. Try sending yourself a message.\nTap here if you need help.</string>
-    <string name="accessibility_service_blocked">%s is blocking Heads-up from accessing your notifications. Please disable it from the accessibility menu.</string>
+    <string name="accessibility_service_blocked">%s might be blocking Heads-up from accessing your notifications. Please disable it from the accessibility menu.</string>
     <string name="export_debug_data">Export debug data</string>
 
     <!-- Added since 1.8.2 -->

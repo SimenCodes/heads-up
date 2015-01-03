@@ -95,11 +95,13 @@
     <item name="bottom">Долу</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'L\' light</item>
-    <item name="ldark">Android 5.0 \'L\' dark</item>
+    <item name="l">Android 5.0 \'Lollipop\' light</item>
+    <item name="ldark">Android 5.0 \'Lollipop\' dark</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">Чисто бяло</item>
     <item name="holodark">Чисто черно</item>
     <item name="random">Psychedelic (random)</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Само на заключен екран</string>
   <string name="pref_only_on_lock_screen_desc">Показвай само изскачащи прозорчета на заключения екран.</string>

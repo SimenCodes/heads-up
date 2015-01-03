@@ -97,11 +97,13 @@
     <item name="bottom">底部</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">安卓5.0 \"L\" 亮色主题</item>
-    <item name="ldark">安卓5.0 \"L\" 暗色主题</item>
+    <item name="l">安卓5.0 \"Lollipop\" 亮色主题</item>
+    <item name="ldark">安卓5.0 \"Lollipop\" 暗色主题</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">扁平亮色主题</item>
     <item name="holodark">扁平暗色主题</item>
     <item name="random">Psychedelic (random)</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">只在锁屏显示</string>
   <string name="pref_only_on_lock_screen_desc">尽在锁屏界面显示弹窗</string>
@@ -111,9 +113,24 @@
   <string name="device_admin_disable_warning">关闭服务之后，Heads-up的某些功能可能不会正常工作。</string>
   <string name="title_activity_device_admin_enabler">启用设备管理</string>
   <string name="pref_device_admin">修复 \'亮屏\' 错误。</string>
+  <string name="no_proximity_sensor_error">没有检测到传感器，口袋模式将不会工作。请不要报告这个BUG。</string>
+  <string name="pref_keep_screen_on_forever">保持屏幕开启</string>
+  <string name="action_help">帮助!</string>
+  <string name="action_test">测试</string>
   <string name="device_admin_enable_explanation">启用设备管理将允许Heads-up关闭你的屏幕。当显示弹窗后屏幕不关闭或口袋模式工作不正常请启用设备管理。</string>
+  <string name="device_admin_alredy_on">设备管理器已开启。</string>
+  <string name="device_admin_not_available">设备管理器未启用。正在停止。</string>
   <string name="intro_status_on">服务已开启。尝试给自己发一条信息，\n如果没有浮动通知弹出，请重启设备再试。若仍不显示请通过邮件联系开发者：sb@simen.codes.\n（反馈信息请用英文书写）</string>
   <string name="intro_status_on_confirmed">服务正在运行。尝试给自己发一条信息。\n若仍不显示请通过邮件联系开发者：sb@simen.codes.\n（反馈信息请用英文书写）</string>
+  <string name="export_debug_data">导出调试数据</string>
+  <string name="pref_close_on_outside_touch_desc">当你触摸通知之外区域时移除弹出窗口</string>
+  <string name="pref_reminder_delay">提醒时间</string>
+  <string name="pref_reminder_delay_desc">如果你上滑通知，Heads-up 将会在指定的几分钟后重现显示通知。设置为 0 禁用。\n警告: 不稳定的实验性特性。不要依赖他的工作。</string>
+  <string name="pref_reminder_delay_counter"><xliff:g id="time" example="7">%s</xliff:g> 分钟后提醒我</string>
+  <string name="pref_top_margin_locked">锁屏通知位置</string>
+  <string name="pref_dont_disturb_error">警告: Google 移除了 Android 5.0 上获取正在运行的任务的权限，因此这可能不能正常工作。</string>
   <string name="pref_dismiss_on_swipe_desc">通过滑动消除通知。(你也可以通过点击X按钮来消除通知。)</string>
   <string name="pref_dismiss_keyguard_desc">打开通知时自动解锁手机\n警告！这会允许任何人解锁你的手机，请注意你的安全设置。</string>
+  <string name="pref_broadcast_notifications">广播通知</string>
+  <string name="title_broadcast_request">通知权限</string>
 </resources>

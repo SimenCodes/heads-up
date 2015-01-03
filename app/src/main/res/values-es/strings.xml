@@ -97,9 +97,11 @@
   <string-array name="overlayStyles">
     <item name="l">Android 5.0 \"L\" claro</item>
     <item name="ldark">Android 5.0 \"L\" oscuro</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">Blanco normal</item>
     <item name="holodark">Oscuro normal</item>
     <item name="random">Psychedelic (random)</item>
+    <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Solo estando bloqueado</string>
   <string name="pref_only_on_lock_screen_desc">Solo mostrar heads-ups en la pantalla de bloqueo.</string>
@@ -109,6 +111,8 @@
   <string name="device_admin_disable_warning">Al desactivar este servicio, algunas funciones de Heads-up pueden no funcionar correctamente.</string>
   <string name="title_activity_device_admin_enabler">Activar como Administrador de Dispositivo</string>
   <string name="pref_device_admin">Forzar Apagar pantalla</string>
+  <string name="no_proximity_sensor_error">Sin sensor de proximidad detectada. Detección de bolsillo no funcionará. Por favor no reportar este error.</string>
+  <string name="pref_keep_screen_on_forever">Mantener la pantalla encendida</string>
   <string name="action_help">Ayuda!</string>
   <string name="action_test">Prueba</string>
   <string name="device_admin_enable_explanation">Activar esto permite a Heads-up apagar tu pantalla. Usar si la pantalla no se apaga tras mostrar un heads-up en la pantalla de bloqueo, o si la detección de bolsillo no funciona correctamente.</string>
