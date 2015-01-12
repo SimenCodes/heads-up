@@ -17,10 +17,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion '21.1.1'
+    buildToolsVersion '21.1.2'
     signingConfigs {
         release {
-            storeFile file('/home/simen/workspace/keystore/keys')
+            storeFile file('/home/simen/Kode/Android/keystore/keys')
             storePassword 'blah' //System.console().readLine("\n\$ Enter keystore password: ")
             keyAlias 'android key'
             keyPassword 'blah' //System.console().readLine("\n\$ Enter key password: ")
@@ -40,7 +40,7 @@ android {
             //noinspection GroovyAssignabilityCheck
             signingConfig signingConfigs.release
             minifyEnabled true
-            proguardFiles '/home/simen/.apps/sdk/tools/proguard/proguard-android-optimize.txt', 'proguard-rules.pro'
+            proguardFiles '/home/simen/.apps/android-sdk/tools/proguard/proguard-android-optimize.txt', 'proguard-rules.pro'
         }
         debug {
             // Development
