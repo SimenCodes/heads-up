@@ -32,7 +32,7 @@
         <item name="11">com.samsung.sec.android.MusicPlayer.metachanged</item>
         <item name="12">com.andrew.apollo.metachanged</item>
         <item name="13">com.tbig.playerpro.metachanged</item>
-        <item name="14">com.sonymobile.music.metachanged</item>
+        <item name="14">com.sonyericsson.music.playbackcontrol.ACTION_TRACK_STARTED</item>
     </string-array>
 
     <string-array name="voiceover_supported_apps" translatable="false">
@@ -51,6 +51,6 @@
         <item name="11">com.samsung.sec.android.MusicPlayer</item>
         <item name="12">com.andrew.apollo</item>
         <item name="13">com.tbig.playerpro</item>
-        <item name="14">com.sonymobile.music</item>
+        <item name="14">com.sonyericsson.music</item>
     </string-array>
 </resources>
