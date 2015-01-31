@@ -83,18 +83,6 @@ class VoiceOver {
 
         final Bundle extras = intent.getExtras();
 
-        /*
-        01-31 18:32:09.271  13009-13009/codes.simen.l50notifications D/VoiceOver﹕ com.sonyericsson.music.playbackcontrol.ACTION_TRACK_STARTED
-        01-31 18:32:09.271  13009-13009/codes.simen.l50notifications V/VoiceOver ALBUM_ID﹕ 6
-        01-31 18:32:09.271  13009-13009/codes.simen.l50notifications V/VoiceOver TRACK_DURATION﹕ 208051
-        01-31 18:32:09.271  13009-13009/codes.simen.l50notifications V/VoiceOver ARTIST_ID﹕ 5
-        01-31 18:32:09.271  13009-13009/codes.simen.l50notifications V/VoiceOver TRACK_URI﹕ content://media/external/audio/media/6223
-        01-31 18:32:09.271  13009-13009/codes.simen.l50notifications V/VoiceOver ALBUM_NAME﹕ Wanderings of an Illustrative Mind
-        01-31 18:32:09.271  13009-13009/codes.simen.l50notifications V/VoiceOver ARTIST_NAME﹕ Among Savages
-        01-31 18:32:09.271  13009-13009/codes.simen.l50notifications V/VoiceOver TRACK_NAME﹕ Terrified
-        01-31 18:32:09.271  13009-13009/codes.simen.l50notifications V/VoiceOver TRACK_ID﹕ 6223
-         */
-
         try {
             // Debug code for finding fields when adding app support
             for (String str : extras.keySet()) {
