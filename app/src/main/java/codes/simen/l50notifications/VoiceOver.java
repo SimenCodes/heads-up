@@ -85,9 +85,9 @@ class VoiceOver {
 
         try {
             // Debug code for finding fields when adding app support
-            for (String str : extras.keySet()) {
+            /*for (String str : extras.keySet()) {
                 Mlog.v(logTag + " " + str, extras.get(str));
-            }/**/
+            }*/
 
             boolean playing = intent.getBooleanExtra("playing", true);
 
@@ -135,9 +135,9 @@ class VoiceOver {
             lastId = id;
 
 
-            String artist;
-            String album;
-            String track;
+            final String artist;
+            final String album;
+            final String track;
             if (isSonyWalkman) {
                 artist = intent.getStringExtra("ARTIST_NAME");
                 album = intent.getStringExtra("ALBUM_NAME");
