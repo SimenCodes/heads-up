@@ -70,7 +70,7 @@ public class ThemeClass {
      */
     public void showTime(LinearLayout layout, Time time) {
         final TextView timeView = (TextView) layout.findViewById(R.id.timeView);
-        timeView.setText(time.hour + ":" + time.minute);
+        timeView.setText(time.minute >= 10 ? time.hour + ":" + time.minute : time.hour + ":0" + time.minute);
         timeView.setVisibility(View.VISIBLE);
     }
 

@@ -77,7 +77,8 @@
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true">
 
                     <TextView android:id="@+id/notification_title"
                         style="@style/ReadTheme_TextAppearance"

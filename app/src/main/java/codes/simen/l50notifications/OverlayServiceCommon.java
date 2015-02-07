@@ -120,7 +120,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private String currentPackage = "";
     private boolean isCompact = false;
     private boolean isActionButtons = false;
-    private Time notificationTime = new Time();
+    private Time notificationTime = null;
 
     private SensorManager sensorManager = null;
     private Sensor sensor;
@@ -362,6 +362,10 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             key = extras.getString("key");
             tag = extras.getString("tag");
             id = extras.getInt("id", 0);
+            if (notificationTime != null)
+                themeClass.hideTime(layout);
+            else
+                notificationTime = new Time();
             notificationTime.setToNow();
             final float sizeMultiplier = (float) (preferences.getInt("font_size", 100) / 100.0);
 
@@ -695,6 +699,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     if (!preferences.getBoolean("keep_screen_on_forever", false))
                         screenOff();
                     themeClass.showTime(layout, notificationTime);
+                    themeClass.hideDismissButton(themeClass.getDismissButton(layout));
                     return;
                 }
 
