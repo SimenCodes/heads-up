@@ -19,6 +19,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.text.format.Time;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +28,7 @@ import android.view.ViewStub;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import codes.simen.l50notifications.R;
 import codes.simen.l50notifications.util.Mlog;
@@ -45,29 +47,51 @@ public class ThemeClass {
 
     }
 
-    /*
-     Load layout resource here. Also, load any theme settings
+    /**
+     * Load layout resource here. Also, load any theme settings
+     * @param layout The root layout
      */
     public void init (LinearLayout layout) {
 
     }
 
-    /*
-     Fetch the root view of the theme
+    /**
+     * Fetch the root view of the theme
+     * @param layout The root layout
      */
     public ViewGroup getRootView (LinearLayout layout) {
         return (ViewGroup) layout.findViewById(R.id.linearLayout);
     }
 
-    /*
-     Fetch a reference to the action button area
+    /**
+     * Show the time the notification arrived
+     * @param layout The root layout
+     * @param time Time object containing the time the notification arrived
+     */
+    public void showTime(LinearLayout layout, Time time) {
+        final TextView timeView = (TextView) layout.findViewById(R.id.timeView);
+        timeView.setText(time.hour + ":" + time.minute);
+        timeView.setVisibility(View.VISIBLE);
+    }
+
+    /**
+     * The the time view
+     * @param layout The root layout
+     */
+    public void hideTime(LinearLayout layout) {
+        layout.findViewById(R.id.timeView).setVisibility(View.GONE);
+    }
+
+    /**
+     * Fetch a reference to the action button area
+     * @param layout The root layout
      */
     public ViewGroup getActionButtons(LinearLayout layout) {
         return (ViewGroup) layout.findViewById(R.id.action_buttons);
     }
 
-    /*
-     Remove all action buttons from the layout, in case the layout needs to be re-used.
+    /**
+    * Remove all action buttons from the layout, in case the layout needs to be re-used.
     */
     public void removeActionButtons (ViewGroup actionButtonViewGroup) {
         while (actionButtonViewGroup.getChildCount() > 0) {
@@ -75,22 +99,26 @@ public class ThemeClass {
         }
     }
 
-    /*
-     This notification does have action buttons. Display the action button area. If count parameter is -1, only display the action button view
+    /**
+     * This notification does have action buttons. Display the action button area.
+     * @param layout The root layout
+     * @param count The number of action buttons.
+     *              If count parameter is -1, only display the action button view
      */
     public void showActionButtons(LinearLayout layout, int count) {
         layout.findViewById(R.id.button_container).setVisibility(View.VISIBLE);
     }
 
-    /*
-     This notification doesn't have any action buttons. Hide the action button area.
+    /**
+     * This notification doesn't have any action buttons. Hide the action button area.
+     * @param layout The root layout
      */
     public void hideActionButtons(LinearLayout layout) {
         layout.findViewById(R.id.button_container).setVisibility(View.GONE);
     }
 
-    /*
-     Add an action button to the layout.
+    /**
+     * Add an action button to the layout.
      */
     public void addActionButton(ViewGroup actionButtons, String actionTitle, Drawable icon, View.OnClickListener clickListener, float fontMultiplier) {
         LayoutInflater inflater = LayoutInflater.from(actionButtons.getContext());
@@ -107,14 +135,14 @@ public class ThemeClass {
         button.setOnClickListener(clickListener);
     }
 
-    /*
+    /**
      Return the view displaying the notification icon.
      */
     public ImageView getIconView(LinearLayout layout) {
         return (ImageView) layout.findViewById(R.id.notification_icon);
     }
 
-    /*
+    /**
      Return the view displaying the small notification icon.
      Should return null if the theme doesn't use small icons.
      */
@@ -122,7 +150,7 @@ public class ThemeClass {
         return (ImageView) layout.findViewById(R.id.notification_icon_small);
     }
 
-    /*
+    /**
      Set the notification icon from a bitmap.
      */
     public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons) {
@@ -150,7 +178,7 @@ public class ThemeClass {
             imageView.setImageBitmap(bitmap);
     }
 
-    /*
+    /**
      Set the small notification icon.
      */
     public void setSmallIcon(ImageView smallIcon, Drawable drawable) {
@@ -158,7 +186,7 @@ public class ThemeClass {
         else                  smallIcon.setVisibility(View.GONE);
     }
 
-    /*
+    /**
      Fetch the dismiss button.
      */
     public View getDismissButton(LinearLayout layout) {
@@ -166,14 +194,14 @@ public class ThemeClass {
     }
 
 
-    /*
+    /**
      Hide the dismiss button.
      */
     public void hideDismissButton(View dismissButton) {
         dismissButton.setVisibility(View.GONE);
     }
 
-    /*
+    /**
      In case you need to do something when stopping. Called after the view is removed from the window manager.
      */
     public void destroy(LinearLayout layout) {

@@ -44,6 +44,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
+import android.text.format.Time;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -119,6 +120,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private String currentPackage = "";
     private boolean isCompact = false;
     private boolean isActionButtons = false;
+    private Time notificationTime = new Time();
 
     private SensorManager sensorManager = null;
     private Sensor sensor;
@@ -360,6 +362,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             key = extras.getString("key");
             tag = extras.getString("tag");
             id = extras.getInt("id", 0);
+            notificationTime.setToNow();
             final float sizeMultiplier = (float) (preferences.getInt("font_size", 100) / 100.0);
 
             Mlog.v(logTag, currentPackage);
@@ -691,6 +694,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 if (isLocked()) {
                     if (!preferences.getBoolean("keep_screen_on_forever", false))
                         screenOff();
+                    themeClass.showTime(layout, notificationTime);
                     return;
                 }
 
