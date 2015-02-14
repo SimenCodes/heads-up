@@ -128,8 +128,8 @@
   <string name="pref_reminder_delay_counter">Upozorniť ma po <xliff:g id="time" example="7">%s</xliff:g> min.</string>
   <string name="pref_top_margin_locked">Pozícia na uzamknutej obrazovke</string>
   <string name="pref_dont_disturb_error">Upozornenie: Google odstránil možnosť získať informácie o spustených úlohách v Androide 5.0, takže to nebude fungovať správne.</string>
-  <string name="pref_dismiss_on_swipe_desc">Odstráni upozornenia keď ich potiahnete do strany. Alebo môžete kliknúť na tlačidlo X.</string>
-  <string name="pref_dismiss_keyguard_desc">Automatický odomkne zariadenie keď otvoríte upozornenie.\nVAROVANIE! Toto dovolí KOMUKOĽVEK odomknúť vaše zariadnie, bez ohľadu na nastavenie zabezpečenia.</string>
+  <string name="pref_dismiss_on_swipe_desc">Odstráni upozornenia keď ich potiahnete do strany. Alebo môžete kliknúť na tlačidlo X.\nVyžaduje Android 4.3</string>
+  <string name="pref_dismiss_keyguard_desc">Automatický odomkne zariadenie keď otvoríte upozornenie.\nVAROVANIE! Toto dovolí KOMUKOĽVEK odomknúť vaše zariadnie, bez ohľadu na nastavenie zabezpečenia.\nToto je tiež nedoporučované Androidom a nemusí to fungovať správne.</string>
   <string name="pref_broadcast_notifications">Vysielanie upozornení</string>
   <string name="pref_broadcast_notifications_desc">Povolí prístup k upozorneniam aj ostatným mojim aplikáciám. Zníži spotrebu RAM ak používate napr. aplikáciu Voiceify. Nechajte vypnuté, pokým vás jedna z mojich aplikácií nepožiada o zapnutie.</string>
   <string name="title_broadcast_request">Prístup k upozorneniam</string>

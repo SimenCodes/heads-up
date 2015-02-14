@@ -78,12 +78,12 @@
   <string name="pendingintent_cancel_exception">Aplikacja przerwała działanie</string>
   <string name="pendingintent_null_exception">Aplikacja nie zdefiniowała żadnych działań</string>
   <string name="pref_hide_dismiss_button">Ukryj przycisk odrzucenia</string>
-  <string name="pref_hide_dismiss_button_desc">Ukryj przycisk odrzucenia X w powiadomnieniach</string>
+  <string name="pref_hide_dismiss_button_desc">Ukryj przycisk odrzucenia w powiadomieniach</string>
   <string name="pref_dismiss_keyguard">Odblokuj telefon</string>
   <string name="pref_compact_mode">Tryb kompaktowy</string>
   <string name="pref_compact_mode_desc">Pokazuj jedynie pierwszą linijkę w powiadomieniu</string>
   <string name="pref_font_size">Rozmiar czcionki</string>
-  <string name="pref_font_size_desc">Zmień rozmiar czcionki użytej w powiadomieniu</string>
+  <string name="pref_font_size_desc">Zmień rozmiar czcionki w powiadomieniu</string>
   <string name="leave_review">Napisz recenzję</string>
   <string name="pref_header_other">O aplikacji</string>
   <string-array name="overlayPosition">
@@ -112,9 +112,9 @@
   <string name="no_proximity_sensor_error">Nie wykryto czujnika zbliżeniowego. Tryb kieszonkowy nie będzie działać. Proszę NIE zgłaszaj tego jako błąd.</string>
   <string name="pref_keep_screen_on_forever">Podtrzymaj włączony ekran</string>
   <string name="pref_keep_screen_on_forever_desc">Po włączeniu ekranu, podtrzymuj go tak długo jak heads-up jest widoczny.</string>
-  <string name="action_help">Pomocy!</string>
+  <string name="action_help">Pomoc!</string>
   <string name="action_test">Test</string>
-  <string name="device_admin_enable_explanation">Uruchomienie tej usługi pozwoli programowi na wygaszanie ekranu. Włącz tę funkcję gdy ekran nie wygasa samoistnie po ukazaniu powiadomień na ekranie blokady lub gdy nie działa opcja \'Tryb kieszeniowy\'.\n\nWAŻNE! Nie będziesz w stanie odinstalować Heads-Up dopóki ta funkcja będzie włączona.</string>
+  <string name="device_admin_enable_explanation">Uruchomienie tej usługi pozwoli programowi na wygaszanie ekranu. Włącz tę funkcję gdy ekran nie wygasa samoistnie po ukazaniu powiadomień na ekranie blokady lub gdy nie działa opcja tryb kieszeniowy.\n\nWAŻNE! Nie będziesz w stanie odinstalować Heads-Up dopóki ta funkcja będzie włączona.</string>
   <string name="device_admin_alredy_on">Już jest menadżerem urządzenia.</string>
   <string name="device_admin_not_available">Zabezpieczenie urządzenia nie jest włączone. Zatrzymuję.</string>
   <string name="intro_status_on">Usługa jest aktywna. Spróbuj wysłać samemu sobie wiadomość.\nJeżeli nie będzie działać, proszę zresetować urządzenie i spróbować ponownie.\nKliknij tutaj jeżeli potrzebujesz pomocy</string>
@@ -124,11 +124,11 @@
   <string name="pref_close_on_outside_touch">Zamknij przy dotknięciu po za obszar</string>
   <string name="pref_close_on_outside_touch_desc">Usuwa okno gdy klikniesz po za heads-up</string>
   <string name="pref_reminder_delay">Czas przypomnienia</string>
-  <string name="pref_reminder_delay_desc">Jeżeli przesuniesz heads-up w górę, Heads-up wyświetli go po liczbie minut jaką wprowadzisz. Ustaw zero by wyłączyć.\nUWAGA: Eksprymentalna, niestabilna funkcja. Brak gwarancji prawidłowego działania.</string>
+  <string name="pref_reminder_delay_desc">Jeżeli przesuniesz heads-up w górę, Heads-up wyświetli go po liczbie minut jaką tu wprowadzisz. Ustaw zero by wyłączyć.\nUWAGA: Eksperymentalna, niestabilna funkcja. Brak gwarancji prawidłowego działania.</string>
   <string name="pref_reminder_delay_counter">Przypomnij mi po <xliff:g id="time" example="7">%s</xliff:g> minutach</string>
   <string name="pref_top_margin_locked">Pozycja powiadomienia na ekranie blokady</string>
   <string name="pref_dont_disturb_error">Uwaga: Google usunął możliwość uruchomienia ekranu z ostatnio uruchomionymi aplikacjami w Android 5.0, więc ta funkcja nie będzie działać. Z dokumentacji:\ngetRecentTasks() — Dla LOLLIPOP ta metoda nie jest dłużej dostępna dla aplikacji ze źródeł trzecich gdyż stwarzało to ryzyko wycieku informacji osobistych. Dla kompatybilności wstecznej funkcja wciąż będzie zwracała mały podzbiór z tych danych: własne zadania wewnątrz aplikacji i ewentualnie inne takie jak ekran domowy gdzie nie ma zagrożenia przed wyciekiem newralgicznych danych</string>
-  <string name="pref_dismiss_on_swipe_desc">Usuń powiadomienie przesuwając je palcem w bok. (Nadal możesz wcisnąć X by odrzucić powiadomienie).</string>
+  <string name="pref_dismiss_on_swipe_desc">Usuń powiadomienie przesuwając je w bok. Nadal możesz wcisnąć X by odrzucić powiadomienie.\nWymagany Android 4.3</string>
   <string name="pref_dismiss_keyguard_desc">Automatycznie odblokuj telefon po kliknięciu powiadomienia.\nUWAGA! To pozwoli każdemu odblokować Twój telefon, niezależnie od Twoich ustawień zabezpieczeń.</string>
   <string name="pref_broadcast_notifications">Nadawanie powiadomienia</string>
   <string name="pref_broadcast_notifications_desc">Daj moim innym aplikacjom dostęp do powiadomień. Pozwoli to zmniejszyć zużycie pamięci RAM w przypadku korzystania z aplikacji, takich jak Voiceify. Nie włączaj tego, chyba że jedna z moich aplikacji poprosi o włączenie.</string>

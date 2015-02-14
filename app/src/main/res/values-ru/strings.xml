@@ -17,20 +17,20 @@
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
   <string name="app_name">Heads-up notifications</string>
   <string name="app_icon_name">Heads-up</string>
-  <string name="title_activity_welcome">Heads-up notifications</string>
+  <string name="title_activity_welcome">Heads-up уведомления</string>
   <string name="action_settings">Настройки</string>
   <string name="reader_btn_open">Открыть</string>
   <string name="reader_btn_dismiss">Скрыть</string>
-  <string name="intro_desc">Нажмите кнопку ниже, чтобы включить или отключить heads-up notifications.</string>
+  <string name="intro_desc">Нажмите кнопку ниже, чтобы включить или отключить уведомления heads-up.</string>
   <string name="welcome_btn_toggleservice">Включить / Выключить уведомления</string>
-  <string name="intro_warning_miui">Вы используете MIUI? Прежде чем вы сможете использовать это приложение,  нужно дать ему разрешения, в настройках безопасности.\n1. Откройте системные настройки&gt; Все&gt; Приложения&gt; Загружены&gt; Heads-up notifications.\n2. Установите галочку \'Показать всплывающие окна\'.\n3. Внизу, перейдите к \'Управление разрешениями\'.\n4. Установите \'Я доверяю этому приложению\', чтобы уведомления заработали. </string>
+  <string name="intro_warning_miui">Вы используете MIUI? Прежде чем вы сможете использовать это приложение,  нужно дать ему разрешения, в настройках безопасности.\n1. Откройте системные настройки&gt; Все&gt; Приложения&gt; Загруженные&gt; Heads-up notifications.\n2. Установите галочку \'Показать всплывающие окна\'.\n3. Внизу, перейдите к \'Управление разрешениями\'.\n4. Установите \'Я доверяю этому приложению\', чтобы уведомления заработали. </string>
   <string name="site_ad">Вам нравиться моё приложение? Попробуйте другие мои приложения:</string>
   <string name="site_ad_link">Перейти Simen.codes</string>
   <string name="title_activity_app_list">Фильтр приложений</string>
   <string name="pref_priority_title">Приоритет уведомлений</string>
   <string name="pref_priority_summary">Фильтр уведомлений на основе их приоритета.\nТребуется Android 4.1</string>
   <string name="applist_desc">Снимите галку для отключения уведомлений от этого приложения. Вы также можете нажать и удерживать кнопку \"Скрыть\" в самом уведомление, чтобы отключить приложение.</string>
-  <string name="blocklist_desc">Нажмите для выбора всех приложений</string>
+  <string name="blocklist_desc">Выберите приложения, в работу которых heads-up не будет вмешиваться.</string>
   <string name="blocked_confirmation">Приложение заблокировано</string>
   <string name="pref_header_style">Стиль</string>
   <string name="pref_lock_screen_on">Показывать на экране блокировки</string>
@@ -41,7 +41,7 @@
   <string name="title_activity_settings">Настройки</string>
   <string name="pref_header_general">Общий</string>
   <string-array name="priorityLevel">
-    <item name="MAX">Важные и неотложные (текущие вызовы, указания, аварийные оповещения)</item>
+    <item name="MAX">Важные и неотложные (текущие вызовы, направления, срочные оповещения)</item>
     <item name="HIGH">Важные (контакты, важные письма)</item>
     <item name="NORMAL">Нормальные (+уведомления от старых приложений)</item>
     <item name="LOW">Не важные (обновления ПО, нежелательная почта)</item>
@@ -50,7 +50,7 @@
   <string name="pref_overlay_display_time_counter">
         <xliff:g id="time" example="7">%s</xliff:g> секунд
     </string>
-  <string name="pref_top_margin">Положение уведомления</string>
+  <string name="pref_top_margin">Положение уведомления, при раз блокирован ним устройстве</string>
   <string name="pref_turn_screen_on">Включать экран</string>
   <string name="pref_turn_screen_on_desc">Включает экран при новом уведомление, когда экран заблокирован</string>
   <string name="pref_opacity">Прозрачность</string>
@@ -61,7 +61,7 @@
   <string name="title_activity_noshow_list">Не показывать в этих приложениях</string>
   <string name="pref_round_icons">Круглые иконки</string>
   <string name="pref_round_icons_desc">Использовать круглые иконки вместо квадратных</string>
-  <string name="pref_use_proximity">Карманный режим</string>
+  <string name="pref_use_proximity">Режим \"в кармане\"</string>
   <string name="pref_use_proximity_desc">Не включает экран, если телефон находится в кармане или лежит на столе экраном вниз.</string>
   <string name="pref_header_lockscreen">Экран блокировки</string>
   <string name="pref_block_current_app">Блокировать текущее приложение</string>

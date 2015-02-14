@@ -65,7 +65,7 @@
   <string name="pref_use_proximity_desc">Non accendere lo schermo se il telefono è in una tasca o capovolto su un tavolo.</string>
   <string name="pref_header_lockscreen">Schermata di blocco</string>
   <string name="pref_block_current_app">Blocca l\'applicazione corrente</string>
-  <string name="pref_block_current_app_desc">Non mostrare le notifiche heads-up per l\'applicazione corrente</string>
+  <string name="pref_block_current_app_desc">Non mostrare le notifiche heads-up se l\'app che le ha generate è in primo piano.</string>
   <string name="pref_header_behaviour">Comportamento</string>
   <string name="music_title">Riproducendo: <xliff:g id="track" example="TRACK">%s</xliff:g></string>
   <string name="music_text">Di: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
@@ -76,7 +76,7 @@
   <string name="accessibility_not_found_detour"><![CDATA[Vai su \'Accessibilità\' > \'Notifiche Heads-up\']]></string>
   <string name="accessibility_toast">Seleziona \'Notifiche Heads-up\' per attivare il servizio</string>
   <string name="pref_floating_window">Apri come finestra flottante</string>
-  <string name="pref_floating_window_desc">Tieni premuto sull\'icona per aprire la notifica in una finestra flottante. Caratterisica sperimentale, funziona con OmniRom e XhaloFloatingWindow.</string>
+  <string name="pref_floating_window_desc">Tieni premuto sull\'icona per aprire la notifica in una finestra flottante. Caratteristica sperimentale, funziona con OmniRom e XhaloFloatingWindow.</string>
   <string name="pendingintent_cancel_exception">L\'applicazione ha annullato l\'azione</string>
   <string name="pendingintent_null_exception">L\'applicazione non ha definito alcuna azione</string>
   <string name="pref_hide_dismiss_button">Nascondi il bottone rimuovi</string>
