@@ -108,7 +108,9 @@ class DecisionMaker {
             /*for (String extraKey : notification.extras.keySet()) {
                 Mlog.d(logTag, extraKey + "=" + notification.extras.get(extraKey));
             }*/
-            title = notification.extras.getString("android.title");
+			try {
+                title = notification.extras.get("android.title").toString();
+            } catch (Exception ignored) {}
             text = notification.extras.get("android.text").toString();
 
             String bigText = null;
