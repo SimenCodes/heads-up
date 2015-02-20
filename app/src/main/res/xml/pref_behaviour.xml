@@ -53,6 +53,12 @@
         android:defaultValue="false"
         />
 
+    <CheckBoxPreference
+            android:key="show_non_cancelable"
+            android:title="@string/pref_show_non_cancelable"
+            android:summary="@string/pref_non_cancelable_desc"
+            android:defaultValue="false"
+            />
     <!--
     Removed due to stability issues
     <codes.simen.l50notifications.ui.ReminderDelayPreference
