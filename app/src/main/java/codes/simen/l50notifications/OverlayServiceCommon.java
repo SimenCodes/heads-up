@@ -89,7 +89,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private static final int MAX_LINES = 12;
     private static final int SENSOR_DELAY_MILLIS = 10000;
     private static final int MIN_LINES = 2;
-    private static final int FLAG_FLOATING_WINDOW = 0x00002000;
+    public static final int FLAG_FLOATING_WINDOW = 0x00002000;
     private static final ArrayList<String> LOCKSCREEN_APPS = new ArrayList<String>(Arrays.asList(new String[]{
             "com.achep.acdisplay",
             "com.silverfinger.lockscreen",
@@ -755,27 +755,31 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     }
 
     void openIntent(PendingIntent mPendingIntent, boolean isFloating) {
-        try {
-            dismissKeyguard();
-            Mlog.d(logTag, "sendPending");
+            if (isLocked())
+                startActivity(new Intent(getApplicationContext(), UnlockActivity.class)
+                            .putExtra("action", mPendingIntent)
+                            .putExtra("floating", isFloating)
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                );
+            else {
+                try {
+                    dismissKeyguard();
+                    Mlog.d(logTag, "sendPending");
 
-            Intent intent = new Intent();
-            if (isFloating) {
-                intent.addFlags(FLAG_FLOATING_WINDOW);
+                    Intent intent = new Intent().addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    if (isFloating) intent.addFlags(FLAG_FLOATING_WINDOW);
+                    mPendingIntent.send(getApplicationContext(), 0, intent);
+                    doFinish(2);
+                } catch (PendingIntent.CanceledException e) {
+                    //reportError(e, "App has canceled action", getApplicationContext());
+                    Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_cancel_exception), Toast.LENGTH_SHORT).show();
+                    doFinish(0);
+                } catch (NullPointerException e) {
+                    //reportError(e, "No action defined", getApplicationContext());
+                    Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_null_exception), Toast.LENGTH_SHORT).show();
+                    doFinish(0);
+                }
             }
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            mPendingIntent.send(getApplicationContext(), 0, intent);
-
-            doFinish(2);
-        } catch (PendingIntent.CanceledException e) {
-            //reportError(e, "App has canceled action", getApplicationContext());
-            Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_cancel_exception), Toast.LENGTH_SHORT).show();
-            doFinish(0);
-        } catch (NullPointerException e) {
-            //reportError(e, "No action defined", getApplicationContext());
-            Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_null_exception), Toast.LENGTH_SHORT).show();
-            doFinish(0);
-        }
     }
 
     private final View.OnLongClickListener blockTouchListener = new View.OnLongClickListener() {
