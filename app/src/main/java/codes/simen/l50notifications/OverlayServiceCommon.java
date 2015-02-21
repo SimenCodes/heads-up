@@ -296,13 +296,14 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
     private boolean isLocked() {
         KeyguardManager keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
-        final boolean isLocked;
+        final boolean isKeyguardLocked;
         if (Build.VERSION.SDK_INT >= 16)
-             isLocked = keyguardManager.isKeyguardLocked();
-        else isLocked = keyguardManager.inKeyguardRestrictedInputMode();
+             isKeyguardLocked = keyguardManager.isKeyguardLocked();
+        else isKeyguardLocked = keyguardManager.inKeyguardRestrictedInputMode();
 
-        Mlog.v(logTag, isLocked + " " + LOCKSCREEN_APPS.contains(currentPackage));
-        return isLocked || (currentPackage != null && LOCKSCREEN_APPS.contains(currentPackage));
+        Mlog.v(logTag, isKeyguardLocked + " " + LOCKSCREEN_APPS.contains(currentPackage));
+        isLocked = isKeyguardLocked || (currentPackage != null && LOCKSCREEN_APPS.contains(currentPackage));
+        return isLocked;
     }
 
     private void addViewToWindowManager() {
@@ -570,10 +571,10 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
                     @Override
                     public void outside() {
-                        if (preferences.getBoolean("close_on_outside_touch", false))
+                        if (preferences.getBoolean("close_on_outside_touch", false) || isLocked()) {
+                            if (isLocked) pokeScreenTimer();
                             doFinish(0);
-                        if (isLocked && !isLocked())
-                            doFinish(0);
+                        }
                     }
                 }
                 );
@@ -989,6 +990,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             }
         }
     }
+
     void screenOff() {
         if (wLock != null && wLock.isHeld()) wLock.release();
 
@@ -1002,6 +1004,15 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 policyManager.lockNow();
             } else Mlog.v(logTag, "ADMIN_NOT_ACTIVE");
         }
+    }
+
+    /**
+     * Acquire a WakeLock which ensures the screen is on and then pokes the user activity timer.
+     */
+    void pokeScreenTimer() {
+        if (powerManager == null)
+            powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+        powerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, "pokeScreenTimer").acquire(1000);
     }
 
     @Override
