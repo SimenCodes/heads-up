@@ -57,8 +57,11 @@ public class NotificationListenerAccessibilityService extends AccessibilityServi
                 // Ignore toasts
                 Notification notification = (Notification) accessibilityEvent.getParcelableData();
                 if (notification == null) return;
-                // Ignore ongoing stuff
-                if ((notification.flags & Notification.FLAG_ONGOING_EVENT) != 0) return;
+                // Do not Ignore ongoing stuff if show non-cancelable feature is selected
+                if(!PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).
+                        getBoolean("show_non_cancelable", false)  ){
+                    if ((notification.flags & Notification.FLAG_ONGOING_EVENT) != 0) return;
+                }
 
                 DecisionMaker decisionMaker = new DecisionMaker();
                 decisionMaker.handleActionAdd(notification,
