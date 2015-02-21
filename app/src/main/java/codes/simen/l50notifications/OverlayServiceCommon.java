@@ -755,31 +755,31 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     }
 
     void openIntent(PendingIntent mPendingIntent, boolean isFloating) {
-            if (isLocked())
-                startActivity(new Intent(getApplicationContext(), UnlockActivity.class)
+        if (isLocked()) {
+            startActivity(new Intent(getApplicationContext(), UnlockActivity.class)
                             .putExtra("action", mPendingIntent)
                             .putExtra("floating", isFloating)
                             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                );
-            else {
-                try {
-                    dismissKeyguard();
-                    Mlog.d(logTag, "sendPending");
+            );
+            doFinish(2);
+        } else {
+            try {
+                Mlog.d(logTag, "sendPending");
 
-                    Intent intent = new Intent().addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    if (isFloating) intent.addFlags(FLAG_FLOATING_WINDOW);
-                    mPendingIntent.send(getApplicationContext(), 0, intent);
-                    doFinish(2);
-                } catch (PendingIntent.CanceledException e) {
-                    //reportError(e, "App has canceled action", getApplicationContext());
-                    Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_cancel_exception), Toast.LENGTH_SHORT).show();
-                    doFinish(0);
-                } catch (NullPointerException e) {
-                    //reportError(e, "No action defined", getApplicationContext());
-                    Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_null_exception), Toast.LENGTH_SHORT).show();
-                    doFinish(0);
-                }
+                Intent intent = new Intent().addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                if (isFloating) intent.addFlags(FLAG_FLOATING_WINDOW);
+                mPendingIntent.send(getApplicationContext(), 0, intent);
+                doFinish(2);
+            } catch (PendingIntent.CanceledException e) {
+                //reportError(e, "App has canceled action", getApplicationContext());
+                Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_cancel_exception), Toast.LENGTH_SHORT).show();
+                doFinish(0);
+            } catch (NullPointerException e) {
+                //reportError(e, "No action defined", getApplicationContext());
+                Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_null_exception), Toast.LENGTH_SHORT).show();
+                doFinish(0);
             }
+        }
     }
 
     private final View.OnLongClickListener blockTouchListener = new View.OnLongClickListener() {
@@ -813,21 +813,6 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             return true;
         }
     };
-
-    void dismissKeyguard() {
-        if (Build.VERSION.SDK_INT >= 16) {
-            if (!preferences.getBoolean("dismiss_keyguard", false)) return;
-
-            KeyguardManager keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
-            if (keyguardManager.isKeyguardLocked()) {
-                Mlog.d(logTag, "attempt exit");
-                Intent intent = new Intent();
-                intent.setClass(getApplicationContext(), KeyguardRelock.class);
-                intent.setAction(Intent.ACTION_SCREEN_ON);
-                startService(intent);
-            }
-        }
-    }
 
     private void doFinish(final int doDismiss) { // 0=ikke fjern 1=fjern 2=åpnet
         Mlog.v(logTag + "DoFinish", doDismiss);

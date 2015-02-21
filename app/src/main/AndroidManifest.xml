@@ -124,11 +124,6 @@
             </intent-filter>
         </receiver>
 
-        <service
-            android:name=".KeyguardRelock"
-            android:exported="false" >
-        </service>
-
         <receiver
             android:name=".admin.AdminReceiver"
             android:description="@string/device_admin_enable_explanation"
