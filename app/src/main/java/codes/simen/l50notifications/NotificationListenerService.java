@@ -81,7 +81,6 @@ public class NotificationListenerService extends android.service.notification.No
                  */
                 if (
                         (statusBarNotification.isOngoing() || !statusBarNotification.isClearable())
-                                && !statusBarNotification.getPackageName().equals("com.tencent.mobileqq") // QQ, popular Chinese social media
                         )
                     return;
             }

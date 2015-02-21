@@ -96,7 +96,6 @@ For details regarding problems and missing strings in your translation, see http
     <string name="pref_font_size_desc">Fine-tune the font size in the popups</string>
     <string name="leave_review">Leave review</string>
     <string name="pref_header_other">About</string>
-    <string name="pref_show_non_cancelable">Show Non-Cancelable Notifications</string>
 
     <string-array name="overlayPosition">
         <item name="aboveStatus">Top</item>
@@ -158,5 +157,6 @@ For details regarding problems and missing strings in your translation, see http
     <string name="pref_broadcast_notifications_desc">Give my other apps access to your notifications. This will reduce RAM usage if you use an app like Voiceify. Keep it off unless one of my apps ask you to enable it.</string>
     <string name="title_broadcast_request">Notification access</string>
     <string name="content_broadcast_request">This will give %s access to your notifications. Are you sure this is what you want?</string>
-    <string name="pref_non_cancelable_desc">Show notifications which are displayed by background Services like Download Manager, WIFI Settings.</string>
+    <string name="pref_show_non_cancelable">Show non-cancelable notifications</string>
+    <string name="pref_show_non_cancelable_desc">Show ongoing, non-clearable notifications displayed by background services like Downloads.\nNote: If some notifications refuse to go away, try disabling this.</string>
 </resources>
