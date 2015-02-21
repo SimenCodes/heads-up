@@ -184,7 +184,9 @@
 
         <activity
             android:name=".UnlockActivity"
-            android:theme="@android:style/Theme.Wallpaper.NoTitleBar">
+            android:theme="@android:style/Theme.Wallpaper.NoTitleBar"
+            android:noHistory="true"
+            android:excludeFromRecents="true">
         </activity>
     </application>
 
