@@ -70,11 +70,21 @@ public class NotificationListenerService extends android.service.notification.No
     @Override
     public void onNotificationPosted(StatusBarNotification statusBarNotification) {
         try {
-            if (
-                   (statusBarNotification.isOngoing() || !statusBarNotification.isClearable())
-                && !statusBarNotification.getPackageName().equals("com.tencent.mobileqq") // QQ, popular Chinese social media
-                )
+            if(!PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).
+                    getBoolean("show_non_cancelable", false)  ){
+                /* if Show non-cancellable notifications is selected then need not check
+                for Ongoing / Clearable as there will be ongoing notification by the background
+                 service which is trying to display. Also it need not check for Chinese Social
+                Media website as it will be displaying the notification from the same.
+                if Show non-cancellable notifications is not selected then existing logic
+                prevails
+                 */
+                if (
+                        (statusBarNotification.isOngoing() || !statusBarNotification.isClearable())
+                                && !statusBarNotification.getPackageName().equals("com.tencent.mobileqq") // QQ, popular Chinese social media
+                        )
                     return;
+            }
 
             if (NotificationListenerAccessibilityService.doLoadSettings) doLoadSettings();
 
