@@ -47,7 +47,7 @@ android {
             debuggable true
             minifyEnabled false
         }
-        testing {
+        signedExperiment {
             // Signed APK, but debuggable
             debuggable true
             signingConfig signingConfigs.release
