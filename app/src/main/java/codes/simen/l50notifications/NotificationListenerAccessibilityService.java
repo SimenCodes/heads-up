@@ -58,10 +58,8 @@ public class NotificationListenerAccessibilityService extends AccessibilityServi
                 Notification notification = (Notification) accessibilityEvent.getParcelableData();
                 if (notification == null) return;
                 // Do not Ignore ongoing stuff if show non-cancelable feature is selected
-                if(!PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).
-                        getBoolean("show_non_cancelable", false)  ){
-                    if ((notification.flags & Notification.FLAG_ONGOING_EVENT) != 0) return;
-                }
+                if ((notification.flags & Notification.FLAG_ONGOING_EVENT) != 0 && !PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).
+                        getBoolean("show_non_cancelable", false)) return;
 
                 DecisionMaker decisionMaker = new DecisionMaker();
                 decisionMaker.handleActionAdd(notification,

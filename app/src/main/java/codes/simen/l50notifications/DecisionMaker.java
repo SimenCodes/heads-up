@@ -105,9 +105,9 @@ class DecisionMaker {
         // Get the text
         if (Build.VERSION.SDK_INT >= 21) {
             // Uncomment to test which extras a given notification contains
-            /*for (String extraKey : notification.extras.keySet()) {
+            for (String extraKey : notification.extras.keySet()) {
                 Mlog.d(logTag, extraKey + "=" + notification.extras.get(extraKey));
-            }*/
+            }
 			try {
                 title = notification.extras.get("android.title").toString();
             } catch (Exception ignored) {}
@@ -188,6 +188,11 @@ class DecisionMaker {
         if (Build.VERSION.SDK_INT >= 11)
             intent.putExtra("iconLarge", notification.largeIcon);
         intent.putExtra("icon", notification.icon);
+
+        if (Build.VERSION.SDK_INT >= 21)
+            intent.putExtra("color", notification.color);
+        else if (Build.VERSION.SDK_INT >= 19)
+            intent.putExtra("color", notification.extras.getInt("android.color"));
 
         intent.putExtra("tag", tag);
         intent.putExtra("id", id);

@@ -409,6 +409,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 reportError(npe, "", getApplicationContext());
             }
 
+            final int color = extras.getInt("color");
+
             ImageView imageView = themeClass.getIconView(layout);
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -436,9 +438,9 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                         if (drawable != null)
                             bitmap = drawableToBitmap(drawable);
                         if (smallIconView != null)
-                            themeClass.setSmallIcon(smallIconView, null);
+                            themeClass.setSmallIcon(smallIconView, null, color);
                     } else if (drawable != null && smallIconView != null)
-                        themeClass.setSmallIcon(smallIconView, drawable);
+                        themeClass.setSmallIcon(smallIconView, drawable, color);
 
                     if (bitmap != null) {
                         final int shortestSide;
@@ -448,7 +450,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                         else                shortestSide = width;
 
                         bitmap = ThumbnailUtils.extractThumbnail(bitmap, shortestSide, shortestSide, ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
-                        themeClass.setIcon( imageView, bitmap, preferences.getBoolean("round_icons", true) );
+                        themeClass.setIcon( imageView, bitmap, preferences.getBoolean("round_icons", true), color);
                     }
                 }
             } catch (Exception e) {e.printStackTrace();}

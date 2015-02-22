@@ -16,7 +16,6 @@
 package codes.simen.l50notifications.theme;
 
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -49,7 +48,7 @@ public class L5Light extends ThemeClass {
         //Typeface typeface = Typeface.createFromAsset(actionButtons.getContext().getAssets(), "RobotoCondensed-Regular.ttf");
         //button.setTypeface(typeface);
         if (icon != null) {
-            icon.mutate().setColorFilter(Color.DKGRAY, PorterDuff.Mode.MULTIPLY);
+            icon.mutate().setColorFilter(getColorFilter(Color.DKGRAY));
             button.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null);
         }
         button.setOnClickListener(clickListener);

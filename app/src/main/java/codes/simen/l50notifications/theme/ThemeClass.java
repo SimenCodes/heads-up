@@ -1,4 +1,4 @@
-/*
+/**
  * This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
  *     the Free Software Foundation, either version 3 of the License, or
@@ -17,8 +17,10 @@ package codes.simen.l50notifications.theme;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
+import android.graphics.ColorFilter;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,28 +47,28 @@ public class ThemeClass {
 
     }
 
-    /*
+    /**
      Load layout resource here. Also, load any theme settings
      */
     public void init (LinearLayout layout) {
 
     }
 
-    /*
+    /**
      Fetch the root view of the theme
      */
     public ViewGroup getRootView (LinearLayout layout) {
         return (ViewGroup) layout.findViewById(R.id.linearLayout);
     }
 
-    /*
+    /**
      Fetch a reference to the action button area
      */
     public ViewGroup getActionButtons(LinearLayout layout) {
         return (ViewGroup) layout.findViewById(R.id.action_buttons);
     }
 
-    /*
+    /**
      Remove all action buttons from the layout, in case the layout needs to be re-used.
     */
     public void removeActionButtons (ViewGroup actionButtonViewGroup) {
@@ -75,21 +77,21 @@ public class ThemeClass {
         }
     }
 
-    /*
+    /**
      This notification does have action buttons. Display the action button area. If count parameter is -1, only display the action button view
      */
     public void showActionButtons(LinearLayout layout, int count) {
         layout.findViewById(R.id.button_container).setVisibility(View.VISIBLE);
     }
 
-    /*
+    /**
      This notification doesn't have any action buttons. Hide the action button area.
      */
     public void hideActionButtons(LinearLayout layout) {
         layout.findViewById(R.id.button_container).setVisibility(View.GONE);
     }
 
-    /*
+    /**
      Add an action button to the layout.
      */
     public void addActionButton(ViewGroup actionButtons, String actionTitle, Drawable icon, View.OnClickListener clickListener, float fontMultiplier) {
@@ -101,20 +103,20 @@ public class ThemeClass {
         button.setText(actionTitle);
         button.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontMultiplier * button.getTextSize());
         if (icon != null) {
-            icon.mutate().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
+            icon.mutate().setColorFilter(getColorFilter(Color.BLACK));
             button.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null);
         }
         button.setOnClickListener(clickListener);
     }
 
-    /*
+    /**
      Return the view displaying the notification icon.
      */
     public ImageView getIconView(LinearLayout layout) {
         return (ImageView) layout.findViewById(R.id.notification_icon);
     }
 
-    /*
+    /**
      Return the view displaying the small notification icon.
      Should return null if the theme doesn't use small icons.
      */
@@ -122,10 +124,10 @@ public class ThemeClass {
         return (ImageView) layout.findViewById(R.id.notification_icon_small);
     }
 
-    /*
+    /**
      Set the notification icon from a bitmap.
      */
-    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons) {
+    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons, int color) {
         if (bitmap == null) return;
         if (round_icons) {
             final double minimumWidthForRoundIcon = imageView.getContext().getResources().
@@ -146,19 +148,40 @@ public class ThemeClass {
                 imageView.setImageBitmap(bitmap);
             }
             imageView.setBackgroundResource(R.drawable.circle_grey);
-        } else
+            setColor(imageView, color);
+        } else {
             imageView.setImageBitmap(bitmap);
+            setColor(imageView, color);
+        }
     }
 
-    /*
+    /**
      Set the small notification icon.
      */
-    public void setSmallIcon(ImageView smallIcon, Drawable drawable) {
-        if (drawable != null) smallIcon.setImageDrawable(drawable);
-        else                  smallIcon.setVisibility(View.GONE);
+    public void setSmallIcon(ImageView smallIcon, Drawable drawable, int color) {
+        if (drawable != null) {
+            smallIcon.setImageDrawable(drawable);
+            setColor(smallIcon, color);
+        } else {
+            smallIcon.setVisibility(View.GONE);
+        }
     }
 
-    /*
+    protected void setColor(View view, int color) {
+        if (color == 0) return;
+        Drawable drawable = view.getBackground();
+        if (drawable != null) {
+            drawable = drawable.mutate();
+            //drawable.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
+            drawable.setColorFilter(getColorFilter(color));
+            if (Build.VERSION.SDK_INT >= 16) view.setBackground(drawable);
+            else                             view.setBackgroundDrawable(drawable);
+        } else {
+            view.setBackgroundColor(color);
+        }
+    }
+
+    /**
      Fetch the dismiss button.
      */
     public View getDismissButton(LinearLayout layout) {
@@ -166,16 +189,35 @@ public class ThemeClass {
     }
 
 
-    /*
+    /**
      Hide the dismiss button.
      */
     public void hideDismissButton(View dismissButton) {
         dismissButton.setVisibility(View.GONE);
     }
 
-    /*
+    /**
      In case you need to do something when stopping. Called after the view is removed from the window manager.
      */
     public void destroy(LinearLayout layout) {
+    }
+
+    /**
+     * Get a color filter for recoloring any solid drawable.
+     * From http://stackoverflow.com/a/11171509
+     * @param color The color
+     * @return A ColorMatrixColorFilter
+     */
+    protected static ColorFilter getColorFilter(int color) {
+        int red = (color & 0xFF0000) / 0xFFFF;
+        int green = (color & 0xFF00) / 0xFF;
+        int blue = color & 0xFF;
+
+        float[] matrix = { 0, 0, 0, 0, red
+                         , 0, 0, 0, 0, green
+                         , 0, 0, 0, 0, blue
+                         , 0, 0, 0, 1, 0 };
+
+        return new ColorMatrixColorFilter(matrix);
     }
 }
