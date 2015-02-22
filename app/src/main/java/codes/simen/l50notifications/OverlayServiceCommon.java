@@ -103,7 +103,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             "com.jedga.peek.free",
             "com.jedga.peek.pro",
             "com.hi.locker",
-            "com.vlocker.locker"
+            "com.vlocker.locker",
+            "com.microsoft.next"
     }));
 
     private WindowManager windowManager;
