@@ -757,6 +757,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
     void openIntent(PendingIntent mPendingIntent, boolean isFloating) {
         if (isLocked()) {
+            pokeScreenTimer();
             startActivity(new Intent(getApplicationContext(), UnlockActivity.class)
                             .putExtra("action", mPendingIntent)
                             .putExtra("floating", isFloating)
