@@ -134,4 +134,6 @@
   <string name="pref_broadcast_notifications_desc">Povolí prístup k upozorneniam aj ostatným mojim aplikáciám. Zníži spotrebu RAM ak používate napr. aplikáciu Voiceify. Nechajte vypnuté, pokým vás jedna z mojich aplikácií nepožiada o zapnutie.</string>
   <string name="title_broadcast_request">Prístup k upozorneniam</string>
   <string name="content_broadcast_request">Povolí aplikácii %s prístup k vašim upozorneniam. Ste si istý, že to je to, čo chcete?</string>
+  <string name="pref_show_non_cancelable">Zobraziť nezrušiteľné upozornenia</string>
+  <string name="pref_show_non_cancelable_desc">Zobrazí prebiehajúce nevymazateľné upozornenia zobrazované službami na pozadí, ako napríklad Sťahovanie.\nPoznámka: Ak niektoré upozornenia odmietajú zmiznúť, skúste toto zakázať.</string>
 </resources>

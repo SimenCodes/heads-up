@@ -134,4 +134,6 @@
   <string name="pref_broadcast_notifications_desc">Laisser mes autres applications accéder à vos notifications. Ceci réduira l\'utilisation de la RAM lors de l\'usage d\'applications comme Voiceify. Laisser inactif sauf si une de mes applications vous demande de l\'activer.</string>
   <string name="title_broadcast_request">Accès aux notifications</string>
   <string name="content_broadcast_request">Cela donnera %s accès à vos notifications. Êtes vous sur que c\'est ce que vous souhaitez ?</string>
+  <string name="pref_show_non_cancelable">Afficher les notifications non-annulables</string>
+  <string name="pref_show_non_cancelable_desc">Afficher les notifications en cours et non-éffaçables, déclenchées par des services d\'arrière-plan similaires aux téléchargements.\nNote : si certaines notifications refusent de s\'éffacer, essayez de désactiver cette option.</string>
 </resources>

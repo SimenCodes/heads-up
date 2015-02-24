@@ -136,4 +136,6 @@
   <string name="pref_broadcast_notifications_desc">Dai l\'accesso alle notifiche alle altre mie applicazioni. Questo ridurrà la RAM utilizzata se utilizzi un\'app come Voiceify. Mantienilo disabilitato fino a quando una delle mie app ti chiede di abilitarlo.</string>
   <string name="title_broadcast_request">Accesso alle notifiche</string>
   <string name="content_broadcast_request">Questo darà a %s accesso alle tue notifiche. Sei sicuro di volerlo?</string>
+  <string name="pref_show_non_cancelable">Mostra notifiche non cancellabili</string>
+  <string name="pref_show_non_cancelable_desc">Mostra notifiche non cancellabili mostrate in background da servizi come \"Download\".\nNota: se alcune notifiche si rifiutano di essere cancellate, prova a disabilitare questa opzione.</string>
 </resources>

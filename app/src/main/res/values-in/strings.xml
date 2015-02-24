@@ -27,7 +27,7 @@
   <string name="site_ad">Suka yang anda lihat? Temukan aplikasi-aplikasi saya yang lainnya:</string>
   <string name="site_ad_link">Kunjungi Simen.codes</string>
   <string name="title_activity_app_list">Filter aplikasi</string>
-  <string name="pref_priority_title">Prioritas pemberitahuan</string>
+  <string name="pref_priority_title">Kepentingan pemberitahuan</string>
   <string name="pref_priority_summary">Filter pemberitahuan berdasarkan prioritasnya.\nMemerlukan Android 4.1</string>
   <string name="applist_desc">Hapus centang pada aplikasi untuk mematikan pemberitahuannya. Anda juga dapat mengetuk dan menahan tombol \'X\' pada popup heads-up untuk mematikan pemberitahuan aplikasi.</string>
   <string name="blocklist_desc">Centang aplikasi agar popup heads-up tidak mengganggu/muncul ketika anda menggunakannya.</string>
