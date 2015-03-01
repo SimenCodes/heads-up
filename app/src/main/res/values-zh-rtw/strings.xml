@@ -134,4 +134,6 @@
   <string name="pref_broadcast_notifications_desc">讓我設計的其他應用程式存取您的通知。如果您有用Voiceify，這將降低RAM用量。建議關閉此選項，除非我的其中一個應用要您將此選項開啟。</string>
   <string name="title_broadcast_request">通知權限</string>
   <string name="content_broadcast_request">這將讓%s可以存取您的通知。你確定要這麼做嗎？</string>
+  <string name="pref_show_non_cancelable">顯示常駐通知</string>
+  <string name="pref_show_non_cancelable_desc">顯示由背景服務運行的常駐通知，如：下載。\n註：如果某些通知卡住無法清除的話，試試看將此功能關閉。</string>
 </resources>

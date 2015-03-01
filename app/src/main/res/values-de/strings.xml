@@ -136,4 +136,5 @@
   <string name="pref_broadcast_notifications_desc">Gewährt meinen anderen Apps Zugriff auf Ihre Benachrichtigungen. Dies wird den RAM Verbrauch reduzieren, wenn sie Apps wie Voiceify verwenden. Lassen Sie es deaktiviert, außer eine meiner Apps fordert Sie auf, es zu aktivieren.</string>
   <string name="title_broadcast_request">Benachrichtigungszugriff</string>
   <string name="content_broadcast_request">Dies wird %s Zugriff auf Ihre Benachrichtigungen gewähren. Sind Sie sicher, dass Sie das wollen?</string>
+  <string name="pref_show_non_cancelable">Zeige nicht entfernbare Benachrichtigung</string>
 </resources>

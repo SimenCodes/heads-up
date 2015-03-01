@@ -134,4 +134,6 @@
   <string name="pref_broadcast_notifications_desc">Gi de andre appene mine tilgang til varslene dine. Dette vil redusere RAM-bruken hvis du bruker f.eks. Voiceify. Hold dette slått av hvis ikke en av appene mine ber deg om å slå det på.</string>
   <string name="title_broadcast_request">Varseltilgang</string>
   <string name="content_broadcast_request">Dette vil gi %s tilgang til varslene dine. Er du sikker på at du vil dette?</string>
+  <string name="pref_show_non_cancelable">Vis pågående varsler</string>
+  <string name="pref_show_non_cancelable_desc">Vis varsler fra bakgrunnstjenester, for eksempel pågående nedlastinger.\nOBS: Hvis noen meldinger nekter å gå bort, prøv å deaktivere dette.</string>
 </resources>

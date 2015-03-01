@@ -135,4 +135,6 @@ Deteniendo.</string>
   <string name="pref_broadcast_notifications_desc">Dar acceso a mis otras aplicaciones para leer sus notificaciones. Esto reducirá el uso de RAM si utiliza aplicaciones como Voiceify. Mantengalo apagado a menos que alguna de mis app le pida habilitarlo.</string>
   <string name="title_broadcast_request">Acceso a notificaciones</string>
   <string name="content_broadcast_request">Esto dará a %s acceso a sus notificaciones. ¿Esta seguro de que esto es lo que quiere?</string>
+  <string name="pref_show_non_cancelable">Mostrar notificaciones que no se pueden cancelar</string>
+  <string name="pref_show_non_cancelable_desc">Mostrar notificaciones activas que no se pueden cancelar mostradas por servicios en segundo plano como Descargas.\nNota: Si algunas notificaciones se niegan a desaparecer, intenta desactivar esto.</string>
 </resources>

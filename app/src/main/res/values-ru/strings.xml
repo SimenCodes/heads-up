@@ -137,4 +137,5 @@
   <string name="title_broadcast_request">Доступ к уведомлениям</string>
   <string name="content_broadcast_request">Это даст %s доступ к вашим уведомлениям. Вы уверены что хотите это сделать?</string>
   <string name="pref_show_non_cancelable">Показать уведомления, которые не могут быть отменены</string>
+  <string name="pref_show_non_cancelable_desc">Показывать постоянные, не очищаемые уведомления таких фоновых служб как \"Загрузки\".\nПримечание: Если некоторые уведомления невозможно удалить, попробуйте отключить их.</string>
 </resources>

@@ -134,4 +134,6 @@
   <string name="pref_broadcast_notifications_desc">あなたの通知に私の他のアプリのアクセス権を与えます。これにより Voiceify のようなアプリを使用する場合にメモリの使用量を減らします。私のアプリが有効にするように依頼しない限りオフのままにしてください。</string>
   <string name="title_broadcast_request">通知アクセス</string>
   <string name="content_broadcast_request">あなたの通知に %s のアクセス権を与えます。ご確認ください、よろしいですか?</string>
+  <string name="pref_show_non_cancelable">キャンセル不可の通知を表示</string>
+  <string name="pref_show_non_cancelable_desc">ダウンロードのようなバック グラウンド サービスによって表示される、実行中のクリアできない通知を表示します。\n注: 通知が見えなくなることを防止したい場合は、これを無効にしてみてください。</string>
 </resources>

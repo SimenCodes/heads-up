@@ -15,7 +15,7 @@
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
-  <string name="app_name">Heads-up notificaties</string>
+  <string name="app_name">Heads-up meldingen</string>
   <string name="app_icon_name">Heads-up</string>
   <string name="title_activity_welcome">Heads-up notificaties</string>
   <string name="action_settings">Instellingen</string>
@@ -69,8 +69,8 @@
   <string name="music_text">Artiest: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
   <string name="pref_music_popup">Pop-up huidig nummer</string>
   <string name="pref_music_popup_desc">Toont metagegevens van het huidige nummer.\nNiet alle muziekspelers worden ondersteund.</string>
-  <string name="intro_warning_both_services">Zowel toegang tot notificaties als de toegankelijkheid service is ingeschakeld. Schakel één ervan uit.</string>
-  <string name="notification_listener_not_found_detour">Selecteer \'Toegang tot notificaties\' en selecteer \'Heads-up notificaties\'</string>
+  <string name="intro_warning_both_services">Zowel toegang tot meldingen, als de toegankelijkheid service is ingeschakeld. Schakel één ervan uit.</string>
+  <string name="notification_listener_not_found_detour">Selecteer \'Toegang tot meldingen\' en selecteer \'Heads-up notificaties\'</string>
   <string name="accessibility_not_found_detour"><![CDATA[Ga naar \'Toegankelijkheid\' > \'Heads-up notificaties\']]></string>
   <string name="accessibility_toast">Selecteer \'Heads-up notificaties\' om de service in te schakelen</string>
   <string name="pref_floating_window">Als losstaand venster openen</string>
@@ -104,12 +104,12 @@
   <string name="pref_only_on_lock_screen">Alleen op vergrendelscherm</string>
   <string name="pref_only_on_lock_screen_desc">Toon alleen pop-ups op het vergrendelscherm.</string>
   <string name="pref_privacy_on_lockscreen">Privacy op vergrendelscherm</string>
-  <string name="pref_privacy_on_lockscreen_desc">Toont niet de inhoud van de melding op het vergrendelscherm</string>
+  <string name="pref_privacy_on_lockscreen_desc">Toon geen inhoud van meldingen op het vergrendelscherm</string>
   <string name="accessibility_desc">Schakel deze service in om toegang te geven aan Heads-up om de meldingen te lezen.\n\n LET OP schakel de toegankelijkheid service niet in als je toestel draait op Android 4.3 of nieuwer (volg hiervoor de instructies in de app op).</string>
-  <string name="device_admin_disable_warning">Als je de service uitschakelt werken sommige functies in Heads-up niet.</string>
+  <string name="device_admin_disable_warning">Als je de service uitschakelt werken sommige functies in Heads-up mogelijk niet zoals het hoort.</string>
   <string name="title_activity_device_admin_enabler">Activeer apparaatbeheer</string>
   <string name="pref_device_admin">Repareer de \'scherm blijft aan\' bug.</string>
-  <string name="no_proximity_sensor_error">Geen nabijheidssensor gedetecteerd. Broekzak detectie zal niet werken. Deze bug niet melden.</string>
+  <string name="no_proximity_sensor_error">Geen nabijheidssensor gedetecteerd. Broekzak detectie zal niet werken. Deze bug NIET melden.</string>
   <string name="pref_keep_screen_on_forever">Scherm aanlaten</string>
   <string name="pref_keep_screen_on_forever_desc">Na het inschakelen van het scherm, houd het scherm aan net zolang de Heads-up zichtbaar is.</string>
   <string name="action_help">Help!</string>
@@ -132,6 +132,8 @@
   <string name="pref_dismiss_keyguard_desc">Ontgrendeld automatisch het apparaat wanneer je een melding opent.\nWAARSCHUWING! Deze functie zorgt ervoor dat IEDEREEN je apparaat kan ontgrendelen, ongeacht eventuele beveiliging.\nDeze methode is afgekeurd in Android en kan mogelijk niet goed werken.</string>
   <string name="pref_broadcast_notifications">Meldingen doorsturen</string>
   <string name="pref_broadcast_notifications_desc">Geeft mijn andere apps toegang tot je meldingen. Dit vergt meer RAM geheugen en het is dus beter om deze functie uit te schakelen, tenzij mijn andere apps hierom vragen.</string>
-  <string name="title_broadcast_request">Toegang tot notificaties</string>
+  <string name="title_broadcast_request">Toegang tot meldingen</string>
   <string name="content_broadcast_request">Dit zal %s toegang geven tot jouw meldingen. Weet je het zeker?</string>
+  <string name="pref_show_non_cancelable">Niet-annuleerbare melingen weergeven</string>
+  <string name="pref_show_non_cancelable_desc">Actieve, niet te verwijderen meldingen door achtergrond apps zoals Downloads weergeven.\nLet op: Als sommige meldingen weigeren om te worden verwijderd, probeer dit uit te schakelen.</string>
 </resources>

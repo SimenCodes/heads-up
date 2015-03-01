@@ -24,10 +24,10 @@
   <string name="intro_desc">Clicca il tasto qui sotto per attivare o disattivare le notifiche heads-up.</string>
   <string name="welcome_btn_toggleservice">Attiva / Disattiva heads-up</string>
   <string name="intro_warning_miui">Utilizzi la ROM MIUI? Prima di poter utilizzare quest\'app, dovrai probabilmente seguire questi passaggi per via della troppa sicurezza.\n1. Vai su Impostazioni di sistema &gt; Tutte &gt; Apps &gt; Scaricate &gt; Notifiche Heads-up.\n2. Attiva la seconda opzione \"Mostra finestre popup\".\n3. In basso, vai su \"Gestisci autorizzazioni\".\n 4. Imposta \"Mi fido di quest \'app\" su ON. </string>
-  <string name="site_ad">Ti piace? Visita le altre mie app:</string>
+  <string name="site_ad">Ti piace? Visita altre mie app:</string>
   <string name="site_ad_link">Visita Simen.codes</string>
   <string name="title_activity_app_list">Filtro applicazioni</string>
-  <string name="pref_priority_title">Priorita\' notifiche</string>
+  <string name="pref_priority_title">Priorità notifiche</string>
   <string name="pref_priority_summary">Filtra le notifiche in base alla loro priorità.\nRichiede Android 4.1</string>
   <string name="applist_desc">Deseleziona un\'app per silenziarla. Puoi anche tenere premuto sul tasto \'Rimuovi\' nella notifica heads-up dell\'app desiderata per silenziarla.</string>
   <string name="blocklist_desc">Selezionare l\'applicazione sulla quale l\'heads-up non interferisce mentre la stai utilizzando.</string>
@@ -37,7 +37,7 @@
   <string name="pref_lock_screen_on_desc">Visualizza le notifiche heads-up sulla schermata di sblocco.</string>
   <string name="bug_report_request">Se l\'app non funziona come dovrebbe, clicca qui per segnalare il problema.\n\n</string>
   <string name="pref_overlay_display_time">Durata visualizzazione heads-up</string>
-  <string name="pref_overlay_time_max">Finche\' non la rimuovo</string>
+  <string name="pref_overlay_time_max">Finchè non la rimuovo</string>
   <string name="title_activity_settings">Impostazioni</string>
   <string name="pref_header_general">Generale</string>
   <string-array name="priorityLevel">
@@ -50,7 +50,7 @@
   <string name="pref_overlay_display_time_counter">
         <xliff:g id="time" example="7">%s</xliff:g> secondi
     </string>
-  <string name="pref_top_margin">Posizione popup</string>
+  <string name="pref_top_margin">Posizione popup quando sbloccato</string>
   <string name="pref_turn_screen_on">Accendi lo schermo</string>
   <string name="pref_turn_screen_on_desc">Accendi lo schermo quando si riceve una notifica.</string>
   <string name="pref_opacity">Opacità</string>
@@ -137,5 +137,5 @@
   <string name="title_broadcast_request">Accesso alle notifiche</string>
   <string name="content_broadcast_request">Questo darà a %s accesso alle tue notifiche. Sei sicuro di volerlo?</string>
   <string name="pref_show_non_cancelable">Mostra notifiche non cancellabili</string>
-  <string name="pref_show_non_cancelable_desc">Mostra notifiche non cancellabili mostrate in background da servizi come \"Download\".\nNota: se alcune notifiche si rifiutano di essere cancellate, prova a disabilitare questa opzione.</string>
+  <string name="pref_show_non_cancelable_desc">Mostra notifiche in corso non cancellabili, generate in background da servizi come \"Download\".\nNota: se alcune notifiche si rifiutano di essere rimosse, prova a disabilitare questa opzione.</string>
 </resources>

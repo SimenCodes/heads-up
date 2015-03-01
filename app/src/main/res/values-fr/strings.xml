@@ -23,7 +23,7 @@
   <string name="reader_btn_dismiss">Rejeter</string>
   <string name="intro_desc">Appuyer ci-dessous pour activer/désactiver les notifications heads-up.</string>
   <string name="welcome_btn_toggleservice">Activer/Désactiver heads-up</string>
-  <string name="intro_warning_miui">Vous utilisez MIUI? Avant de pouvoir utiliser cette application, vous devez réduire un peu la sécurité.\n1. Aller à System Settings &gt; All &gt; Apps &gt; Downloaded &gt; Heads-up notifications.\n2. Activer \'Show popup windows\' (seconde option).\n3. En bas aller à \'Manage permissions\'.\n4. Sélectionner \'I trust this app\'. </string>
+  <string name="intro_warning_miui">Vous utilisez MIUI? Avant de pouvoir utiliser cette application, vous devez réduire un peu la sécurité.\n1. Aller à Paramètre Système &gt; Tout &gt; Aplications &gt; Téléchargés &gt; Heads-up notifications.\n2. Activer l\'interrupteur \'Show popup windows\' (seconde option).\n3. En bas aller à \'Manage permissions\'.\n4. Sélectionner \'I trust this app\'. </string>
   <string name="site_ad">Vous aimer ce que vous voyez ? Allez voir mes autres applications :</string>
   <string name="site_ad_link">Aller sur Simen.codes</string>
   <string name="title_activity_app_list">Filtrer les Applis</string>

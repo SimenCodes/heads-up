@@ -134,4 +134,6 @@
   <string name="pref_broadcast_notifications_desc">Jepi aplikacioneve të mia të tjera akses tek njoftimet e tua. Kjo do të reduktojë përdorimin e RAM nëse ti përdor një aplikacion si Voiceify. Mbaje fikur përveçse njëri prej aplikacioneve të mia të kërkon që ta aktivizosh.</string>
   <string name="title_broadcast_request">Akses njoftimesh</string>
   <string name="content_broadcast_request">Kjo do t\'i japë %s akses tek njoftimet e tua. A je i sigurt se kjo është ajo që do?</string>
+  <string name="pref_show_non_cancelable">Trego njoftimet e pa-anullueshme</string>
+  <string name="pref_show_non_cancelable_desc">Trego njoftimet aktuale që nuk fshihen që shfaqen në shërbimet në sfond si p.sh. Shkarkimet. \nShënim: Nëse disa njoftime refuzojnë të largohen, provo ta çaktivizosh këtë.</string>
 </resources>

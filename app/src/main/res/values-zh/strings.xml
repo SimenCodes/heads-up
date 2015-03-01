@@ -136,4 +136,6 @@
   <string name="pref_broadcast_notifications_desc">允许我其它的应用访问您的通知。但这将占用您手机的运行内存。如果我的应用没有要求您打开，请保持关闭。</string>
   <string name="title_broadcast_request">访问通知</string>
   <string name="content_broadcast_request">是否允许 %s 访问您的通知？</string>
+  <string name="pref_show_non_cancelable">显示不可取消的通知</string>
+  <string name="pref_show_non_cancelable_desc">显示后台服务所产生的持续的或者不可取消的通知，比如下载。\n注意：如果无法消除某些通知，请尝试禁用此项。</string>
 </resources>
