@@ -31,7 +31,7 @@ android {
         minSdkVersion 11
         targetSdkVersion 21
         versionCode 52
-        versionName '1.9.2c BETA'
+        versionName '1.10'
     }
     buildTypes {
         release {
