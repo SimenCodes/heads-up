@@ -22,22 +22,25 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
+
+import codes.simen.l50notifications.util.Mlog;
 
 
 public class UnlockActivity extends Activity {
     public static final String logTag = "UnlockActivity";
+
+    private boolean isPendingIntentStarted = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         requestWindowFeature(android.view.Window.FEATURE_NO_TITLE);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        Log.v(logTag, "creating dismiss window");
+        Mlog.v(logTag, "creating dismiss window");
 
         //register for user present so we don't have to manually check kg with the keyguard manager
         IntentFilter userUnlock = new IntentFilter (Intent.ACTION_USER_PRESENT);
@@ -57,32 +60,43 @@ public class UnlockActivity extends Activity {
             // Double-check we got the right intent
             if (!intent.getAction().equals(Intent.ACTION_USER_PRESENT)) return;
 
-            Log.v(logTag, "Unlocked!");
+            Mlog.v(logTag, "Unlocked!");
 
-            Bundle extras = getIntent().getExtras();
-            PendingIntent pendingIntent = (PendingIntent) extras.get("action");
-
-            try {
-                intent = new Intent();
-                if (extras.getBoolean("floating", false)) {
-                    intent.addFlags(OverlayServiceCommon.FLAG_FLOATING_WINDOW);
-                }
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                pendingIntent.send(getApplicationContext(), 0, intent);
-
-            } catch (PendingIntent.CanceledException e) {
-                //reportError(e, "App has canceled action", getApplicationContext());
-                Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_cancel_exception), Toast.LENGTH_SHORT).show();
-            } catch (NullPointerException e) {
-                //reportError(e, "No action defined", getApplicationContext());
-                Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_null_exception), Toast.LENGTH_SHORT).show();
-            }
-
-            unregisterReceiver(this);
+            startPendingIntent();
 
             moveTaskToBack(true);
             finish();
         }
     };
 
+    private void startPendingIntent() {
+        if (isPendingIntentStarted) return;
+        isPendingIntentStarted = true;
+        Intent intent;Bundle extras = getIntent().getExtras();
+        PendingIntent pendingIntent = (PendingIntent) extras.get("action");
+
+        try {
+            intent = new Intent();
+            if (extras.getBoolean("floating", false)) {
+                intent.addFlags(OverlayServiceCommon.FLAG_FLOATING_WINDOW);
+            }
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            pendingIntent.send(getApplicationContext(), 0, intent);
+
+        } catch (PendingIntent.CanceledException e) {
+            //reportError(e, "App has canceled action", getApplicationContext());
+            Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_cancel_exception), Toast.LENGTH_SHORT).show();
+        } catch (NullPointerException e) {
+            //reportError(e, "No action defined", getApplicationContext());
+            Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_null_exception), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        startPendingIntent();
+        super.onDestroy();
+        Mlog.v(logTag, "Destroy");
+        unregisterReceiver(unlockDone);
+    }
 }
