@@ -453,12 +453,15 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                         themeClass.setIcon( imageView, bitmap, preferences.getBoolean("round_icons", true), color);
                     }
                 }
-            } catch (Exception e) {e.printStackTrace();}
+            } catch (Exception e) {
+                reportError(e, "Icon", getApplicationContext());
+            }
+
             if (title.equals("")) {
                 try {
                     title = (String) pm.getApplicationLabel(pm.getApplicationInfo(packageName, 0));
                 } catch (PackageManager.NameNotFoundException | NullPointerException e) {
-                    reportError(e, "", getApplicationContext());
+                    reportError(e, "EmptyTitle", getApplicationContext());
                 }
             }
 
