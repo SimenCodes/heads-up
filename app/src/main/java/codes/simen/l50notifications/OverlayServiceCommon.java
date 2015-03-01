@@ -89,7 +89,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private static final int MAX_LINES = 12;
     private static final int SENSOR_DELAY_MILLIS = 10000;
     private static final int MIN_LINES = 2;
-    private static final int FLAG_FLOATING_WINDOW = 0x00002000;
+    public static final int FLAG_FLOATING_WINDOW = 0x00002000;
     private static final ArrayList<String> LOCKSCREEN_APPS = new ArrayList<String>(Arrays.asList(new String[]{
             "com.achep.acdisplay",
             "com.silverfinger.lockscreen",
@@ -297,13 +297,14 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
     private boolean isLocked() {
         KeyguardManager keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
-        final boolean isLocked;
+        final boolean isKeyguardLocked;
         if (Build.VERSION.SDK_INT >= 16)
-             isLocked = keyguardManager.isKeyguardLocked();
-        else isLocked = keyguardManager.inKeyguardRestrictedInputMode();
+             isKeyguardLocked = keyguardManager.isKeyguardLocked();
+        else isKeyguardLocked = keyguardManager.inKeyguardRestrictedInputMode();
 
-        Mlog.v(logTag, isLocked + " " + LOCKSCREEN_APPS.contains(currentPackage));
-        return isLocked || (currentPackage != null && LOCKSCREEN_APPS.contains(currentPackage));
+        Mlog.v(logTag, isKeyguardLocked + " " + LOCKSCREEN_APPS.contains(currentPackage));
+        isLocked = isKeyguardLocked || (currentPackage != null && LOCKSCREEN_APPS.contains(currentPackage));
+        return isLocked;
     }
 
     private void addViewToWindowManager() {
@@ -576,10 +577,10 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
                     @Override
                     public void outside() {
-                        if (preferences.getBoolean("close_on_outside_touch", false))
+                        if (preferences.getBoolean("close_on_outside_touch", false) || isLocked()) {
+                            if (isLocked) pokeScreenTimer();
                             doFinish(0);
-                        if (isLocked && !isLocked())
-                            doFinish(0);
+                        }
                     }
                 }
                 );
@@ -761,26 +762,31 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     }
 
     void openIntent(PendingIntent mPendingIntent, boolean isFloating) {
-        try {
-            dismissKeyguard();
-            Mlog.d(logTag, "sendPending");
-
-            Intent intent = new Intent();
-            if (isFloating) {
-                intent.addFlags(FLAG_FLOATING_WINDOW);
-            }
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            mPendingIntent.send(getApplicationContext(), 0, intent);
-
+        if (isLocked()) {
+            pokeScreenTimer();
+            startActivity(new Intent(getApplicationContext(), UnlockActivity.class)
+                            .putExtra("action", mPendingIntent)
+                            .putExtra("floating", isFloating)
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            );
             doFinish(2);
-        } catch (PendingIntent.CanceledException e) {
-            //reportError(e, "App has canceled action", getApplicationContext());
-            Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_cancel_exception), Toast.LENGTH_SHORT).show();
-            doFinish(0);
-        } catch (NullPointerException e) {
-            //reportError(e, "No action defined", getApplicationContext());
-            Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_null_exception), Toast.LENGTH_SHORT).show();
-            doFinish(0);
+        } else {
+            try {
+                Mlog.d(logTag, "sendPending");
+
+                Intent intent = new Intent().addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                if (isFloating) intent.addFlags(FLAG_FLOATING_WINDOW);
+                mPendingIntent.send(getApplicationContext(), 0, intent);
+                doFinish(2);
+            } catch (PendingIntent.CanceledException e) {
+                //reportError(e, "App has canceled action", getApplicationContext());
+                Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_cancel_exception), Toast.LENGTH_SHORT).show();
+                doFinish(0);
+            } catch (NullPointerException e) {
+                //reportError(e, "No action defined", getApplicationContext());
+                Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_null_exception), Toast.LENGTH_SHORT).show();
+                doFinish(0);
+            }
         }
     }
 
@@ -815,21 +821,6 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             return true;
         }
     };
-
-    void dismissKeyguard() {
-        if (Build.VERSION.SDK_INT >= 16) {
-            if (!preferences.getBoolean("dismiss_keyguard", false)) return;
-
-            KeyguardManager keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
-            if (keyguardManager.isKeyguardLocked()) {
-                Mlog.d(logTag, "attempt exit");
-                Intent intent = new Intent();
-                intent.setClass(getApplicationContext(), KeyguardRelock.class);
-                intent.setAction(Intent.ACTION_SCREEN_ON);
-                startService(intent);
-            }
-        }
-    }
 
     private void doFinish(final int doDismiss) { // 0=ikke fjern 1=fjern 2=åpnet
         Mlog.v(logTag + "DoFinish", doDismiss);
@@ -995,6 +986,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             }
         }
     }
+
     void screenOff() {
         if (wLock != null && wLock.isHeld()) wLock.release();
 
@@ -1008,6 +1000,15 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 policyManager.lockNow();
             } else Mlog.v(logTag, "ADMIN_NOT_ACTIVE");
         }
+    }
+
+    /**
+     * Acquire a WakeLock which ensures the screen is on and then pokes the user activity timer.
+     */
+    void pokeScreenTimer() {
+        if (powerManager == null)
+            powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+        powerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, "pokeScreenTimer").acquire(1000);
     }
 
     @Override
