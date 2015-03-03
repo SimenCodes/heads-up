@@ -67,6 +67,13 @@ public class OverlayService extends OverlayServiceCommon {
     };
 
     @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // Ensure we unbind the service properly
+        unbindService(mConnection);
+    }
+
+    @Override
     public IBinder onBind(Intent intent) {
         return null;
     }
