@@ -733,9 +733,9 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     public void onPopupClick(View v, boolean isFloating) {
         final ViewGroup rootView = themeClass.getRootView(layout);
         if (rootView.getTranslationX() != 0 || rootView.getTranslationY() != 0)
-            return; // Stop if we're currently swiping. Bug 0000034
+            return; // Stop if we're currently swiping. Bug 0000034 (in the old bug tracker)
 
-        if (!expand()) openIntent(pendingIntent, isFloating);
+        if (Build.VERSION.SDK_INT >= 12 || !expand()) openIntent(pendingIntent, isFloating);
     }
 
     /*
@@ -1017,7 +1017,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     }
 
 
-    private static void reportError(Exception e, String msg, Context c) {
+    static void reportError(Exception e, String msg, Context c) {
         try {
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c.getApplicationContext());
             SharedPreferences.Editor editor = preferences.edit();
