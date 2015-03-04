@@ -28,7 +28,7 @@ android {
     }
     defaultConfig {
         applicationId "codes.simen.l50notifications"
-        minSdkVersion 11
+        minSdkVersion 12
         targetSdkVersion 21
         versionCode 52
         versionName '1.10'

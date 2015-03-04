@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.WindowManager;
 import android.widget.Toast;
 
@@ -32,20 +33,30 @@ public class UnlockActivity extends Activity {
     public static final String logTag = "UnlockActivity";
 
     private boolean isPendingIntentStarted = false;
+    private Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //register for user present so we don't have to manually check kg with the keyguard manager
+        IntentFilter userUnlock = new IntentFilter (Intent.ACTION_USER_PRESENT);
+        registerReceiver(unlockDone, userUnlock);
 
         requestWindowFeature(android.view.Window.FEATURE_NO_TITLE);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         Mlog.v(logTag, "creating dismiss window");
 
-        //register for user present so we don't have to manually check kg with the keyguard manager
-        IntentFilter userUnlock = new IntentFilter (Intent.ACTION_USER_PRESENT);
-        registerReceiver(unlockDone, userUnlock);
-
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (!isFinishing()) {
+                    startPendingIntent();
+                    finish();
+                }
+            }
+        }, 2000);
     }
 
     @Override
@@ -84,10 +95,10 @@ public class UnlockActivity extends Activity {
             pendingIntent.send(getApplicationContext(), 0, intent);
 
         } catch (PendingIntent.CanceledException e) {
-            //reportError(e, "App has canceled action", getApplicationContext());
+            OverlayServiceCommon.reportError(e, "App has canceled action", getApplicationContext());
             Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_cancel_exception), Toast.LENGTH_SHORT).show();
         } catch (NullPointerException e) {
-            //reportError(e, "No action defined", getApplicationContext());
+            OverlayServiceCommon.reportError(e, "No action defined", getApplicationContext());
             Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_null_exception), Toast.LENGTH_SHORT).show();
         }
     }

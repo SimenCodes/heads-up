@@ -435,7 +435,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                         }
                     }
                     ImageView smallIconView = themeClass.getSmallIconView(layout);
-                    if (bitmap == null) {
+                    if (bitmap == null || bitmap.isRecycled()) {
                         if (drawable != null)
                             bitmap = drawableToBitmap(drawable);
                         if (smallIconView != null)
@@ -443,7 +443,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     } else if (drawable != null && smallIconView != null)
                         themeClass.setSmallIcon(smallIconView, drawable, color);
 
-                    if (bitmap != null) {
+                    if (bitmap != null && !bitmap.isRecycled()) {
                         final int shortestSide;
                         final int width = bitmap.getWidth();
                         final int height = bitmap.getHeight();
@@ -733,9 +733,9 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     public void onPopupClick(View v, boolean isFloating) {
         final ViewGroup rootView = themeClass.getRootView(layout);
         if (rootView.getTranslationX() != 0 || rootView.getTranslationY() != 0)
-            return; // Stop if we're currently swiping. Bug 0000034
+            return; // Stop if we're currently swiping. Bug 0000034 (in the old bug tracker)
 
-        if (!expand()) openIntent(pendingIntent, isFloating);
+        if (Build.VERSION.SDK_INT >= 12 || !expand()) openIntent(pendingIntent, isFloating);
     }
 
     /*
@@ -1017,7 +1017,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     }
 
 
-    private static void reportError(Exception e, String msg, Context c) {
+    static void reportError(Exception e, String msg, Context c) {
         try {
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c.getApplicationContext());
             SharedPreferences.Editor editor = preferences.edit();
