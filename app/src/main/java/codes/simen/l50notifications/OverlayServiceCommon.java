@@ -435,7 +435,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                         }
                     }
                     ImageView smallIconView = themeClass.getSmallIconView(layout);
-                    if (bitmap == null) {
+                    if (bitmap == null || bitmap.isRecycled()) {
                         if (drawable != null)
                             bitmap = drawableToBitmap(drawable);
                         if (smallIconView != null)
@@ -443,7 +443,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     } else if (drawable != null && smallIconView != null)
                         themeClass.setSmallIcon(smallIconView, drawable, color);
 
-                    if (bitmap != null) {
+                    if (bitmap != null && !bitmap.isRecycled()) {
                         final int shortestSide;
                         final int width = bitmap.getWidth();
                         final int height = bitmap.getHeight();
