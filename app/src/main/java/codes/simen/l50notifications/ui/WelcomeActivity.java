@@ -152,6 +152,7 @@ public class WelcomeActivity extends Activity {
             intent.putExtra("iconLarge", bitmap);
         }/**/
         intent.putExtra("icon", R.drawable.ic_stat_headsup);
+        intent.putExtra("color", getResources().getColor(R.color.primary));
 
         intent.putExtra("actionCount", 1);
         intent.putExtra("action1title", getString(R.string.action_settings));

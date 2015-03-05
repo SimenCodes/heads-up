@@ -95,7 +95,7 @@
   <string-array name="overlayStyles">
     <item name="l">Android 5.0 \'Lollipop\' светло</item>
     <item name="ldark">Android 5.0 \'Lollipop\' тамно</item>
-    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
+    <item name="lblack">Црно Android 5.0 \'Lollipop\'</item>
     <item name="holo">Обично светло</item>
     <item name="holodark">Обично тамно</item>
     <item name="random">Психоделичан (случајан)</item>
@@ -133,4 +133,6 @@
   <string name="pref_broadcast_notifications_desc">Допустите да моје друге апликације корите нотификације. То це умањити употребу меморије. Држите угашено осим ако нека апликација тражи да упалите.</string>
   <string name="title_broadcast_request">Приступ нотификацији</string>
   <string name="content_broadcast_request">Допушта %s да приступи нотификацијама. Сигурно то да се уради?</string>
+  <string name="pref_show_non_cancelable">Покажи нотификације које не могу да се оклоне</string>
+  <string name="pref_show_non_cancelable_desc">Покажи нотификације које се не уклањају као преузимања.\nБележка: ако неке нотификације се не уклоне, угасите ово.</string>
 </resources>

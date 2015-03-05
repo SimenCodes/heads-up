@@ -17,9 +17,11 @@ package codes.simen.l50notifications.theme;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
+import android.graphics.ColorFilter;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.Drawable;
 import android.text.format.Time;
+import android.os.Build;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -118,7 +120,7 @@ public class ThemeClass {
     }
 
     /**
-     * Add an action button to the layout.
+     Add an action button to the layout.
      */
     public void addActionButton(ViewGroup actionButtons, String actionTitle, Drawable icon, View.OnClickListener clickListener, float fontMultiplier) {
         LayoutInflater inflater = LayoutInflater.from(actionButtons.getContext());
@@ -129,7 +131,7 @@ public class ThemeClass {
         button.setText(actionTitle);
         button.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontMultiplier * button.getTextSize());
         if (icon != null) {
-            icon.mutate().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
+            icon.mutate().setColorFilter(getColorFilter(Color.BLACK));
             button.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null);
         }
         button.setOnClickListener(clickListener);
@@ -153,7 +155,7 @@ public class ThemeClass {
     /**
      Set the notification icon from a bitmap.
      */
-    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons) {
+    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons, int color) {
         if (bitmap == null) return;
         if (round_icons) {
             final double minimumWidthForRoundIcon = imageView.getContext().getResources().
@@ -174,16 +176,37 @@ public class ThemeClass {
                 imageView.setImageBitmap(bitmap);
             }
             imageView.setBackgroundResource(R.drawable.circle_grey);
-        } else
+            setColor(imageView, color);
+        } else {
             imageView.setImageBitmap(bitmap);
+            setColor(imageView, color);
+        }
     }
 
     /**
      Set the small notification icon.
      */
-    public void setSmallIcon(ImageView smallIcon, Drawable drawable) {
-        if (drawable != null) smallIcon.setImageDrawable(drawable);
-        else                  smallIcon.setVisibility(View.GONE);
+    public void setSmallIcon(ImageView smallIcon, Drawable drawable, int color) {
+        if (drawable != null) {
+            smallIcon.setImageDrawable(drawable);
+            setColor(smallIcon, color);
+        } else {
+            smallIcon.setVisibility(View.GONE);
+        }
+    }
+
+    protected void setColor(View view, int color) {
+        if (color == 0) return;
+        Drawable drawable = view.getBackground();
+        if (drawable != null) {
+            drawable = drawable.mutate();
+            //drawable.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
+            drawable.setColorFilter(getColorFilter(color));
+            if (Build.VERSION.SDK_INT >= 16) view.setBackground(drawable);
+            else                             view.setBackgroundDrawable(drawable);
+        } else {
+            view.setBackgroundColor(color);
+        }
     }
 
     /**
@@ -205,5 +228,24 @@ public class ThemeClass {
      In case you need to do something when stopping. Called after the view is removed from the window manager.
      */
     public void destroy(LinearLayout layout) {
+    }
+
+    /**
+     * Get a color filter for recoloring any solid drawable.
+     * From http://stackoverflow.com/a/11171509
+     * @param color The color
+     * @return A ColorMatrixColorFilter
+     */
+    protected static ColorFilter getColorFilter(int color) {
+        int red = (color & 0xFF0000) / 0xFFFF;
+        int green = (color & 0xFF00) / 0xFF;
+        int blue = color & 0xFF;
+
+        float[] matrix = { 0, 0, 0, 0, red
+                         , 0, 0, 0, 0, green
+                         , 0, 0, 0, 0, blue
+                         , 0, 0, 0, 1, 0 };
+
+        return new ColorMatrixColorFilter(matrix);
     }
 }

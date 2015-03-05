@@ -134,4 +134,6 @@
   <string name="pref_broadcast_notifications_desc">Bildirimler için diğer uygulamalarıma erişim izni verin. Voiceify gibi bir uygulama kullandığınızda bu RAM kullanımını azaltacaktır. Uygulamalarımdan biri etkinleştirmek için size sormadıkça kapalı tutun.</string>
   <string name="title_broadcast_request">Bildirim erişimi</string>
   <string name="content_broadcast_request">Bu bildirimlere %s erişimi verecektir. Emin misiniz?</string>
+  <string name="pref_show_non_cancelable">İptal edilemeyen bildirimleri göster</string>
+  <string name="pref_show_non_cancelable_desc">İndirilenler gibi arkaplan hizmetleri tarafından görüntülenen, devam eden temizlenemeyen bildirimleri göster.\nBazı bildirimler gitmeyi reddederse, bunu devre dışı bırakmayı deneyin.</string>
 </resources>

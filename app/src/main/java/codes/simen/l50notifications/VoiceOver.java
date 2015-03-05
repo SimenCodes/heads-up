@@ -96,7 +96,8 @@ class VoiceOver {
                 return;
             }
 
-            //boolean isfavorite = intent.getBooleanExtra("isfavorite", false);
+            // Sony's new Walkman app doesn't quite understand the concept of standards...
+            final boolean isSonyWalkman = action.equals("com.sonyericsson.music.playbackcontrol.ACTION_TRACK_STARTED");
 
             long id = -1;
             if (action.equals("com.spotify.music.metadatachanged")) {
@@ -113,7 +114,8 @@ class VoiceOver {
                     Mlog.d(logTag, "Too short, just " + String.valueOf(length));
                     return;
                 }
-
+            } else if (isSonyWalkman) {
+                id = extras.getInt("TRACK_ID", -1);
             } else {
                 if (!playing) return;
                 id = intent.getLongExtra("id", -1);
@@ -133,10 +135,18 @@ class VoiceOver {
             lastId = id;
 
 
-            String artist = intent.getStringExtra("artist");
-            String album = intent.getStringExtra("album");
-            String track = intent.getStringExtra("track");
-
+            final String artist;
+            final String album;
+            final String track;
+            if (isSonyWalkman) {
+                artist = intent.getStringExtra("ARTIST_NAME");
+                album = intent.getStringExtra("ALBUM_NAME");
+                track = intent.getStringExtra("TRACK_NAME");
+            } else {
+                artist = intent.getStringExtra("artist");
+                album = intent.getStringExtra("album");
+                track = intent.getStringExtra("track");
+            }
 
             Intent decideIntent = new Intent();
             decideIntent.setClass(context, OverlayServiceCommon.class);

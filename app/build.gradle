@@ -28,10 +28,10 @@ android {
     }
     defaultConfig {
         applicationId "codes.simen.l50notifications"
-        minSdkVersion 11
+        minSdkVersion 12
         targetSdkVersion 21
         versionCode 52
-        versionName '1.9.2c BETA'
+        versionName '1.10'
     }
     buildTypes {
         release {
@@ -47,7 +47,7 @@ android {
             debuggable true
             minifyEnabled false
         }
-        testing {
+        signedExperiment {
             // Signed APK, but debuggable
             debuggable true
             signingConfig signingConfigs.release

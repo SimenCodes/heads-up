@@ -42,10 +42,8 @@ public class HoloLight extends ThemeClass {
     public HoloLight(){super();}
 
     @Override
-    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons) {
-        super.setIcon(imageView, bitmap, round_icons);
-        if (round_icons)
-            imageView.setBackgroundResource(R.drawable.circle_grey);
+    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons, int color) {
+        super.setIcon(imageView, bitmap, round_icons, color);
     }
 
     @Override
