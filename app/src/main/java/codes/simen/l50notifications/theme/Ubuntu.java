@@ -40,7 +40,7 @@ public class Ubuntu extends ThemeClass {
 
     @Override
     public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons, int color) {
-        super.setIcon(imageView, bitmap, false, color);
+        super.setIcon(imageView, bitmap, false, 0);
     }
 
     @Override
@@ -64,6 +64,5 @@ public class Ubuntu extends ThemeClass {
         }
         button.setOnClickListener(clickListener);
     }
-
 
 }

@@ -65,27 +65,48 @@
             </FrameLayout>
 
             <LinearLayout
-                android:paddingLeft="16dp"
+                android:paddingLeft="@dimen/notification_texts_padding_left"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingStart="@dimen/notification_texts_padding_left"
+                android:paddingEnd="@dimen/notification_texts_padding_right"
+                android:paddingRight="@dimen/notification_texts_padding_right">
 
-                <TextView android:id="@+id/notification_title"
-                    style="@style/ReadTheme_Dark_TextAppearance"
-                    android:focusable="true"
-                    android:ellipsize="marquee"
-                    android:singleLine="true"
-                    android:layout_gravity="left"
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Simen.codes"
-                    android:textSize="@dimen/text_size_notification_title" />
+                    android:animateLayoutChanges="true">
+
+                    <TextView android:id="@+id/notification_title"
+                        style="@style/ReadTheme_Dark_TextAppearance"
+                        android:focusable="true"
+                        android:ellipsize="marquee"
+                        android:singleLine="true"
+                        android:layout_gravity="left"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Simen.codes"
+                        android:textSize="@dimen/text_size_notification_title" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        style="@style/ReadTheme_TextAppearance.Small"
+                        android:textColor="@android:color/tertiary_text_light"
+                        android:textSize="@dimen/text_size_notification_text"
+                        android:text="13:20"
+                        android:visibility="gone"
+                        android:id="@+id/timeView" />
+                </LinearLayout>
 
                 <TextView android:id="@+id/notification_subtitle"
                     style="@style/ReadTheme_Dark_TextAppearance.Small"
                     android:layout_gravity="left"
-                    android:scrollHorizontally="true"
                     android:ellipsize="end"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
