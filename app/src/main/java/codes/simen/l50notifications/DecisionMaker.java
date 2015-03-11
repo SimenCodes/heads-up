@@ -105,9 +105,9 @@ class DecisionMaker {
         // Get the text
         if (Build.VERSION.SDK_INT >= 21) {
             // Uncomment to test which extras a given notification contains
-            for (String extraKey : notification.extras.keySet()) {
+            /*for (String extraKey : notification.extras.keySet()) {
                 Mlog.d(logTag, extraKey + "=" + notification.extras.get(extraKey));
-            }
+            }*/
 			try {
                 title = notification.extras.get("android.title").toString();
             } catch (Exception ignored) {}
@@ -287,7 +287,10 @@ class DecisionMaker {
                     }
             }
         }
-        if (viewTexts.length() > 1 && viewTexts.length() > text.length()) {
+		
+		viewTexts = viewTexts.trim();
+		
+        if (viewTexts.length() > 1 && viewTexts.length() > 3) {
             if (viewTexts.startsWith("\n"))
                 viewTexts = viewTexts.substring("\n".length());
             Mlog.d(logTag, viewTexts);
