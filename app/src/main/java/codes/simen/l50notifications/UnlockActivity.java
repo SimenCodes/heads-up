@@ -48,19 +48,22 @@ public class UnlockActivity extends Activity {
 
         Mlog.v(logTag, "creating dismiss window");
 
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (!isFinishing()) {
-                    startPendingIntent();
-                    finish();
-                }
-            }
-        }, 2000);
+        handler.postDelayed(timeoutRunnable, 2000);
     }
+
+    private final Runnable timeoutRunnable = new Runnable() {
+        @Override
+        public void run() {
+            if (!isFinishing()) {
+                startPendingIntent();
+                finish();
+            }
+        }
+    };
 
     @Override
     protected void onNewIntent(Intent intent) {
+        Mlog.d(logTag, "Intent received: " + intent);
         setIntent(intent);
     }
 
