@@ -134,4 +134,6 @@
   <string name="pref_broadcast_notifications_desc">Da accesul altor aplicatii ale mele la notificari. Acest lucru va reduce utilizarea RAM, daca utilizati o aplicatie ca Voiceify. Pastrati-l oprit cu execptia cazului in care o aplicatie va cere activarea.</string>
   <string name="title_broadcast_request">Acces la notificari</string>
   <string name="content_broadcast_request">Acest lucru va oferi %s acces la notificari. Sunteti sigur ca acest lucru este ceea ce vrei?</string>
+  <string name="pref_show_non_cancelable">Arata notificarile neanulabile</string>
+  <string name="pref_show_non_cancelable_desc">Arata notificarile in progres netransparente afisate de serviciile de fundal ca Descarcarile.\n Note: Daca cateva notificari refuza sa dispara, atunci dezactiveaza-le.</string>
 </resources>

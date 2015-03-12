@@ -157,7 +157,7 @@ class DecisionMaker {
                     } catch (RuntimeException rte) {
                         try {
                             Looper.prepareMainLooper();
-                        } catch (IllegalStateException|RuntimeException ilse) {
+                        } catch (RuntimeException e) {
                             try {
                                 fullContent(notification, context, texts, text);
                                 final String fullContent = fullContent(notification, context, texts, text);
