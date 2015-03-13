@@ -39,7 +39,7 @@ public class UnlockActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //register for user present so we don't have to manually check kg with the keyguard manager
+        // User present is usually sent after the device has been unlocked
         IntentFilter userUnlock = new IntentFilter (Intent.ACTION_USER_PRESENT);
         registerReceiver(unlockDone, userUnlock);
 
@@ -48,12 +48,14 @@ public class UnlockActivity extends Activity {
 
         Mlog.v(logTag, "creating dismiss window");
 
+        // In case we don't get an user present broadcast, just move on
         handler.postDelayed(timeoutRunnable, 2000);
     }
 
     private final Runnable timeoutRunnable = new Runnable() {
         @Override
         public void run() {
+            Mlog.d(logTag, "Timeout runnable run");
             if (!isFinishing()) {
                 startPendingIntent();
                 finish();
@@ -78,12 +80,12 @@ public class UnlockActivity extends Activity {
 
             startPendingIntent();
 
-            moveTaskToBack(true);
             finish();
         }
     };
 
     private void startPendingIntent() {
+        Mlog.d(logTag, "Start pending intent requested");
         if (isPendingIntentStarted) return;
         isPendingIntentStarted = true;
         Intent intent;Bundle extras = getIntent().getExtras();
@@ -91,12 +93,11 @@ public class UnlockActivity extends Activity {
 
         try {
             intent = new Intent();
-            if (extras.getBoolean("floating", false)) {
+            if (extras.getBoolean("floating", false))
                 intent.addFlags(OverlayServiceCommon.FLAG_FLOATING_WINDOW);
-            }
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             pendingIntent.send(getApplicationContext(), 0, intent);
-
+            Mlog.d(logTag, "Pending intent started successfully");
         } catch (PendingIntent.CanceledException e) {
             OverlayServiceCommon.reportError(e, "App has canceled action", getApplicationContext());
             Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_cancel_exception), Toast.LENGTH_SHORT).show();

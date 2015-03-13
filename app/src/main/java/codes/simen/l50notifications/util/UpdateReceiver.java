@@ -22,7 +22,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.preference.PreferenceManager;
@@ -55,9 +54,12 @@ public class UpdateReceiver extends BroadcastReceiver {
             final int prev_v = preferences.getInt("prev_v", LATEST_VERSION);
             if (prev_v < LATEST_VERSION) {
                 SharedPreferences.Editor editor = preferences.edit();
-                if (prev_v < 59) {
+                if (prev_v < 53) {
+                    editor.putBoolean("dismiss_keyguard", true);
+                }
+                if (prev_v < 52) {
                     try {
-                        PackageInfo packageInfo = context.getPackageManager().getPackageInfo("com.tencent.mobileqq", 0);
+                        context.getPackageManager().getPackageInfo("com.tencent.mobileqq", 0);
                     } catch (PackageManager.NameNotFoundException e) {
                         Mlog.i(logTag, "QQ is installed on device. Enabling ongoing notifications.");
                         editor.putBoolean("show_non_cancelable", true);

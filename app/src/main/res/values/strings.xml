@@ -152,7 +152,7 @@ For details regarding problems and missing strings in your translation, see http
 
     <!-- Changed since 1.9 -->
     <string name="pref_dismiss_on_swipe_desc">Remove notifications from the drawer when you swipe them away horizontally. You can still tap the X to dismiss from the drawer.\nRequires Android 4.3</string>
-    <string name="pref_dismiss_keyguard_desc">Automatically unlock the phone when you open a notification.\nWARNING! This will allow ANYONE to unlock your phone, regardless of your security settings.\nThis is also deprecated in Android, and may not work properly.</string>
+    <string name="pref_dismiss_keyguard_desc">Attempt to unlock the device when you open a notification. Disable if all you get when opening a notification is a blank desktop.</string>
     <string name="pref_broadcast_notifications">Broadcast notifications</string>
     <string name="pref_broadcast_notifications_desc">Give my other apps access to your notifications. This will reduce RAM usage if you use an app like Voiceify. Keep it off unless one of my apps ask you to enable it.</string>
     <string name="title_broadcast_request">Notification access</string>

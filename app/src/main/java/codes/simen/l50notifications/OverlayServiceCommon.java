@@ -520,8 +520,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                                 public void onClick(View view) {
                                     try {
                                         if (themeClass.getRootView(layout).getTranslationX() != 0) return; // Stop if we're currently swiping. Bug 0000034
-                                        openIntent(actionIntent, false);
                                         Mlog.d(logTag, "sendPendingAction");
+                                        openIntent(actionIntent, false);
                                     } catch (NullPointerException e) {
                                         reportError(e, "", getApplicationContext());
                                     }
@@ -772,7 +772,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     }
 
     void openIntent(PendingIntent mPendingIntent, boolean isFloating) {
-        if (isLocked()) {
+        if (isLocked() && preferences.getBoolean("dismiss_keyguard", true)) {
             pokeScreenTimer();
             startActivity(new Intent(getApplicationContext(), UnlockActivity.class)
                             .putExtra("action", mPendingIntent)

@@ -46,6 +46,13 @@
         android:defaultValue="false"
         />
 
+    <CheckBoxPreference
+        android:key="dismiss_keyguard"
+        android:title="@string/pref_dismiss_keyguard"
+        android:summary="@string/pref_dismiss_keyguard_desc"
+        android:defaultValue="true"
+        />
+
     <!--
     Removed due to stability issues
     <codes.simen.l50notifications.ui.ReminderDelayPreference
