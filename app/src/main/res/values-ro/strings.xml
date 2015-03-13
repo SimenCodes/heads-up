@@ -129,7 +129,6 @@
   <string name="pref_top_margin_locked">Pozitie popup pe ecran de blocare</string>
   <string name="pref_dont_disturb_error">Atentie: Google a sters abilitatea de sarcina in Android 5.0 , asa ca nu va functiona corespunzator.De la documentele\ngetRecentTasks() — Ca si LOLLIPOP, aceasta metoda nu mai este disponibila pentru alte aplicatii:introduerea documentului centrat recent inseamna scurgeri de informatii.</string>
   <string name="pref_dismiss_on_swipe_desc">Elimina notificarile din sertar, atunci cand va deplasati pe orizontal. Inca puteti atinge X pentru a renunta la sertar. \nNecesita Android 4.3</string>
-  <string name="pref_dismiss_keyguard_desc">Deblocare automata a telefonului cand deschideti o notificare. \nATENTIE! Acest lucru va permite oricui sa deblocheze telefonul, indiferent de securitate . \nAcesta este, de asemenea, invechit in Android, şi poate functiona incorect.</string>
   <string name="pref_broadcast_notifications">Notificarile de difuzare</string>
   <string name="pref_broadcast_notifications_desc">Da accesul altor aplicatii ale mele la notificari. Acest lucru va reduce utilizarea RAM, daca utilizati o aplicatie ca Voiceify. Pastrati-l oprit cu execptia cazului in care o aplicatie va cere activarea.</string>
   <string name="title_broadcast_request">Acces la notificari</string>

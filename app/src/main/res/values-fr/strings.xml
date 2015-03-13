@@ -129,7 +129,6 @@
   <string name="pref_top_margin_locked">Position de la fenêtre sur l\'écran de verrouillage</string>
   <string name="pref_dont_disturb_error">Attention: Google à retiré la possibilité d\'obtenir la liste des tâches en cours d\'exécution dans Android 5.0, donc cela ne fonctionnera pas correctement.</string>
   <string name="pref_dismiss_on_swipe_desc">Enlever la notification quand vous la balayez horizontalement. Vous pouvez toujours utiliser le bouton X.\n Requiers Android 4.3</string>
-  <string name="pref_dismiss_keyguard_desc">Débloquer le téléphone lors de l\'ouverture d\'une notification.\nATTENTION! N\'importe qui pourra débloquer votre téléphone, peut importe les paramétrages de sécurité.\n Ceci a été rendu obsolète dans Android et peut ne pas fonctionner correctement.</string>
   <string name="pref_broadcast_notifications">Diffuser les notifications</string>
   <string name="pref_broadcast_notifications_desc">Laisser mes autres applications accéder à vos notifications. Ceci réduira l\'utilisation de la RAM lors de l\'usage d\'applications comme Voiceify. Laisser inactif sauf si une de mes applications vous demande de l\'activer.</string>
   <string name="title_broadcast_request">Accès aux notifications</string>

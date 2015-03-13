@@ -131,7 +131,6 @@
   <string name="pref_top_margin_locked">Posizione del popup nella schermata di blocco</string>
   <string name="pref_dont_disturb_error">Attenzione: Google ha rimosso la possibilità di mantenere attività in esecuzione in Android 5.0, quindi non funzionerà correttamente.</string>
   <string name="pref_dismiss_on_swipe_desc">Rimuovi le notifiche dal centro notifiche quando la scarti con uno swipe orizzontale. (Puoi comunque cliccare sulla X per rimuoverle dal centro notifiche).\nRichiede Android 4.3</string>
-  <string name="pref_dismiss_keyguard_desc">Sbocca automaticamente il dispositivo quando apri una notifica.\nATTENZIONE! Questo premetterà a tutti di sbloccare il dispositivo, indipendentemente dalle impostazioni di sicurezza.\nQuesto non è neanche approvato in Android, e potrebbe non funzionare correttamente.</string>
   <string name="pref_broadcast_notifications">Notifiche broadcast</string>
   <string name="pref_broadcast_notifications_desc">Dai l\'accesso alle notifiche alle altre mie applicazioni. Questo ridurrà la RAM utilizzata se utilizzi un\'app come Voiceify. Mantienilo disabilitato fino a quando una delle mie app ti chiede di abilitarlo.</string>
   <string name="title_broadcast_request">Accesso alle notifiche</string>

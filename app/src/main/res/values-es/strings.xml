@@ -130,7 +130,6 @@ Deteniendo.</string>
   <string name="pref_top_margin_locked">Posición del Popup en la pantalla de bloqueo</string>
   <string name="pref_dont_disturb_error">Advertencia: Google retiró la habilidad de tener tareas ejecutandose en Android 5.0, por lo tanto esto no funcionará correctamente.</string>
   <string name="pref_dismiss_on_swipe_desc"> Al descartar un heads-up deslizando, remover también la notificación en la barra de notificaciones. Igual puedes presionar la X para descartar notificaciones en la barra.</string>
-  <string name="pref_dismiss_keyguard_desc">Desbloquear automáticamente cuando abras una notificación.\nCuidado! Esto permitirá que CUALQUIER PERSONA pueda desbloquear el teléfono, independiente de la configuración de seguridad.</string>
   <string name="pref_broadcast_notifications">Transmitir notificaciones</string>
   <string name="pref_broadcast_notifications_desc">Dar acceso a mis otras aplicaciones para leer sus notificaciones. Esto reducirá el uso de RAM si utiliza aplicaciones como Voiceify. Mantengalo apagado a menos que alguna de mis app le pida habilitarlo.</string>
   <string name="title_broadcast_request">Acceso a notificaciones</string>

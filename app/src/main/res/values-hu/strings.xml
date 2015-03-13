@@ -129,7 +129,6 @@
   <string name="pref_top_margin_locked">Felugró ablak pozíciója a lezárt kijelzőn</string>
   <string name="pref_dont_disturb_error">Figyelmeztetés: A Google visszavonta a lehetőséget, hogy Android 5.0-n futtasd a programot, ezért nem fog megfelelően működni. A docs: \ngetRecentTasks() — mint a LOLLIPOP, ez a módszer már nem érhető el, a harmadik féltől származó alkalmazásokhoz.</string>
   <string name="pref_dismiss_on_swipe_desc">Értesítések eltávolítása, amikor Ön elhúzza őket el vízszintesen. Továbbra is érintse meg az X-et az eltávolításhoz. \nRequires Android 4.3 a</string>
-  <string name="pref_dismiss_keyguard_desc">Automatikusan kinyitja a telefont, amikor Ön megnyit egy értesítést. \nWARNING! Ez lehetővé teszi, hogy bárkinek, hogy kinyissa a telefon, függetlenül attól, hogy a biztonsági beállításoktól. \nEz már elavult az Androidban, és nem is működik megfelelően.</string>
   <string name="pref_broadcast_notifications">Sugárzott értesítések</string>
   <string name="pref_broadcast_notifications_desc">Hozzáférést biztosít más appoknak az értesítéseimhez. Ez csökkenti a RAM használatát, ha pl. a Voiceify appot használod, vagy ehhez hasonlót. Tartsa kikapcsolva, kivéve, ha egy app kéri, hogy engedélyezze.</string>
   <string name="title_broadcast_request">Értesítési hozzáférés</string>

@@ -128,7 +128,6 @@
   <string name="pref_reminder_delay_counter">Потсети ме после <xliff:g id="time" example="7">%s</xliff:g> минута</string>
   <string name="pref_top_margin_locked">Смештај на екран блокирања</string>
   <string name="pref_dismiss_on_swipe_desc">Уклони нотификације са фијоке када их превучете. Можете и да употребите X.</string>
-  <string name="pref_dismiss_keyguard_desc">Ауто-деблокирај телефон на отварање нотификације.\nПАЖЊА! то дозвољава да БИЛО ко деблокира Ваш телефон.</string>
   <string name="pref_broadcast_notifications">Емитуј нотификације</string>
   <string name="pref_broadcast_notifications_desc">Допустите да моје друге апликације корите нотификације. То це умањити употребу меморије. Држите угашено осим ако нека апликација тражи да упалите.</string>
   <string name="title_broadcast_request">Приступ нотификацији</string>

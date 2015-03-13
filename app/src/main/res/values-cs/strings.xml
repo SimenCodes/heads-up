@@ -129,7 +129,6 @@
   <string name="pref_top_margin_locked">Pozice vyskakovacího okna na zamykací obrazovce</string>
   <string name="pref_dont_disturb_error">Varování: Google odstranil možnost pro běh úloh v Androidu 5.0, tudíž toto nebude fungovat správně. Z dokumentů:\ngetRecentTasks() — Pro LOLLIPOP, tato metoda již není dostupná pro aplikace třetích stran: může zapříčinit únik soukromých informací. Pro zpětnou kompabilitu, stále bude vracet malý objem dat, uživatelovi vlastní úlohy a možná některé další úlohy jako domácí obrazovka, které jsou známy, že neobsahují citlivá data.</string>
   <string name="pref_dismiss_on_swipe_desc">Odstranit upozornění vodorovným tahem. Stále můžeš použít X tlačítko pro jejich zamítnutí.\nVyžaduje Android 4.3</string>
-  <string name="pref_dismiss_keyguard_desc">Automaticky odemknout telefon po otevření upozorění.\nVAROVÁNÍ! Tímto umožníš KOMUKOLIV odemknout zařízení navzdory tvému nastavení zabezpečení.\nToto je také zastaralé v Androidu a nemusí fungovat korektně.</string>
   <string name="pref_broadcast_notifications">Oznámení vysílání</string>
   <string name="pref_broadcast_notifications_desc">Přidat mým ostatním aplikacím přístup k oznámením. Toto sníží využití RAM pokud používáš aplikaci jako Voiceify. Nech vypnuté dokud si některá má aplikace nevyžádá povolení.</string>
   <string name="title_broadcast_request">Přístup k oznámení</string>

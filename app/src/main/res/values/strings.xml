@@ -15,13 +15,6 @@
 -->
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
 
-    <!--
-Hi!, thank you for wanting to help translate Heads-up!
-To begin, download this file to your computer. When you're finished translating, email your file to sb@simen.codes. Please include the word 'translation' in the subject line, as this puts your email in my priority inbox.
-After receiving the translation, I'll send you a testing APK containing your translation.
-For details regarding problems and missing strings in your translation, see http://app.simen.codes/dev/translation/heads-up/ I update this document every time I receive a translation.
-    -->
-
     <string name="app_name">Heads-up notifications</string>
     <string name="app_icon_name">Heads-up</string>
     <string name="title_activity_welcome">Heads-up notifications</string>
@@ -48,7 +41,6 @@ For details regarding problems and missing strings in your translation, see http
     <string name="pref_overlay_time_max">Until I dismiss it</string>
     <string name="title_activity_settings">Settings</string>
     <string name="pref_header_general">Filtering</string>
-
     <string-array name="priorityLevel">
         <item name="MAX">Critical and urgent (missed calls, directions, emergency alerts)</item>
         <item name="HIGH">Important (communications, important emails)</item>
@@ -56,7 +48,6 @@ For details regarding problems and missing strings in your translation, see http
         <item name="LOW">Non-important (software updates, junk mail)</item>
         <item name="MIN">Contextual and background info (weather, expired events, suggestions)</item>
     </string-array>
-
     <string name="pref_overlay_display_time_counter"><xliff:g id="time" example="7">%s</xliff:g> seconds</string>
     <string name="pref_top_margin">Popup position when unlocked</string>
     <string name="pref_turn_screen_on">Turn screen on</string>
@@ -96,7 +87,6 @@ For details regarding problems and missing strings in your translation, see http
     <string name="pref_font_size_desc">Fine-tune the font size in the popups</string>
     <string name="leave_review">Leave review</string>
     <string name="pref_header_other">About</string>
-
     <string-array name="overlayPosition">
         <item name="aboveStatus">Top</item>
         <item name="top">Below status bar</item>
@@ -113,8 +103,6 @@ For details regarding problems and missing strings in your translation, see http
         <!-- Do not translate this one -->
         <item name="ubuntu">Ubuntu</item>
     </string-array>
-
-    <!-- Added since 1.7 -->
     <string name="pref_only_on_lock_screen">Only on lockscreen</string>
     <string name="pref_only_on_lock_screen_desc">Only display popups on the lockscreen.</string>
     <string name="pref_privacy_on_lockscreen">Privacy on lockscreen</string>
@@ -123,13 +111,9 @@ For details regarding problems and missing strings in your translation, see http
     <string name="device_admin_disable_warning">After disabling this service, some features in Heads-up might not work properly.</string>
     <string name="title_activity_device_admin_enabler">Enable device admin</string>
     <string name="pref_device_admin">Fix \'screen stays on\' bug.</string>
-
-    <!-- Added since 1.8 -->
     <string name="no_proximity_sensor_error">No proximity sensor detected. Pocket detection will not work. Please DON\'T report this bug.</string>
     <string name="pref_keep_screen_on_forever">Keep screen on</string>
     <string name="pref_keep_screen_on_forever_desc">After turning the screen on, keep it on as long as the heads-up is visible.</string>
-
-    <!-- Added/changed since 1.8.1 -->
     <string name="action_help">Help!</string>
     <string name="action_test">Test</string>
     <string name="device_admin_enable_explanation">Enabling this will allow Heads-up to turn off your screen. Only use this if the screen doesn\'t turn off after displaying popups on the lockscreen, or if the pocket detection doesn\'t work properly.\n\nIMPORTANT! You will not be able to uninstall Heads-up while this feature is enabled.</string>
@@ -139,8 +123,6 @@ For details regarding problems and missing strings in your translation, see http
     <string name="intro_status_on_confirmed">The service is running. Try sending yourself a message.\nTap here if you need help.</string>
     <string name="accessibility_service_blocked">%s might be blocking Heads-up from accessing your notifications. Please disable it from the accessibility menu.</string>
     <string name="export_debug_data">Export debug data</string>
-
-    <!-- Added since 1.8.2 -->
     <string name="pref_close_on_outside_touch">Close on outside touch</string>
     <string name="pref_close_on_outside_touch_desc">Remove the popup when you touch outside the heads-up</string>
     <string name="pref_reminder_delay">Reminder time</string>
@@ -149,10 +131,8 @@ For details regarding problems and missing strings in your translation, see http
     <string name="pref_top_margin_locked">Popup position on lock screen</string>
     <!-- Note to translators: you don't have to translate the full text, just make sure the user understands that the feature will not work in 5.0 -->
     <string name="pref_dont_disturb_error">Warning: Google removed the ability to get running tasks in Android 5.0, so this will not work properly. From the docs:\ngetRecentTasks() —  As of LOLLIPOP, this method is no longer available to third party applications: the introduction of document-centric recents means it can leak personal information. For backwards compatibility, it will still return a small subset of its data: the caller\'s own tasks, and possibly some other tasks such as home that are known to not be sensitive.</string>
-
-    <!-- Changed since 1.9 -->
     <string name="pref_dismiss_on_swipe_desc">Remove notifications from the drawer when you swipe them away horizontally. You can still tap the X to dismiss from the drawer.\nRequires Android 4.3</string>
-    <string name="pref_dismiss_keyguard_desc">Attempt to unlock the device when you open a notification. Disable if all you get when opening a notification is a blank desktop.</string>
+    <string name="pref_dismiss_keyguard_desc">Attempt to unlock the device when you open a notification. Disable if you get a blank desktop when opening a notification.</string>
     <string name="pref_broadcast_notifications">Broadcast notifications</string>
     <string name="pref_broadcast_notifications_desc">Give my other apps access to your notifications. This will reduce RAM usage if you use an app like Voiceify. Keep it off unless one of my apps ask you to enable it.</string>
     <string name="title_broadcast_request">Notification access</string>

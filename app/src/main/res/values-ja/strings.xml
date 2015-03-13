@@ -129,7 +129,6 @@
   <string name="pref_top_margin_locked">ロック画面のポップアップの位置</string>
   <string name="pref_dont_disturb_error">警告: Android 5.0 で Google はタスクで実行する機能を取り除きました。そのため正しく動作しません。ドキュメントより: \ngetRecentTasks() - LOLLIPOPで、現在このメソッドはサードパーティのアプリケーションで使用できません。最近のドキュメントセンターの導入部で、個人情報を漏洩する可能性があることを意味しています。下位互換性により、まだデータの小さなサブセットが返されます。呼び出し元自体のタスクや、おそらくあまり機密性がないことが明らかないくつかのホームの作業など。</string>
   <string name="pref_dismiss_on_swipe_desc">通知を横にスワイプすると、ドロワーから通知を削除します。また、ドロワーから X をタップすることもできます。\nAndroid 4.3 が必要です</string>
-  <string name="pref_dismiss_keyguard_desc">通知を開くと、自動的に電話のロックを解除します。 \n警告! これにより、セキュリティ設定に関係なく、誰でもあなたの電話のロックを解除することができます。 \nまた、これは Android で廃止されました。正常に動作しない可能性があります。</string>
   <string name="pref_broadcast_notifications">ブロードキャスト通知</string>
   <string name="pref_broadcast_notifications_desc">あなたの通知に私の他のアプリのアクセス権を与えます。これにより Voiceify のようなアプリを使用する場合にメモリの使用量を減らします。私のアプリが有効にするように依頼しない限りオフのままにしてください。</string>
   <string name="title_broadcast_request">通知アクセス</string>

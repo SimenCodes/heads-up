@@ -113,5 +113,4 @@
   <string name="intro_status_on">Tjänsten är aktiverad. Prova skicka dig själv ett meddelande.\nOm det inte fungerar, starta om din enhet och försök igen. Kontakta mig sb@simen.codes om du inte får det att fungera</string>
   <string name="intro_status_on_confirmed">Tjänsten är aktiverad. Prova skicka dig själv ett meddelande. /nKontakta mig sb@simen.codes om du inte får det att fungera</string>
   <string name="pref_dismiss_on_swipe_desc">Avböj notifikationer med en svepning. Du kan fortfarande trycka X för att avböja dem från listan.</string>
-  <string name="pref_dismiss_keyguard_desc">Lås automatiskt upp telefonen vid inkommande notifikation.\nVARNING! Detta tillåter VEM SOM HÄLST låser upp din telefon, oberoende på säkerhet\'s inställningar.</string>
 </resources>

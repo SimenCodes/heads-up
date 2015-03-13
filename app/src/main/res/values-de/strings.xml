@@ -131,7 +131,6 @@
   <string name="pref_top_margin_locked">Position des Popups auf dem Sperrbildschirm</string>
   <string name="pref_dont_disturb_error">Warnung: Google hat in Android 5.0 die Möglichkeit entfernt, die laufenden Prozesse auszulesen. Aus der Dokumentation:\ngetRecentTasks() —  Seit LOLLIPOP ist diese Methode aus Datenschutzgründen nicht mehr für Drittanbieterapps verfügbar. Für Abwärtskompatibilität wird nur noch ein Teil der Daten zurückgegeben.</string>
   <string name="pref_dismiss_on_swipe_desc">Benachrichtigungen durch Wischen entfernen. Sie können dies nach wie vor auch über einen Tipp auf das X erreichen..</string>
-  <string name="pref_dismiss_keyguard_desc">Entsperrt das Gerät automatisch, wenn Sie eine Benachrichtigung öffnen.\nACHTUNG! Damit erhalten Dritte mit physischem Zugriff auf Ihr Gerät auch Zugriff auf Ihre Daten, unabhängig von allen sonstigen Sicherheitseinstellungen!</string>
   <string name="pref_broadcast_notifications">Benachrichtigungen broadcasten</string>
   <string name="pref_broadcast_notifications_desc">Gewährt meinen anderen Apps Zugriff auf Ihre Benachrichtigungen. Dies wird den RAM Verbrauch reduzieren, wenn sie Apps wie Voiceify verwenden. Lassen Sie es deaktiviert, außer eine meiner Apps fordert Sie auf, es zu aktivieren.</string>
   <string name="title_broadcast_request">Benachrichtigungszugriff</string>

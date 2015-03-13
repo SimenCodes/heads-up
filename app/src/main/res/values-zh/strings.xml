@@ -131,7 +131,6 @@
   <string name="pref_top_margin_locked">锁屏通知位置</string>
   <string name="pref_dont_disturb_error">警告: Google 移除了 Android 5.0 上获取正在运行的任务的权限，因此这可能不能正常工作。</string>
   <string name="pref_dismiss_on_swipe_desc">通过滑动消除通知。(你也可以通过点击X按钮来消除通知。)</string>
-  <string name="pref_dismiss_keyguard_desc">打开通知时自动解锁手机\n警告！这会允许任何人解锁你的手机，请注意你的安全设置。</string>
   <string name="pref_broadcast_notifications">广播通知</string>
   <string name="pref_broadcast_notifications_desc">允许我其它的应用访问您的通知。但这将占用您手机的运行内存。如果我的应用没有要求您打开，请保持关闭。</string>
   <string name="title_broadcast_request">访问通知</string>

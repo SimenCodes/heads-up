@@ -129,7 +129,6 @@
   <string name="pref_top_margin_locked">位置 (鎖屏)</string>
   <string name="pref_dont_disturb_error">警告！Google在Android 5.0將取得現正運行任務的功能拿掉了，所以這將無法正常運作。技術性資料：\ngetRecentTasks() — 目前於Lollipop中，基於個人隱私的安全性問題，此API已從第三方程式移除。</string>
   <string name="pref_dismiss_on_swipe_desc">清除時將通知列裡的通知移除.</string>
-  <string name="pref_dismiss_keyguard_desc">當您收到通知時將自動解鎖您的手機。\n警告！這代表著所有人都可以解鎖您的手機， 即使您有設置任何安全設定。\n這在Android中野遭到棄用，可能無法正常運作。</string>
   <string name="pref_broadcast_notifications">廣播通知</string>
   <string name="pref_broadcast_notifications_desc">讓我設計的其他應用程式存取您的通知。如果您有用Voiceify，這將降低RAM用量。建議關閉此選項，除非我的其中一個應用要您將此選項開啟。</string>
   <string name="title_broadcast_request">通知權限</string>
