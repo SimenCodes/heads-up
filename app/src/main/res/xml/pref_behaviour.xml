@@ -49,7 +49,6 @@
     <CheckBoxPreference
         android:key="dismiss_keyguard"
         android:title="@string/pref_dismiss_keyguard"
-        android:summary="@string/pref_dismiss_keyguard_desc"
         android:defaultValue="true"
         />
 

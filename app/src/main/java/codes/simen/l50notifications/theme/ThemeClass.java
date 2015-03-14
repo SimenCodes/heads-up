@@ -20,8 +20,8 @@ import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.Drawable;
-import android.text.format.Time;
 import android.os.Build;
+import android.text.format.Time;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -195,7 +195,7 @@ public class ThemeClass {
         }
     }
 
-    protected void setColor(View view, int color) {
+    protected static void setColor(View view, int color) {
         if (color == 0) return;
         Drawable drawable = view.getBackground();
         if (drawable != null) {

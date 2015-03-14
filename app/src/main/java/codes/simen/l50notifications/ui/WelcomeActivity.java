@@ -148,11 +148,11 @@ public class WelcomeActivity extends Activity {
                 , PendingIntent.FLAG_UPDATE_CURRENT));
 
         if (Build.VERSION.SDK_INT >= 11) {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
+            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
             intent.putExtra("iconLarge", bitmap);
         }/**/
-        intent.putExtra("icon", R.drawable.ic_stat_headsup);
-        intent.putExtra("color", getResources().getColor(R.color.primary));
+        intent.putExtra("icon", -1);
+        intent.putExtra("color", getResources().getColor(R.color.primaryDark));
 
         intent.putExtra("actionCount", 1);
         intent.putExtra("action1title", getString(R.string.action_settings));

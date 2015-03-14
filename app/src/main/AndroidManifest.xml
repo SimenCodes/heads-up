@@ -20,8 +20,8 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- Determine currently running task -->
     <uses-permission android:name="android.permission.GET_TASKS" />
-    <!-- Dismiss the keyguard -->
-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <!-- Dismiss the keyguard. Not in use anymore -->
+    <!--<uses-permission android:name="android.permission.DISABLE_KEYGUARD" />-->
     <!-- Turn the screen on. Not kept for longer than one minute unless "keep screen on" is enabled -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
@@ -34,7 +34,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >

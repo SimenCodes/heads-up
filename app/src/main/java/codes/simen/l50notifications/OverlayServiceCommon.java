@@ -434,7 +434,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     Bitmap bitmap = (Bitmap) extras.get("iconLarge");
                     if (appRes != null && extras.containsKey("icon")) {
                         int icon_id = extras.getInt("icon");
-                        drawable = appRes.getDrawable(icon_id);
+                        if (icon_id > 0)
+                            drawable = appRes.getDrawable(icon_id);
                     } else {
                         try {
                             drawable = pm.getApplicationIcon(packageName);
@@ -448,7 +449,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                             bitmap = drawableToBitmap(drawable);
                         if (smallIconView != null)
                             themeClass.setSmallIcon(smallIconView, null, color);
-                    } else if (drawable != null && smallIconView != null)
+                    } else if (smallIconView != null)
                         themeClass.setSmallIcon(smallIconView, drawable, color);
 
                     if (bitmap != null && !bitmap.isRecycled()) {
