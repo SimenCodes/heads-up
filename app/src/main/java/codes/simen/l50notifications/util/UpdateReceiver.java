@@ -15,10 +15,15 @@
 
 package codes.simen.l50notifications.util;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.preference.PreferenceManager;
 
 import java.io.IOException;
@@ -27,6 +32,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import codes.simen.l50notifications.BuildConfig;
+import codes.simen.l50notifications.R;
+import codes.simen.l50notifications.ui.SettingsActivity;
 
 public class UpdateReceiver extends BroadcastReceiver {
 
@@ -47,6 +54,33 @@ public class UpdateReceiver extends BroadcastReceiver {
             final int prev_v = preferences.getInt("prev_v", LATEST_VERSION);
             if (prev_v < LATEST_VERSION) {
                 SharedPreferences.Editor editor = preferences.edit();
+                if (prev_v < 53) {
+                    editor.putBoolean("dismiss_keyguard", true);
+                }
+                if (prev_v < 52) {
+                    try {
+                        context.getPackageManager().getPackageInfo("com.tencent.mobileqq", 0);
+                    } catch (PackageManager.NameNotFoundException e) {
+                        Mlog.i(logTag, "QQ is installed on device. Enabling ongoing notifications.");
+                        editor.putBoolean("show_non_cancelable", true);
+                        Notification.Builder builder = new Notification.Builder(context)
+                                .setContentTitle("Settings changed")
+                                .setContentText("QQ detected, enabled ongoing notifications")
+                                .setSmallIcon(R.drawable.ic_stat_headsup)
+                                .setVibrate(null)
+                                .setAutoCancel(true)
+                                .setContentIntent(PendingIntent.getActivity(
+                                        context, 0, new Intent(context, SettingsActivity.class),
+                                        PendingIntent.FLAG_UPDATE_CURRENT
+                                ));
+
+                        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+                        if (Build.VERSION.SDK_INT >= 16)
+                            notificationManager.notify(0, builder.build());
+                        else
+                            notificationManager.notify(0, builder.getNotification());
+                    }
+                }
                 if (prev_v < 31) {
                     SharedPreferences oldPreferences = context.getSharedPreferences("heads-up", 0);
                     SharedPreferences.Editor oldEditor = oldPreferences.edit();

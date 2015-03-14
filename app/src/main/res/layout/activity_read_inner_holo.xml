@@ -49,7 +49,7 @@
                     android:layout_weight="0"
                     android:layout_width="@dimen/notification_ic_size"
                     android:layout_height="@dimen/notification_ic_size"
-                    android:src="@drawable/ic_launcher"
+                    android:src="@mipmap/ic_launcher"
                     android:scaleType="centerInside"
                     android:background="@color/notification_ic_background" />
 
@@ -61,15 +61,34 @@
                     android:layout_gravity="center_vertical"
                     android:orientation="vertical">
 
-                    <TextView android:id="@+id/notification_title"
-                        style="@style/ReadTheme_Dark_TextAppearance"
-                        android:focusable="true"
-                        android:ellipsize="marquee"
-                        android:singleLine="true"
-                        android:layout_gravity="left"
+                    <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/app_name" />
+                        android:animateLayoutChanges="true">
+
+                        <TextView android:id="@+id/notification_title"
+                            style="@style/ReadTheme_Dark_TextAppearance"
+                            android:focusable="true"
+                            android:ellipsize="marquee"
+                            android:singleLine="true"
+                            android:layout_gravity="left"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/app_name" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            style="@style/ReadTheme_Dark_TextAppearance.Small"
+                            android:textColor="@android:color/tertiary_text_light"
+                            android:textSize="@dimen/text_size_notification_text"
+                            android:text="13:20"
+                            android:visibility="gone"
+                            android:id="@+id/timeView" />
+                    </LinearLayout>
 
                     <TextView android:id="@+id/notification_subtitle"
                         style="@style/ReadTheme_Dark_TextAppearance.Small"

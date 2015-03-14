@@ -16,11 +16,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 22
     buildToolsVersion '21.1.2'
     signingConfigs {
         release {
-            storeFile file('/home/simen/workspace/keystore/keys')
+            storeFile file('/home/simen/Kode/Android/keystore/keys')
             storePassword 'blah' //System.console().readLine("\n\$ Enter keystore password: ")
             keyAlias 'android key'
             keyPassword 'blah' //System.console().readLine("\n\$ Enter key password: ")
@@ -28,10 +28,10 @@ android {
     }
     defaultConfig {
         applicationId "codes.simen.l50notifications"
-        minSdkVersion 11
-        targetSdkVersion 21
-        versionCode 52
-        versionName '1.9.2c BETA'
+        minSdkVersion 12
+        targetSdkVersion 22
+        versionCode 54
+        versionName '1.10'
     }
     buildTypes {
         release {
@@ -40,14 +40,14 @@ android {
             //noinspection GroovyAssignabilityCheck
             signingConfig signingConfigs.release
             minifyEnabled true
-            proguardFiles '/home/simen/.apps/sdk/tools/proguard/proguard-android-optimize.txt', 'proguard-rules.pro'
+            proguardFiles '/home/simen/.apps/android-sdk/tools/proguard/proguard-android-optimize.txt', 'proguard-rules.pro'
         }
         debug {
             // Development
             debuggable true
             minifyEnabled false
         }
-        testing {
+        signedExperiment {
             // Signed APK, but debuggable
             debuggable true
             signingConfig signingConfigs.release
@@ -55,7 +55,7 @@ android {
         }
     }
     lintOptions {
-        warning 'MissingTranslation'
+        warning 'MissingTranslation', 'NewApi'
     }
     productFlavors {
     }

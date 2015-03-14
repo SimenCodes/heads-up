@@ -20,8 +20,8 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- Determine currently running task -->
     <uses-permission android:name="android.permission.GET_TASKS" />
-    <!-- Dismiss the keyguard -->
-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <!-- Dismiss the keyguard. Not in use anymore -->
+    <!--<uses-permission android:name="android.permission.DISABLE_KEYGUARD" />-->
     <!-- Turn the screen on. Not kept for longer than one minute unless "keep screen on" is enabled -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <!-- Receive and send SMS messages for quick reply -->
@@ -42,12 +42,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="codes.simen.l50notifications.ui.WelcomeActivity"
+            android:name=".ui.WelcomeActivity"
             android:label="@string/app_icon_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,7 +62,7 @@
         </activity>
 
         <service
-            android:name="codes.simen.l50notifications.NotificationListenerService"
+            android:name=".NotificationListenerService"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
             <intent-filter>
@@ -70,7 +70,7 @@
             </intent-filter>
         </service>
         <service
-            android:name="codes.simen.l50notifications.NotificationListenerAccessibilityService"
+            android:name=".NotificationListenerAccessibilityService"
             android:enabled="true"
             android:exported="true"
             android:label="@string/app_name"
@@ -85,14 +85,14 @@
         </service>
 
         <activity
-            android:name="codes.simen.l50notifications.ui.SettingsActivity"
+            android:name=".ui.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName="codes.simen.l50notifications.ui.WelcomeActivity" >
+            android:parentActivityName=".ui.WelcomeActivity" >
         </activity>
         <activity
-            android:name="codes.simen.l50notifications.ui.ActivityAppList"
+            android:name=".ui.ActivityAppList"
             android:label="@string/title_activity_app_list"
-            android:parentActivityName="codes.simen.l50notifications.ui.SettingsActivity" >
+            android:parentActivityName=".ui.SettingsActivity" >
             <intent-filter>
                 <action android:name="codes.simen.l50notifications.activities.AppList.blacklist" />
                 <action android:name="codes.simen.l50notifications.activities.AppList.noshowlist" />
@@ -102,12 +102,12 @@
         </activity>
 
         <service
-            android:name="codes.simen.l50notifications.OverlayService"
+            android:name=".OverlayService"
             android:enabled="true"
             android:exported="false" >
         </service>
         <service
-            android:name="codes.simen.l50notifications.OverlayServiceCommon"
+            android:name=".OverlayServiceCommon"
             android:enabled="true"
             android:exported="false">
         </service>
@@ -127,7 +127,7 @@
         </service>
 
         <activity
-            android:name="codes.simen.l50notifications.ui.SetLocaleActivity"
+            android:name=".ui.SetLocaleActivity"
             android:label="@string/title_activity_set_locale"
             android:theme="@android:style/Theme.Holo.Light.Dialog" >
             <intent-filter>
@@ -137,7 +137,7 @@
         </activity>
 
         <receiver
-            android:name="codes.simen.l50notifications.util.UpdateReceiver"
+            android:name=".util.UpdateReceiver"
             android:enabled="true"
             android:exported="true" >
             <intent-filter>
@@ -145,13 +145,8 @@
             </intent-filter>
         </receiver>
 
-        <service
-            android:name="codes.simen.l50notifications.KeyguardRelock"
-            android:exported="false" >
-        </service>
-
         <receiver
-            android:name="codes.simen.l50notifications.admin.AdminReceiver"
+            android:name=".admin.AdminReceiver"
             android:description="@string/device_admin_enable_explanation"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_DEVICE_ADMIN" >
@@ -165,45 +160,55 @@
         </receiver>
 
         <activity
-            android:name="codes.simen.l50notifications.ui.DeviceAdminEnabler"
+            android:name=".ui.DeviceAdminEnabler"
             android:exported="true"
             android:label="@string/title_activity_device_admin_enabler" >
             <intent-filter>
                 <action android:name="codes.simen.l50notifications.deviceAdmin" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="codes.simen.l50notifications.ui.RequestBroadcastDialog"
-            android:theme="@style/Dialog">
+            android:name=".ui.RequestBroadcastDialog"
+            android:theme="@style/Dialog" >
             <intent-filter>
                 <action android:name="codes.simen.l50notifications.REQUEST_BROADCAST" />
                 <action android:name="codes.simen.l50notifications.CHECK_BROADCAST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.LLandActivity"
+            android:theme="@style/AppTheme" >
+            <intent-filter>
+                <action android:name="codes.simen.l50notifications.LLAND" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.LLandActivity"
-            android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name="codes.simen.l50notifications.LLAND" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            </activity>
-
         <activity-alias
             android:name=".ui.LLandActivitySys"
-            android:label="LLand"
+            android:enabled="false"
             android:icon="@drawable/pop_vortex2"
-            android:targetActivity=".ui.LLandActivity"
-            android:enabled="false">
+            android:label="LLand"
+            android:targetActivity=".ui.LLandActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="com.android.internal.category.PLATLOGO" />
             </intent-filter>
         </activity-alias>
+
+        <activity
+            android:name=".UnlockActivity"
+            android:theme="@android:style/Theme.Wallpaper.NoTitleBar"
+            android:noHistory="true"
+            android:excludeFromRecents="true">
+        </activity>
     </application>
 
 </manifest>

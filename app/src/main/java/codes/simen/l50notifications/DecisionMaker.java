@@ -108,7 +108,9 @@ class DecisionMaker {
             /*for (String extraKey : notification.extras.keySet()) {
                 Mlog.d(logTag, extraKey + "=" + notification.extras.get(extraKey));
             }*/
-            title = notification.extras.getString("android.title");
+			try {
+                title = notification.extras.get("android.title").toString();
+            } catch (Exception ignored) {}
             text = notification.extras.get("android.text").toString();
 
             String bigText = null;
@@ -155,7 +157,7 @@ class DecisionMaker {
                     } catch (RuntimeException rte) {
                         try {
                             Looper.prepareMainLooper();
-                        } catch (IllegalStateException ilse) {
+                        } catch (RuntimeException e) {
                             try {
                                 fullContent(notification, context, texts, text);
                                 final String fullContent = fullContent(notification, context, texts, text);
@@ -163,7 +165,7 @@ class DecisionMaker {
                                 // Ignore all errors, we'll survive without the full notification
                             } catch (Exception ignored) {}
                         }
-                    }
+                    } catch (Exception ignored) {}
                 }
             }
         }
@@ -186,6 +188,11 @@ class DecisionMaker {
         if (Build.VERSION.SDK_INT >= 11)
             intent.putExtra("iconLarge", notification.largeIcon);
         intent.putExtra("icon", notification.icon);
+
+        if (Build.VERSION.SDK_INT >= 21)
+            intent.putExtra("color", notification.color);
+        else if (Build.VERSION.SDK_INT >= 19)
+            intent.putExtra("color", notification.extras.getInt("android.color"));
 
         intent.putExtra("tag", tag);
         intent.putExtra("id", id);
@@ -280,11 +287,12 @@ class DecisionMaker {
                     }
             }
         }
-        if (viewTexts.length() > 1 && viewTexts.length() > text.length()) {
-            if (viewTexts.startsWith("\n"))
-                viewTexts = viewTexts.substring("\n".length());
+		
+		viewTexts = viewTexts.trim();
+		
+        if (viewTexts.length() > 1 && viewTexts.length() > 3) {
             Mlog.d(logTag, viewTexts);
-            return viewTexts.substring(0, viewTexts.length() - 1);
+            return viewTexts;
         }
         return null;
     }

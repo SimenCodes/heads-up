@@ -42,23 +42,12 @@
             android:layout_marginRight="10dp"
             android:baselineAligned="false">
 
-            <FrameLayout
-                android:layout_width="@dimen/notification_ic_container_size"
-                android:layout_height="@dimen/notification_ic_container_size">
-
-                <ImageView
-                    android:id="@+id/notification_icon"
-                    android:layout_width="@dimen/notification_ic_size"
-                    android:layout_height="@dimen/notification_ic_size"
-                    android:src="@drawable/sun"
-                    android:scaleType="centerInside" />
-
-                <ImageView
-                    android:layout_width="@dimen/notification_ic_size"
-                    android:layout_height="@dimen/notification_ic_size"
-                    android:background="@drawable/frame_ubuntu"
-                    android:scaleType="centerInside" />
-            </FrameLayout>
+            <ImageView
+                android:id="@+id/notification_icon"
+                android:layout_width="@dimen/notification_ic_size"
+                android:layout_height="@dimen/notification_ic_size"
+                android:src="@drawable/sun"
+                android:scaleType="centerInside" />
 
             <ImageView
                 android:layout_width="@dimen/notification_ic_small_size"
@@ -72,16 +61,35 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView android:id="@+id/notification_title"
-                    style="@style/ReadTheme_Dark_TextAppearance"
-                    android:focusable="true"
-                    android:ellipsize="marquee"
-                    android:singleLine="true"
-                    android:layout_gravity="left"
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Simen.codes"
-                    android:textSize="@dimen/text_size_notification_title" />
+                    android:animateLayoutChanges="true">
+
+                    <TextView android:id="@+id/notification_title"
+                        style="@style/ReadTheme_Dark_TextAppearance"
+                        android:textSize="@dimen/text_size_notification_title"
+                        android:focusable="true"
+                        android:ellipsize="marquee"
+                        android:singleLine="true"
+                        android:layout_gravity="left"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/app_name" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        style="@style/ReadTheme_Dark_TextAppearance.Small"
+                        android:textSize="@dimen/text_size_notification_text"
+                        android:text="13:20"
+                        android:visibility="gone"
+                        android:id="@+id/timeView" />
+
+                </LinearLayout>
 
                 <TextView android:id="@+id/notification_subtitle"
                     style="@style/ReadTheme_Dark_TextAppearance.Small"
@@ -92,7 +100,6 @@
                     android:layout_height="wrap_content"
                     android:text="Hey!"
                     android:singleLine="false"
-                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="@dimen/text_size_notification_text" />
 
             </LinearLayout>

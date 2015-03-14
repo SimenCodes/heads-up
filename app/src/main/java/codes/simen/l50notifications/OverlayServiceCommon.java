@@ -44,6 +44,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
+import android.text.format.Time;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -90,8 +91,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private static final int MAX_LINES = 12;
     private static final int SENSOR_DELAY_MILLIS = 10000;
     private static final int MIN_LINES = 2;
-    private static final int FLAG_FLOATING_WINDOW = 0x00002000;
-    private static final ArrayList<String> LOCKSCREEN_APPS = new ArrayList<>(Arrays.asList(new String[]{
+    public static final int FLAG_FLOATING_WINDOW = 0x00002000;
+    private static final ArrayList<String> LOCKSCREEN_APPS = new ArrayList<String>(Arrays.asList(new String[]{
             "com.achep.acdisplay",
             "com.silverfinger.lockscreen",
             "com.slidelock",
@@ -103,7 +104,10 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             "com.jedga.peek",
             "com.jedga.peek.free",
             "com.jedga.peek.pro",
-            "com.hi.locker"
+            "com.hi.locker",
+            "com.vlocker.locker",
+            "com.microsoft.next",
+			"com.cmcm.locker"
     }));
 
     public WindowManager windowManager;
@@ -121,6 +125,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private boolean isCompact = false;
     private boolean isActionButtons = false;
     private boolean isQuickReply = false;
+    private Time notificationTime = null;
 
     private SensorManager sensorManager = null;
     private Sensor sensor;
@@ -297,13 +302,14 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
     private boolean isLocked() {
         KeyguardManager keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
-        final boolean isLocked;
+        final boolean isKeyguardLocked;
         if (Build.VERSION.SDK_INT >= 16)
-             isLocked = keyguardManager.isKeyguardLocked();
-        else isLocked = keyguardManager.inKeyguardRestrictedInputMode();
+             isKeyguardLocked = keyguardManager.isKeyguardLocked();
+        else isKeyguardLocked = keyguardManager.inKeyguardRestrictedInputMode();
 
-        Mlog.v(logTag, isLocked + " " + LOCKSCREEN_APPS.contains(currentPackage));
-        return isLocked || (currentPackage != null && LOCKSCREEN_APPS.contains(currentPackage));
+        Mlog.v(logTag, isKeyguardLocked + " " + LOCKSCREEN_APPS.contains(currentPackage));
+        isLocked = isKeyguardLocked || (currentPackage != null && LOCKSCREEN_APPS.contains(currentPackage));
+        return isLocked;
     }
 
     private void addViewToWindowManager() {
@@ -370,6 +376,11 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             key = extras.getString("key");
             tag = extras.getString("tag");
             id = extras.getInt("id", 0);
+            if (notificationTime != null)
+                themeClass.hideTime(layout);
+            else
+                notificationTime = new Time();
+            notificationTime.setToNow();
             final float sizeMultiplier = (float) (preferences.getInt("font_size", 100) / 100.0);
 
             Mlog.v(logTag, currentPackage);
@@ -418,11 +429,13 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 reportError(npe, "", getApplicationContext());
             }
 
+            final int color = extras.getInt("color");
+
             ImageView imageView = themeClass.getIconView(layout);
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    onPopupClick(preferences.getBoolean("floating_window", false));
+                    onPopupClick(v, preferences.getBoolean("floating_window", false));
                 }
             });
 
@@ -432,7 +445,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     Bitmap bitmap = (Bitmap) extras.get("iconLarge");
                     if (appRes != null && extras.containsKey("icon")) {
                         int icon_id = extras.getInt("icon");
-                        drawable = appRes.getDrawable(icon_id);
+                        if (icon_id > 0)
+                            drawable = appRes.getDrawable(icon_id);
                     } else {
                         try {
                             drawable = pm.getApplicationIcon(packageName);
@@ -441,15 +455,15 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                         }
                     }
                     ImageView smallIconView = themeClass.getSmallIconView(layout);
-                    if (bitmap == null) {
+                    if (bitmap == null || bitmap.isRecycled()) {
                         if (drawable != null)
                             bitmap = drawableToBitmap(drawable);
                         if (smallIconView != null)
-                            themeClass.setSmallIcon(smallIconView, null);
-                    } else if (drawable != null && smallIconView != null)
-                        themeClass.setSmallIcon(smallIconView, drawable);
+                            themeClass.setSmallIcon(smallIconView, null, color);
+                    } else if (smallIconView != null)
+                        themeClass.setSmallIcon(smallIconView, drawable, color);
 
-                    if (bitmap != null) {
+                    if (bitmap != null && !bitmap.isRecycled()) {
                         final int shortestSide;
                         final int width = bitmap.getWidth();
                         final int height = bitmap.getHeight();
@@ -457,15 +471,18 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                         else                shortestSide = width;
 
                         bitmap = ThumbnailUtils.extractThumbnail(bitmap, shortestSide, shortestSide, ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
-                        themeClass.setIcon( imageView, bitmap, preferences.getBoolean("round_icons", true) );
+                        themeClass.setIcon( imageView, bitmap, preferences.getBoolean("round_icons", true), color);
                     }
                 }
-            } catch (Exception e) {e.printStackTrace();}
+            } catch (Exception e) {
+                reportError(e, "Icon", getApplicationContext());
+            }
+
             if (title.equals("")) {
                 try {
                     title = (String) pm.getApplicationLabel(pm.getApplicationInfo(packageName, 0));
                 } catch (PackageManager.NameNotFoundException | NullPointerException e) {
-                    reportError(e, "", getApplicationContext());
+                    reportError(e, "EmptyTitle", getApplicationContext());
                 }
             }
 
@@ -515,8 +532,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                                 public void onClick(View view) {
                                     try {
                                         if (themeClass.getRootView(layout).getTranslationX() != 0) return; // Stop if we're currently swiping. Bug 0000034
-                                        openIntent(actionIntent, false);
                                         Mlog.d(logTag, "sendPendingAction");
+                                        openIntent(actionIntent, false);
                                     } catch (NullPointerException e) {
                                         reportError(e, "", getApplicationContext());
                                     }
@@ -578,10 +595,10 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
                     @Override
                     public void outside() {
-                        if (preferences.getBoolean("close_on_outside_touch", false))
+                        if (preferences.getBoolean("close_on_outside_touch", false) || isLocked()) {
+                            if (isLocked) pokeScreenTimer();
                             doFinish(0);
-                        if (isLocked && !isLocked())
-                            doFinish(0);
+                        }
                     }
                 }
                 );
@@ -737,6 +754,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 if (isLocked()) {
                     if (!preferences.getBoolean("keep_screen_on_forever", false))
                         screenOff();
+                    themeClass.showTime(layout, notificationTime);
+                    themeClass.hideDismissButton(themeClass.getDismissButton(layout));
                     return;
                 }
 
@@ -765,15 +784,15 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     }
 
     public void onPopupClick(View v) {
-        onPopupClick(false);
+        onPopupClick(v, false);
     }
 
-    public void onPopupClick(boolean isFloating) {
+    public void onPopupClick(View v, boolean isFloating) {
         final ViewGroup rootView = themeClass.getRootView(layout);
         if (rootView.getTranslationX() != 0 || rootView.getTranslationY() != 0)
-            return; // Stop if we're currently swiping. Bug 0000034
+            return; // Stop if we're currently swiping. Bug 0000034 (in the old bug tracker)
 
-        if (!expand()) openIntent(pendingIntent, isFloating);
+        if (Build.VERSION.SDK_INT >= 12 || !expand()) openIntent(pendingIntent, isFloating);
     }
 
     /*
@@ -802,24 +821,31 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     }
 
     void openIntent(PendingIntent mPendingIntent, boolean isFloating) {
-        try {
-            dismissKeyguard();
-            Mlog.d(logTag, "sendPending");
-
-            Intent intent = new Intent();
-            if (isFloating) intent.addFlags(FLAG_FLOATING_WINDOW);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            mPendingIntent.send(getApplicationContext(), 0, intent);
-
+        if (isLocked() && preferences.getBoolean("dismiss_keyguard", true)) {
+            pokeScreenTimer();
+            startActivity(new Intent(getApplicationContext(), UnlockActivity.class)
+                            .putExtra("action", mPendingIntent)
+                            .putExtra("floating", isFloating)
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            );
             doFinish(2);
-        } catch (PendingIntent.CanceledException e) {
-            //reportError(e, "App has canceled action", getApplicationContext());
-            Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_cancel_exception), Toast.LENGTH_SHORT).show();
-            doFinish(0);
-        } catch (NullPointerException e) {
-            //reportError(e, "No action defined", getApplicationContext());
-            Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_null_exception), Toast.LENGTH_SHORT).show();
-            doFinish(0);
+        } else {
+            try {
+                Mlog.d(logTag, "sendPending");
+
+                Intent intent = new Intent().addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                if (isFloating) intent.addFlags(FLAG_FLOATING_WINDOW);
+                mPendingIntent.send(getApplicationContext(), 0, intent);
+                doFinish(2);
+            } catch (PendingIntent.CanceledException e) {
+                //reportError(e, "App has canceled action", getApplicationContext());
+                Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_cancel_exception), Toast.LENGTH_SHORT).show();
+                doFinish(0);
+            } catch (NullPointerException e) {
+                //reportError(e, "No action defined", getApplicationContext());
+                Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_null_exception), Toast.LENGTH_SHORT).show();
+                doFinish(0);
+            }
         }
     }
 
@@ -853,21 +879,6 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             return true;
         }
     };
-
-    void dismissKeyguard() {
-        if (Build.VERSION.SDK_INT >= 16) {
-            if (!preferences.getBoolean("dismiss_keyguard", false)) return;
-
-            KeyguardManager keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
-            if (keyguardManager.isKeyguardLocked()) {
-                Mlog.d(logTag, "attempt exit");
-                Intent intent = new Intent();
-                intent.setClass(getApplicationContext(), KeyguardRelock.class);
-                intent.setAction(Intent.ACTION_SCREEN_ON);
-                startService(intent);
-            }
-        }
-    }
 
     private void doFinish(final int doDismiss) { // 0=ikke fjern 1=fjern 2=åpnet
         Mlog.v(logTag + "DoFinish", doDismiss);
@@ -1033,6 +1044,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             }
         }
     }
+
     void screenOff() {
         if (wLock != null && wLock.isHeld()) wLock.release();
 
@@ -1048,13 +1060,22 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         }
     }
 
+    /**
+     * Acquire a WakeLock which ensures the screen is on and then pokes the user activity timer.
+     */
+    void pokeScreenTimer() {
+        if (powerManager == null)
+            powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+        powerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, "pokeScreenTimer").acquire(1000);
+    }
+
     @Override
     public IBinder onBind(Intent intent) {
         return null;
     }
 
 
-    private static void reportError(Exception e, String msg, Context c) {
+    static void reportError(Exception e, String msg, Context c) {
         try {
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c.getApplicationContext());
             SharedPreferences.Editor editor = preferences.edit();

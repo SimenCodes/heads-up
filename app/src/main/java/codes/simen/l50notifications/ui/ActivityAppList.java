@@ -83,25 +83,26 @@ public class ActivityAppList extends ListActivity {
         super.onStart();
         try {
             String serializedBlacklist = prefs.getString(type/* + "Serial"*/, "");
+            //noinspection unchecked
             blacklisted = (Set<String>) ObjectSerializer.deserialize(serializedBlacklist);
             if (blacklisted == null) {
                 Mlog.w(logTag, "null");
-                blacklisted = new HashSet<String>();
+                blacklisted = new HashSet<>();
             }
         } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(getApplicationContext(), "IOe " + e.getMessage(), Toast.LENGTH_LONG).show();
-            blacklisted = new HashSet<String>();
+            blacklisted = new HashSet<>();
             //finish();
         } catch (ClassCastException e) {
             e.printStackTrace();
             Toast.makeText(getApplicationContext(), "CCe " + e.getMessage(), Toast.LENGTH_LONG).show();
-            blacklisted = new HashSet<String>();
+            blacklisted = new HashSet<>();
             //finish();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             Toast.makeText(getApplicationContext(), "CNFe " + e.getMessage(), Toast.LENGTH_LONG).show();
-            blacklisted = new HashSet<String>();
+            blacklisted = new HashSet<>();
             //finish();
         }
         invertedList = prefs.getBoolean(type + "_inverted", false);
@@ -145,7 +146,7 @@ public class ActivityAppList extends ListActivity {
     private final Handler loadThreadHandler = new Handler() {
         @SuppressLint("NewApi")
         public void handleMessage (Message msg) {
-            if (Build.VERSION.SDK_INT >= 19&&((ActivityManager)getSystemService(ACTIVITY_SERVICE))
+            if (Build.VERSION.SDK_INT >= 19 && ((ActivityManager) getSystemService(ACTIVITY_SERVICE))
                     .isLowRamDevice())
                  loadAdapter(false);
             else loadAdapter(true);

@@ -17,7 +17,6 @@ package codes.simen.l50notifications.theme;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -40,10 +39,9 @@ public class L5Dark extends ThemeClass {
     }
 
     @Override
-    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons) {
-        super.setIcon(imageView, bitmap, round_icons);
-        if (round_icons)
-            imageView.setBackgroundResource(R.drawable.circle);
+    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons, int color) {
+        if (round_icons) imageView.setBackgroundResource(R.drawable.circle);
+        super.setIcon(imageView, bitmap, round_icons, color);
     }
 
     @Override
@@ -57,7 +55,7 @@ public class L5Dark extends ThemeClass {
         button.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontMultiplier * button.getTextSize());
         button.setTextColor(Color.WHITE);
         if (icon != null) {
-            icon.mutate().setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
+            icon.mutate().setColorFilter(getColorFilter(Color.WHITE));
             button.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null);
         }
         button.setOnClickListener(clickListener);

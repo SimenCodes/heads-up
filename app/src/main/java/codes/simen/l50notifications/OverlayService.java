@@ -30,6 +30,8 @@ import codes.simen.l50notifications.util.Mlog;
 public class OverlayService extends OverlayServiceCommon {
     private int onBindAction = 0; // 0=nothing, 1=remove, 2=check existence
 
+    private boolean serviceBound = false;
+
     @Override
     public void doDismiss (boolean mStopNow) {
         Mlog.d(logTag, packageName + tag + id);
@@ -38,7 +40,7 @@ public class OverlayService extends OverlayServiceCommon {
 
         Intent intent = new Intent(this, NotificationListenerService.class);
         intent.setAction(NotificationListenerService.ACTION_CUSTOM);
-        bindService(intent, mConnection, BIND_AUTO_CREATE);
+        serviceBound = bindService(intent, mConnection, BIND_AUTO_CREATE);
     }
 
     private final ServiceConnection mConnection = new ServiceConnection() {
@@ -54,7 +56,6 @@ public class OverlayService extends OverlayServiceCommon {
                 case 1:
                     if (Build.VERSION.SDK_INT >= 20) listenerService.doRemove(key);
                     else                             listenerService.doRemove(packageName, tag, id);
-                    unbindService(mConnection);
                     stopSelf();
                     break;
             }
@@ -65,6 +66,14 @@ public class OverlayService extends OverlayServiceCommon {
         public void onServiceDisconnected(ComponentName arg0) {
         }
     };
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // Ensure we unbind the service properly
+        if (serviceBound)
+            unbindService(mConnection);
+    }
 
     @Override
     public IBinder onBind(Intent intent) {

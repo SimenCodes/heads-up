@@ -42,6 +42,13 @@
         />
 
     <CheckBoxPreference
+        android:key="show_non_cancelable"
+        android:title="@string/pref_show_non_cancelable"
+        android:summary="@string/pref_show_non_cancelable_desc"
+        android:defaultValue="false"
+        />
+
+    <CheckBoxPreference
         android:key="block_current_app"
         android:title="@string/pref_block_current_app"
         android:summary="@string/pref_block_current_app_desc"

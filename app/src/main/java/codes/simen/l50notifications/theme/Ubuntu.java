@@ -17,7 +17,6 @@ package codes.simen.l50notifications.theme;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -40,13 +39,13 @@ public class Ubuntu extends ThemeClass {
     }
 
     @Override
-    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons) {
-        super.setIcon(imageView, bitmap, false);
+    public void setIcon(ImageView imageView, Bitmap bitmap, boolean round_icons, int color) {
+        super.setIcon(imageView, bitmap, false, 0);
     }
 
     @Override
-    public void setSmallIcon(ImageView smallIcon, Drawable drawable) {
-        super.setSmallIcon(smallIcon, drawable);
+    public void setSmallIcon(ImageView smallIcon, Drawable drawable, int color) {
+        super.setSmallIcon(smallIcon, drawable, 0);
     }
 
     @Override
@@ -60,11 +59,10 @@ public class Ubuntu extends ThemeClass {
         button.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontMultiplier * button.getTextSize());
         button.setTextColor(Color.WHITE);
         if (icon != null) {
-            icon.mutate().setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
+            icon.mutate().setColorFilter(getColorFilter(Color.WHITE));
             button.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null);
         }
         button.setOnClickListener(clickListener);
     }
-
 
 }
