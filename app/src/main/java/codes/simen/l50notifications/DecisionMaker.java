@@ -291,10 +291,8 @@ class DecisionMaker {
 		viewTexts = viewTexts.trim();
 		
         if (viewTexts.length() > 1 && viewTexts.length() > 3) {
-            if (viewTexts.startsWith("\n"))
-                viewTexts = viewTexts.substring("\n".length());
             Mlog.d(logTag, viewTexts);
-            return viewTexts.substring(0, viewTexts.length() - 1);
+            return viewTexts;
         }
         return null;
     }
