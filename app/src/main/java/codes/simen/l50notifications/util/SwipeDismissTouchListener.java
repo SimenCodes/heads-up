@@ -362,7 +362,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
                 if (mSwipingVertical) {
                     if (deltaY > 0) {
                         if (deltaY > 50 && mCallbacks.canExpand()) performDismiss(DIRECTION_DOWN);
-                        deltaY = (float) (deltaY * 0.1 + mSwipingSlop);
+                        deltaY = (float) (deltaY * 0.05 + mSwipingSlop);
                     }
                     mTranslationY = deltaY;
                     mView.setTranslationY(deltaY - mSwipingSlop);
