@@ -20,9 +20,9 @@ import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.os.Build;
 import android.text.format.Time;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -203,18 +203,18 @@ public class ThemeClass {
      This heads-up will offer quick reply. Return false if this theme doesn't support it.
      */
     public boolean setupQuickReply(LinearLayout layout,
-                                View.OnClickListener startEditClickListener,
+                                View.OnFocusChangeListener startEditClickListener,
                                 View.OnClickListener sendButtonClickListener
     ) {
         final ImageButton sendButton = (ImageButton) layout.findViewById(R.id.sendButton);
         sendButton.setOnClickListener(sendButtonClickListener);
 
-        final EditText editText = (EditText) layout.findViewById(R.id.editText);
-        editText.setOnClickListener(startEditClickListener);
+        final EditText editText = getQuickReplyEditText(layout);
+        editText.setOnFocusChangeListener(startEditClickListener);
 
         editText.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {
-                sendButton.setEnabled(s.length() > 0);
+                sendButton.setVisibility(s.length() > 0 ? View.VISIBLE : View.GONE);
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -231,7 +231,11 @@ public class ThemeClass {
     }
 
     public String getQuickReplyText(LinearLayout layout) {
-        return ((EditText) layout.findViewById(R.id.editText)).getText().toString();
+        return getQuickReplyEditText(layout).getText().toString();
+    }
+
+    public EditText getQuickReplyEditText(LinearLayout layout) {
+        return (EditText) layout.findViewById(R.id.editText);
     }
 
     protected static void setColor(View view, int color) {

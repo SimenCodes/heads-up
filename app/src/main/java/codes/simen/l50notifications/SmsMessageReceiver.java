@@ -111,12 +111,14 @@ public class SmsMessageReceiver extends BroadcastReceiver {
     	    // Get photo as input stream:
     	    Uri uri = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, contactId);
     	    input = ContactsContract.Contacts.openContactPhotoInputStream(context.getContentResolver(), uri);
+            cursor.close();
 
     	    Mlog.v(LOG_TAG, "Contact Found @ " + number);
     	    Mlog.v(LOG_TAG, "Contact name  = " + name);
     	    Mlog.v(LOG_TAG, "Contact id    = " + contactId);
     	    return name;
     	} else {
+            cursor.close();
 
     	    Mlog.v(LOG_TAG, "Contact Not Found @ " + number);
     	    return number; // contact not found

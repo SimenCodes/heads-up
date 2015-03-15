@@ -54,6 +54,7 @@ import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
 import android.view.ViewStub;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -125,6 +126,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private boolean isCompact = false;
     private boolean isActionButtons = false;
     private boolean isQuickReply = false;
+    private boolean isInputMethodOpenedByQuickReply = false;
     private Time notificationTime = null;
 
     private SensorManager sensorManager = null;
@@ -209,7 +211,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     PixelFormat.TRANSLUCENT
             );
             if (isLocked)
-                position = Integer.valueOf(preferences.getString("overlay_vertical_position_locked", "-10"));
+                position = Integer.valueOf(preferences.getString("overlay_vertical_position_locked", "1"));
             if (!isLocked || position == -10)
                 position = Integer.valueOf(preferences.getString("overlay_vertical_position", "1"));
             switch (position) {
@@ -338,6 +340,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         Mlog.d(logTag, "Start");
         try {
             final String action = intent.getAction();
+            Mlog.d(logTag, "Action: " + action);
             if (action.equals("REMOVE")) {
                 try {
                     if (packageName.equals(intent.getStringExtra("packageName"))
@@ -349,7 +352,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                             doFinish(0);
                     }
                 } catch (Exception e) {
-                    //reportError(e, "remove failed", getApplicationContext());
+                    reportError(e, "Remove failed", getApplicationContext());
                     stopSelf();
                 }
                 if (packageName.equals("")) stopSelf();
@@ -674,22 +677,31 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     }
 
     private void setupQuickReply(final String fromNumber) {
-        layoutParams.flags &= ~ WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
-        themeClass.setupQuickReply(layout, new View.OnClickListener() {
+        themeClass.setupQuickReply(layout, new View.OnFocusChangeListener() {
             @Override
-            public void onClick(View v) {
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus || !isViewAdded) return;
                 Mlog.v(logTag, "StartEditing");
-                layoutParams.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
-                layoutParams.flags &= ~ WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
 
+                layoutParams.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
+                layoutParams.flags &= ~WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE &
+                                      ~WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
+                Mlog.d(logTag, layoutParams.type);
                 if (layoutParams.type != WindowManager.LayoutParams.TYPE_PRIORITY_PHONE) {
                     layoutParams.type = WindowManager.LayoutParams.TYPE_PRIORITY_PHONE;
+                    Mlog.d(logTag, "Re-creating layout view");
                     windowManager.removeView(layout);
                     windowManager.addView(layout, layoutParams);
-                    displayTime = MAX_DISPLAY_TIME;
                 } else {
-                    //windowManager.updateViewLayout(layout, layoutParams);
+                    Mlog.d(logTag, "Updating layout params");
+                    windowManager.updateViewLayout(layout, layoutParams);
                 }
+
+                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                imm.showSoftInput(themeClass.getQuickReplyEditText(layout), InputMethodManager.SHOW_FORCED);
+                isInputMethodOpenedByQuickReply = true;
+
+                displayTime = MAX_DISPLAY_TIME;
             }
         }, new View.OnClickListener() {
             @Override
@@ -884,6 +896,12 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         Mlog.v(logTag + "DoFinish", doDismiss);
         handler.removeCallbacks(closeTimer);
 
+        //  Close the keyboard if it was opened by quick reply
+        if (isInputMethodOpenedByQuickReply) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(layout.getWindowToken(), 0);
+        }
+
         // Integrate with Voiceify
         if (doDismiss == 1 || doDismiss == 2) {
             PackageManager packageManager = getPackageManager();
@@ -992,8 +1010,10 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         super.onDestroy();
         Mlog.d(logTag, "Destroy");
 
-        if (isViewAdded)
+        if (isViewAdded) {
+            isViewAdded = false;
             windowManager.removeViewImmediate(layout);
+        }
         if (sensorManager != null)
             sensorManager.unregisterListener(this, sensor);
         if (wLock != null && wLock.isHeld())

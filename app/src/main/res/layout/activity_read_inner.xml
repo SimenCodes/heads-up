@@ -142,6 +142,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/messageReply"
+        android:animateLayoutChanges="true"
         android:visibility="gone">
 
         <EditText
@@ -149,6 +150,7 @@
             android:layout_height="wrap_content"
             android:inputType="textShortMessage|textImeMultiLine|textMultiLine|textCapSentences|textAutoComplete|textAutoCorrect"
             android:textColor="@android:color/primary_text_light"
+            android:textSize="@dimen/text_size_popup_button"
             android:id="@+id/editText"
             android:layout_weight="1"
             android:hint="Type to reply" />
@@ -160,6 +162,7 @@
             android:src="@drawable/ic_action_send"
             style="@style/Button_Borderless"
             android:scaleType="fitCenter"
+            android:visibility="gone"
             android:contentDescription="Send" />
 
     </LinearLayout>
