@@ -23,11 +23,12 @@
 
     <dimen name="notification_texts_padding_left">10dp</dimen>
     <dimen name="notification_texts_padding_right">5dp</dimen>
-    <dimen name="padding_action_buttons_left">10dp</dimen>
+    <dimen name="padding_action_buttons_left">5dp</dimen>
     <dimen name="padding_action_buttons_right">5dp</dimen>
 
     <dimen name="text_size_popup_button">14sp</dimen>
     <dimen name="text_size_notification_title">14sp</dimen>
     <dimen name="text_size_notification_text">12sp</dimen>
     <dimen name="corner_radius">2dp</dimen>
+    <dimen name="notification_content_padding">5dp</dimen>
 </resources>

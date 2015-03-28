@@ -37,9 +37,9 @@
             android:orientation="horizontal"
             android:onClick="onPopupClick"
             android:layout_marginBottom="0dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="@dimen/notification_content_padding"
+            android:layout_marginTop="@dimen/notification_content_padding"
+            android:layout_marginRight="@dimen/notification_content_padding"
             android:baselineAligned="false">
 
             <FrameLayout
@@ -149,32 +149,9 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="5dp"
+            android:layout_marginLeft="@dimen/padding_action_buttons_left"
+            android:layout_marginStart="@dimen/padding_action_buttons_left"
             android:background="#33333333"/>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:inputType="textShortMessage|textImeMultiLine|textMultiLine|textCapSentences|textAutoComplete|textAutoCorrect"
-                android:ems="10"
-                android:id="@+id/editText"
-                android:layout_weight="1"
-                android:hint="Type to answer" />
-
-            <ImageButton
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:id="@+id/imageButton"
-                android:src="@drawable/ic_action_send"
-                style="@style/Button_Borderless"
-                android:scaleType="fitCenter" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -50,7 +50,7 @@ public class ThemeClass {
     }
 
     /**
-     * Load layout resource here. Also, load any theme settings
+     * Called right after the theme has been inflated
      * @param layout The root layout
      */
     public void init (LinearLayout layout) {

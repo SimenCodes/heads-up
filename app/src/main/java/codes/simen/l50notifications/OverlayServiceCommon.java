@@ -586,7 +586,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
                     @Override
                     public void outside() {
-                        if (preferences.getBoolean("close_on_outside_touch", false) || isLocked()) {
+                        if (preferences.getBoolean("close_on_outside_touch", false) || (isLocked && !isLocked())) {
                             if (isLocked) pokeScreenTimer();
                             doFinish(0);
                         }

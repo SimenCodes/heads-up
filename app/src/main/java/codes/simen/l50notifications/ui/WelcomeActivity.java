@@ -60,8 +60,12 @@ public class WelcomeActivity extends Activity {
         if (Build.DISPLAY.toUpperCase().contains("MIUI") || Build.MANUFACTURER.toUpperCase().contains("XIAOMI")) {
             findViewById(R.id.miui_warning).setVisibility(View.VISIBLE);
         }
-        if (Mlog.isLogging)
+        if (Mlog.isLogging) {
             doSendTest(null);
+            Toast.makeText(getApplicationContext(),
+                    "Experimental demo version. Does not auto-update, and might not work at all. Please report bugs!",
+                    Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override

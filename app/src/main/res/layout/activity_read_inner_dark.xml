@@ -37,9 +37,9 @@
             android:orientation="horizontal"
             android:onClick="onPopupClick"
             android:layout_marginBottom="0dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="@dimen/notification_content_padding"
+            android:layout_marginTop="@dimen/notification_content_padding"
+            android:layout_marginRight="@dimen/notification_content_padding"
             android:baselineAligned="false">
 
             <FrameLayout
@@ -143,13 +143,6 @@
         android:layout_height="fill_parent"
         android:id="@+id/button_container"
         android:padding="0dp">
-
-        <View
-            android:id="@+id/bottom_bar"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="5dp"
-            android:background="#33333333"/>
 
         <LinearLayout
             android:layout_width="match_parent"
