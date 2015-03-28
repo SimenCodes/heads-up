@@ -34,7 +34,6 @@ import android.view.accessibility.AccessibilityEvent;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.util.Set;
 
 public class NotificationListenerAccessibilityService extends AccessibilityService
 {
@@ -43,7 +42,6 @@ public class NotificationListenerAccessibilityService extends AccessibilityServi
 
     public static boolean doLoadSettings = true;
     private VoiceOver voiceOver = null;
-    private Set<String> packageBlacklist;
 
     @Override
     public void onAccessibilityEvent(AccessibilityEvent accessibilityEvent)

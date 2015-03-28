@@ -18,6 +18,7 @@ package codes.simen.l50notifications;
 import android.annotation.TargetApi;
 import android.app.IntentService;
 import android.app.Notification;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -159,7 +160,6 @@ class DecisionMaker {
                             Looper.prepareMainLooper();
                         } catch (RuntimeException e) {
                             try {
-                                fullContent(notification, context, texts, text);
                                 final String fullContent = fullContent(notification, context, texts, text);
                                 if (fullContent != null) text = fullContent;
                                 // Ignore all errors, we'll survive without the full notification
@@ -235,6 +235,20 @@ class DecisionMaker {
                     e1.printStackTrace();
                 }
             }
+        } else if (Build.VERSION.SDK_INT >= 16) {
+            final SimpleAction[] actions = getActions(notification);
+
+            int i = actions.length;
+
+            intent.putExtra("actionCount", actions.length);
+            for (SimpleAction action : actions) {
+                if (i < 0) break; //No infinite loops, has happened once
+                Mlog.d(logTag, action.title);
+                intent.putExtra("action" + i + "icon", action.icon);
+                intent.putExtra("action" + i + "title", action.title);
+                intent.putExtra("action" + i + "intent", action.actionIntent);
+                i--;
+            }
         }
 
         if (preferences != null && preferences.getBoolean("broadcast_notifications", false)) {
@@ -295,6 +309,59 @@ class DecisionMaker {
             return viewTexts;
         }
         return null;
+    }
+
+    public SimpleAction[] getActions(Notification notification) {
+        Object[] actionsAsObjects;
+        try {
+            Field field = Notification.class.getDeclaredField("actions");
+            field.setAccessible(true);
+            actionsAsObjects = (Object[]) field.get(notification);
+            if (actionsAsObjects == null) {
+                Mlog.w(logTag, "No action objects");
+                return null;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        int n = actionsAsObjects.length;
+        SimpleAction[] actions = new SimpleAction[n];
+        for (int i = 0; i < n; ++i) {
+            Object object = actionsAsObjects[i];
+            try {
+                Field iconField = object.getClass().getDeclaredField("icon");
+                Field titleField = object.getClass().getDeclaredField("title");
+                Field actionIntentField = object.getClass().getDeclaredField("actionIntent");
+
+                iconField.setAccessible(true);
+                titleField.setAccessible(true);
+                actionIntentField.setAccessible(true);
+
+                int icon = iconField.getInt(object);
+                CharSequence title = (CharSequence) titleField.get(object);
+                PendingIntent actionIntent = (PendingIntent) actionIntentField.get(object);
+
+                actions[i] = new SimpleAction(icon, title, actionIntent);
+                continue;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+        return actions;
+    }
+
+    public class SimpleAction {
+        int icon;
+        CharSequence title;
+        PendingIntent actionIntent;
+
+        public SimpleAction(int icon, CharSequence title, PendingIntent actionIntent) {
+            this.icon = icon;
+            this.title = title;
+            this.actionIntent = actionIntent;
+        }
     }
 
     public void handleActionRemove(String packageName, String tag, int id, Context applicationContext) {
