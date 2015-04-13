@@ -77,7 +77,7 @@ Open the app 'phone manager', click settings in the top right corner. Select "dr
 If this doesn't work, try the instructions for XIAOMI/ZTE/MIUI users.
 
 #### Lollipop users: ####
-In Android 5, Google removed the ability to fetch running apps. This makes it impossible to detect custom lock screens, and it also breaks the "Block current app" and "Don't disturb" features. Until Google decides to add this back into Android, it's impossible to implement these feature. They left the following message in the changelog:
+In Android 5, Google removed the ability to fetch running apps. This makes it impossible to detect custom lock screens, and it also breaks the "Block current app" and "Don't disturb" features. Until Google decides to add this back into Android, it's impossible to implement these features. They left the following message in the changelog:
 
 > This method was deprecated in API level 21.
 > As of LOLLIPOP, this method is no longer available to third party applications: the introduction of document-centric recents means it can leak personal information to the caller. For backwards compatibility, it will still return a small subset of its data: at least the caller's own tasks (though see getAppTasks() for the correct supported way to retrieve that information), and possibly some other tasks such as home that are known to not be sensitive.
