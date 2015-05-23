@@ -48,7 +48,7 @@ If you speak another language, I'd appreciate if you could help us translate thi
 
 ## Common issues ##
 ###*NOTE:* It's exam time now, and I don't have much time to answer your questions.
-You can find answers to most questions by using the search box at the top of this page (switch to the desktop version if you don't see it). Thanks for your patience and understanding.
+You can find answers to most questions by using the search box at the top of this page (switch to the desktop version if you don't see it) or the [issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue). Thanks for your patience and understanding.
 #### If no popups appear: ####
 *The universal problemsolver list*
 - Did you remember to enable the service by pressing the "Enable/disable" button and then setting Heads-up to ON in the next screen?
