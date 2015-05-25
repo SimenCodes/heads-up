@@ -47,6 +47,8 @@ If you speak another language, I'd appreciate if you could help us translate thi
 
 
 ## Common issues ##
+###*NOTE:* It's exam time now, and I don't have much time to answer your questions.
+You can find answers to most questions by using the search box at the top of this page (switch to the desktop version if you don't see it) or the [issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue). Thanks for your patience and understanding.
 #### If no popups appear: ####
 *The universal problemsolver list*
 - Did you remember to enable the service by pressing the "Enable/disable" button and then setting Heads-up to ON in the next screen?
@@ -74,11 +76,20 @@ Open the app 'phone manager', click settings in the top right corner. Select "dr
 
 If this doesn't work, try the instructions for XIAOMI/ZTE/MIUI users.
 
+#### Lollipop users: ####
+In Android 5, Google removed the ability to fetch running apps. This makes it impossible to detect custom lock screens, and it also breaks the "Block current app" and "Don't disturb" features. Until Google decides to add this back into Android, it's impossible to implement these features. They left the following message in the changelog:
+
+> This method was deprecated in API level 21.
+> As of LOLLIPOP, this method is no longer available to third party applications: the introduction of document-centric recents means it can leak personal information to the caller. For backwards compatibility, it will still return a small subset of its data: at least the caller's own tasks (though see getAppTasks() for the correct supported way to retrieve that information), and possibly some other tasks such as home that are known to not be sensitive.
+
 #### Device talking? ####
-This is a bug in Samsung's firmware. See post on my [website](http://simen.codes/stuff/samsung-phone-talking/)
+This is a bug in Samsung's firmware. See post on my [website](http://simen.codes/stuff/samsung-phone-talking/). If you don't need Text-To-Speech, you can also go to System Settings > Apps > All, and disable everything with TTS or Text-To-Speech in the name.
 
 #### Uninstalling: ####
 If you find that the uninstall button is disabled, go to Settings > Security > Device administrators > Heads-up, and tap Disable.
+
+#### Only one notification ####
+Yup, that's right. **Heads-up does only show one notification.** Period. See issue #34.
 
 #### Something else? ####
 Something I haven't covered here? I answer all kinds questions in the [issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue).
