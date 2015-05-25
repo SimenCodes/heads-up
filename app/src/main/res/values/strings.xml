@@ -64,7 +64,7 @@
     <string name="pref_use_proximity_desc">Don\'t turn the screen on if the phone is in a pocket or facedown on a table.</string>
     <string name="pref_header_lockscreen">Lock screen</string>
     <string name="pref_block_current_app">Block current app</string>
-    <string name="pref_block_current_app_desc">Don\'t display heads-up for notifications from the current app</string>
+    <string name="pref_block_current_app_desc">Don\'t display heads-up for notifications from the current app.\nThis does NOT work in Android 5.0+ due to a system restriction.</string>
     <string name="pref_header_behaviour">Behaviour</string>
     <string name="music_title">Playing: <xliff:g id="track" example="TRACK">%s</xliff:g></string>
     <string name="music_text">By: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>

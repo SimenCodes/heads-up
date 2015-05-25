@@ -129,6 +129,7 @@
   <string name="pref_top_margin_locked">Kilit ekranındaki açılır pencere konumu</string>
   <string name="pref_dont_disturb_error">Uyarı: Google Android 5.0\'da çalışan görevleri alma yeteneğini kaldırdı, bu nedenle bu düzgün çalışmaz. From the docs:\ngetRecentTasks() —  As of LOLLIPOP, this method is no longer available to third party applications: the introduction of document-centric recents means it can leak personal information. For backwards compatibility, it will still return a small subset of its data: the caller\'s own tasks, and possibly some other tasks such as home that are known to not be sensitive.</string>
   <string name="pref_dismiss_on_swipe_desc">Yatay olarak kaydırıldığında bildirimleri çekmeceden kaldır. Yine de çekmeceden kaldırmak için X\'e dokunabilirsiniz.\nAndroid 4.3 gerekir</string>
+  <string name="pref_dismiss_keyguard_desc">Bir bildirim açarken cihazın kilidini açmak için deneyin. Bir bildirim açarken boş bir masaüstü görürseniz devre dışı bırakın.</string>
   <string name="pref_broadcast_notifications">Yayın bildirimleri</string>
   <string name="pref_broadcast_notifications_desc">Bildirimler için diğer uygulamalarıma erişim izni verin. Voiceify gibi bir uygulama kullandığınızda bu RAM kullanımını azaltacaktır. Uygulamalarımdan biri etkinleştirmek için size sormadıkça kapalı tutun.</string>
   <string name="title_broadcast_request">Bildirim erişimi</string>

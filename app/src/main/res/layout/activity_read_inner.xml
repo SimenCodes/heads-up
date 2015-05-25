@@ -15,8 +15,8 @@
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
-    tools:context="codes.simen.l50notifications.OverlayServiceCommon"
+<!--suppress AndroidMissingOnClickHandler -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/card_white"
@@ -161,7 +161,8 @@
             android:paddingLeft="@dimen/padding_action_buttons_left"
             android:paddingRight="@dimen/padding_action_buttons_right"
             android:paddingStart="@dimen/padding_action_buttons_left"
-            android:paddingEnd="@dimen/padding_action_buttons_right" >
+            android:paddingEnd="@dimen/padding_action_buttons_right"
+            android:orientation="horizontal">
 
         </LinearLayout>
 
@@ -171,6 +172,6 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="@dimen/notification_content_padding"/>
 
 </LinearLayout>
