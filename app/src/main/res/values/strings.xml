@@ -139,4 +139,5 @@
     <string name="content_broadcast_request">This will give %s access to your notifications. Are you sure this is what you want?</string>
     <string name="pref_show_non_cancelable">Show non-cancelable notifications</string>
     <string name="pref_show_non_cancelable_desc">Show ongoing, non-clearable notifications displayed by background services like Downloads.\nNote: If some notifications refuse to go away, try disabling this.</string>
+    <string name="action_donate">Donate</string>
 </resources>

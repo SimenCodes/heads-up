@@ -24,7 +24,7 @@
   <string name="intro_desc">Clicca il tasto qui sotto per attivare o disattivare le notifiche heads-up.</string>
   <string name="welcome_btn_toggleservice">Attiva / Disattiva heads-up</string>
   <string name="intro_warning_miui">Utilizzi la ROM MIUI? Prima di poter utilizzare quest\'app, dovrai probabilmente seguire questi passaggi per via della troppa sicurezza.\n1. Vai su Impostazioni di sistema &gt; Tutte &gt; Apps &gt; Scaricate &gt; Notifiche Heads-up.\n2. Attiva la seconda opzione \"Mostra finestre popup\".\n3. In basso, vai su \"Gestisci autorizzazioni\".\n 4. Imposta \"Mi fido di quest \'app\" su ON. </string>
-  <string name="site_ad">Ti piace? Visita altre mie app:</string>
+  <string name="site_ad">Ti piace? Visita le altre mie app:</string>
   <string name="site_ad_link">Visita Simen.codes</string>
   <string name="title_activity_app_list">Filtro applicazioni</string>
   <string name="pref_priority_title">Priorità notifiche</string>
@@ -43,7 +43,7 @@
   <string-array name="priorityLevel">
     <item name="MAX">Urgenti (chiamate in arrivo, avvertenze, avvisi d\'emergenza)</item>
     <item name="HIGH">Importanti (comunicazioni, email importanti)</item>
-    <item name="NORMAL">Normali (+notificate da app vecchie)</item>
+    <item name="NORMAL">Normali (+notifiche da app vecchie)</item>
     <item name="LOW">Non importanti (aggiornamenti software, email irrilevanti)</item>
     <item name="MIN">Informazioni contestuali e di background (meteo, eventi passati, suggerimenti)</item>
   </string-array>
@@ -70,7 +70,7 @@
   <string name="music_title">Riproducendo: <xliff:g id="track" example="TRACK">%s</xliff:g></string>
   <string name="music_text">Di: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
   <string name="pref_music_popup">Popup della canzone corrente</string>
-  <string name="pref_music_popup_desc">Mostra i metadata delle canzoni quando cambia traccia.\nNota: non tutti i lettori musicali sono supportati.</string>
+  <string name="pref_music_popup_desc">Mostra le informazioni delle canzoni quando cambia traccia.\nNota: non tutti i lettori musicali sono supportati.</string>
   <string name="intro_warning_both_services">Accesso alle notifiche e accesso facilitato sono entrambi abilitati. Per favore, disabilita uno dei due.</string>
   <string name="notification_listener_not_found_detour">Seleziona \'Accesso alle notifiche\' e attiva \'Notifiche Heads-up\'</string>
   <string name="accessibility_not_found_detour"><![CDATA[Vai su \'Accessibilità\' > \'Notifiche Heads-up\']]></string>
@@ -119,19 +119,19 @@
   <string name="device_admin_enable_explanation">Abilitando questa opzione permetterai a Heads-up di spegnere il display. Usala solo se lo schermo non si spegne automaticamente dopo aver ricevuto un popup nella schermata di blocco, altrimenti la rilevazione col sensore di prossimità non funzionerà correttamente.\n\nIMPORTANTE! Non potrai disinstallare Heads-up finché questa opzione è attiva.</string>
   <string name="device_admin_alredy_on">Amministratore dispositivo è già attivo.</string>
   <string name="device_admin_not_available">Amministratore dispositivo non è abilitato. Arresto.</string>
-  <string name="intro_status_on">Il servizio è attivo. Prova inviandoti un messaggio.\nSe non funziona correttamente riavvia il dispositivo e prova di nuovo. Contattami a sb@simen.codes se non riesci a far funzionare l\'app come vorresti (scrivimi in lingua inglese).</string>
-  <string name="intro_status_on_confirmed">Il servizio è in funzione. Prova inviandoti un messaggio.\n Contattami a sb@simen.codes se non riesci a far funzionare correttamente l\'app (scrivimi in lingua inglese).</string>
+  <string name="intro_status_on">Il servizio è attivo. Provalo inviandoti un messaggio.\nSe non funziona correttamente riavvia il dispositivo e prova di nuovo. \n Premi qui se hai bisogno di aiuto</string>
+  <string name="intro_status_on_confirmed">Il servizio è in funzione. Provalo inviandoti un messaggio.\n Premi qui se hai bisogno di aiuto.</string>
   <string name="accessibility_service_blocked">%s sta bloccando Heads-up nell\'accedere alle tue notifiche. Per favore disabilitato dal menù accessibilità.</string>
   <string name="export_debug_data">Esporta i dati di debug</string>
   <string name="pref_close_on_outside_touch">Chiudi con un tocco all\'esterno</string>
   <string name="pref_close_on_outside_touch_desc">Rimuovi il popup quando tocchi al di fuori dell\'heads-up</string>
   <string name="pref_reminder_delay">Ritardo promemoria</string>
-  <string name="pref_reminder_delay_desc">Se effettui lo swipe dell\'heads-up verso l\'alto, Heads-up lo mostrerà di nuovo dopo il numero di minuti che indichi qui. Imposta 0 per disabilitare.\nATTENZIONE: Sperimentale, caratteristica instabile. Non è detto che funzioni.</string>
+  <string name="pref_reminder_delay_desc">Se effettui lo swipe della notifica verso l\'alto, Heads-up la mostrerà di nuovo dopo il numero di minuti che indichi qui. Imposta 0 per disabilitare.\nATTENZIONE: Sperimentale, caratteristica instabile. Non è detto che funzioni.</string>
   <string name="pref_reminder_delay_counter">Ricordamelo dopo <xliff:g id="time" example="7">%s</xliff:g> minuti</string>
   <string name="pref_top_margin_locked">Posizione del popup nella schermata di blocco</string>
   <string name="pref_dont_disturb_error">Attenzione: Google ha rimosso la possibilità di mantenere attività in esecuzione in Android 5.0, quindi non funzionerà correttamente.</string>
   <string name="pref_dismiss_on_swipe_desc">Rimuovi le notifiche dal centro notifiche quando la scarti con uno swipe orizzontale. (Puoi comunque cliccare sulla X per rimuoverle dal centro notifiche).\nRichiede Android 4.3</string>
-  <string name="pref_dismiss_keyguard_desc">Tentativo di sbloccare il dispositivo quando si apre una notifica. Disabilitare se si ha un desktop vuoto quando si apre una notifica.</string>
+  <string name="pref_dismiss_keyguard_desc">Tenta di sbloccare il dispositivo quando si apre una notifica. Disabilita se si ha un desktop vuoto quando si apre una notifica.</string>
   <string name="pref_broadcast_notifications">Notifiche broadcast</string>
   <string name="pref_broadcast_notifications_desc">Dai l\'accesso alle notifiche alle altre mie applicazioni. Questo ridurrà la RAM utilizzata se utilizzi un\'app come Voiceify. Mantienilo disabilitato fino a quando una delle mie app ti chiede di abilitarlo.</string>
   <string name="title_broadcast_request">Accesso alle notifiche</string>

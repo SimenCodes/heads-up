@@ -125,7 +125,7 @@ Deteniendo.</string>
   <string name="pref_close_on_outside_touch">Cerrar al tocar fuera</string>
   <string name="pref_close_on_outside_touch_desc">Quitar el popup al tocar fuera del heads-up</string>
   <string name="pref_reminder_delay">Tiempo de recordatorio</string>
-  <string name="pref_reminder_delay_desc">Si deslizas el heads-up hacia arriba, el heads-up volverá a mostrarse tras los minutos que especifique aquí. Poner cero para deshabilitar. \nADVERTENCIA: funcion experimental e inestable. No confíe en que funcione.</string>
+  <string name="pref_reminder_delay_desc">Si deslizas el heads-up hacia arriba, el heads-up volverá a mostrarse tras los minutos que especifique aquí. Poner cero para deshabilitar. \nADVERTENCIA: función experimental e inestable. No confíe en que funcione.</string>
   <string name="pref_reminder_delay_counter">Recordarme tras <xliff:g id="time" example="7">%s</xliff:g> minutos</string>
   <string name="pref_top_margin_locked">Posición del Popup en la pantalla de bloqueo</string>
   <string name="pref_dont_disturb_error">Advertencia: Google retiró la habilidad de tener tareas ejecutandose en Android 5.0, por lo tanto esto no funcionará correctamente.</string>

@@ -158,19 +158,18 @@ public class WelcomeActivity extends Activity {
         intent.putExtra("icon", -1);
         intent.putExtra("color", getResources().getColor(R.color.primaryDark));
 
-        intent.putExtra("actionCount", 1);
-        intent.putExtra("action1title", getString(R.string.action_settings));
-        intent.putExtra("action1icon", R.drawable.ic_action_settings);
-        intent.putExtra("action1intent", PendingIntent.getActivity(this, 0,
+        intent.putExtra("actionCount", 2);
+        intent.putExtra("action2title", getString(R.string.action_settings));
+        intent.putExtra("action2icon", R.drawable.ic_action_settings);
+        intent.putExtra("action2intent", PendingIntent.getActivity(this, 0,
                 new Intent(getApplicationContext(), SettingsActivity.class),
                 PendingIntent.FLAG_CANCEL_CURRENT));
-
-        /*intent.putExtra("action2title", getString(R.string.leave_review));
-        intent.putExtra("action2icon", R.drawable.ic_checkmark);
-        intent.putExtra("action2intent", PendingIntent.getActivity(this, 0,
+        intent.putExtra("action1title", getString(R.string.action_donate));
+        intent.putExtra("action1icon", R.drawable.ic_coin);
+        intent.putExtra("action1intent", PendingIntent.getActivity(this, 0,
                 new Intent(Intent.ACTION_VIEW)
-                        .setData(Uri.parse("https://play.google.com/store/apps/details?id=codes.simen.l50notifications"))
-                , PendingIntent.FLAG_UPDATE_CURRENT));*/
+                        .setData(Uri.parse("http://simen.codes/donate/#heads-up"))
+                , PendingIntent.FLAG_UPDATE_CURRENT));
 
         startService(intent);
 

@@ -63,7 +63,7 @@
   <string name="pref_use_proximity_desc">Nerozsvieti obrazovku ak je zariadenie vo vrecku alebo leží obrazovkou dolu na stole.</string>
   <string name="pref_header_lockscreen">Uzamknutá obrazovka</string>
   <string name="pref_block_current_app">Blokovať aktuálnu aplikáciu</string>
-  <string name="pref_block_current_app_desc">Nezobrazí upozornenie z aktuálnej aplikácie.\nNefunguje na Androide 5.0+, obmedzenie systému.</string>
+  <string name="pref_block_current_app_desc">Nezobrazí upozornenie z aktuálnej aplikácie.</string>
   <string name="pref_header_behaviour">Správanie</string>
   <string name="music_title">Prehráva sa: <xliff:g id="track" example="TRACK">%s</xliff:g></string>
   <string name="music_text">Od: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>

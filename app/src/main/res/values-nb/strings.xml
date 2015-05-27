@@ -41,13 +41,13 @@
   <string name="title_activity_settings">Innstillinger</string>
   <string name="pref_header_general">Filtrering</string>
   <string-array name="priorityLevel">
-    <item name="MAX">Kritisk og hastesaker (tapte anrop, nødmeldinger, osv.)</item>
-    <item name="HIGH">Viktig (kommunikasjon, viktig e-post)</item>
-    <item name="NORMAL">Normal (+varsler fra veldig gamle apper)</item>
-    <item name="LOW">Uviktig (appoppdateringer, reklame)</item>
-    <item name="MIN">Bakgrunnsinfo (værmeldinger, forslag, osv.)</item>
+      <item name="MAX">Kritisk og hastesaker (tapte anrop, nødmeldinger, osv.)</item>
+      <item name="HIGH">Viktig (kommunikasjon, viktig e-post)</item>
+      <item name="NORMAL">Normal (+varsler fra veldig gamle apper)</item>
+      <item name="LOW">Uviktig (appoppdateringer, reklame)</item>
+      <item name="MIN">Bakgrunnsinfo (værmeldinger, forslag, osv.)</item>
   </string-array>
-  <string name="pref_overlay_display_time_counter">Vis i <xliff:g id="time" example="7">%s</xliff:g> sekunder</string>
+  <string name="pref_overlay_display_time_counter">Vis i <xliff:g example="7" id="time">%s</xliff:g> sekunder</string>
   <string name="pref_top_margin">Posisjon (når enheten er i bruk)</string>
   <string name="pref_turn_screen_on">Slå på skjermen</string>
   <string name="pref_turn_screen_on_desc">Slå på skjermen når du får et varsel</string>
@@ -63,10 +63,10 @@
   <string name="pref_use_proximity_desc">Ikke slå på skjermen om mobilen ligger i lomma eller med skjermen ned.\nKrever at enheten har avstandssensor.</string>
   <string name="pref_header_lockscreen">Låseskjerm</string>
   <string name="pref_block_current_app">Blokker aktiv app</string>
-  <string name="pref_block_current_app_desc">Blokker varsler fra den aktive appen.</string>
+  <string name="pref_block_current_app_desc">Blokker varsler fra den aktive appen.\nDette fungerer IKKE i Android 5.0+ på grunn av begrensninger i Android.</string>
   <string name="pref_header_behaviour">Oppførsel</string>
-  <string name="music_title">Spiller <xliff:g id="track" example="TRACK">%s</xliff:g></string>
-  <string name="music_text">Av <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nFra albumet <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+  <string name="music_title">Spiller <xliff:g example="TRACK" id="track">%s</xliff:g></string>
+  <string name="music_text">Av <xliff:g example="ARTIST" id="artist">%s</xliff:g>\nFra albumet <xliff:g example="ALBUM" id="album">%s</xliff:g></string>
   <string name="pref_music_popup">Gjeldene sang</string>
   <string name="pref_music_popup_desc">Vis et vindu med informasjon om sangen som spiller.\nMerk: dette fungerer ikke med alle musikkspillere.</string>
   <string name="intro_warning_both_services">Både varsellytteren og tilgjengelighetstjenesten er aktivert. Vennligst deaktiver en av dem.</string>
@@ -87,19 +87,19 @@
   <string name="leave_review">Skriv omtale</string>
   <string name="pref_header_other">Om</string>
   <string-array name="overlayPosition">
-    <item name="aboveStatus">Øverst</item>
-    <item name="top">Under statuslinjen</item>
-    <item name="center">I midten</item>
-    <item name="bottom">Nederst</item>
+      <item name="aboveStatus">Øverst</item>
+      <item name="top">Under statuslinjen</item>
+      <item name="center">I midten</item>
+      <item name="bottom">Nederst</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'Lollipop\' lys</item>
-    <item name="ldark">Android 5.0 \'Lollipop\' mørk</item>
-    <item name="lblack">Android 5.0 \'Lollipop\' svart</item>
-    <item name="holo">Enkel lys</item>
-    <item name="holodark">Enkel mørk</item>
-    <item name="random">Fargerik (tilfeldig)</item>
-    <item name="ubuntu">Ubuntu</item>
+      <item name="l">Android 5.0 \'Lollipop\' lys</item>
+      <item name="ldark">Android 5.0 \'Lollipop\' mørk</item>
+      <item name="lblack">Android 5.0 \'Lollipop\' svart</item>
+      <item name="holo">Enkel lys</item>
+      <item name="holodark">Enkel mørk</item>
+      <item name="random">Fargerik (tilfeldig)</item>
+      <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Bare på låseskjerm</string>
   <string name="pref_only_on_lock_screen_desc">Bare vis heads-up når skjermen er låst.</string>
@@ -125,14 +125,16 @@
   <string name="pref_close_on_outside_touch_desc">Lukk popup-vinduet når du trykker et annet sted på skjermen.</string>
   <string name="pref_reminder_delay">Påminnelsestid</string>
   <string name="pref_reminder_delay_desc">Hvis du sveiper heads-up-meldingen oppover, vil den dukke opp igjen etter tiden du angir her.\nADVARSEL: Eksperimentell, ustabil funksjon. Ikke forvent at den virker. Sett til null for å deaktivere.</string>
-  <string name="pref_reminder_delay_counter">Send påminnelse etter <xliff:g id="time" example="7">%s</xliff:g> minutter</string>
+  <string name="pref_reminder_delay_counter">Send påminnelse etter <xliff:g example="7" id="time">%s</xliff:g> minutter</string>
   <string name="pref_top_margin_locked">Posisjon (på låseskjermen)</string>
   <string name="pref_dont_disturb_error">Advarsel: Google fjernet muligheten til å hente kjørende oppgaver i Android 5.0, så dette vil ikke fungere. Fra utviklerdokumentasjonen:\ngetRecentTasks() —  As of LOLLIPOP, this method is no longer available to third party applications: the introduction of document-centric recents means it can leak personal information. For backwards compatibility, it will still return a small subset of its data: the caller\'s own tasks, and possibly some other tasks such as home that are known to not be sensitive.</string>
   <string name="pref_dismiss_on_swipe_desc">Fjern varsler fra varselsenteret når du sveiper dem vekk. Hvis du deaktiverer dette, vil du fortsatt kunne bruke X-knappen for å fjerne varselet.\nKrever Android 4.3</string>
+  <string name="pref_dismiss_keyguard_desc">Lås opp skjermen eller be om kode når du trykker på et varsel. Hvis du bare ser bakgrunnsbildet ditt i stedet, prøv å deaktivere dette.</string>
   <string name="pref_broadcast_notifications">Kringkast varsler</string>
   <string name="pref_broadcast_notifications_desc">Gi de andre appene mine tilgang til varslene dine. Dette vil redusere RAM-bruken hvis du bruker f.eks. Voiceify. Hold dette slått av hvis ikke en av appene mine ber deg om å slå det på.</string>
   <string name="title_broadcast_request">Varseltilgang</string>
   <string name="content_broadcast_request">Dette vil gi %s tilgang til varslene dine. Er du sikker på at du vil dette?</string>
   <string name="pref_show_non_cancelable">Vis pågående varsler</string>
   <string name="pref_show_non_cancelable_desc">Vis varsler fra bakgrunnstjenester, for eksempel pågående nedlastinger.\nOBS: Hvis noen meldinger nekter å gå bort, prøv å deaktivere dette.</string>
+  <string name="action_donate">Doner</string>
 </resources>
