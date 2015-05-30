@@ -112,7 +112,11 @@ class DecisionMaker {
 			try {
                 title = notification.extras.get("android.title").toString();
             } catch (Exception ignored) {}
-            text = notification.extras.get("android.text").toString();
+            try {
+                text = notification.extras.get("android.text").toString();
+            } catch (Exception ignored) {
+                text = "";
+            }
 
             String bigText = null;
             try {
@@ -238,16 +242,18 @@ class DecisionMaker {
         } else if (Build.VERSION.SDK_INT >= 16) {
             final SimpleAction[] actions = getActions(notification);
 
-            int i = actions.length;
+            int i = actions != null ? actions.length : 0;
 
-            intent.putExtra("actionCount", actions.length);
-            for (SimpleAction action : actions) {
-                if (i < 0) break; //No infinite loops, has happened once
-                Mlog.d(logTag, action.title);
-                intent.putExtra("action" + i + "icon", action.icon);
-                intent.putExtra("action" + i + "title", action.title);
-                intent.putExtra("action" + i + "intent", action.actionIntent);
-                i--;
+            if (i > 0) {
+                intent.putExtra("actionCount", actions.length);
+                for (SimpleAction action : actions) {
+                    if (i < 0) break; //No infinite loops, has happened once
+                    Mlog.d(logTag, action.title);
+                    intent.putExtra("action" + i + "icon", action.icon);
+                    intent.putExtra("action" + i + "title", action.title);
+                    intent.putExtra("action" + i + "intent", action.actionIntent);
+                    i--;
+                }
             }
         }
 

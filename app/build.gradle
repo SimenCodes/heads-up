@@ -30,8 +30,8 @@ android {
         applicationId "codes.simen.l50notifications"
         minSdkVersion 12
         targetSdkVersion 22
-        versionCode 54
-        versionName '1.10'
+        versionCode 55
+        versionName '1.10.1'
     }
     buildTypes {
         release {
