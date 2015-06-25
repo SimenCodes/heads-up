@@ -18,6 +18,7 @@ package codes.simen.l50notifications.ui;
 
 import android.content.Context;
 import android.preference.DialogPreference;
+import android.text.format.DateFormat;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TimePicker;
@@ -39,7 +40,7 @@ public class ClockPreference extends DialogPreference {
 
         mTimePicker.setCurrentHour((int) Math.floor(value / 60));
         mTimePicker.setCurrentMinute((int) Math.floor(value % 60));
-        mTimePicker.setIs24HourView(true); // TODO: Support 12-hour style
+        mTimePicker.setIs24HourView(DateFormat.is24HourFormat(getContext().getApplicationContext()));
 
         return mTimePicker;
     }
