@@ -91,7 +91,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private static final int SENSOR_DELAY_MILLIS = 10000;
     private static final int MIN_LINES = 2;
     public static final int FLAG_FLOATING_WINDOW = 0x00002000;
-    private static final ArrayList<String> LOCKSCREEN_APPS = new ArrayList<String>(Arrays.asList(new String[]{
+    private static final ArrayList<String> LOCKSCREEN_APPS = new ArrayList<>(Arrays.asList(new String[]{
             "com.achep.acdisplay",
             "com.silverfinger.lockscreen",
             "com.slidelock",
@@ -106,7 +106,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             "com.hi.locker",
             "com.vlocker.locker",
             "com.microsoft.next",
-			"com.cmcm.locker"
+            "com.cmcm.locker"
     }));
 
     private WindowManager windowManager;
@@ -522,7 +522,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                                     try {
                                         if (themeClass.getRootView(layout).getTranslationX() != 0) return; // Stop if we're currently swiping. Bug 0000034
                                         Mlog.d(logTag, "sendPendingAction");
-                                        openIntent(actionIntent, false);
+                                        triggerIntent(actionIntent, false);
                                     } catch (NullPointerException e) {
                                         reportError(e, "", getApplicationContext());
                                     }
@@ -679,19 +679,19 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
     private ArrayList<View> getAllChildren(View v) {
         if (!(v instanceof ViewGroup)) {
-            ArrayList<View> viewArrayList = new ArrayList<View>();
+            ArrayList<View> viewArrayList = new ArrayList<>();
             viewArrayList.add(v);
             return viewArrayList;
         }
 
-        ArrayList<View> result = new ArrayList<View>();
+        ArrayList<View> result = new ArrayList<>();
 
         ViewGroup viewGroup = (ViewGroup) v;
         for (int i = 0; i < viewGroup.getChildCount(); i++) {
 
             View child = viewGroup.getChildAt(i);
 
-            ArrayList<View> viewArrayList = new ArrayList<View>();
+            ArrayList<View> viewArrayList = new ArrayList<>();
             viewArrayList.add(v);
             viewArrayList.addAll(getAllChildren(child));
 
@@ -737,6 +737,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         doFinish(0);
     }
 
+    @SuppressWarnings("unused")
     public void onPopupClick(View v) {
         onPopupClick(v, false);
     }
@@ -746,7 +747,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         if (rootView.getTranslationX() != 0 || rootView.getTranslationY() != 0)
             return; // Stop if we're currently swiping. Bug 0000034 (in the old bug tracker)
 
-        if (Build.VERSION.SDK_INT >= 12 || !expand()) openIntent(pendingIntent, isFloating);
+        if (Build.VERSION.SDK_INT >= 12 || !expand()) triggerIntent(pendingIntent, isFloating);
     }
 
     /*
@@ -772,31 +773,55 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         }
     }
 
-    void openIntent(PendingIntent mPendingIntent, boolean isFloating) {
+    private void triggerIntent(PendingIntent mPendingIntent, boolean isFloating) {
         if (isLocked() && preferences.getBoolean("dismiss_keyguard", true)) {
             pokeScreenTimer();
-            startActivity(new Intent(getApplicationContext(), UnlockActivity.class)
-                            .putExtra("action", mPendingIntent)
-                            .putExtra("floating", isFloating)
-                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            );
+            if (preferences.getBoolean("dismiss_keyguard_dirty", false)) {
+                dismissKeyguard();
+                openIntent(mPendingIntent, isFloating);
+            } else {
+                startActivity(new Intent(getApplicationContext(), UnlockActivity.class)
+                                .putExtra("action", mPendingIntent)
+                                .putExtra("floating", isFloating)
+                                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                );
+            }
             doFinish(2);
         } else {
-            try {
-                Mlog.d(logTag, "sendPending");
+            openIntent(mPendingIntent, isFloating);
+        }
+    }
 
-                Intent intent = new Intent().addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                if (isFloating) intent.addFlags(FLAG_FLOATING_WINDOW);
-                mPendingIntent.send(getApplicationContext(), 0, intent);
-                doFinish(2);
-            } catch (PendingIntent.CanceledException e) {
-                //reportError(e, "App has canceled action", getApplicationContext());
-                Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_cancel_exception), Toast.LENGTH_SHORT).show();
-                doFinish(0);
-            } catch (NullPointerException e) {
-                //reportError(e, "No action defined", getApplicationContext());
-                Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_null_exception), Toast.LENGTH_SHORT).show();
-                doFinish(0);
+    private void openIntent(PendingIntent mPendingIntent, boolean isFloating) {
+        try {
+            Mlog.d(logTag, "sendPending");
+
+            Intent intent = new Intent().addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            if (isFloating) intent.addFlags(FLAG_FLOATING_WINDOW);
+            mPendingIntent.send(getApplicationContext(), 0, intent);
+            doFinish(2);
+        } catch (PendingIntent.CanceledException e) {
+            //reportError(e, "App has canceled action", getApplicationContext());
+            Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_cancel_exception), Toast.LENGTH_SHORT).show();
+            doFinish(0);
+        } catch (NullPointerException e) {
+            //reportError(e, "No action defined", getApplicationContext());
+            Toast.makeText(getApplicationContext(), getString(R.string.pendingintent_null_exception), Toast.LENGTH_SHORT).show();
+            doFinish(0);
+        }
+    }
+
+    private void dismissKeyguard() {
+        if (Build.VERSION.SDK_INT >= 16) {
+            if (!preferences.getBoolean("dismiss_keyguard", false)) return;
+
+            KeyguardManager keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
+            if (keyguardManager.isKeyguardLocked()) {
+                Mlog.d(logTag, "attempt exit");
+                Intent intent = new Intent();
+                intent.setClass(getApplicationContext(), KeyguardRelock.class);
+                intent.setAction(Intent.ACTION_SCREEN_ON);
+                startService(intent);
             }
         }
     }
@@ -806,7 +831,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         public boolean onLongClick(View v) {
             try {
                 Set<String> blacklist = (Set<String>) ObjectSerializer.deserialize(preferences.getString("blacklist", ""));
-                if (blacklist == null) blacklist = new HashSet<String>();
+                if (blacklist == null) blacklist = new HashSet<>();
 
                 final boolean isBlacklistInverted = preferences.getBoolean("blacklist_inverted", false);
                 Mlog.v(logTag, isBlacklistInverted);
@@ -823,9 +848,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("blacklist", serialized);
                 editor.apply();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
+            } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
             }
             doFinish(1);
