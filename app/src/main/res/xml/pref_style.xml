@@ -44,7 +44,7 @@
     <codes.simen.l50notifications.ui.OpacityPreference
         android:key="opacity"
         android:title="@string/pref_opacity"
-        android:defaultValue="98"
+        android:defaultValue="100"
         />
 
     <codes.simen.l50notifications.ui.FontSizePreference
