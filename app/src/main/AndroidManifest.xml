@@ -20,8 +20,8 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- Determine currently running task -->
     <uses-permission android:name="android.permission.GET_TASKS" />
-    <!-- Dismiss the keyguard. Not in use anymore -->
-    <!--<uses-permission android:name="android.permission.DISABLE_KEYGUARD" />-->
+    <!-- Dismiss the keyguard -->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <!-- Turn the screen on. Not kept for longer than one minute unless "keep screen on" is enabled -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
@@ -188,6 +188,12 @@
             android:noHistory="true"
             android:excludeFromRecents="true">
         </activity>
+
+        <service
+            android:name=".KeyguardRelock"
+            android:exported="false" >
+        </service>
+
     </application>
 
 </manifest>

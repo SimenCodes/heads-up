@@ -140,6 +140,8 @@
     <string name="pref_show_non_cancelable">Show non-cancelable notifications</string>
     <string name="pref_show_non_cancelable_desc">Show ongoing, non-clearable notifications displayed by background services like Downloads.\nNote: If some notifications refuse to go away, try disabling this.</string>
     <string name="action_donate">Donate</string>
+    <string name="pref_dismiss_keyguard_dirty">Dirty unlock</string>
+    <string name="pref_dismiss_keyguard_dirty_desc">If the normal unlock option doesn\'t work, try enabling this.\nWARNING: This will override all lockscreen security, and it can cause problems on some devices!</string>
     <string name="pref_night_mode">Night mode</string>
     <string name="pref_night_mode_desc">Disable Heads-up while you sleep</string>
     <string name="pref_night_mode_start">Night mode start time</string>
