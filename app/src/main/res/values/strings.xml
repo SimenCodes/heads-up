@@ -140,4 +140,8 @@
     <string name="pref_show_non_cancelable">Show non-cancelable notifications</string>
     <string name="pref_show_non_cancelable_desc">Show ongoing, non-clearable notifications displayed by background services like Downloads.\nNote: If some notifications refuse to go away, try disabling this.</string>
     <string name="action_donate">Donate</string>
+    <string name="pref_night_mode">Night mode</string>
+    <string name="pref_night_mode_desc">Disable Heads-up while you sleep</string>
+    <string name="pref_night_mode_start">Night mode start time</string>
+    <string name="pref_night_mode_end">Night mode end time</string>
 </resources>

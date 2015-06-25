@@ -42,6 +42,7 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Set;
 
@@ -67,10 +68,12 @@ class DecisionMaker {
 
     public void handleActionAdd(Notification notification, String packageName, String tag, int id, String key, Context context, String src) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        if (isNight(preferences)) return;
 
         // Package filter
         Mlog.d(logTag, packageName);
         try {
+            //noinspection unchecked
             final Set<String> packageBlacklist = (Set<String>) ObjectSerializer.deserialize(preferences.getString("blacklist", ""));
             if (packageBlacklist != null) {
                 final boolean isBlacklistInverted = preferences.getBoolean("blacklist_inverted", false);
@@ -310,7 +313,7 @@ class DecisionMaker {
 		
 		viewTexts = viewTexts.trim();
 		
-        if (viewTexts.length() > 1 && viewTexts.length() > 3) {
+        if (viewTexts.length() > 1) {
             Mlog.d(logTag, viewTexts);
             return viewTexts;
         }
@@ -383,6 +386,30 @@ class DecisionMaker {
         applicationContext.startService(intent);
     }
 
+    /**
+     * Check if the user is sleeping.
+     * @param preferences The default SharedPreferences
+     * @return if true, don't disturb the user.
+     */
+    public static boolean isNight(SharedPreferences preferences) {
+        if (!preferences.getBoolean("night_mode", false)) return false;
+
+        int start = preferences.getInt("night_mode_start", 1320);
+        int end = preferences.getInt("night_mode_end", 420);
+
+        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+        int minute = Calendar.getInstance().get(Calendar.MINUTE);
+        int time = (hour * 60) + minute;
+
+        if (start > end)
+            if (time <= start || time >= end)
+                return true;
+        if (start < end)
+            if (time >= start && time <= end)
+                return true;
+        return false;
+    }
+
     private static List<String> getText(Notification notification) {
         RemoteViews contentView = notification.contentView;
         /*if (Build.VERSION.SDK_INT >= 16) {
@@ -391,7 +418,7 @@ class DecisionMaker {
 
         // Use reflection to examine the m_actions member of the given RemoteViews object.
         // It's not pretty, but it works.
-        List<String> text = new ArrayList<String>();
+        List<String> text = new ArrayList<>();
         try
         {
             Field field = contentView.getClass().getDeclaredField("mActions");
@@ -456,19 +483,19 @@ class DecisionMaker {
 
     private ArrayList<View> getAllChildren(View v) {
         if (!(v instanceof ViewGroup)) {
-            ArrayList<View> viewArrayList = new ArrayList<View>();
+            ArrayList<View> viewArrayList = new ArrayList<>();
             viewArrayList.add(v);
             return viewArrayList;
         }
 
-        ArrayList<View> result = new ArrayList<View>();
+        ArrayList<View> result = new ArrayList<>();
 
         ViewGroup viewGroup = (ViewGroup) v;
         for (int i = 0; i < viewGroup.getChildCount(); i++) {
 
             View child = viewGroup.getChildAt(i);
 
-            ArrayList<View> viewArrayList = new ArrayList<View>();
+            ArrayList<View> viewArrayList = new ArrayList<>();
             viewArrayList.add(v);
             viewArrayList.addAll(getAllChildren(child));
 
