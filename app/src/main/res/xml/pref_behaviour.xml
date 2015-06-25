@@ -52,6 +52,14 @@
         android:defaultValue="true"
         />
 
+    <CheckBoxPreference
+        android:key="dismiss_keyguard_dirty"
+        android:title="@string/pref_dismiss_keyguard_dirty"
+        android:summary="@string/pref_dismiss_keyguard_dirty_desc"
+        android:dependency="dismiss_keyguard"
+        android:defaultValue="false"
+        />
+
     <!--
     Removed due to stability issues
     <codes.simen.l50notifications.ui.ReminderDelayPreference
