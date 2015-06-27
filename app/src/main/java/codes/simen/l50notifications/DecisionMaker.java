@@ -106,9 +106,9 @@ class DecisionMaker {
         // Get the text
         if (Build.VERSION.SDK_INT >= 21) {
             // Uncomment to test which extras a given notification contains
-            /*for (String extraKey : notification.extras.keySet()) {
+            for (String extraKey : notification.extras.keySet()) {
                 Mlog.d(logTag, extraKey + "=" + notification.extras.get(extraKey));
-            }*/
+            }
 			try {
                 title = notification.extras.get("android.title").toString();
             } catch (Exception ignored) {}
@@ -120,11 +120,24 @@ class DecisionMaker {
 
             String bigText = null;
             try {
-                bigText = notification.extras.get("android.bigText").toString();
+                if (
+                        notification.extras.getString("android.template", "").equals("android.app.Notification$InboxStyle")
+                        && notification.extras.containsKey("android.textLines")
+                ) {
+                    CharSequence[] textLines = notification.extras.getCharSequenceArray("android.textLines");
+                    bigText = "";
+                    for (CharSequence line : textLines) {
+                        bigText += line + "\n";
+                    }
+                } else {
+                    bigText = notification.extras.get("android.bigText").toString();
+                }
+                if (notification.extras.containsKey("android.title.big"))
+                    title = notification.extras.getCharSequence("android.title.big", title).toString();
             } catch (Exception ignored) {}
 
             if (bigText != null && bigText.length() > 3) {
-                text = bigText;
+                text = bigText.trim();
             }
         } else {
             // Old, hacky way. Close your eyes and skip this section.
@@ -391,7 +404,7 @@ class DecisionMaker {
 
         // Use reflection to examine the m_actions member of the given RemoteViews object.
         // It's not pretty, but it works.
-        List<String> text = new ArrayList<String>();
+        List<String> text = new ArrayList<>();
         try
         {
             Field field = contentView.getClass().getDeclaredField("mActions");
@@ -456,19 +469,19 @@ class DecisionMaker {
 
     private ArrayList<View> getAllChildren(View v) {
         if (!(v instanceof ViewGroup)) {
-            ArrayList<View> viewArrayList = new ArrayList<View>();
+            ArrayList<View> viewArrayList = new ArrayList<>();
             viewArrayList.add(v);
             return viewArrayList;
         }
 
-        ArrayList<View> result = new ArrayList<View>();
+        ArrayList<View> result = new ArrayList<>();
 
         ViewGroup viewGroup = (ViewGroup) v;
         for (int i = 0; i < viewGroup.getChildCount(); i++) {
 
             View child = viewGroup.getChildAt(i);
 
-            ArrayList<View> viewArrayList = new ArrayList<View>();
+            ArrayList<View> viewArrayList = new ArrayList<>();
             viewArrayList.add(v);
             viewArrayList.addAll(getAllChildren(child));
 
