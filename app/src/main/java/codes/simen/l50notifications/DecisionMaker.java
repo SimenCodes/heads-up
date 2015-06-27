@@ -123,11 +123,24 @@ class DecisionMaker {
 
             String bigText = null;
             try {
-                bigText = notification.extras.get("android.bigText").toString();
+                if (
+                        notification.extras.getString("android.template", "").equals("android.app.Notification$InboxStyle")
+                        && notification.extras.containsKey("android.textLines")
+                ) {
+                    CharSequence[] textLines = notification.extras.getCharSequenceArray("android.textLines");
+                    bigText = "";
+                    for (CharSequence line : textLines) {
+                        bigText += line + "\n";
+                    }
+                } else {
+                    bigText = notification.extras.get("android.bigText").toString();
+                }
+                if (notification.extras.containsKey("android.title.big"))
+                    title = notification.extras.getCharSequence("android.title.big", title).toString();
             } catch (Exception ignored) {}
 
             if (bigText != null && bigText.length() > 3) {
-                text = bigText;
+                text = bigText.trim();
             }
         } else {
             // Old, hacky way. Close your eyes and skip this section.
