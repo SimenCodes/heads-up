@@ -15,9 +15,9 @@
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
-  <string name="app_name">Plovoucí oznámení</string>
-  <string name="app_icon_name">Plovoucí oznámení</string>
-  <string name="title_activity_welcome">Plovoucí oznámení</string>
+  <string name="app_name">vyskakující oznámení</string>
+  <string name="app_icon_name">Vyskakující</string>
+  <string name="title_activity_welcome">Vyskakující oznámení</string>
   <string name="action_settings">Nastavení</string>
   <string name="reader_btn_open">Otevřít</string>
   <string name="reader_btn_dismiss">Zamítnout</string>
@@ -127,7 +127,6 @@
   <string name="pref_reminder_delay_desc">Tahem oznámení vzhůru se oznámení znovu-zobrazí po určité době, kterou zde nastavíš. Nastav 0 pro vypnutí.\nVAROVÁNÍ! Experimentální, nestabilní funkce. Nespoléhej se na ni.</string>
   <string name="pref_reminder_delay_counter">Připomenou po <xliff:g id="time" example="7">%s</xliff:g> minutách</string>
   <string name="pref_top_margin_locked">Pozice vyskakovacího okna na zamykací obrazovce</string>
-  <string name="pref_dont_disturb_error">Varování: Google odstranil možnost pro běh úloh v Androidu 5.0, tudíž toto nebude fungovat správně. Z dokumentů:\ngetRecentTasks() — Pro LOLLIPOP, tato metoda již není dostupná pro aplikace třetích stran: může zapříčinit únik soukromých informací. Pro zpětnou kompabilitu, stále bude vracet malý objem dat, uživatelovi vlastní úlohy a možná některé další úlohy jako domácí obrazovka, které jsou známy, že neobsahují citlivá data.</string>
   <string name="pref_dismiss_on_swipe_desc">Zamítnout upozornění tahem do stran. Stále můžeš použít X tlačítko pro jejich zamítnutí.\nVyžaduje Android 4.3</string>
   <string name="pref_dismiss_keyguard_desc">Automaticky odemknout telefon po otevření upozorění.\nVAROVÁNÍ! Tímto umožníš KOMUKOLIV odemknout zařízení navzdory tvému nastavení zabezpečení.\nToto je také zastaralé v Androidu a nemusí fungovat korektně.</string>
   <string name="pref_broadcast_notifications">Oznámení vysílání</string>
@@ -136,4 +135,5 @@
   <string name="content_broadcast_request">Toto přidá %s přístup k oznámením. Opravdu to chceš?</string>
   <string name="pref_show_non_cancelable">Zobrazit stálá oznámení</string>
   <string name="pref_show_non_cancelable_desc">Zobrazit probíhající, neodstranitelná oznámení zobrazující služby na pozadí jako Stahování.\nPozn.: Pokud nějaké upozornění odmítá zmizet, zkus toto vypnout.</string>
+  <string name="action_donate">Finanční podpora</string>
 </resources>

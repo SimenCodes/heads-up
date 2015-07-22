@@ -17,6 +17,7 @@ package codes.simen.l50notifications;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.annotation.TargetApi;
 import android.app.ActivityManager;
 import android.app.KeyguardManager;
 import android.app.PendingIntent;
@@ -64,9 +65,11 @@ import java.io.PrintWriter;
 import java.io.Serializable;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import codes.simen.l50notifications.admin.AdminReceiver;
@@ -237,10 +240,42 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private void getCurrentPackage() {
         try {
             ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
-            currentPackage = am.getRunningTasks(1).get(0).topActivity.getPackageName();
-        } catch (SecurityException | IndexOutOfBoundsException e) {
+            if (Build.VERSION.SDK_INT >= 21) {
+                ActivityManager.RunningAppProcessInfo processInfo = getTopAppLollipop(am);
+                if (processInfo != null)
+                    currentPackage = processInfo.processName;
+            }
+            else
+                currentPackage = am.getRunningTasks(1).get(0).topActivity.getPackageName();
+        } catch (SecurityException | IndexOutOfBoundsException | NullPointerException e) {
             reportError(e, "Please allow Heads-up to get running tasks", getApplicationContext());
         }
+    }
+
+    @TargetApi(21)
+    private ActivityManager.RunningAppProcessInfo getTopAppLollipop(ActivityManager am) {
+        List<ActivityManager.RunningAppProcessInfo> tasks = am.getRunningAppProcesses();
+        if (tasks != null && tasks.size() > 0) {
+            Field processStateField = null;
+            try {
+                processStateField = ActivityManager.RunningAppProcessInfo.class.getDeclaredField("processState");
+            } catch (NoSuchFieldException ignored) {}
+            final int PROCESS_STATE_TOP = 2;
+
+            for (ActivityManager.RunningAppProcessInfo task : tasks) {
+                if (task.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND && task.importanceReasonCode == 0) {
+                    if (processStateField == null) return task;
+                    try {
+                        if (processStateField.getInt(task) == PROCESS_STATE_TOP)
+                            return task;
+                    } catch (IllegalAccessException e) {
+                        Mlog.d(logTag, "IAE: " + e.getMessage());
+                        return task;
+                    }
+                }
+            }
+        }
+        return null;
     }
 
     private void displayWindow () {

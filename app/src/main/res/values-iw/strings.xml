@@ -14,7 +14,7 @@
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<resources>
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
   <string name="app_name">התראות ראשים</string>
   <string name="app_icon_name">ראשים</string>
   <string name="title_activity_welcome">התראות ראשים</string>
@@ -32,6 +32,9 @@
   <string name="pref_priority_title">עדיפות להתראות</string>
   <string name="pref_priority_summary">פילטר התראות מבוסס על העדפיות שלהן.\n נדרש Android 4.1 </string>
   <string name="applist_desc">הסר את הסימון על מנת להשתיק את התוכנה. אתה יכול גם ללחוץ ולהחזיק על ה-X בראשים בשביל להשתיק את התוכנה.</string>
+  <string name="pref_header_style">סגנון</string>
+  <string name="pref_lock_screen_on">הצג על מסך הנעילה</string>
+  <string name="pref_lock_screen_on_desc">הצג את ההתראות  על מסך הנעילה.</string>
   <string name="title_activity_settings">הגדרות</string>
   <string name="pref_font_size">גודל גופן</string>
   <string name="leave_review">השאר סקירה</string>
