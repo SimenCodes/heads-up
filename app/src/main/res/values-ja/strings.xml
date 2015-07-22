@@ -28,9 +28,9 @@
   <string name="site_ad_link">Simen.codes を訪問</string>
   <string name="title_activity_app_list">アプリ フィルター</string>
   <string name="pref_priority_title">通知の優先順位</string>
-  <string name="pref_priority_summary">優先順位に基づいて通知をフィルターします。 \nAndroid 4.1 が必要です</string>
+  <string name="pref_priority_summary">優先順位に基づいて通知をフィルターします。 \nAndroid 4.1以上 が必要です</string>
   <string name="applist_desc">アプリをミュートするにはチェックをオフにします。heads-up の X ボタンを長押ししてアプリをミュートすることもできます。</string>
-  <string name="blocklist_desc">使用中に heads-up を干渉から守るために、アプリをチェックしてください。</string>
+  <string name="blocklist_desc">他のアプリを使用中にheads-upが干渉しないように、通知を制限するアプリを確認して下さい。</string>
   <string name="blocked_confirmation">アプリをブロックしました</string>
   <string name="pref_header_style">スタイル</string>
   <string name="pref_lock_screen_on">ロック画面に表示する</string>
@@ -127,7 +127,6 @@
   <string name="pref_reminder_delay_desc">Heads-up を上向きにスワイプすると、ここで指定した分数の後に Heads-up が再表示されます。ゼロに設定すると無効になります。 \n警告: 実験的で、不安定な機能です。動作を信頼しないでください。</string>
   <string name="pref_reminder_delay_counter"><xliff:g id="time" example="7">%s</xliff:g> 分後にアラーム</string>
   <string name="pref_top_margin_locked">ロック画面のポップアップの位置</string>
-  <string name="pref_dont_disturb_error">警告: Android 5.0 で Google はタスクで実行する機能を取り除きました。そのため正しく動作しません。ドキュメントより: \ngetRecentTasks() - LOLLIPOPで、現在このメソッドはサードパーティのアプリケーションで使用できません。最近のドキュメントセンターの導入部で、個人情報を漏洩する可能性があることを意味しています。下位互換性により、まだデータの小さなサブセットが返されます。呼び出し元自体のタスクや、おそらくあまり機密性がないことが明らかないくつかのホームの作業など。</string>
   <string name="pref_dismiss_on_swipe_desc">通知を横にスワイプすると、ドロワーから通知を削除します。また、ドロワーから X をタップすることもできます。\nAndroid 4.3 が必要です</string>
   <string name="pref_dismiss_keyguard_desc">通知を開くときにデバイスのロックを解除しようとします。ブランクのデスクトップを開く場合は、無効にしてください。</string>
   <string name="pref_broadcast_notifications">ブロードキャスト通知</string>
@@ -136,4 +135,5 @@
   <string name="content_broadcast_request">あなたの通知に %s のアクセス権を与えます。ご確認ください、よろしいですか?</string>
   <string name="pref_show_non_cancelable">キャンセル不可通知を表示</string>
   <string name="pref_show_non_cancelable_desc">ダウンロードのようなバック グラウンド サービスによって表示される、実行中のクリアできない通知を表示します。\n注: 通知が見えなくなることを防止したい場合は、これを無効にしてみてください。</string>
+  <string name="action_donate">寄付</string>
 </resources>

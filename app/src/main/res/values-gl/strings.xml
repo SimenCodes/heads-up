@@ -70,6 +70,8 @@
   <string name="pref_music_popup">Canción actual</string>
   <string name="pref_music_popup_desc">Amosar os metadatos da canción ó trocar de pista.\nNota: non todos os reprodutores son compatibles.</string>
   <string name="intro_warning_both_services">Tanto o servizo de notificacións como o de accesibilidade están activos, por favor desactiva un deles.</string>
+  <string name="accessibility_not_found_detour"><![CDATA[Ir a \'Accesibilidade\' > \'Notificacións de Heads-up\']]></string>
+  <string name="accessibility_toast">Selecciona \'Heads-up notifications\' para activar o servizo</string>
   <string name="pref_floating_window">Abrir como xanela flotante</string>
   <string name="pref_floating_window_desc">Manter premida a icona para abrir a notificación como unha xanela flotante. Característica experimental, funciona con OmniRom e XHaloFloatingWindow.</string>
   <string name="pendingintent_cancel_exception">A aplicación cancelou a acción</string>
@@ -101,6 +103,9 @@
   <string name="pref_only_on_lock_screen">Só na pantalla de bloqueo</string>
   <string name="pref_only_on_lock_screen_desc">Amosar as notificacións só na pantalla de bloqueo.</string>
   <string name="pref_privacy_on_lockscreen">Privacidade na pantalla de bloqueo</string>
+  <string name="pref_privacy_on_lockscreen_desc">Non amosar o contido das mensaxes na pantalla de bloqueo</string>
+  <string name="accessibility_desc">Activar este servizo para permitir ao Heads-up ler as túas notificacións.\n\nNON actives o serivzo de accesibilidade se o teu dispositivo emprega Android 4.3 ou superior (sigue as instrucións da aplicacións).</string>
+  <string name="device_admin_disable_warning">Ao desactivar o servizo algunhas características do Heads-up pode que non funcionen correctamente.</string>
   <string name="title_activity_device_admin_enabler">Activar a administración do dispositivo</string>
   <string name="pref_device_admin">Arranxar o erro \'manter a pantalla acesa\'.</string>
   <string name="no_proximity_sensor_error">Non se detectou sensor de proximidade. A detección do peto non funcionará, por favor NON reportes este erro.</string>
@@ -109,14 +114,21 @@
   <string name="action_help">Axuda!</string>
   <string name="action_test">Proba</string>
   <string name="device_admin_alredy_on">Xa es administrador de dispositivos.</string>
+  <string name="device_admin_not_available">Aprovisionamento do dispositivo desactivado. Detendo.</string>
   <string name="intro_status_on">O servizo está activo. Tenta a enviarte unha mensaxe a ti mesmo.\nSe non funciona, por favor reinicia o dispositivo e téntao de novo.\nToca aquí se precisas axuda</string>
   <string name="intro_status_on_confirmed">O servizo está en execución. Tenta a enviarte unha mensaxe a ti mesmo.\nPreme aquí se precisas axuda.</string>
+  <string name="accessibility_service_blocked">%s pode estar a bloquear o acceso ás notificacións por parte de Heads-up. Por favor desactivala no menú accesibilidade.</string>
   <string name="export_debug_data">Exportar os datos de depuración</string>
   <string name="pref_close_on_outside_touch">Pechar ao tocar fora</string>
   <string name="pref_close_on_outside_touch_desc">Eliminar a notificación ao tocar fora do heads-up</string>
   <string name="pref_reminder_delay_counter">Lembrarmo despois de <xliff:g id="time" example="7">%s</xliff:g> minutos</string>
   <string name="pref_top_margin_locked">Posición das notificacións na pantalla de bloqueo</string>
+  <string name="pref_dismiss_on_swipe_desc">Eliminar as notificacións esvarandoas horizontalmente. Tamén podes premer na X para rexeitalas.\nRequírese Android 4.3</string>
+  <string name="pref_dismiss_keyguard_desc">Tenta desbloquear o dispositivo ao abrir unha notificación. Desactívao se o escritorio aparece baleiro o abrir a notificación.</string>
   <string name="pref_broadcast_notifications">Transmitir notificacións</string>
+  <string name="pref_broadcast_notifications_desc">Darlle as outras aplicacións acceso ás notificacións. Reducirá o uso da RAM se empregas unha aplicación como Voiceify. Mantelo apagado agás que algunha das miñas aplicacións pida activalo.</string>
   <string name="title_broadcast_request">Acceso ás notificacións</string>
   <string name="content_broadcast_request">Isto daralle acceso a %s as túas notificacións. Tes a certeza de que é o que queres?</string>
+  <string name="pref_show_non_cancelable">Amosar as notificacións non cancelables</string>
+  <string name="action_donate">Doar</string>
 </resources>

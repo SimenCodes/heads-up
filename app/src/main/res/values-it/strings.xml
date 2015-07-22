@@ -129,7 +129,6 @@
   <string name="pref_reminder_delay_desc">Se effettui lo swipe della notifica verso l\'alto, Heads-up la mostrerà di nuovo dopo il numero di minuti che indichi qui. Imposta 0 per disabilitare.\nATTENZIONE: Sperimentale, caratteristica instabile. Non è detto che funzioni.</string>
   <string name="pref_reminder_delay_counter">Ricordamelo dopo <xliff:g id="time" example="7">%s</xliff:g> minuti</string>
   <string name="pref_top_margin_locked">Posizione del popup nella schermata di blocco</string>
-  <string name="pref_dont_disturb_error">Attenzione: Google ha rimosso la possibilità di mantenere attività in esecuzione in Android 5.0, quindi non funzionerà correttamente.</string>
   <string name="pref_dismiss_on_swipe_desc">Rimuovi le notifiche dal centro notifiche quando la scarti con uno swipe orizzontale. (Puoi comunque cliccare sulla X per rimuoverle dal centro notifiche).\nRichiede Android 4.3</string>
   <string name="pref_dismiss_keyguard_desc">Tenta di sbloccare il dispositivo quando si apre una notifica. Disabilita se si ha un desktop vuoto quando si apre una notifica.</string>
   <string name="pref_broadcast_notifications">Notifiche broadcast</string>
@@ -138,4 +137,5 @@
   <string name="content_broadcast_request">Questo darà a %s accesso alle tue notifiche. Sei sicuro di volerlo?</string>
   <string name="pref_show_non_cancelable">Mostra notifiche non cancellabili</string>
   <string name="pref_show_non_cancelable_desc">Mostra notifiche in corso non cancellabili, generate in background da servizi come \"Download\".\nNota: se alcune notifiche si rifiutano di essere rimosse, prova a disabilitare questa opzione.</string>
+  <string name="action_donate">Supportaci</string>
 </resources>

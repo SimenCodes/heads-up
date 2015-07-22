@@ -127,7 +127,6 @@
   <string name="pref_reminder_delay_desc">Jika anda menggeser popup heads-up keatas, Heads-up akan menampilkan pemberitahuan itu lagi setelah beberapa menit yang anda masukkan disini. Atur sebagai nol untuk mematikan.\nPERINGATAN: Eksperiman, fitur tidak stabil. Jangan terlalu percaya itu akan bekerja.</string>
   <string name="pref_reminder_delay_counter">Ingatkan saya kembali setelah <xliff:g id="time" example="7">%s</xliff:g> menit</string>
   <string name="pref_top_margin_locked">Posisi popup di layar kunci</string>
-  <string name="pref_dont_disturb_error">Peringatan: Fitur ini tidak bekerja di Android 5.0.</string>
   <string name="pref_dismiss_on_swipe_desc">Hilangkan pemberitahuan jika anda menggesernya secara horizontal. Anda tetap dapat mengetuk tombol \'X\' untuk mengabaikannya.\nMemerlukan Android 4.3</string>
   <string name="pref_dismiss_keyguard_desc">Membuka perangkat saat anda membuka pemberitahuan. Matikan jika tidak muncul apa-apa saat membuka pemberitahuan.</string>
   <string name="pref_broadcast_notifications">Siarkan pemberitahuan</string>
