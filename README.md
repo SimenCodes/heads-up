@@ -1,6 +1,6 @@
 #Heads-up notifications#
-With this app, any device can get the heads-up notifications introduced in the new Android 5.0 “L Developer Preview”, no root required. And the popups actually look like those in Android L.
-But according to Addictivetips (and a lot of the users), this app “has done more than just replicate a feature of Android L. Even if you aren’t dying to try Android L and some of its new features, this app is worth a try“.
+With this app, any device can get the heads-up notifications introduced in Android 5 “Lollipop”, no root required. And the popups actually look like those in Android Lollipop.
+But according to Addictivetips (and a lot of the users), this app “has done more than just replicate a feature of Lollipop. Even if you aren’t dying to try Lollipop and some of its new features, this app is worth a try“.
 
 *Looking for help? Scroll down to "Common Issues"*
 
@@ -21,34 +21,12 @@ But according to Addictivetips (and a lot of the users), this app “has done mo
 - Compact/expandable mode
 - Full notification
 
-## So... why is this app on GitHub? ##
-As of now, the app has over 100,000 downloads on the Play store, and a 4.5 average rating. And that's really awesome! Honestly, I never thought this thing would make it past 50 downloads, so I'm still recovering after seeing the statistics page on the Play store.
-
-Unfortunately, I don't have time to work on Heads-up, so I decided to open-source it. I'll keep updating the app every now and then, but I just can't keep up with all those great suggestions for new features. And that's where you come in: if you're a developer, designer, translator, or just "some guy", feel free to download the code, make as many changes as you wish, and be sure to send a pull request when you're finished, so everyone else gets to enjoy your improvements.
-
-### Popular feature requests ###
-- Answer SMS directly from the popup
-- Multiple notifications
-- Incoming call handling 
-- Reminder after X minutes
-- User-submitted themes
-- More customization options
-
-I ran a poll on my [website](http://simen.codes/stuff/future-of-heads-up/) a while ago, where over 1,000 users voted.
-
-- Roughly 50% of the users wanted support for multiple notifications. Among those, half wanted them horizontally, while the other half wanted them vertically (this option should probably be implemented in a separate app as it kills the whole point of non-intrusive notifications).
-- Then, 25% voted for quick reply to messages. While I specified reply to SMS, many asked for the same feature for other apps as well. AFAIK, most other apps doesn't allow this. If you know how to do this, please share!
-- About 10% wanted more advanced theming and customisation. Choosing colors, crating themes, sharing them with friends through the app, etc. Also, some people ask for a separate position on the lock screen.
-- The remaining users opted for something else, or keeping the app as it is.
-
 ## Translating ##
 If you speak another language, I'd appreciate if you could help us translate this the app!
 [Go to the Crowdin page](https://crowdin.com/project/heads-up)
 
 
 ## Common issues ##
-###*NOTE:* It's exam time now, and I don't have much time to answer your questions.
-You can find answers to most questions by using the search box at the top of this page (switch to the desktop version if you don't see it) or the [issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue). Thanks for your patience and understanding.
 #### If no popups appear: ####
 *The universal problemsolver list*
 - Did you remember to enable the service by pressing the "Enable/disable" button and then setting Heads-up to ON in the next screen?
@@ -77,10 +55,7 @@ Open the app 'phone manager', click settings in the top right corner. Select "dr
 If this doesn't work, try the instructions for XIAOMI/ZTE/MIUI users.
 
 #### Lollipop users: ####
-In Android 5, Google removed the ability to fetch running apps. This makes it impossible to detect custom lock screens, and it also breaks the "Block current app" and "Don't disturb" features. Until Google decides to add this back into Android, it's impossible to implement these features. They left the following message in the changelog:
-
-> This method was deprecated in API level 21.
-> As of LOLLIPOP, this method is no longer available to third party applications: the introduction of document-centric recents means it can leak personal information to the caller. For backwards compatibility, it will still return a small subset of its data: at least the caller's own tasks (though see getAppTasks() for the correct supported way to retrieve that information), and possibly some other tasks such as home that are known to not be sensitive.
+A fix for the "Don't disturb" and "Block current app" features is on its way.
 
 #### Device talking? ####
 This is a bug in Samsung's firmware. See post on my [website](http://simen.codes/stuff/samsung-phone-talking/). If you don't need Text-To-Speech, you can also go to System Settings > Apps > All, and disable everything with TTS or Text-To-Speech in the name.

@@ -73,8 +73,6 @@ public class ActivityAppList extends ListActivity {
             setTitle(R.string.title_activity_noshow_list);
             checkedWhenInList = true;
             ((TextView) findViewById(R.id.titleView)).setText(R.string.blocklist_desc);
-            if (Build.VERSION.SDK_INT >= 21)
-                findViewById(R.id.lollipop_applist_error).setVisibility(View.VISIBLE);
         }
     }
 
