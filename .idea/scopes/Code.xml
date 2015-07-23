@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Code" pattern="file[heads-up]:build.gradle||file[app]:proguard-rules.pro||file[app]:build.gradle||file[app]:src/main//*" />
+</component>
