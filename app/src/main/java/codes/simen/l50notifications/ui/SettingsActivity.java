@@ -12,7 +12,9 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.text.format.DateFormat;
 
+import java.util.Date;
 import java.util.List;
 
 import codes.simen.l50notifications.NotificationListenerAccessibilityService;
@@ -89,13 +91,8 @@ public class SettingsActivity extends PreferenceActivity {
         getPreferenceScreen().addPreference(fakeHeader);
         addPreferencesFromResource(R.xml.pref_other);
 
-        // Bind the summaries of EditText/List/Dialog/Ringtone preferences to
-        // their values. When their values change, their summaries are updated
-        // to reflect the new value, per the Android Design guidelines.
-        //bindPreferenceSummaryToValue(findPreference("example_text"));
-        //bindPreferenceSummaryToValue(findPreference("example_list"));
-        //bindPreferenceSummaryToValue(findPreference("notifications_new_message_ringtone"));
-        //bindPreferenceSummaryToValue(findPreference("sync_frequency"));
+        bindPreferenceSummaryToValue(findPreference("night_mode_start"));
+        bindPreferenceSummaryToValue(findPreference("night_mode_end"));
     }
 
     /** {@inheritDoc} */
@@ -121,9 +118,7 @@ public class SettingsActivity extends PreferenceActivity {
      * "simplified" settings UI should be shown.
      */
     private static boolean isSimplePreferences(Context context) {
-        return ALWAYS_SIMPLE_PREFS
-                || Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB
-                || !isXLargeTablet(context);
+        return Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB || !isXLargeTablet(context);
     }
 
     /** {@inheritDoc} */
@@ -144,7 +139,16 @@ public class SettingsActivity extends PreferenceActivity {
         public boolean onPreferenceChange(Preference preference, Object value) {
             String stringValue = value.toString();
 
-            if (preference instanceof ListPreference) {
+            if (preference instanceof ClockPreference) {
+                final int intValue = (int) value;
+                if (intValue < 0) return false; // Not set yet
+
+                int hour = (int) Math.floor(intValue / 60);
+                int minute = (int) Math.floor(intValue % 60);
+
+                preference.setSummary(DateFormat.getTimeFormat(preference.getContext()).format(new Date(0, 0, 0, hour, minute)));
+
+            } else if (preference instanceof ListPreference) {
                 // For list preferences, look up the correct display value in
                 // the preference's 'entries' list.
                 ListPreference listPreference = (ListPreference) preference;
@@ -183,7 +187,7 @@ public class SettingsActivity extends PreferenceActivity {
         sBindPreferenceSummaryToValueListener.onPreferenceChange(preference,
                 PreferenceManager
                         .getDefaultSharedPreferences(preference.getContext())
-                        .getString(preference.getKey(), ""));
+                        .getInt(preference.getKey(), -1));
     }
 
     /**
@@ -197,12 +201,8 @@ public class SettingsActivity extends PreferenceActivity {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.pref_general);
 
-            // Bind the summaries of EditText/List/Dialog/Ringtone preferences
-            // to their values. When their values change, their summaries are
-            // updated to reflect the new value, per the Android Design
-            // guidelines.
-            //bindPreferenceSummaryToValue(findPreference("example_text"));
-            //bindPreferenceSummaryToValue(findPreference("example_list"));
+            bindPreferenceSummaryToValue(findPreference("night_mode_start"));
+            bindPreferenceSummaryToValue(findPreference("night_mode_end"));
         }
     }
 

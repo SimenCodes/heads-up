@@ -23,6 +23,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TimePicker;
 
+import java.util.Date;
+
 public class ClockPreference extends DialogPreference {
 
     private TimePicker mTimePicker;
@@ -51,6 +53,11 @@ public class ClockPreference extends DialogPreference {
             int hour = mTimePicker.getCurrentHour();
             int minute = mTimePicker.getCurrentMinute();
             persistInt( (hour * 60) + minute);
+            // GregorianCalendar crashes with "bad class" on M, so we'll use the old Date.
+            // The old thing probably works just fine for this stuff anyway.
+            //noinspection deprecation
+            setSummary(DateFormat.getTimeFormat(getContext().getApplicationContext())
+                    .format(new Date(0, 0, 0, hour, minute)));
         }
     }
 
