@@ -40,6 +40,7 @@ android {
             //noinspection GroovyAssignabilityCheck
             signingConfig signingConfigs.release
             minifyEnabled true
+            shrinkResources true
             proguardFiles '/home/simen/.apps/Android/Sdk/tools/proguard/proguard-android-optimize.txt', 'proguard-rules.pro'
         }
         debug {
