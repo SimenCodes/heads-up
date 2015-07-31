@@ -25,7 +25,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.AudioManager;
 import android.os.Build;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
@@ -37,8 +36,8 @@ import java.io.Writer;
 
 public class NotificationListenerAccessibilityService extends AccessibilityService
 {
-    static boolean isInit = false;
     private final static String logTag = "NotificationListenerAccessibility";
+    private boolean isInit = false;
 
     public static boolean doLoadSettings = true;
     private VoiceOver voiceOver = null;
@@ -98,9 +97,7 @@ public class NotificationListenerAccessibilityService extends AccessibilityServi
                 .putBoolean("running", true)
                 .apply();
         if (isInit)
-		{
             return;
-        }
 
         AccessibilityServiceInfo info = new AccessibilityServiceInfo();
         info.eventTypes = AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED;
@@ -153,19 +150,6 @@ public class NotificationListenerAccessibilityService extends AccessibilityServi
                 .edit()
                 .putBoolean("running", false)
                 .apply();
-    }
-
-    private static boolean isInCall(Context context) {
-        AudioManager manager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
-        int mode = manager.getMode();
-        if (mode == AudioManager.MODE_IN_CALL) {
-            return true;
-        } else if (Build.VERSION.SDK_INT >= 11) {
-            if (mode == AudioManager.MODE_IN_COMMUNICATION) {
-                return true;
-            }
-        }
-        return false;
     }
 
     boolean isNotificationListenerEnabled() {

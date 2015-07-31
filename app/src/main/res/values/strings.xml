@@ -68,6 +68,7 @@
     <string name="pref_header_behaviour">Behaviour</string>
     <string name="music_title">Playing: <xliff:g id="track" example="TRACK">%s</xliff:g></string>
     <string name="music_text">By: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+    <string name="music_unknown">Unknown</string>
     <string name="pref_music_popup">Current song popup</string>
     <string name="pref_music_popup_desc">Display song metadata on track change.\nNote: not all music players are supported.</string>
     <string name="intro_warning_both_services">Both the notification listener and the accessibility service is enabled. Please disable one of them.</string>

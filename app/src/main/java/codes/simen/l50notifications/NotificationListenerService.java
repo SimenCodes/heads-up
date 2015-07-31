@@ -28,6 +28,7 @@ import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.service.notification.StatusBarNotification;
 import android.text.TextUtils;
+import android.widget.Toast;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -61,7 +62,9 @@ public class NotificationListenerService extends android.service.notification.No
         if (intent.getAction().equals(ACTION_CUSTOM)) {
             super.onBind(intent);
             return mBinder;
-        } else  {
+        } else {
+            if (Mlog.isLogging)
+                Toast.makeText(getApplicationContext(), "Heads-up enabled", Toast.LENGTH_SHORT).show();
             doLoadSettings();
             return super.onBind(intent);
         }
@@ -139,6 +142,7 @@ public class NotificationListenerService extends android.service.notification.No
         );
     }
 
+    @SuppressWarnings("deprecation")
     public void doRemove (String pkg, String tag, int id) {
         Mlog.d(logTag, pkg + tag + id);
         try {

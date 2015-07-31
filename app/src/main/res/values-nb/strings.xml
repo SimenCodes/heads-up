@@ -67,6 +67,7 @@
   <string name="pref_header_behaviour">Oppførsel</string>
   <string name="music_title">Spiller <xliff:g id="track" example="TRACK">%s</xliff:g></string>
   <string name="music_text">Av <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nFra albumet <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+  <string name="music_unknown">Ukjent</string>
   <string name="pref_music_popup">Gjeldene sang</string>
   <string name="pref_music_popup_desc">Vis et vindu med informasjon om sangen som spiller.\nMerk: dette fungerer ikke med alle musikkspillere.</string>
   <string name="intro_warning_both_services">Både varsellytteren og tilgjengelighetstjenesten er aktivert. Vennligst deaktiver en av dem.</string>
