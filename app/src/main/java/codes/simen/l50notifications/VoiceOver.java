@@ -152,11 +152,14 @@ class VoiceOver {
             decideIntent.setClass(context, OverlayServiceCommon.class);
             decideIntent.setAction("add");
             decideIntent.putExtra("packageName", "codes.simen.voiceover");
+            final String unknown = resources.getString(R.string.music_unknown);
             decideIntent.putExtra("title", resources.getString(
-                    R.string.music_title, track
+                    R.string.music_title, track != null ? track : unknown
             ));
             decideIntent.putExtra("text", resources.getString(
-                    R.string.music_text, artist, album
+                    R.string.music_text,
+                    artist != null ? artist : unknown,
+                    album != null ? album : unknown
             ));
 
             decideIntent.setPackage(intent.getPackage());
