@@ -21,7 +21,7 @@ import android.graphics.ColorFilter;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.text.format.Time;
+import android.text.format.DateFormat;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +31,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.Date;
 
 import codes.simen.l50notifications.R;
 import codes.simen.l50notifications.util.Mlog;
@@ -68,11 +70,13 @@ public class ThemeClass {
     /**
      * Show the time the notification arrived
      * @param layout The root layout
-     * @param time Time object containing the time the notification arrived
+     * @param time Date object containing the time the notification arrived
      */
-    public void showTime(LinearLayout layout, Time time) {
+    public void showTime(LinearLayout layout, Date time) {
         final TextView timeView = (TextView) layout.findViewById(R.id.timeView);
-        timeView.setText(time.minute >= 10 ? time.hour + ":" + time.minute : time.hour + ":0" + time.minute);
+        timeView.setText(
+                DateFormat.getTimeFormat(layout.getContext().getApplicationContext()).format(time)
+        );
         timeView.setVisibility(View.VISIBLE);
     }
 

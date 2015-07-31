@@ -45,7 +45,6 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
-import android.text.format.Time;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -68,6 +67,7 @@ import java.io.Writer;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -126,7 +126,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private String currentPackage = "";
     private boolean isCompact = false;
     private boolean isActionButtons = false;
-    private Time notificationTime = null;
+    private Date notificationTime = null;
 
     private SensorManager sensorManager = null;
     private Sensor sensor;
@@ -376,9 +376,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                             && tag.equals(intent.getStringExtra("tag"))
                             && id == intent.getIntExtra("id", 0)) {
                         Mlog.d(logTag, "remove");
-                        boolean isDelaying = false;
-                        if (!isDelaying)
-                            doFinish(0);
+                        doFinish(0);
                     }
                 } catch (Exception e) {
                     //reportError(e, "remove failed", getApplicationContext());
@@ -401,11 +399,12 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             key = extras.getString("key");
             tag = extras.getString("tag");
             id = extras.getInt("id", 0);
-            if (notificationTime != null)
+            if (notificationTime != null) {
                 themeClass.hideTime(layout);
-            else
-                notificationTime = new Time();
-            notificationTime.setToNow();
+                notificationTime.setTime(System.currentTimeMillis());
+            } else {
+                notificationTime = new Date();
+            }
             final float sizeMultiplier = (float) (preferences.getInt("font_size", 100) / 100.0);
 
             Mlog.v(logTag, currentPackage);
