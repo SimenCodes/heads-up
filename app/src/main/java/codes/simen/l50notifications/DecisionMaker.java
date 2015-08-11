@@ -129,9 +129,11 @@ class DecisionMaker {
                 ) {
                     CharSequence[] textLines = notification.extras.getCharSequenceArray("android.textLines");
                     bigText = "";
-                    for (CharSequence line : textLines) {
-                        bigText += line + "\n";
-                    }
+                    if (textLines != null)
+                        for (int i = textLines.length - 1; i >= 0; i--) {
+                            CharSequence line = textLines[i];
+                            bigText += line + "\n";
+                        }
                 } else {
                     bigText = notification.extras.get("android.bigText").toString();
                 }
