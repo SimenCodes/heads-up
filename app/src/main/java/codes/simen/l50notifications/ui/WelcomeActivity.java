@@ -43,7 +43,6 @@ import codes.simen.l50notifications.util.Mlog;
 
 public class WelcomeActivity extends Activity {
     public static final String ACCESSIBILITY_SERVICE_NAME = "codes.simen.l50notifications/codes.simen.l50notifications.NotificationListenerAccessibilityService";
-    private static final int REQUEST_CODE = 654;
     private static final String logTag = "Heads-up";
     private static boolean isRunning = false;
     private SharedPreferences preferences = null;
@@ -56,6 +55,10 @@ public class WelcomeActivity extends Activity {
         setTitle(R.string.app_name);
         setContentView(R.layout.activity_welcome);
         preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+        if (preferences.getBoolean("firstrun", true)) {
+            startActivity(new Intent(this, SetupActivity.class));
+        }
 
         if (Build.DISPLAY.toUpperCase().contains("MIUI") || Build.MANUFACTURER.toUpperCase().contains("XIAOMI")) {
             findViewById(R.id.miui_warning).setVisibility(View.VISIBLE);
@@ -88,7 +91,7 @@ public class WelcomeActivity extends Activity {
                 bothEnabled.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        gotoAccessibility();
+                        gotoAccessibility(v.getContext());
                     }
                 });
             } else {
@@ -128,9 +131,9 @@ public class WelcomeActivity extends Activity {
                 .putBoolean("running", false)
                 .apply();
         if (Build.VERSION.SDK_INT >= 18)
-            gotoNotifyservice();
+            gotoNotifyservice(this);
         else
-            gotoAccessibility();
+            gotoAccessibility(this);
     }
 
     public void doOpenSettings (View v) {
@@ -156,7 +159,7 @@ public class WelcomeActivity extends Activity {
             intent.putExtra("iconLarge", bitmap);
         }/**/
         intent.putExtra("icon", -1);
-        intent.putExtra("color", getResources().getColor(R.color.primaryDark));
+        intent.putExtra("color", getResources().getColor(R.color.primaryDark, null));
 
         intent.putExtra("actionCount", 2);
         intent.putExtra("action2title", getString(R.string.action_settings));
@@ -220,36 +223,33 @@ public class WelcomeActivity extends Activity {
     }
 
 
-    void gotoNotifyservice() {
+    public static void gotoNotifyservice(Context context) {
         try {
             Intent intent = new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS");
-            if (isNotificationListenerEnabled(this))
-                startActivity(intent);
-            else
-                startActivityForResult(intent, REQUEST_CODE);
+            context.startActivity(intent);
         } catch (ActivityNotFoundException anfe) {
             try {
                 Intent intent = new Intent(Settings.ACTION_SECURITY_SETTINGS);
-                startActivity(intent);
-                Toast.makeText(getApplicationContext(), getString(R.string.notification_listener_not_found_detour), Toast.LENGTH_LONG).show();
+                context.startActivity(intent);
+                Toast.makeText(context, context.getText(R.string.notification_listener_not_found_detour), Toast.LENGTH_LONG).show();
             } catch (ActivityNotFoundException anfe2) {
-                Toast.makeText(getApplicationContext(), anfe2.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(context, anfe2.getMessage(), Toast.LENGTH_LONG).show();
             }
         }
     }
 
-    void gotoAccessibility() {
+    public static void gotoAccessibility(Context context) {
         try {
             Intent intent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
-            startActivity(intent);
-            Toast.makeText(getApplicationContext(), getString(R.string.accessibility_toast), Toast.LENGTH_LONG).show();
+            context.startActivity(intent);
+            Toast.makeText(context, context.getText(R.string.accessibility_toast), Toast.LENGTH_LONG).show();
         } catch (ActivityNotFoundException anfe) {
             try {
                 Intent intent = new Intent(Settings.ACTION_SETTINGS);
-                startActivity(intent);
-                Toast.makeText(getApplicationContext(), getString(R.string.accessibility_not_found_detour), Toast.LENGTH_LONG).show();
+                context.startActivity(intent);
+                Toast.makeText(context, context.getText(R.string.accessibility_not_found_detour), Toast.LENGTH_LONG).show();
             } catch (ActivityNotFoundException anfe2) {
-                Toast.makeText(getApplicationContext(), anfe2.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(context, anfe2.getMessage(), Toast.LENGTH_LONG).show();
             }
         }
     }

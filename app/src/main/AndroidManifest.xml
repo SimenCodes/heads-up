@@ -123,7 +123,6 @@
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
             </intent-filter>
         </receiver>
-
         <receiver
             android:name=".admin.AdminReceiver"
             android:description="@string/device_admin_enable_explanation"
@@ -184,9 +183,9 @@
 
         <activity
             android:name=".UnlockActivity"
-            android:theme="@android:style/Theme.Wallpaper.NoTitleBar"
+            android:excludeFromRecents="true"
             android:noHistory="true"
-            android:excludeFromRecents="true">
+            android:theme="@android:style/Theme.Wallpaper.NoTitleBar" >
         </activity>
 
         <service
@@ -194,6 +193,10 @@
             android:exported="false" >
         </service>
 
+        <activity
+            android:name=".ui.SetupActivity"
+            android:label="@string/title_activity_setup" >
+        </activity>
     </application>
 
 </manifest>

@@ -23,7 +23,7 @@
     <string name="reader_btn_dismiss">Dismiss</string>
     <string name="intro_desc">Tap the button below to enable or disable heads-up notifications.</string>
     <string name="welcome_btn_toggleservice">Toggle heads-up</string>
-    <string name="intro_warning_miui">Are you using MIUI? Before you can use this app, you\'ll probably need to give it some slack when it comes to security.\n1. Go to System Settings > All > Apps > Downloaded > Heads-up notifications.\n2. Toggle the switch that says \'Show popup windows\' (second option).\n3. At the bottom, go to \'Manage permissions\'.\n4. Set \'I trust this app\' to on. </string>
+    <string name="intro_warning_miui">Are you using MIUI or a similar ROM? Before you can use this app, you\'ll probably need to give it some slack when it comes to security.\n1. Go to System Settings > All > Apps > Downloaded > Heads-up notifications.\n2. Toggle the switch that says \'Show popup windows\' (second option).\n3. At the bottom, go to \'Manage permissions\'.\n4. Set \'I trust this app\' to on. </string>
     <string name="site_ad">Like what you see? Check out my other apps as well:</string>
     <string name="site_ad_link">Visit Simen.codes</string>
     <string name="title_activity_app_list">App filter</string>
@@ -145,4 +145,10 @@
     <string name="pref_night_mode_desc">Disable Heads-up while you sleep</string>
     <string name="pref_night_mode_start">Night mode start time</string>
     <string name="pref_night_mode_end">Night mode end time</string>
+    <string name="title_activity_setup">Heads-up setup</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="welcome_info">Thanks for downloading Heads-up.\n\nDuring setup, you\'ll see a few warnings from the Android system. They seem a bit scary, but don\'t worry; Heads-up does NOT collect, store or send your data anywhere.</string>
+    <string name="welcome_hi">Hi!</string>
+    <string name="welcome_btn_opensettings">Open app settings</string>
 </resources>
