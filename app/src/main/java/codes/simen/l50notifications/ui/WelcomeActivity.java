@@ -159,7 +159,8 @@ public class WelcomeActivity extends Activity {
             intent.putExtra("iconLarge", bitmap);
         }/**/
         intent.putExtra("icon", -1);
-        intent.putExtra("color", getResources().getColor(R.color.primaryDark, null));
+        //noinspection deprecation
+        intent.putExtra("color", getResources().getColor(R.color.primaryDark));
 
         intent.putExtra("actionCount", 2);
         intent.putExtra("action2title", getString(R.string.action_settings));
