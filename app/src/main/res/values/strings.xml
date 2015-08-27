@@ -64,7 +64,7 @@
     <string name="pref_use_proximity_desc">Don\'t turn the screen on if the phone is in a pocket or facedown on a table.</string>
     <string name="pref_header_lockscreen">Lock screen</string>
     <string name="pref_block_current_app">Block current app</string>
-    <string name="pref_block_current_app_desc">Don\'t display heads-up for notifications from the current app.</string>
+    <string name="pref_block_current_app_desc">Don\'t display heads-up for notifications from the current app.\nThis does NOT work in Android 6.0+ due to a system restriction.</string>
     <string name="pref_header_behaviour">Behaviour</string>
     <string name="music_title">Playing: <xliff:g id="track" example="TRACK">%s</xliff:g></string>
     <string name="music_text">By: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
@@ -130,6 +130,8 @@
     <string name="pref_reminder_delay_desc">If you swipe the heads-up upwards, Heads-up will re-display it after the number of minutes you specify here. Set to zero to disable.\nWARNING: Experimental, unstable feature. Don\'t rely on it to work.</string>
     <string name="pref_reminder_delay_counter">Remind me after <xliff:g id="time" example="7">%s</xliff:g> minutes</string>
     <string name="pref_top_margin_locked">Popup position on lock screen</string>
+    <!-- Note to translators: you don't have to translate the full text, just make sure the user understands that the feature will not work in 6.0 -->
+    <string name="pref_dont_disturb_error">Warning: Google removed the ability to get running tasks in Android 6.0, so this will not work properly. From the docs:\ngetRecentTasks() —  As of LOLLIPOP, this method is no longer available to third party applications: the introduction of document-centric recents means it can leak personal information. For backwards compatibility, it will still return a small subset of its data: the caller\'s own tasks, and possibly some other tasks such as home that are known to not be sensitive.</string>
     <string name="pref_dismiss_on_swipe_desc">Remove notifications from the drawer when you swipe them away horizontally. You can still tap the X to dismiss from the drawer.\nRequires Android 4.3</string>
     <string name="pref_dismiss_keyguard_desc">Attempt to unlock the device when you open a notification. Disable if you get a blank desktop when opening a notification.</string>
     <string name="pref_broadcast_notifications">Broadcast notifications</string>
@@ -147,8 +149,13 @@
     <string name="pref_night_mode_end">Night mode end time</string>
     <string name="title_activity_setup">Heads-up setup</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="welcome_info">Thanks for downloading Heads-up.\n\nDuring setup, you\'ll see a few warnings from the Android system. They seem a bit scary, but don\'t worry; Heads-up does NOT collect, store or send your data anywhere.</string>
     <string name="welcome_hi">Hi!</string>
+    <string name="welcome_info">Thanks for downloading Heads-up.\n\nDuring setup, you\'ll see a few warnings from the Android system. They seem a bit scary, but don\'t worry; Heads-up does NOT collect, store or send your data anywhere.</string>
     <string name="welcome_btn_opensettings">Open app settings</string>
+    <string name="welcome_step1_title">Step 1: Notifications</string>
+    <string name="welcome_step1_text">Give Heads-up access to your notifications by tapping the button below, turning on Heads-up, and then pressing the back button on your device.</string>
+    <string name="welcome_step2_title">Step 2: Popups</string>
+    <string name="welcome_step2_2_text">To allow Heads-up to view popups, tap the button below, set the swtich to on, and press the back button on your device.</string>
+    <string name="welcome_done_title">That\'s it!</string>
+    <string name="welcome_done_text">If you see a heads-up notification at the top of your screen, you\'re ready to go!\n\nNow, go to the settings page and tweak everything just the way you want it.\n\nNo heads-up notification appearing? Tap Help!</string>
 </resources>
