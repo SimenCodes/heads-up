@@ -45,12 +45,11 @@
         android:id="@+id/notification_open"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textColor="@android:color/white"
+        style="@style/Button_Colored"
         android:text="@string/welcome_btn_toggleservice"
         android:singleLine="true"
         android:onClick="onClick"
-        android:layout_margin="5dp"
-        android:background="@drawable/button_enable" />
+        android:layout_margin="5dp" />
 
     <LinearLayout
         android:layout_width="match_parent"

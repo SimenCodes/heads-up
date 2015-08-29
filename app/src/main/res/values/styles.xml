@@ -48,6 +48,12 @@
         <item name="android:textColor">@color/text_color_dark</item>
     </style>
 
+    <style name="Button_Colored" parent="android:Widget.Holo.Light.Button">
+        <item name="android:background">@drawable/button_enable</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
     <style name="Button_Borderless">
         <item name="android:background">@drawable/item_background</item>
     </style>
