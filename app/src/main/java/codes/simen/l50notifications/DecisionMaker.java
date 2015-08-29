@@ -417,10 +417,10 @@ class DecisionMaker {
         int time = (hour * 60) + minute;
 
         if (start < end)
-            if (time <= start || time >= end)
+            if (time >= start && time <= end)
                 return true;
         if (start > end)
-            if (time >= start && time <= end)
+            if (time >= start || time <= end)
                 return true;
         return false;
     }
