@@ -74,4 +74,4 @@ If your question hasn't been answered there already, feel free to ask!
 ## Contact ##
 Problems, feature requests or questions? Go to the [Issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue). You can also [email](mailto:sb@simen.codes) me, but I'm slower to answer emails.
 
-*PS: Want to try the newest version before everyone else? [Get the BETA here](https://play.google.com/apps/testing/codes.simen.l50notifications).
+*PS: Want to try the newest version before everyone else? [Get the BETA here](https://play.google.com/apps/testing/codes.simen.l50notifications).*
