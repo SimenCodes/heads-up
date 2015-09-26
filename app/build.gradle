@@ -17,7 +17,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '23.0.0'
+    buildToolsVersion '23.0.1'
     signingConfigs {
         release {
             storeFile file('/home/simen/Kode/Android/keystore/keys')
@@ -27,7 +27,7 @@ android {
         applicationId "codes.simen.l50notifications"
         minSdkVersion 12
         targetSdkVersion 23
-        versionCode 56
+        versionCode 58
         versionName '1.11'
     }
     buildTypes {
@@ -60,5 +60,5 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
 }

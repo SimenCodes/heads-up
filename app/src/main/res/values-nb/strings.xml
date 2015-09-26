@@ -130,7 +130,7 @@
   <string name="pref_reminder_delay_desc">Hvis du sveiper heads-up-meldingen oppover, vil den dukke opp igjen etter tiden du angir her.\nADVARSEL: Eksperimentell, ustabil funksjon. Ikke forvent at den virker. Sett til null for å deaktivere.</string>
   <string name="pref_reminder_delay_counter">Send påminnelse etter <xliff:g id="time" example="7">%s</xliff:g> minutter</string>
   <string name="pref_top_margin_locked">Posisjon (på låseskjermen)</string>
-  <string name="pref_dont_disturb_error">Advarsel: Google fjernet muligheten til å hente kjørende oppgaver i Android 6.0, så dette vil ikke fungere. Fra utviklerdokumentasjonen:\ngetRecentTasks() —  As of LOLLIPOP, this method is no longer available to third party applications: the introduction of document-centric recents means it can leak personal information. For backwards compatibility, it will still return a small subset of its data: the caller\'s own tasks, and possibly some other tasks such as home that are known to not be sensitive.</string>
+  <string name="pref_dont_disturb_error">Advarsel: Google fjernet muligheten til å hente kjørende oppgaver i Android 6.0, så dette vil ikke fungere ordentlig. Fra utviklerdokumentasjonen:\ngetRecentTasks() —  As of LOLLIPOP, this method is no longer available to third party applications: the introduction of document-centric recents means it can leak personal information. For backwards compatibility, it will still return a small subset of its data: the caller\'s own tasks, and possibly some other tasks such as home that are known to not be sensitive.</string>
   <string name="pref_dismiss_on_swipe_desc">Fjern varsler fra varselsenteret når du sveiper dem vekk. Hvis du deaktiverer dette, vil du fortsatt kunne bruke X-knappen for å fjerne varselet.\nKrever Android 4.3</string>
   <string name="pref_dismiss_keyguard_desc">Lås opp skjermen eller be om kode når du trykker på et varsel. Hvis du bare ser bakgrunnsbildet ditt i stedet, prøv å deaktivere dette.</string>
   <string name="pref_broadcast_notifications">Kringkast varsler</string>
@@ -142,4 +142,18 @@
   <string name="action_donate">Doner</string>
   <string name="pref_dismiss_keyguard_dirty">Alternativ opplåsing</string>
   <string name="pref_dismiss_keyguard_dirty_desc">Hvis enheten ikke låses opp riktig, prøv å aktivere dette.\nADVARSEL: Dette overstyrer låseskjermen, slik at hvem som helst kan låse opp enheten din!</string>
+  <string name="pref_night_mode">Nattmodus</string>
+  <string name="pref_night_mode_desc">Slå av Heads-up mens du sover</string>
+  <string name="pref_night_mode_start">Slå på nattmodus klokka</string>
+  <string name="pref_night_mode_end">Slå av nattmodus klokka</string>
+  <string name="title_activity_setup">Oppsett av Heads-up</string>
+  <string name="welcome_hi">Hei!</string>
+  <string name="welcome_info">Takk for at du prøver Heads-up.\n\nUnder installasjonen får du nok et par advarsler fra Android. De kan virke litt skremmende, men slapp av; Heads-up samler ALDRI inn dataene dine.</string>
+  <string name="welcome_btn_opensettings">Åpne innstillinger</string>
+  <string name="welcome_step1_title">1: Varsler</string>
+  <string name="welcome_step1_text">Gi Heads-up tilgang til varslene dine ved å trykke på knappen under og slå på Heads-up i menyen som dukker opp. Trykk deretter på tilbake-knappen.</string>
+  <string name="welcome_step2_title">2: Tegne øverst</string>
+  <string name="welcome_step2_2_text">For at Heads-up skal kunne vise varslene dine, trykk på knappen under, la Heads-up tegne oppå andre apper, og trykk tilbake-knappen på enheten.</string>
+  <string name="welcome_done_title">Det var alt!</string>
+  <string name="welcome_done_text">Hvis du ser et Heads-up-varsel øverst på skjermen, er alt klart!\n\nDa er det bare å gå til innstillingene og justere alt akkurat som du vil ha det.\n\nHvis ikke, trykk Hjelp!</string>
 </resources>
