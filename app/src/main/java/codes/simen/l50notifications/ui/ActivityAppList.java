@@ -73,9 +73,9 @@ public class ActivityAppList extends ListActivity {
             setTitle(R.string.title_activity_noshow_list);
             checkedWhenInList = true;
             ((TextView) findViewById(R.id.titleView)).setText(R.string.blocklist_desc);
+            if (Build.VERSION.SDK_INT >= 23)
+                findViewById(R.id.marshmallow_applist_error).setVisibility(View.VISIBLE);
         }
-        if (Build.VERSION.SDK_INT >= 23)
-            findViewById(R.id.marshmallow_applist_error).setVisibility(View.VISIBLE);
     }
 
     @Override

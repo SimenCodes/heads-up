@@ -144,8 +144,8 @@
   <string name="pref_dismiss_keyguard_dirty_desc">Hvis enheten ikke låses opp riktig, prøv å aktivere dette.\nADVARSEL: Dette overstyrer låseskjermen, slik at hvem som helst kan låse opp enheten din!</string>
   <string name="pref_night_mode">Nattmodus</string>
   <string name="pref_night_mode_desc">Slå av Heads-up mens du sover</string>
-  <string name="pref_night_mode_start">Slå på nattmodus klokka</string>
-  <string name="pref_night_mode_end">Slå av nattmodus klokka</string>
+  <string name="pref_night_mode_start">Slå på nattmodus</string>
+  <string name="pref_night_mode_end">Slå av nattmodus</string>
   <string name="title_activity_setup">Oppsett av Heads-up</string>
   <string name="welcome_hi">Hei!</string>
   <string name="welcome_info">Takk for at du prøver Heads-up.\n\nUnder installasjonen får du nok et par advarsler fra Android. De kan virke litt skremmende, men slapp av; Heads-up samler ALDRI inn dataene dine.</string>
