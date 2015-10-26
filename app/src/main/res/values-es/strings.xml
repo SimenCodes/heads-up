@@ -69,6 +69,7 @@
   <string name="pref_header_behaviour">Comportamiento</string>
   <string name="music_title">Reproduciendo <xliff:g id="track" example="TRACK">%s</xliff:g></string>
   <string name="music_text">Por <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nEn el álbum <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+  <string name="music_unknown">Desconocido</string>
   <string name="pref_music_popup">Mostrar canción actual</string>
   <string name="pref_music_popup_desc">Mostrar metadatos de la canción al cambiar de pista.\nNota: no todos los reproductores son compatibles.</string>
   <string name="intro_warning_both_services">El servicio de accesibilidad e interpretar notificaciones están habilitados. Por favor deshabilita uno de ellos.</string>
@@ -130,6 +131,7 @@ Deteniendo.</string>
   <string name="pref_reminder_delay_desc">Si deslizas el heads-up hacia arriba, el heads-up volverá a mostrarse tras los minutos que especifique aquí. Poner cero para deshabilitar. \nADVERTENCIA: funcion experimental e inestable. No confíe en que funcione.</string>
   <string name="pref_reminder_delay_counter">Recordarme tras <xliff:g id="time" example="7">%s</xliff:g> minutos</string>
   <string name="pref_top_margin_locked">Posición del Popup en la pantalla de bloqueo</string>
+  <string name="pref_dont_disturb_error">Advertencia: Google ha removido la habilidad de mantener funcionando tareas en Android 6.0, por eso tal vez esto no funcionará apropiadamente. Desde los documentos:\ngetRecentTasks()  —  A partir de LOLLIPOP, este método ya no está disponible para aplicaciones de terceros: la introducción de recientes al centradas en los documentos significa que pueden filtrar información personal. Para retrocompatibilidad, todavía devolverá un pequeño subconjunto de sus datos: el llamado a las propias tareas, y posiblemente algunas otras tareas como la de home que son conocidas por no ser sensibles.</string>
   <string name="pref_dismiss_on_swipe_desc"> Al descartar un heads-up deslizando, remover también la notificación en la barra de notificaciones. Igual puedes presionar la X para descartar notificaciones en la barra.</string>
   <string name="pref_dismiss_keyguard_desc">Intentar desbloquear el dispositivo cuando abra una notificación. Desactivar si al abrir una notificación ve una pantalla en blanco.</string>
   <string name="pref_broadcast_notifications">Transmitir notificaciones</string>
@@ -141,4 +143,18 @@ Deteniendo.</string>
   <string name="action_donate">Hacer un donativo</string>
   <string name="pref_dismiss_keyguard_dirty">Método de desbloqueo alternativo</string>
   <string name="pref_dismiss_keyguard_dirty_desc">Si la opción de desbloqueo normal no funciona, prueba habilitar esto. \nATENCIÓN: Esto anulará toda la seguridad de la pantalla de bloqueo, y puede causar problemas en algunos dispositivos!</string>
+  <string name="pref_night_mode">Modo Nocturno</string>
+  <string name="pref_night_mode_desc">Deshabilita los Heads-up mientras duermes</string>
+  <string name="pref_night_mode_start">Hora de inicio de modo de noche</string>
+  <string name="pref_night_mode_end">Hora de finalización de modo de noche</string>
+  <string name="title_activity_setup">Configuración de Heads-up</string>
+  <string name="welcome_hi">Hola!</string>
+  <string name="welcome_info">Gracias por descargar Heads-up.\n\nDurante la configuración, verás algunos avisos del sistema Android. Lucen un poco aterradores, pero no te preocupes; Heads-up no recoge, almacena o envia sus datos en ningun lugar.</string>
+  <string name="welcome_btn_opensettings">Configuración de aplicaciones abiertas</string>
+  <string name="welcome_step1_title">Paso 1: Notificaciones</string>
+  <string name="welcome_step1_text">Dele a Heads-up acceso a las notificaciones pulsando el botón aqui abajo, active Heads-up y pulse el botón atrás de su dispositivo.</string>
+  <string name="welcome_step2_title">Paso 2: Ventanas emergentes</string>
+  <string name="welcome_step2_2_text">Para permitir a Heads-up ver ventanas emergentes, pulse el botón abajo, deje el interruptor en activado y pulse el botón atrás de su dispositivo.</string>
+  <string name="welcome_done_title">Eso es todo!</string>
+  <string name="welcome_done_text">¿Si ves una notificación Heads-up en la parte superior de la pantalla, ya está listo!\n\n Ahora, ve a la página de configuración y modifica todo de la forma que quieras.\n\n ¿Las notificaciones Heads-up no aparecen? Toque la Ayuda!</string>
 </resources>

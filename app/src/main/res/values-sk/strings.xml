@@ -69,6 +69,7 @@
   <string name="pref_header_behaviour">Správanie</string>
   <string name="music_title">Prehráva sa: <xliff:g id="track" example="TRACK">%s</xliff:g></string>
   <string name="music_text">Od: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+  <string name="music_unknown">Neznáma</string>
   <string name="pref_music_popup">Zobrazenie aktuálnej skladby</string>
   <string name="pref_music_popup_desc">Zobrazí informácie o skladbe pri zmene skladby.\nUpozornenie: nie všetky hudobné prehrávače sú podporované.</string>
   <string name="intro_warning_both_services">Je povolený prístup k upozorneniam aj služba uľahčenia prístupu. Prosím, jedno z toho zakážte.</string>
@@ -140,4 +141,5 @@
   <string name="action_donate">Podporiť</string>
   <string name="pref_dismiss_keyguard_dirty">Alternatívna metóda odomknutia</string>
   <string name="pref_dismiss_keyguard_dirty_desc">Ak normálne odomknutie nefunguje, skúste povoliť toto.\nUPOZORNENIE: Zmení zabezpečenie uzamknutej obrazovky, a môže spôsobiť problémy na niektorých zariadeniach!</string>
+  <string name="pref_night_mode">Nočný režim</string>
 </resources>

@@ -69,6 +69,7 @@
   <string name="pref_header_behaviour">Comportamento</string>
   <string name="music_title">Reproducindo: <xliff:g id="track" example="TRACK">%s</xliff:g></string>
   <string name="music_text">Por: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nÁlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+  <string name="music_unknown">Descoñecido</string>
   <string name="pref_music_popup">Canción actual</string>
   <string name="pref_music_popup_desc">Amosar os metadatos da canción ó trocar de pista.\nNota: non todos os reprodutores son compatibles.</string>
   <string name="intro_warning_both_services">Tanto o servizo de notificacións como o de accesibilidade están activos, por favor desactiva un deles.</string>
@@ -135,4 +136,13 @@
   <string name="pref_show_non_cancelable">Amosar as notificacións non cancelables</string>
   <string name="action_donate">Doar</string>
   <string name="pref_dismiss_keyguard_dirty">Método de desbloqueo alternativo</string>
+  <string name="pref_night_mode">Modo nocturno</string>
+  <string name="pref_night_mode_desc">Desactivar Heads-up mentres dormes</string>
+  <string name="pref_night_mode_start">Inicio do modo nocturno</string>
+  <string name="pref_night_mode_end">Finalización do modo nocturno</string>
+  <string name="title_activity_setup">Configuración do Heads-up</string>
+  <string name="welcome_hi">Ola!</string>
+  <string name="welcome_btn_opensettings">Abrir os axustes da aplicación</string>
+  <string name="welcome_step1_title">Paso 1: Notificacións</string>
+  <string name="welcome_step1_text">Concederlle a Heads-up acceso ás notificacións premendo o botón de abaixo, activar Heads-up, entón premer o botón atrás no dispositivo.</string>
 </resources>

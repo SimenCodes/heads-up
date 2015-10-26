@@ -69,6 +69,7 @@
   <string name="pref_header_behaviour">Viselkedés</string>
   <string name="music_title">Lejátszás: <xliff:g id="track" example="TRACK">%s </xliff:g></string>
   <string name="music_text">Előadó: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+  <string name="music_unknown">Ismeretlen</string>
   <string name="pref_music_popup">Most játszott dal</string>
   <string name="pref_music_popup_desc">Metaadatok megjelenítése dalváltásakor.\nMegjegyzés: nem minden zenelejátszó támogatja.</string>
   <string name="intro_warning_both_services">Az értesítésfigyelő és a kisegítő szolgáltatás is engedélyezve van. Kérem, hogy az egyiket tiltsa le ezek közül.</string>
@@ -129,6 +130,7 @@
   <string name="pref_reminder_delay_desc">Az értesítés felfelé pöccintése után az megjelenik újra meghatározott perc letelte után. Letiltáshoz állítsa be 0-ra.\nFIGYELMEZTETÉS: Kísérleti, instabil funkció. Nem megbízható működésű.</string>
   <string name="pref_reminder_delay_counter">Emlékeztessen újra <xliff:g id="time" example="7">%s</xliff:g> perc múlva</string>
   <string name="pref_top_margin_locked">Lebegő értesítés pozíciója a lezárt kijelzőn</string>
+  <string name="pref_dont_disturb_error">FIGYELMEZTETÉS: /n  Android 6.0, illetve 5.x en nem fog működni.</string>
   <string name="pref_dismiss_on_swipe_desc">Értesítések eltávolítása vízszintes pöccintéssel. Továbbra is használható az X is az eltávolításhoz.\nAndroid 4.3+ szükséges hozzá</string>
   <string name="pref_dismiss_keyguard_desc">Megkísérli az alkalmazás, hogy feloldja az eszközt, ha megnyit egy értesítést. Kapcsolja ki ezt a funkciót, ha a feloldás üres kezdőképernyőt eredményez.</string>
   <string name="pref_broadcast_notifications">Közvetített értesítések</string>
@@ -140,4 +142,18 @@
   <string name="action_donate">Támogatás</string>
   <string name="pref_dismiss_keyguard_dirty">Alternatív feloldási mód</string>
   <string name="pref_dismiss_keyguard_dirty_desc">Ha a normál feloldási beállítás nem működik, kapcsolja be ezt.\nFIGYELEM: Felülír minden lezárt képernyő biztonsági beállítást, ez problémát okozhat néhány eszközön!</string>
+  <string name="pref_night_mode">Ne zavarj mód</string>
+  <string name="pref_night_mode_desc">Kikapcsolja a Lebegő értesitéseket mikor alszol</string>
+  <string name="pref_night_mode_start">Ne zavarj mód kezdete</string>
+  <string name="pref_night_mode_end">Ne zavarj mód vége</string>
+  <string name="title_activity_setup">Lebegő értesitések beállítása</string>
+  <string name="welcome_hi">Helló!</string>
+  <string name="welcome_info">Köszönjük hogy letöltötted a Heads-up-ot\n\nA beállítás közben kaphatsz riasztásokat az Android rendszertől. Ezek kicsit ilyesztőek de ne félj, a Heads-up SEHOVA és SOHA NEM fogja az adataidat küldeni.</string>
+  <string name="welcome_btn_opensettings">Nyisd meg az alkalmazás beállitásait</string>
+  <string name="welcome_step1_title">Első lépés: Értesitések</string>
+  <string name="welcome_step1_text">Add meg az engedéjt a Heads-up-nak hogy megynyomod az alábbi gombot, ezzel bekapcsolod a Heads-up-ot, majd nyomd meg a vissza gombot a készülékeden.</string>
+  <string name="welcome_step2_title">Második lépés: Felugró értesitések</string>
+  <string name="welcome_step2_2_text">Hogy engedéjezd at Heads-up-ot, hogy lásd a felugró értesítéseket nyomd meg az alábbi gombot, majd állisd át Be-re aztán, nyomd meg a vissza gombot a készülékeden.</string>
+  <string name="welcome_done_title">Már kész is!</string>
+  <string name="welcome_done_text">Ha látod a lebegő értesitést a képernyőd tetején készen is állsz! \n\n most, menj a beállításokba és beállíthatsz bármit csak ahogy te akarod! \n\n Nincs ott az értesités? Nyomj a segitség gombra!</string>
 </resources>
