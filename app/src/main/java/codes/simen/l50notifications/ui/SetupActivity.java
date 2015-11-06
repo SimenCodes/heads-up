@@ -124,8 +124,8 @@ public class SetupActivity extends Activity {
         intent.setClass(getApplicationContext(), OverlayServiceCommon.class);
         intent.setAction("TEST");
         intent.putExtra("packageName", getPackageName());
-        intent.putExtra("title", "It works!");
-        intent.putExtra("text", "Thanks for trying Heads-up! If you like it, please leave a review on Play. If you can\'t get it to work, you can get help on the project's GitHub issue page.");
+        intent.putExtra("title", getString(R.string.sample_notification_title_setup));
+        intent.putExtra("text", getString(R.string.sample_notification));
         intent.putExtra("action", PendingIntent.getActivity(this, 0,
                 new Intent(Intent.ACTION_VIEW)
                         .setData(Uri.parse("http://simen.codes"))

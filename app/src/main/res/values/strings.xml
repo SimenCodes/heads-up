@@ -158,4 +158,6 @@
     <string name="welcome_step2_2_text">To allow Heads-up to view popups, tap the button below, set the swtich to on, and press the back button on your device.</string>
     <string name="welcome_done_title">That\'s it!</string>
     <string name="welcome_done_text">If you see a heads-up notification at the top of your screen, you\'re ready to go!\n\nNow, go to the settings page and tweak everything just the way you want it.\n\nNo heads-up notification appearing? Tap Help!</string>
+    <string name="sample_notification">Thanks for trying Heads-up! If you like it, please leave a review on Play. If you can\'t get it to work, you can get help on the project\'s GitHub issue page.</string>
+    <string name="sample_notification_title_setup">It works!</string>
 </resources>
