@@ -285,8 +285,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 if (stopIfNotLocked()) return;
 
             }
-            if (powerManager == null)
-                powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+            initPowerManager();
 
             if (preferences.getBoolean("turn_screen_on", false) && !powerManager.isScreenOn()) {
                 if (preferences.getBoolean("use_proximity", false)) {
@@ -320,7 +319,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 addViewToWindowManager();
             }
         } else {
-            if (isLocked()) stopSelf();
+            if (isLocked())
+                stopSelf();
             else
                 addViewToWindowManager();
         }
@@ -334,6 +334,14 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     }
 
     private boolean isLocked() {
+        if (preferences.getBoolean("off_as_locked", false)) {
+            initPowerManager();
+            if (!powerManager.isScreenOn()) {
+                isLocked = true;
+                return isLocked;
+            }
+        }
+
         KeyguardManager keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
         final boolean isKeyguardLocked;
         if (Build.VERSION.SDK_INT >= 16)
@@ -1030,12 +1038,16 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     }
 
     void createWLock() {
-        if (powerManager == null)
-            powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+        initPowerManager();
 
         wLock = powerManager.newWakeLock(
                 PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP,
                 "heads-up");
+    }
+
+    private void initPowerManager() {
+        if (powerManager == null)
+            powerManager = (PowerManager) getSystemService(POWER_SERVICE);
     }
 
     void screenOn() {
@@ -1058,8 +1070,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     void screenOff() {
         if (wLock != null && wLock.isHeld()) wLock.release();
 
-        if (powerManager == null)
-            powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+        initPowerManager();
         if (powerManager.isScreenOn()) {
             if (policyManager == null)
                 policyManager = (DevicePolicyManager) getSystemService(DEVICE_POLICY_SERVICE);
@@ -1074,8 +1085,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
      * Acquire a WakeLock which ensures the screen is on and then pokes the user activity timer.
      */
     void pokeScreenTimer() {
-        if (powerManager == null)
-            powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+        initPowerManager();
         powerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, "pokeScreenTimer").acquire(1000);
     }
 

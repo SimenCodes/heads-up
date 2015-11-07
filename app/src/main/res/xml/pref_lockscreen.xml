@@ -80,4 +80,11 @@
             />
     </Preference>
 
+    <CheckBoxPreference
+        android:key="off_as_locked"
+        android:title="@string/pref_off_as_locked"
+        android:summary="@string/pref_off_as_locked_desc"
+        android:defaultValue="false"
+        />
+
 </PreferenceScreen>

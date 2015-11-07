@@ -160,4 +160,6 @@
     <string name="welcome_done_text">If you see a heads-up notification at the top of your screen, you\'re ready to go!\n\nNow, go to the settings page and tweak everything just the way you want it.\n\nNo heads-up notification appearing? Tap Help!</string>
     <string name="sample_notification">Thanks for trying Heads-up! If you like it, please leave a review on Play. If you can\'t get it to work, you can get help on the project\'s GitHub issue page.</string>
     <string name="sample_notification_title_setup">It works!</string>
+    <string name="pref_off_as_locked">Workaround: off as locked</string>
+    <string name="pref_off_as_locked_desc">Enabling this will make Heads-up consider the screen locked whenever it is turned off. Useful if you get notifications on the lock screen even if you have this setting turned off.</string>
 </resources>
