@@ -64,7 +64,7 @@ This is a bug in Samsung's firmware. See post on my [website](http://simen.codes
 If you find that the uninstall button is disabled, go to Settings > Security > Device administrators > Heads-up, and tap Disable.
 
 #### Only one notification ####
-Yup, that's right. **Heads-up does only show one notification.** Period. See issue #34.
+Yup, that's right. **Heads-up does only show one notification.** Period. See [issue #34](https://github.com/SimenCodes/heads-up/issues/34).
 
 #### Something else? ####
 Something I haven't covered here? I answer all kinds questions in the [issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue).
