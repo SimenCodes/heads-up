@@ -75,11 +75,4 @@
         android:defaultValue="true"
         />
 
-    <Preference
-        android:title="@string/title_activity_set_locale">
-        <intent android:targetPackage="codes.simen.l50notifications"
-            android:action="codes.simen.l50notifications.activities.SetLocale"
-            />
-    </Preference>
-
 </PreferenceScreen>
