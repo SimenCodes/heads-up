@@ -15,13 +15,13 @@
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
-  <string name="app_name">Heads-up notifications</string>
+  <string name="app_name">Heads-up 알림</string>
   <string name="app_icon_name">Heads-up</string>
-  <string name="title_activity_welcome">Heads-up notifications</string>
+  <string name="title_activity_welcome">Heads-up  알림</string>
   <string name="action_settings">설정</string>
   <string name="reader_btn_open">열기</string>
   <string name="reader_btn_dismiss">무시</string>
-  <string name="intro_desc">Heads-up notifications를 활성화 또는 비활성화 하시려면 아래의 버튼을 눌러주세요.</string>
+  <string name="intro_desc">Heads-up 알림 을 활성화 또는 비활성화 하시려면 아래의 버튼을 눌러주세요.</string>
   <string name="welcome_btn_toggleservice">Toggle heads-up</string>
   <string name="intro_warning_miui">MIUI나 그와 비슷한 롬을 사용중이신가요? 이 앱을 사용하시기 전에, 아마도 보안 설정이 필요할 것입니다.\n1. 시스템 설정 &gt; All &gt; Apps &gt; 다운로드 &gt; Heads-up notifications 로 가주세요.\n2. \'팝업 윈도우 보이기\'라고 쓰인 스위치를 토글하세요. (2번째 옵션).\n3. 하단의 \'권한 관리\'로 가주세요.\n4. \'I 이 앱 신뢰하기\'를 선택합니다.</string>
   <string name="site_ad">만족스러우신가요? 제 다른 앱들도 살펴보세요:</string>
@@ -31,7 +31,7 @@
   <string name="pref_priority_summary">우선도에 따라 알림을 필터링합니다.\nAndroid 4.1 이상이 필요합니다.</string>
   <string name="applist_desc">알림을 표시하지 않을 앱은 체크 해제하세요. 또는 Heads-up의 X 버튼을 눌러서 알림을 표시하지 않을 수도 있습니다.</string>
   <string name="blocklist_desc">앱을 사용하는 중에 Heads-up이 나타나지 않게 할 앱을 체크하세요. Android 5+ 기기에서는 동작하지 않을 수 있습니다.</string>
-  <string name="blocked_confirmation">앱이 블락됨</string>
+  <string name="blocked_confirmation">응용 프로그램을 차단</string>
   <string name="pref_header_style">스타일</string>
   <string name="pref_lock_screen_on">잠금 화면에 표시</string>
   <string name="pref_lock_screen_on_desc">잠금 화면에 Heads-up을 표시합니다.</string>
@@ -50,15 +50,15 @@
   <string name="pref_overlay_display_time_counter"><xliff:g id="time" example="7">%s</xliff:g> 초</string>
   <string name="pref_top_margin">잠금 해제되었을 때의 팝업 위치</string>
   <string name="pref_turn_screen_on">화면 키기</string>
-  <string name="pref_turn_screen_on_desc">알림이 올 때 화면을 킵니다.</string>
+  <string name="pref_turn_screen_on_desc">알림을 받으면 화면을 켭니다</string>
   <string name="pref_opacity">투명도</string>
   <string name="pref_overlay_style">테마</string>
-  <string name="pref_keep_on_lock_screen">잠금 화면에 남기기</string>
+  <string name="pref_keep_on_lock_screen">잠금 화면 상태로 유지</string>
   <string name="pref_keep_on_lock_screen_desc">알림을 지우기 전까지 잠금화면에 알림을 남깁니다.</string>
   <string name="pref_dismiss_on_swipe">스와이프로 지우기</string>
   <string name="title_activity_noshow_list">방해 금지</string>
   <string name="pref_round_icons">원형 아이콘</string>
-  <string name="pref_round_icons_desc">이전 배포판의 사각형 아이콘 대신 L의 둥근 아이콘을 사용합니다.</string>
+  <string name="pref_round_icons_desc">이전 버전의 사각형 아이콘 대신 L 둥근 아이콘을 사용합니다</string>
   <string name="pref_use_proximity">주머니 감지</string>
   <string name="pref_use_proximity_desc">휴대폰이 주머니 안에 있거나 뒤집혀져 있을 때 화면을 끄지 않습니다.</string>
   <string name="pref_header_lockscreen">잠금 화면</string>
@@ -70,11 +70,15 @@
   <string name="music_unknown">알 수 없음</string>
   <string name="pref_music_popup">현재 노래 팝업</string>
   <string name="pref_music_popup_desc">트랙이 바뀔 때마다 노래의 메타데이터를 표시합니다.\n주의: 모든 음악 플레이어가 지원되지는 않습니다.</string>
+  <string name="intro_warning_both_services">알림 수신기 및 접근성이 동시에 활성화. 하나의 전원을 끕니다.</string>
+  <string name="notification_listener_not_found_detour">권리 알림 서비스 \'를 선택하고\'Heads-up  알림 플로팅 \'선택</string>
   <string name="accessibility_not_found_detour"><![CDATA[\'접근성\' > \'Heads-up notifications\'으로 가주세요]]></string>
   <string name="accessibility_toast">\'Heads-up notifications\' 을 선택하여 서비스를 토글하세요</string>
   <string name="pref_floating_window">플로팅 윈도우로 열기</string>
   <string name="pref_floating_window_desc">플로팅 윈도우로 알림을 열기 이해 아이콘을 탭합니다. 실험적인 기능으로, OmniRom과 XHaloFloatingWindow와 함께 작동합니다.</string>
   <string name="pendingintent_cancel_exception">앱이 작업을 취소했습니다</string>
+  <string name="pendingintent_null_exception">정의되지 않은 동작</string>
+  <string name="pref_hide_dismiss_button">닫기 취소 알림 버튼</string>
   <string name="pref_hide_dismiss_button_desc">알림에서 해제버튼 감추기</string>
   <string name="pref_dismiss_keyguard">휴대폰 깨우기</string>
   <string name="pref_compact_mode">컴팩트 모드</string>
@@ -108,6 +112,7 @@
   <string name="pref_device_admin">\'화면이 켜진 상태로 유지\' 버그 수정</string>
   <string name="no_proximity_sensor_error">근접 센서가 감지되지 않았습니다. 주머니 감지기는 작동하지 않습니다. 이 버그에 대해서는 보고하지 말아주세요.</string>
   <string name="pref_keep_screen_on_forever">화면을 켜진 상태로 유지</string>
+  <string name="pref_keep_screen_on_forever_desc">화면을 켠 후, 긴 heads-up 표시로 그것을 유지.</string>
   <string name="action_help">도움말</string>
   <string name="action_test">테스트</string>
   <string name="device_admin_enable_explanation">이 기능을 활성화하는 것은 Heads-up이 당신의 화면을 끄는 것을 허용시킬 것입니다. 잠금 화면에 팝업 표시가 된 후 화면이 꺼지지 않거나, 주머니 감지기가 올바르게 작동하지 않는 경우에만 사용하시기 바랍니다.\n\n주의! 이 기능이 활성화되어있는 경우 Heads-up을 삭제할 수 없으니 삭제를 원하시는 경우 반드시 이 기능을 비활성화하시길 바랍니다.</string>
@@ -115,7 +120,7 @@
   <string name="device_admin_not_available">장치 프로비저닝이 활성화되어있지 않습니다. 중지합니다.</string>
   <string name="intro_status_on">서비스가 활성화되었습니다. 스스로에게 미시지를 보내보세요.\n만약 작동하지 않는다면, 기기를 재시작하시고 다시 해보세요.\n도움이 필요하시면 이곳을 탭하세요.</string>
   <string name="intro_status_on_confirmed">서비스가 실행 중입니다. 스스로에게 메시지를 보내보세요.\n도움이 필요하시면 이곳을 탭하세요.</string>
-  <string name="accessibility_service_blocked" formatted="false">%s가 Heads-up이 당신의 알림에 접근하는 것을 막고 있는 것 같습니다. 접근성 메뉴에서 %s를 비활성화 해주세요.</string>
+  <string name="accessibility_service_blocked">%1$s가 Heads-up이 당신의 알림에 접근하는 것을 막고 있는 것 같습니다. 접근성 메뉴에서 %1$s를 비활성화 해주세요.</string>
   <string name="export_debug_data">디버그 데이터 내보내기</string>
   <string name="pref_close_on_outside_touch">바깥 쪽 터치로 닫기</string>
   <string name="pref_close_on_outside_touch_desc">Heads-up의 바깥쪽을 터치할 때에 팝업을 지웁니다.</string>
@@ -125,7 +130,9 @@
   <string name="pref_top_margin_locked">잠금 화면에서의 팝업 위치</string>
   <string name="pref_dont_disturb_error">경고: Google이 이 앱이 작동하기 위한 기능을 Android 6.0에서 지웠기 때문에, Android 6.0에서는 잘 동작하지 않을 수ㅠ있습니다.</string>
   <string name="pref_dismiss_on_swipe_desc">알림을 수평 방향으로 스와이프할 때 알림을 알림 패널에서 제거합니다. 알림 패널에서 X버튼을 눌러 지울 수도 있습니다.\nAndroid 4.3이 필요합니다.</string>
+  <string name="pref_dismiss_keyguard_desc">사용자가 알림을 열 때 장치의 잠금을 해제하려고합니다. 알림을 열 때 빈 바탕 화면을 받을 경우 사용하지 않습니다.</string>
   <string name="pref_broadcast_notifications">브로드캐스트 알림</string>
+  <string name="pref_broadcast_notifications_desc">알림 내 다른 애플 리케이션에 액세스 할 수 있습니다. 당신의 목소리와 같은 응용 프로그램을 사용하는 경우이 RAM 사용량을 줄일 수 있습니다. 내 애플 리케이션 중 하나가 활성화하도록 요청하지 않는 한을 유지합니다.</string>
   <string name="title_broadcast_request">알림 액세스</string>
   <string name="content_broadcast_request">이는 %s 액세스 권한을 당신의 알림에 가져다 줄 것입니다. 정말로 하시겠습니까?</string>
   <string name="pref_show_non_cancelable">지울 수 없는 알림도 표시하기</string>
@@ -149,4 +156,6 @@
   <string name="welcome_done_text">Heads-up notification이 화면 상단에 보이신다면, 이 앱을 사용할 준비가 다 된것입니다!\n\n이제, 설정 페이지에서 당신이 원하시는 대로 앱을 트윅해보세요.\n\nHeads-up이 보이지 않으시나요? 도움말을 탭하세요!</string>
   <string name="sample_notification">Heads-up을 사용해주셔서 감사합니다! 이 앱이 마음에 드신다면, Play 스토어에 리뷰를 남겨주세요. 이 앱이 잘 작동하지 않는다면, 이 프로젝트의 Github 이슈 페이지에서 도움을 얻을 수 있을 것입니다.</string>
   <string name="sample_notification_title_setup">잘 작동하네요!</string>
+  <string name="pref_off_as_locked">해결 방법 : 잠금같은 해제</string>
+  <string name="pref_off_as_locked_desc">이것을 사용하면 Heads-up 이 해제 될 때마다 잠금 화면을 고려해야 할 것입니다. 유용한 당신은이 설정이 꺼져있는 경우에도 잠금 화면에서 알림을받을 경우.</string>
 </resources>

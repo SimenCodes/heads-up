@@ -158,6 +158,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/action_buttons"
             style="@style/TextAppearance_Light"
+            android:theme="@style/AppTheme"
             android:paddingLeft="@dimen/padding_action_buttons_left"
             android:paddingRight="@dimen/padding_action_buttons_right"
             android:paddingStart="@dimen/padding_action_buttons_left"

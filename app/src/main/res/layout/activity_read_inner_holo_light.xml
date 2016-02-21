@@ -141,6 +141,7 @@
                 android:paddingStart="@dimen/padding_action_buttons_left"
                 android:paddingEnd="@dimen/padding_action_buttons_right"
                 android:id="@+id/action_buttons"
+                android:theme="@style/AppTheme"
                 style="@style/TextAppearance_Dark">
 
             </LinearLayout>

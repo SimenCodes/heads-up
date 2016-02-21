@@ -21,10 +21,10 @@
   <string name="action_settings">设置</string>
   <string name="reader_btn_open">打开</string>
   <string name="reader_btn_dismiss">已读</string>
-  <string name="intro_desc">点击下面的按钮开启或关闭 heads-up 浮动通知.</string>
+  <string name="intro_desc">点击下面的按钮开启或关闭 Heads-up 浮动通知。</string>
   <string name="welcome_btn_toggleservice">开启 / 关闭 Heads-up</string>
   <string name="intro_warning_miui">小米系统？ 在启动本应用之前，需要更改安全设置。\n1. 进入 系统设置 &gt; 全部设置 &gt; 应用 &gt; 已下载 &gt; Heads-up 浮动通知\n2. 点击开关 \"显示悬浮窗\" (第二个选项)\n3. 在底部，选择 \"权限管理\"\n 4. 选择 \"我信任此程序\" 来开启。 </string>
-  <string name="site_ad">喜欢这个应用吗? 看看我的其他应用吧:</string>
+  <string name="site_ad">喜欢这个应用吗? 看看我的其他应用吧：</string>
   <string name="site_ad_link">访问 Simen.codes</string>
   <string name="title_activity_app_list">应用筛选器</string>
   <string name="pref_priority_title">通知优先权</string>
@@ -34,7 +34,7 @@
   <string name="blocked_confirmation">应用已屏蔽</string>
   <string name="pref_header_style">其他设置</string>
   <string name="pref_lock_screen_on">在锁屏上显示</string>
-  <string name="pref_lock_screen_on_desc">在锁屏界面显示Heads-up浮动通知。</string>
+  <string name="pref_lock_screen_on_desc">在锁屏界面显示 Heads-up 浮动通知。</string>
   <string name="bug_report_request">如果程序近期运行不正常，请点击这里反馈问题。\n\n</string>
   <string name="pref_overlay_display_time">持续时间</string>
   <string name="pref_overlay_time_max">永不</string>
@@ -67,7 +67,7 @@
   <string name="pref_block_current_app">屏蔽前台通知</string>
   <string name="pref_block_current_app_desc">不显示正在使用应用的消息弹窗。</string>
   <string name="pref_header_behaviour">行为</string>
-  <string name="music_title">播放 <xliff:g id="track" example="TRACK">%s</xliff:g></string>
+  <string name="music_title">正在播放：<xliff:g id="track" example="TRACK">%s</xliff:g></string>
   <string name="music_text">来自： <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
   <string name="music_unknown">未知</string>
   <string name="pref_music_popup">换歌弹窗</string>
@@ -77,7 +77,7 @@
   <string name="accessibility_not_found_detour"><![CDATA[进入 \'可访问性\' > \'Heads-up 浮动通知\']]></string>
   <string name="accessibility_toast">选择 \'Heads-up 浮动通知\' 启动服务</string>
   <string name="pref_floating_window">用浮动窗口打开</string>
-  <string name="pref_floating_window_desc">长按图标以浮动窗口打开通知。实验性功能，兼容OmniRom和XHaloFloatingWindow.</string>
+  <string name="pref_floating_window_desc">长按图标以浮动窗口打开通知。实验性功能，兼容 OmniRom 和 XHaloFloatingWindow。</string>
   <string name="pendingintent_cancel_exception">取消应用行为</string>
   <string name="pendingintent_null_exception">应用未定义任何行为</string>
   <string name="pref_hide_dismiss_button">隐藏消除通知按钮</string>
@@ -109,12 +109,12 @@
   <string name="pref_privacy_on_lockscreen">锁屏隐私</string>
   <string name="pref_privacy_on_lockscreen_desc">锁屏弹窗隐藏消息内容</string>
   <string name="accessibility_desc">启动本服务允许Heads-up读取你的通知。\n\n安卓4.3以上设备请勿启动。</string>
-  <string name="device_admin_disable_warning">关闭服务之后，Heads-up的某些功能可能不会正常工作。</string>
+  <string name="device_admin_disable_warning">关闭服务之后，Heads-up 某些功能可能不会正常工作。</string>
   <string name="title_activity_device_admin_enabler">启用设备管理</string>
   <string name="pref_device_admin">修复 \'亮屏\' 错误。</string>
   <string name="no_proximity_sensor_error">没有检测到传感器，口袋模式将不会工作。请不要报告这个BUG。</string>
   <string name="pref_keep_screen_on_forever">保持屏幕开启</string>
-  <string name="pref_keep_screen_on_forever_desc">点亮屏幕以后，保持屏幕点亮直到通知消失</string>
+  <string name="pref_keep_screen_on_forever_desc">点亮屏幕以后，保持屏幕点亮直到通知消失。</string>
   <string name="action_help">帮助!</string>
   <string name="action_test">测试</string>
   <string name="device_admin_enable_explanation">启用设备管理将允许Heads-up关闭你的屏幕。当显示弹窗后屏幕不关闭或口袋模式工作不正常请启用设备管理。</string>
@@ -122,7 +122,7 @@
   <string name="device_admin_not_available">设备管理器未启用。正在停止。</string>
   <string name="intro_status_on">服务已开启。尝试给自己发一条信息，\n如果没有浮动通知弹出，请重启设备再试。若仍不显示请通过邮件联系开发者：sb@simen.codes.\n（反馈信息请用英文书写）</string>
   <string name="intro_status_on_confirmed">服务正在运行。尝试给自己发一条信息。\n若仍不显示请通过邮件联系开发者：sb@simen.codes.\n（反馈信息请用英文书写）</string>
-  <string name="accessibility_service_blocked">%s 可能阻止Heads-up访问您的通知，请在功能菜单中禁用它</string>
+  <string name="accessibility_service_blocked">%s 可能阻止 Heads-up 访问您的通知，请在功能菜单中禁用它</string>
   <string name="export_debug_data">导出调试数据</string>
   <string name="pref_close_on_outside_touch">通过触摸屏幕上通知以外的部分关闭通知</string>
   <string name="pref_close_on_outside_touch_desc">当你触摸通知之外区域时移除弹出窗口</string>
@@ -130,7 +130,7 @@
   <string name="pref_reminder_delay_desc">如果你上滑通知，Heads-up 将会在指定的几分钟后重现显示通知。设置为 0 禁用。\n警告: 不稳定的实验性特性。不要依赖他的工作。</string>
   <string name="pref_reminder_delay_counter"><xliff:g id="time" example="7">%s</xliff:g> 分钟后提醒我</string>
   <string name="pref_top_margin_locked">锁屏通知位置</string>
-  <string name="pref_dont_disturb_error">警告：谷歌在Android 6.0中移除了获取运行中任务的功能，因此这可能不能正常工作。参考此份文档：\ngetRecentTasks() — 在棒棒糖中，这个方法将不再对第三方应用开放：最近的文档中心的介绍表明这有可能导致用户信息泄漏。为了向后兼容，此函数仍然会返回数据中的一个极小子集：如调用者自身任务，或者可能是主页等其它被认为不敏感的任务。</string>
+  <string name="pref_dont_disturb_error">警告：谷歌在 Android 6.0中移除了获取运行中任务的功能，因此这可能不能正常工作。参考此份文档：\ngetRecentTasks() — 在棒棒糖中，这个方法将不再对第三方应用开放：最近的文档中心的介绍表明这有可能导致用户信息泄漏。为了向后兼容，此函数仍然会返回数据中的一个极小子集：如调用者自身任务，或者可能是主页等其它被认为不敏感的任务。</string>
   <string name="pref_dismiss_on_swipe_desc">通过滑动消除通知。(你也可以通过点击X按钮来消除通知。)</string>
   <string name="pref_dismiss_keyguard_desc">当打开通知时尝试解锁设备。若是在桌面打开通知时则此项失效。</string>
   <string name="pref_broadcast_notifications">广播通知</string>
@@ -143,19 +143,21 @@
   <string name="pref_dismiss_keyguard_dirty">强制解锁</string>
   <string name="pref_dismiss_keyguard_dirty_desc">如果普通解锁选项不起作用，请尝试启用此选项。\n警告：此选项将会覆盖所有锁屏安全机制，并且可能在某些设备导致问题！</string>
   <string name="pref_night_mode">夜间模式</string>
-  <string name="pref_night_mode_desc">睡眠时禁用Heads-up</string>
+  <string name="pref_night_mode_desc">睡眠时禁用 Heads-up</string>
   <string name="pref_night_mode_start">夜间模式开始时间</string>
   <string name="pref_night_mode_end">夜间模式结束时间</string>
-  <string name="title_activity_setup">Heads-up设置</string>
-  <string name="welcome_hi">你好!</string>
-  <string name="welcome_info">感谢您下载Heads-up。\n\n在安装过程中，你会看到一些安卓系统弹出的警告。它们似乎有些吓人，但不需要担心。Heads-up不会收集、存储或者发送你的数据到任何地方。</string>
+  <string name="title_activity_setup">Heads-up 设置</string>
+  <string name="welcome_hi">你好！</string>
+  <string name="welcome_info">感谢您下载 Heads-up。\n\n在安装过程中，你会看到一些安卓系统弹出的警告。它们似乎有些吓人，但不需要担心。Heads-up 不会收集、存储或者发送你的数据到任何地方。</string>
   <string name="welcome_btn_opensettings">打开应用程序设置</string>
   <string name="welcome_step1_title">第一步：浮动通知</string>
-  <string name="welcome_step1_text">单击下面的按钮，选择Heads-up，再单击设备的返回按钮，以允许Heads-up访问通知栏。</string>
+  <string name="welcome_step1_text">单击下面的按钮，选择 Heads-up，再单击设备的返回按钮，以允许 Heads-up 访问通知栏。</string>
   <string name="welcome_step2_title">第二步：弹出窗口</string>
-  <string name="welcome_step2_2_text">点击下面的按钮，设置开关为on，然后点击设备上的返回按钮，以允许Heads-up显示弹出窗口。</string>
+  <string name="welcome_step2_2_text">点击下面的按钮，设置开关为 ON，然后点击设备上的返回按钮，以允许 Heads-up 显示弹出窗口。</string>
   <string name="welcome_done_title">设置完成！</string>
-  <string name="welcome_done_text">如果你看到屏幕上heads-up的浮动通知，那么你已经准备好了。\n\n现在去设置页面设置各种你需要的功能。\n\n若没有看到heads-up的浮动通知，请点击帮助！</string>
+  <string name="welcome_done_text">如果你看到屏幕上 heads-up 浮动通知，那么你已经准备好了。\n\n现在去设置页面设置各种你需要的功能。\n\n若没有看到 Heads-up 浮动通知，请点击帮助！</string>
   <string name="sample_notification">欢迎使用 Heads-up！如果您喜欢这款应用，请前往 Play 市场评价。如果您发现任何问题，请访问 Github 项目以获取帮助。</string>
   <string name="sample_notification_title_setup">已开始工作！</string>
+  <string name="pref_off_as_locked">解决方案：锁屏即关闭</string>
+  <string name="pref_off_as_locked_desc">激活后将会让浮动通知认为屏幕已经锁定，无论是不是真的。这将有效解决您在关闭锁屏通知后，通知依旧出现在锁屏上的问题。</string>
 </resources>
