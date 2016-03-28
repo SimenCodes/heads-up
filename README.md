@@ -2,9 +2,9 @@
 With this app, any device can get the heads-up notifications introduced in Android 5 “Lollipop”, no root required. And the popups actually look like those in Android Lollipop.
 But according to Addictivetips (and a lot of the users), this app “has done more than just replicate a feature of Lollipop. Even if you aren’t dying to try Lollipop and some of its new features, this app is worth a try“.
 
-<div style="max-width: 500px; padding: 10px; background-color: #ffffb6; margin: 0 auto;">
+<div style="width: 500px; padding: 10px; background-color: #ffffb6; margin: 0 auto;">
 <h3>Hi everyone!</h3>
-<p>As you might have noticed, I don’t really have time to work on Heads-up anymore. Heads-up will keep working, but I won’t add any new features. Maybe someday in the future, but right now I’ve got too much other exciting stuff going on <img src="http://simen.codes/wp-includes/images/smilies/simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;"></p>
+<p>As you might have noticed, I don’t really have time to work on Heads-up anymore. Heads-up will keep working, but I won’t add any new features. Maybe someday in the future, but right now I’ve got too much other exciting stuff going on :)</p>
 <p><b>I’d like to say thank you for using Heads-up, leaving over 30,000 awesome reviews on Google Play, sending me thousands of emails with feedback, and translating it into 30 languages. And of course a huge thank you to those who donated as well!</b></p>
 <p>Seems like you’ve been busy telling your friends about Heads-up too, we’ve been getting over 1,000 new users <b>daily</b> for a total of almost <b>900,000 downloads</b>!</p>
 <p>I’d never be able to pull this off without you!</p>
