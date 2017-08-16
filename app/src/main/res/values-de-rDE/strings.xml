@@ -24,7 +24,7 @@
   <string name="intro_desc">Tippen Sie auf die folgenden Schaltflächen, um Heads-up-Benachrichtigungen ein- oder auszuschalten, die Einstellungen zu ändern oder ein Test-Popup anzuzeigen.</string>
   <string name="welcome_btn_toggleservice">Heads-up ein/aus</string>
   <string name="intro_warning_miui">Benutzen Sie MIUI? Bevor Sie diese App nutzen können, müssen Sie ihr eventuell einige Rechte einräumen.\n1. Gehen Sie dafür zu  Systemeinstellungen &gt; Alle &gt; Apps &gt; Heruntergeladen &gt; Heads-up Benachrichtigungen.\n2. Ändern Sie den Schalter \"Popup-Fenster anzeigen\" (zweite Option).\n3. Gehen dann Sie zu \"Berechtigungen verwalten\".\n4. Aktivieren Sie \"Ich vertraue dieser App \". </string>
-  <string name="site_ad">Gefällt Ihnen Heads-Up-Benachrichtigungen? Dann schauen Sie sich auch meine anderen Apps an:</string>
+  <string name="site_ad">Gefällt Ihnen diese App? Dann schauen Sie sich auch meine anderen Apps an:</string>
   <string name="site_ad_link">Simen.codes besuchen </string>
   <string name="title_activity_app_list">App-Filter</string>
   <string name="pref_priority_title">Priorität der Benachrichtigung</string>
@@ -35,6 +35,7 @@
   <string name="pref_header_style">Stil</string>
   <string name="pref_lock_screen_on">Auf Sperrbildschirm anzeigen</string>
   <string name="pref_lock_screen_on_desc">Zeige Heads-Up-Benachrichtigungen auf dem Sperrbildschirm.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Falls die App unregelmäßig oder inkorrekt arbeitet, tippen Sie bitte hier, um das Problem zu melden. SIe müssen nichts unternehmen wenn die App normal funktioniert.\n\n</string>
   <string name="pref_overlay_display_time">Anzeigedauer</string>
   <string name="pref_overlay_time_max">Bis ich sie bestätige</string>
@@ -69,6 +70,7 @@
   <string name="pref_header_behaviour">Verhalten</string>
   <string name="music_title">Spiele <xliff:g id="track" example="TRACK">%s</xliff:g></string>
   <string name="music_text">Von <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAuf dem Album <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+  <string name="music_unknown">Unbekannt</string>
   <string name="pref_music_popup">Popup aktuelles Lied</string>
   <string name="pref_music_popup_desc">Zeige Metadaten über das Lied bei Liedwechsel an.\nHinweis: Nicht alle Musik-Abspieler werden unterstützt.</string>
   <string name="intro_warning_both_services">Sowohl der Benachrichtigungs-Zugriff als auch der Bedienungshilfen-Dienst sind aktiv. Bitte schalten Sie einen davon ab.</string>
@@ -101,6 +103,7 @@
     <item name="holo">Holo Hell</item>
     <item name="holodark">Holo Dunkel</item>
     <item name="random">Psychedelisch (zufällig)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Nur auf dem Sperrbildschirm</string>
@@ -116,7 +119,6 @@
   <string name="pref_keep_screen_on_forever_desc">Nach Einschalten des Bildschirms solange anlassen, wie Heads-up sichtbar ist.</string>
   <string name="action_help">Hilfe!</string>
   <string name="action_test">Test</string>
-  <string name="device_admin_enable_explanation">Dies Einstellung erlaubt Heads-Up, den Bildschirm Ihres Geräts abzuschalten. Verwenden Sie das, falls der Schirm nach der Anzeige von Popups auf dem Sperrbildschirm nicht abgeschaltet wird oder falls die Hosentaschen-Erkennung nicht richtig funktioniert.</string>
   <string name="device_admin_alredy_on">Bereits ein Geräteadministrator.</string>
   <string name="device_admin_not_available">Gerätebereitstellung ist nicht aktiviert. Stoppe.</string>
   <string name="intro_status_on">Der Dienst ist eingeschaltet.. Versuchen Sie, sich selbst eine Nachricht zu senden (SMS, E-Mail).\nFalls das nicht funktioniert, starten Sie bitte Ihr Gerät neu. Lassen Sie es mich über eine Mail an sb@simen.codes auf Englisch wissen, falls Sie die App nicht in Gang bringen können.</string>
@@ -129,7 +131,9 @@
   <string name="pref_reminder_delay_desc">Wenn Sie die Heads-up Benachrichtigung nach oben schieben, wird Sie nach der hier eingestellten Zeit in Minuten wieder erscheinen. Setzen Sie den Wert auf 0, um die Funktion zu deaktivieren.\nWARNUNG: Experimentell, instabiles Feature. Verlassen Sie sich auf diese Funktion.</string>
   <string name="pref_reminder_delay_counter">Erinnere mich nach <xliff:g id="time" example="7">%s</xliff:g> Minuten</string>
   <string name="pref_top_margin_locked">Position des Popups auf dem Sperrbildschirm</string>
+  <string name="pref_dont_disturb_error">Warnung: Funktion auf Android 6.0 vielleicht nicht möglich.</string>
   <string name="pref_dismiss_on_swipe_desc">Benachrichtigungen durch Wischen entfernen. Sie können dies nach wie vor auch über einen Tipp auf das X erreichen..</string>
+  <string name="pref_dismiss_keyguard_desc">Versuche das Gerät zu entsperren, wenn eine Push-Nachricht geöffnet wird. Deaktivieren Sie diese Einstellung, wenn Sie beim öffnen einen Leeren Bildschirm angezeigt bekommen.</string>
   <string name="pref_broadcast_notifications">Benachrichtigungen broadcasten</string>
   <string name="pref_broadcast_notifications_desc">Gewährt meinen anderen Apps Zugriff auf Ihre Benachrichtigungen. Dies wird den RAM Verbrauch reduzieren, wenn sie Apps wie Voiceify verwenden. Lassen Sie es deaktiviert, außer eine meiner Apps fordert Sie auf, es zu aktivieren.</string>
   <string name="title_broadcast_request">Benachrichtigungszugriff</string>
@@ -137,4 +141,24 @@
   <string name="pref_show_non_cancelable">Zeige nicht entfernbare Benachrichtigung</string>
   <string name="pref_show_non_cancelable_desc">Zeige nicht-löschbare Benachrichtigungen von Hintergrunddiensten wie Downloads.\nFalls einige Benachrichtigungen nicht mehr verschwinden, versuchen Sie, dies zu deaktivieren.</string>
   <string name="action_donate">Spenden</string>
+  <string name="pref_dismiss_keyguard_dirty">Alternatives Entsperren</string>
+  <string name="pref_dismiss_keyguard_dirty_desc">Falls das normale Entsperren nicht funktioniert, versuche diese Option./nWARNUNG: Diese Option deaktiviert die Sperrbildschirm-Sicherheitsmechanismen (z.B PIN) und kann auf manchen Geräten zu problemen führen!</string>
+  <string name="pref_night_mode">Nachtmodus</string>
+  <string name="pref_night_mode_desc">Deaktiviere Heads-up während Sie schlafen</string>
+  <string name="pref_night_mode_start">Nachtmodus Startzeit</string>
+  <string name="pref_night_mode_end">Nachtmodus Endzeit</string>
+  <string name="title_activity_setup">Heads-up einrichten</string>
+  <string name="welcome_hi">Hi!</string>
+  <string name="welcome_info">Vielen Dank, dass Sie Heads-up runtergeladen haben.\n\nWährend der Einrichtung werden Sie einige Warnungen des Android Systems sehen. Diese scheinen ein wenig beängstigend, jedoch keine Sorge; Heads-up sammelt, speichert oder versendet KEINE Daten.</string>
+  <string name="welcome_btn_opensettings">App-Einstellungen öffnen</string>
+  <string name="welcome_step1_title">Schritt 1: Push-Mitteilungen</string>
+  <string name="welcome_step1_text">Erteilen Sie Heads-up Zugang zu Ihren Push-Mitteilungen, indem Sie den Button unten berühren, Heads-up aktivieren und dann die Zurück-Taste Ihres Gerätes drücken.</string>
+  <string name="welcome_step2_title">Schritt 2: Popups</string>
+  <string name="welcome_step2_2_text">Um Heads-up das Anzeigen von Popups zu erlauben, berühren Sie den Button unten, schieben den Schalter auf An und drücken Sie die Zurück-Taste auf ihrem Gerät.</string>
+  <string name="welcome_done_title">Das wars!</string>
+  <string name="welcome_done_text">Wenn Sie eine Mitteilung am oberen Bildschirmrand sehen, sind Sie fertig!\n\nNun gehen Sie in die Einstellungen und verändern Sie alles nach Ihren Vorlieben.\n\nKeine Mitteilungen tauchen auf? Drücken Sie auf Hilfe!</string>
+  <string name="sample_notification">Danke, dass Sie Heads-up ausprobieren! Wenn Sie diese App mögen, hinterlassen Sie doch bitte ein Review auf Google Play. Falls die App nicht funktioniert, können Sie Hilfe auf unserer GitHub Seite bekommen.</string>
+  <string name="sample_notification_title_setup">Es funktioniert!</string>
+  <string name="pref_off_as_locked">Problemumgehung: Deaktivieren wenn gesperrt</string>
+  <string name="pref_off_as_locked_desc">Durch das Aktivieren dieser Einstellung wird Heads-up den Bildschirm als gesperrt ansehen, wenn dieser aus ist. Nützlich, wenn Sie Mitteilungen auf den Sperrbildschirm bekommen, obwohl die jeweilige Einstellung deaktiviert ist.</string>
 </resources>

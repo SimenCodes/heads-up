@@ -16,7 +16,9 @@
 package codes.simen.l50notifications.ui;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.admin.DevicePolicyManager;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -27,6 +29,7 @@ import codes.simen.l50notifications.admin.AdminReceiver;
 import codes.simen.l50notifications.util.Mlog;
 
 public class DeviceAdminEnabler extends Activity {
+    private long time = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,35 @@ public class DeviceAdminEnabler extends Activity {
             return;
         }
 
+        showDialog();
+    }
+
+    private void showDialog() {
+        time = System.currentTimeMillis();
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.device_admin_enable_title)
+                .setMessage(R.string.device_admin_enable_explanation)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (System.currentTimeMillis()-time > 5000) {
+                            enableAdmin();
+                            finish();
+                        } else {
+                            Toast.makeText(getApplicationContext(), R.string.device_admin_too_fast, Toast.LENGTH_SHORT).show();
+                            showDialog();
+                        }
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                }).create().show();
+    }
+
+    private void enableAdmin() {
         Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
         intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN,
                 AdminReceiver.getComponentName(getApplicationContext()));
@@ -48,7 +80,6 @@ public class DeviceAdminEnabler extends Activity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             Mlog.d("DeviceAdminEnabler", "Is resolved");
             startActivity(intent);
-            finish();
         } else {
             Toast.makeText(this, getString(R.string.device_admin_not_available),
                     Toast.LENGTH_SHORT).show();

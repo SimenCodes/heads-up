@@ -35,6 +35,7 @@
   <string name="pref_header_style">Motywy</string>
   <string name="pref_lock_screen_on">Wyświetlaj na ekranie blokady</string>
   <string name="pref_lock_screen_on_desc">Pokazuj powiadomienia \'heads-up\' na ekranie blokady.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Jeśli aplikacja nie działa tak jak powinna, naciśnij tutaj aby zgłosić problem. Proszę pisać w języku angielskim.\n\n</string>
   <string name="pref_overlay_display_time">Czas wyświetlania</string>
   <string name="pref_overlay_time_max">Dopóki jej nie odrzucę</string>
@@ -95,10 +96,11 @@
   <string-array name="overlayStyles">
     <item name="l">Android 5.0 \"L\" jasny</item>
     <item name="ldark">Android 5.0 \"L\" ciemny</item>
-    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' czarny</item>
     <item name="holo">Zwykły jasny</item>
     <item name="holodark">Zwykły ciemny</item>
     <item name="random">Psychodeliczny (losowy)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Tylko na ekranie blokady</string>
@@ -114,7 +116,6 @@
   <string name="pref_keep_screen_on_forever_desc">Po włączeniu ekranu, podtrzymuj go tak długo jak heads-up jest widoczny.</string>
   <string name="action_help">Pomoc!</string>
   <string name="action_test">Test</string>
-  <string name="device_admin_enable_explanation">Uruchomienie tej usługi pozwoli programowi na wygaszanie ekranu. Włącz tę funkcję gdy ekran nie wygasa samoistnie po ukazaniu powiadomień na ekranie blokady lub gdy nie działa opcja tryb kieszeniowy.\n\nWAŻNE! Nie będziesz w stanie odinstalować Heads-Up dopóki ta funkcja będzie włączona.</string>
   <string name="device_admin_alredy_on">Już jest menadżerem urządzenia.</string>
   <string name="device_admin_not_available">Zabezpieczenie urządzenia nie jest włączone. Zatrzymuję.</string>
   <string name="intro_status_on">Usługa jest aktywna. Spróbuj wysłać samemu sobie wiadomość.\nJeżeli nie będzie działać, proszę zresetować urządzenie i spróbować ponownie.\nKliknij tutaj jeżeli potrzebujesz pomocy</string>

@@ -33,8 +33,9 @@
   <string name="blocklist_desc">Označite program zaradi preprečitve obvestilom, da ga med uporabo ne ovirajo. Ne deluje na nekaterih napravah z Androidom 5+.</string>
   <string name="blocked_confirmation">Program blokiran</string>
   <string name="pref_header_style">Slog</string>
-  <string name="pref_lock_screen_on">Prikaži na zaslonu za zakl.</string>
-  <string name="pref_lock_screen_on_desc">Prikaži obvestila na zaslonu za zaklepanje.</string>
+  <string name="pref_lock_screen_on">Prikaži na zakl. zaslonu</string>
+  <string name="pref_lock_screen_on_desc">Prikaži obvestila na zaklenjenem zaslonu.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Če se program v zadnjem času ne vede pravilno, tapnite tukaj, da prijavite težavo. Ni vam treba narediti ničesar, če se program vede pravilno.\n\n</string>
   <string name="pref_overlay_display_time">Čas prikaza</string>
   <string name="pref_overlay_time_max">Dokler ga ne opustim</string>
@@ -53,15 +54,15 @@
   <string name="pref_turn_screen_on_desc">Vklopi zaslon ob prejemu obvestila</string>
   <string name="pref_opacity">Motnost</string>
   <string name="pref_overlay_style">Tema</string>
-  <string name="pref_keep_on_lock_screen">Pusti na zaslonu za zakl.</string>
-  <string name="pref_keep_on_lock_screen_desc">Pusti obvestila na zaslonu za zaklepanje. dokler jih ne opustim</string>
+  <string name="pref_keep_on_lock_screen">Pusti na zakl. zaslonu</string>
+  <string name="pref_keep_on_lock_screen_desc">Pusti obvestila na zaklenjenem zaslonu, dokler jih ne opustim</string>
   <string name="pref_dismiss_on_swipe">Opusti ob vlečenju</string>
   <string name="title_activity_noshow_list">Ne moti</string>
   <string name="pref_round_icons">Okrogle ikone</string>
   <string name="pref_round_icons_desc">Uporabi L-ove okrogle ikone namesto kvadratastih iz prejšnjih izdaj</string>
   <string name="pref_use_proximity">Zaznavanje žepa</string>
   <string name="pref_use_proximity_desc">Ne vklopi zaslona, če je telefon v žepu ali na mizi s prednjo stranjo obrnjeno navzdol.</string>
-  <string name="pref_header_lockscreen">Zaslon za zaklepanje</string>
+  <string name="pref_header_lockscreen">Zaklenjen zaslon</string>
   <string name="pref_block_current_app">Blokiraj trenutni program</string>
   <string name="pref_block_current_app_desc">Ne prikaži obvestil trenutnega programa.</string>
   <string name="pref_header_behaviour">Vedenje</string>
@@ -100,22 +101,22 @@
     <item name="holo">Gola svetla</item>
     <item name="holodark">Gola temna</item>
     <item name="random">Psihodelična (naključna)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
-  <string name="pref_only_on_lock_screen">Samo na zaslonu za zakl.</string>
-  <string name="pref_only_on_lock_screen_desc">Pojavna obvestila prikaži samo na zaslonu za zaklepanje.</string>
-  <string name="pref_privacy_on_lockscreen">Zasebnost zaslona za zakl.</string>
-  <string name="pref_privacy_on_lockscreen_desc">Na zaslonu za zaklepanje ne prikaži vsebine</string>
+  <string name="pref_only_on_lock_screen">Samo na zakl. zaslonu</string>
+  <string name="pref_only_on_lock_screen_desc">Pojavna obvestila prikaži samo na zaklenjenem zaslonu.</string>
+  <string name="pref_privacy_on_lockscreen">Zasebnost zakl. zaslona</string>
+  <string name="pref_privacy_on_lockscreen_desc">Na zaklenjenem zaslonu ne prikaži vsebine</string>
   <string name="accessibility_desc">Omogočite to storitev, da programu dovolite branje vaših obvestil.\n\nNE omogočite storitve dostopnosti, če je v vaši napravi nameščen Android 4.3 ali novejši (namesto tega sledite navodilom v programu).</string>
   <string name="device_admin_disable_warning">Po onemogočanju te storitve morda nekatere lastnosti programa ne bodo delovale pravilno.</string>
   <string name="title_activity_device_admin_enabler">Omogoči skrbništvo naprave</string>
-  <string name="pref_device_admin">Popravi hrošča \'zas. ostane vkl.\'.</string>
+  <string name="pref_device_admin">Popravi hrošča \'zasl. ostane vkl.\'.</string>
   <string name="no_proximity_sensor_error">Tipala bližine ni bilo mogoče zaznati. Zaznavanje žepa ne bo delovalo. NE prijavite tega hrošča.</string>
   <string name="pref_keep_screen_on_forever">Pusti zaslon vklopljen</string>
   <string name="pref_keep_screen_on_forever_desc">Po vklopu zaslona ga pusti vklopljenega, dokler je obvestilo vidno.</string>
   <string name="action_help">Pomoč!</string>
   <string name="action_test">Preizkus</string>
-  <string name="device_admin_enable_explanation">Omogočanje te možnosti bo dovolilo programu, da izklopi zaslon. Uporabite samo, če se zaslon ne izklopi po prikazu pojavnih obvestil na zaslonu za zaklepanje ali zaznavanje žepa ne deluje pravilno.\n\nPOMEMBNO! Programa ne boste mogli odstraniti, če je ta lastnost omogočena.</string>
   <string name="device_admin_alredy_on">Skrbništvo naprave že vklopljeno.</string>
   <string name="device_admin_not_available">Skrbništvo naprave ni omogočeno, Ustavljanje.</string>
   <string name="intro_status_on">Storitev je omogočena. Poizkusite si poslati sporočilo.\nČe to ne deluje, ponovno zaženite napravo in poizkusite znova.\nTapnite tukaj, če potrebujete pomoč.</string>
@@ -127,19 +128,19 @@
   <string name="pref_reminder_delay">Čas opomnika</string>
   <string name="pref_reminder_delay_desc">Če povlečete obvestilo navzgor, ga bo Heads-up ponovno prikazal po št. minut določenem tukaj. Nastavite na 0, da onemogočite.\nOPOZORILO: preizkusna, nestabilna lastnost. Ne zanašajte se, da bo delovala.</string>
   <string name="pref_reminder_delay_counter">Opomni me po <xliff:g id="time" example="7">%s</xliff:g> minutah</string>
-  <string name="pref_top_margin_locked">Položaj obv. na zaslonu za zakl.</string>
-  <string name="pref_dont_disturb_error">Opozorilo: Google je v Androidu 6.0 odstranil možnost pridobitve opravil v izvajanju, tako da to ne bo delovalo pravilno. Iz dokumentacije:\ngetRecentTasks() — Od LOLLIPOPA naprej ta metoda ni več na voljo programom tretjih oseb: uvedba na dokumente osredotočenih nedavnih opravil pomeni, da lahko pride do uhajanja osebnih podatkov. Za povratno združljivost bo še vedno vrnila majhen podniz svojih podatkov: opravila klicne funkcije in morda druga opravila, kot je domače, ki so znana po tem, da niso občutljiva.</string>
+  <string name="pref_top_margin_locked">Položaj obv. na zakl. zaslonu</string>
+  <string name="pref_dont_disturb_error">Opozorilo: Google je v Androidu 6.0 odstranil možnost pridobivanja opravil v izvajanju, tako da to ne bo delovalo pravilno.</string>
   <string name="pref_dismiss_on_swipe_desc">Odstrani obvestila iz predala, ko jih povlečem vodoravno stran. Še vedno lahko tapnete X, da opustite iz predala.\nZahteva Android 4.3</string>
   <string name="pref_dismiss_keyguard_desc">Poizkusite odkleniti napravo, ko odprete obvestilo. Onemogočite, če dobite prazno namizje, ko odprete obvestilo.</string>
   <string name="pref_broadcast_notifications">Obvestila oddaje</string>
-  <string name="pref_broadcast_notifications_desc">Daj drugim programom dostop do svojih obvestil. To bo zmanjšalo uporabo RAM-a, če uporabite program, kot je Voiceify. Pustite jo izklopljeno, razen če vas eden od mojih programov pozove, da jo omogočite.</string>
+  <string name="pref_broadcast_notifications_desc">Daj drugim programom dostop do mojih obvestil. To bo zmanjšalo uporabo RAM-a, če uporabite program, kot je Voiceify. Pustite jo izklopljeno, razen če vas eden od mojih programov pozove, da jo omogočite.</string>
   <string name="title_broadcast_request">Dostop do obvestil</string>
   <string name="content_broadcast_request">To bo dalo %s dostop do vaših obvestil. Ali res to želite storiti?</string>
   <string name="pref_show_non_cancelable">Prikaži nepreklicljiva obv.</string>
   <string name="pref_show_non_cancelable_desc">Prikaži tekoča, neizbrisljiva obvestila, ki jih prikažejo storitve v ozadju, kot so Prejemi.\nOpomba: če se nekatera obvestila nočejo odstraniti, poizkusite to onemogočiti.</string>
   <string name="action_donate">Daruj</string>
   <string name="pref_dismiss_keyguard_dirty">Nadom. način odklepanja</string>
-  <string name="pref_dismiss_keyguard_dirty_desc">Če običajna možnost oklepanja ne deluje, poizkusite to omogočiti.\nOPOZORILO: to bo preglasilo vso varnost zaslona za zaklepanje in lahko povzroči težave na nekaterih napravah!</string>
+  <string name="pref_dismiss_keyguard_dirty_desc">Če običajna možnost oklepanja ne deluje, poizkusite to omogočiti.\nOPOZORILO: to bo preglasilo vso varnost zaklenjenega zaslona in lahko povzroči težave na nekaterih napravah!</string>
   <string name="pref_night_mode">Nočni način</string>
   <string name="pref_night_mode_desc">Onemogoči obvestila med spanjem</string>
   <string name="pref_night_mode_start">Začetni čas nočnega načina</string>

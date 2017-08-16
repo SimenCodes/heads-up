@@ -36,6 +36,9 @@
   <string name="pref_header_style">סגנון</string>
   <string name="pref_lock_screen_on">הצג על מסך הנעילה</string>
   <string name="pref_lock_screen_on_desc">הצג את ההתראות  על מסך הנעילה.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
+  <string name="pref_overlay_display_time">תצוגת זמן</string>
+  <string name="pref_overlay_time_max">עד שאני אתייחס לזה</string>
   <string name="title_activity_settings">הגדרות</string>
   <string name="pref_header_general">סינון</string>
   <string-array name="priorityLevel">
@@ -50,11 +53,13 @@
   <string name="pref_opacity">אטימות</string>
   <string name="pref_overlay_style">ערכת נושא</string>
   <string name="pref_keep_on_lock_screen">השאר במסך הנעילה</string>
+  <string name="pref_dismiss_on_swipe">שחרר בהחלקה</string>
   <string name="title_activity_noshow_list">אל תפריע</string>
   <string name="pref_round_icons">סמלים עגולים</string>
   <string name="pref_use_proximity">זיהוי כיס</string>
   <string name="pref_use_proximity_desc">אל תדליק את המסך אם הטלפון בכיס או עם הפנים למטה על השולחן.</string>
   <string name="pref_header_lockscreen">מסך נעילה</string>
+  <string name="pref_block_current_app">חסום יישום נוכחי</string>
   <string name="pref_header_behaviour">התנהגות</string>
   <string name="pref_font_size">גודל גופן</string>
   <string name="leave_review">השאר סקירה</string>
@@ -72,6 +77,7 @@
     <item name="holo">Plain light</item>
     <item name="holodark">Plain dark</item>
     <item name="random">פסיכודלי (אקראי)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">אובונטו</item>
   </string-array>
   <string name="pref_only_on_lock_screen">פועל רק במסך הנעילה</string>
@@ -80,8 +86,12 @@
   <string name="pref_keep_screen_on_forever">השאר את המסך דולק</string>
   <string name="action_help">עזרה!</string>
   <string name="action_test">בדיקה</string>
+  <string name="export_debug_data">יצא מידע פיתוח</string>
   <string name="pref_close_on_outside_touch">סגור במגע חיצוני</string>
   <string name="pref_close_on_outside_touch_desc">הסר חלונות קופצים אם נוגעים מחוץ לראשים</string>
   <string name="pref_reminder_delay">זמן תזכורת</string>
   <string name="action_donate">תרום</string>
+  <string name="pref_night_mode">מצב לילה</string>
+  <string name="pref_night_mode_start">זמן התחלת מצב לילה</string>
+  <string name="pref_night_mode_end">זמן סיום מצב לילה</string>
 </resources>

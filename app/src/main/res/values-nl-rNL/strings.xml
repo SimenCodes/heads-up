@@ -35,6 +35,7 @@
   <string name="pref_header_style">Stijl</string>
   <string name="pref_lock_screen_on">Toon op vergrendelscherm</string>
   <string name="pref_lock_screen_on_desc">Toon de Heads-up melding op het vergrendelscherm.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Als de app zich vreemd gedraagt de laatste tijd, tik hier om het probleem te melden. Je hoeft dit niet te doen als de app zich normaal gedraagt.\n\nSchrijf a.u.b. in het Engels</string>
   <string name="pref_overlay_display_time">Weergavetijd</string>
   <string name="pref_overlay_time_max">Tot ik de melding sluit</string>
@@ -67,6 +68,7 @@
   <string name="pref_header_behaviour">Gedrag</string>
   <string name="music_title">Speelt: <xliff:g id="track" example="TRACK">%s</xliff:g></string>
   <string name="music_text">Artiest: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+  <string name="music_unknown">Onbekend</string>
   <string name="pref_music_popup">Pop-up huidig nummer</string>
   <string name="pref_music_popup_desc">Toont metagegevens van het huidige nummer.\nNiet alle muziekspelers worden ondersteund.</string>
   <string name="intro_warning_both_services">Zowel toegang tot meldingen, als de toegankelijkheid service is ingeschakeld. Schakel één ervan uit.</string>
@@ -99,6 +101,7 @@
     <item name="holo">Simpel licht</item>
     <item name="holodark">Simpel donker</item>
     <item name="random">Willekeurig</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Alleen op vergrendelscherm</string>
@@ -114,7 +117,6 @@
   <string name="pref_keep_screen_on_forever_desc">Na het inschakelen van het scherm, houd het scherm aan net zolang de Heads-up zichtbaar is.</string>
   <string name="action_help">Help!</string>
   <string name="action_test">Test</string>
-  <string name="device_admin_enable_explanation">Geef toestemming aan Heads-up om je scherm uit te zetten. Gebruik deze functie allen als het scherm niet uitgaat nadat er een pop-up wordt getoond op het vergrendelscherm of als de broekzak detectie niet goed werkt.\n\nBELANGRIJK! Als je deze functie inschakelt kun je Heads-up niet verwijderen.</string>
   <string name="device_admin_alredy_on">Al een apparaatbeheerder.</string>
   <string name="device_admin_not_available">Apparaat kan niet bepaald worden. Stopt.</string>
   <string name="intro_status_on">De service is geactiveerd. Probeer een testmelding te sturen.\nAls dit niet werkt probeer dan je apparaat opnieuw op te starten en probeer opnieuw.\nTap hier als je hulp nodig hebt</string>
@@ -124,9 +126,10 @@
   <string name="pref_close_on_outside_touch">Tap buiten de pop-up om te sluiten</string>
   <string name="pref_close_on_outside_touch_desc">Sluit de pop-up wanneer je het scherm aanraakt</string>
   <string name="pref_reminder_delay">Tijdsherinnering</string>
-  <string name="pref_reminder_delay_desc">Als je de Heads-up naar boven veegt word deze na opgegeven aantal minuten weer getoond. Voer nul in om uit te schakelen.\n WAARSCHUWING: experimentele functie, werkt misschien niet.</string>
+  <string name="pref_reminder_delay_desc">Als je de Heads-up naar boven veegt word deze na opgegeven aantal minuten weer getoond. Voer nul in om uit te schakelen.\n Waarschuwing: experimentele functie, werkt misschien niet.</string>
   <string name="pref_reminder_delay_counter">Herinner mij na <xliff:g id="time" example="7">%s</xliff:g> minuten</string>
   <string name="pref_top_margin_locked">Pop-up positie op vergrendelscherm</string>
+  <string name="pref_dont_disturb_error">Opgelet: Google heeft de mogelijkheid om lopende taken te krijgen in Android 6.0, dus dit zal waarschijnlijk niet correct werken.</string>
   <string name="pref_dismiss_on_swipe_desc">Verwijder meldingen van de statusbalk wanneer je horizontaal erover veegt. Je kunt nog steeds op X drukken om de melding te verwijderen van de statusbalk.\nVereist Android 4.3</string>
   <string name="pref_dismiss_keyguard_desc">Poging om het apparaat te ontgrendelen wanneer u een bericht opent. Schakel dit uit als u een leeg bureaublad krijgt als u het bericht opent.</string>
   <string name="pref_broadcast_notifications">Meldingen doorsturen</string>
@@ -138,4 +141,22 @@
   <string name="action_donate">Doneren</string>
   <string name="pref_dismiss_keyguard_dirty">Alternatief ontgrendelen</string>
   <string name="pref_dismiss_keyguard_dirty_desc">Als het normale ontgrendelen niet werkt, probeer dit in te schakelen.\nWAARSCHUWING: De overschrijft de veiligheid van het vergrendelscherm, en kan problemen veroorzaken op sommige apparaten!</string>
+  <string name="pref_night_mode">Nacht modus</string>
+  <string name="pref_night_mode_desc">Schakel Heads-up uit als u slaap</string>
+  <string name="pref_night_mode_start">Nacht-modus starttijd</string>
+  <string name="pref_night_mode_end">Nacht-modus eindtijd</string>
+  <string name="title_activity_setup">Heads-up setup</string>
+  <string name="welcome_hi">Halo!</string>
+  <string name="welcome_info">Bedankt voor het downloaden van Heads-up. \n\n Terwijl u het programma installeert zal u een paar waarschuwingen zien van uw android systeem. We weten dat ze er een beetje eng uit zien maar geen paniek; Heads-up verzamelt, bewaart of stuurt GEEN ENKELE informatie door.</string>
+  <string name="welcome_btn_opensettings">Open app instellingen</string>
+  <string name="welcome_step1_title">Stap 1: Meldingen</string>
+  <string name="welcome_step1_text">Geef Heads-up toegang tot jouw notificaties door op onderstaande knop te klikken, daarna Heads-up aan te zetten en dan de zwarte knop op je systeem in te drukken.</string>
+  <string name="welcome_step2_title">Stap 2: Pop-up notificaties</string>
+  <string name="welcome_step2_2_text">Om Heads-up toegang te geven om je pop-ups te zien, klik je op onderstaande knop, zet de schakelaar aan (on), en klik op de zwarte knop op je apparaat.</string>
+  <string name="welcome_done_title">Dat was het!</string>
+  <string name="welcome_done_text">Als je een Heads-up notificatie ziet bovenaan je scherm, ben je helemaal klaar!\n\n Nu, ga naar de instellingen pagina en personaliseer alles hoe jij het wilt.\n\n Verschijnt er geen Heads-up notificatie? Klik op Help!</string>
+  <string name="sample_notification">Bedankt om Heads- up te proberen! Als het je bevalt kan je een review achterlaten op play. Als je het niet aan de praat krijgt kan je hulp krijgen op de GitHub projecten pagina.</string>
+  <string name="sample_notification_title_setup">Het werkt!</string>
+  <string name="pref_off_as_locked">Tijdelijke oplossing: staat af wanneer het apparaat vergrendelt is</string>
+  <string name="pref_off_as_locked_desc">Als u dit aanzet zal Heads-uplaten denken dat het scherm is vergrendelt wanneer het is uitgeschakelt. Handig als je notificaties krijgt op je vergrendelscherm zelfs als dit af staat.</string>
 </resources>

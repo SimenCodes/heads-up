@@ -35,6 +35,7 @@
   <string name="pref_header_style">スタイル</string>
   <string name="pref_lock_screen_on">ロック画面に表示する</string>
   <string name="pref_lock_screen_on_desc">ロック画面に heads-up を表示します。</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">アプリの動作に問題がある場合は、ここをタップして問題を報告してください。アプリが普通に動作している場合は何もする必要はありません。\n\n</string>
   <string name="pref_overlay_display_time">表示時間</string>
   <string name="pref_overlay_time_max">消去するまで</string>
@@ -100,6 +101,7 @@
     <item name="holo">プレインライト</item>
     <item name="holodark">プレインダーク</item>
     <item name="random">サイケデリック (ランダム)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">ロック画面でのみ</string>
@@ -115,7 +117,6 @@
   <string name="pref_keep_screen_on_forever_desc">画面をオンにした後は、heads-up を表示し続けます。</string>
   <string name="action_help">ヘルプ!</string>
   <string name="action_test">テスト</string>
-  <string name="device_admin_enable_explanation">これにより Heads-up が画面をオフにすることができるようになります。ロック画面でポップアップを表示した後、画面がオフにならない場合や、ポケット検出が正しく動作しない場合にのみ使用してください。 \n\n重要! この機能が有効になっている間は、Heads-up をアンインストールすることができません。</string>
   <string name="device_admin_alredy_on">すでにデバイス管理になっています。</string>
   <string name="device_admin_not_available">デバイスのプロビジョニングが有効ではありません。停止しています。</string>
   <string name="intro_status_on">サービスは有効です。自分にメッセージを送信してみてください。 \nもし動作しない場合は、お使いのデバイスを再起動して、もう一度やり直してください。 \nヘルプが必要な場合は、ここをタップしてください</string>

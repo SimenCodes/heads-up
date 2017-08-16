@@ -15,7 +15,7 @@
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
-  <string name="app_name">Heads-up notifications</string>
+  <string name="app_name">Noificaciones Heads-up</string>
   <string name="app_icon_name">Heads-up</string>
   <string name="title_activity_welcome">Notificaciones Heads-up</string>
   <string name="action_settings">Ajustes</string>
@@ -35,6 +35,7 @@
   <string name="pref_header_style">Estilo</string>
   <string name="pref_lock_screen_on">Mostrar en pantalla de bloqueo</string>
   <string name="pref_lock_screen_on_desc">Mostrar heads-up en la pantalla de bloqueo.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Si la aplicación ha estado fallando, presiona aquí para reportar el problema. No necesitas hacer nada si la aplicación está funcionando normalmente.\n\n</string>
   <string name="pref_overlay_display_time">Duración de la notificación</string>
   <string name="pref_overlay_time_max">Hasta ser descartado</string>
@@ -48,7 +49,7 @@
     <item name="MIN">Información contextual y de fondo (clima, eventos expirados, sugerencias)</item>
   </string-array>
   <string name="pref_overlay_display_time_counter"><xliff:g id="time" example="7">%s</xliff:g> segundos</string>
-  <string name="pref_top_margin">Posición de los heads-up cuando desbloqueado</string>
+  <string name="pref_top_margin">Posición de la notificación al desbloquear</string>
   <string name="pref_turn_screen_on">Encender la pantalla</string>
   <string name="pref_turn_screen_on_desc">Encender la pantalla al recibir una notificación</string>
   <string name="pref_opacity">Opacidad</string>
@@ -75,7 +76,7 @@
   <string name="accessibility_not_found_detour"><![CDATA[Ve hacia \'Accesibilidad\' > \'Heads-up notifications\']]></string>
   <string name="accessibility_toast">Selecciona \'Heads-up notifications\' para encender el servicio</string>
   <string name="pref_floating_window">Abrir como ventana flotante</string>
-  <string name="pref_floating_window_desc">Manten presionado el ícono para abrir como ventana flotante. Función experimental, funciona con OmniRom y XHaloFloatingWindow.</string>
+  <string name="pref_floating_window_desc">Toca el ícono para abrir la notificacióncomo ventana flotante. Es experimental, funciona con OmniRom y XHaloFloatingWindow.</string>
   <string name="pendingintent_cancel_exception">La aplicación canceló la acción</string>
   <string name="pendingintent_null_exception">La aplicación no puede determinar la acción</string>
   <string name="pref_hide_dismiss_button">Ocultar el botón descartar</string>
@@ -84,7 +85,7 @@
   <string name="pref_compact_mode">Modo compacto</string>
   <string name="pref_compact_mode_desc">Mostrar sólo la primera línea de la notificación.</string>
   <string name="pref_font_size">Tamaño de fuente</string>
-  <string name="pref_font_size_desc">Cambiar el tamaño del texto en los heads-up.</string>
+  <string name="pref_font_size_desc">Cambiar el tamaño de fuente de la notificación</string>
   <string name="leave_review">Escribe una opinión</string>
   <string name="pref_header_other">Acerca de</string>
   <string-array name="overlayPosition">
@@ -100,28 +101,28 @@
     <item name="holo">Claro simple</item>
     <item name="holodark">Oscuro simple</item>
     <item name="random">Psicodelia (al azar)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
-  <string name="pref_only_on_lock_screen">Solo estando bloqueado</string>
-  <string name="pref_only_on_lock_screen_desc">Solo mostrar heads-ups en la pantalla de bloqueo.</string>
-  <string name="pref_privacy_on_lockscreen">Ocultar contenido</string>
+  <string name="pref_only_on_lock_screen">Solo en pantalla de bloqueo</string>
+  <string name="pref_only_on_lock_screen_desc">Sólo mostrar notificaciones en la pantalla de bloqueo.</string>
+  <string name="pref_privacy_on_lockscreen">Privacidad de pantalla de bloqueo</string>
   <string name="pref_privacy_on_lockscreen_desc">No mostrar el contenido de los mensajes en la pantalla de bloqueo.</string>
-  <string name="accessibility_desc">Activa este servicio para permitir que Heads-up vea tus notificaciones.\n\nNO ACTIVES este servicio si tu dispositivo usa Android 4.3 o superior.</string>
+  <string name="accessibility_desc">Activa este servicio para permitir que Heads-up vea tus notificaciones.\n\nNO actives el servicio de accesibilidad si tu dispositivo usa Android 4.3 o superior (sigue las instrucciones en la aplicación en vez de eso).</string>
   <string name="device_admin_disable_warning">Al desactivar este servicio, algunas funciones de Heads-up pueden no funcionar correctamente.</string>
-  <string name="title_activity_device_admin_enabler">Activar como Administrador de Dispositivo</string>
-  <string name="pref_device_admin">Forzar Apagar pantalla</string>
-  <string name="no_proximity_sensor_error">Sensor de proximidad no detectado. La detección del bolsillo no funcionará. Porfavor NO reportar este bug.</string>
+  <string name="title_activity_device_admin_enabler">Activar Administrador de Dispositivo</string>
+  <string name="pref_device_admin">Arreglar error \'la pantalla permanece encendida\'.</string>
+  <string name="no_proximity_sensor_error">Sensor de proximidad no detectado. La detección del bolsillo no funcionará. Por favor NO reportar este error.</string>
   <string name="pref_keep_screen_on_forever">Mantener la pantalla encendida</string>
   <string name="pref_keep_screen_on_forever_desc">Luego de que se encienda la pantalla, mantenerla encendida mientras el Heads-Up este visible.</string>
   <string name="action_help">Ayuda!</string>
   <string name="action_test">Prueba</string>
-  <string name="device_admin_enable_explanation">Activar esto permite a Heads-up apagar tu pantalla. Usar si la pantalla no se apaga tras mostrar un heads-up en la pantalla de bloqueo, o si la detección de bolsillo no funciona correctamente.</string>
-  <string name="device_admin_alredy_on">Ya eres administrador de dispositivos.</string>
+  <string name="device_admin_alredy_on">Ya es administrador de dispositivos.</string>
   <string name="device_admin_not_available">Aprovisionamiento del dispositivo no habilitado.
 Deteniendo.</string>
-  <string name="intro_status_on">El servicio se está ejecutando. Pruébalo enviando un mensaje a tu mismo.\nContáctame a sb@simen.codes si no puedes hacerlo funcionar.\nPor favor escríbeme en inglés.</string>
-  <string name="intro_status_on_confirmed">El servicio se está ejecutando. Pruébalo enviando un mensaje a tu mismo.\nContáctame a sb@simen.codes si no puedes hacerlo funcionar.\nPor favor escríbeme en inglés.</string>
-  <string name="accessibility_service_blocked">%s puede estar impidiendo que Heads-up acceda a sus notificaciones. Porfavor deshabilitala desde el menu de Accesibilidad.</string>
+  <string name="intro_status_on">El servicio está activado. Intenta enviar un mensaje a ti mismo.\nSi no funciona, reinicia tu dispositivo y vuelve a intentarlo. \nToca aquí si necesitas ayuda</string>
+  <string name="intro_status_on_confirmed">El servicio está funcionando. Intenta enviar un mensaje a ti mismo.\nToca aquí si necesitas ayuda.</string>
+  <string name="accessibility_service_blocked">%s puede estar impidiendo que Heads-up acceda a sus notificaciones. Por favor deshabilitala desde el menu de Accesibilidad.</string>
   <string name="export_debug_data">Exportar informacion de debug</string>
   <string name="pref_close_on_outside_touch">Cerrar al tocar fuera</string>
   <string name="pref_close_on_outside_touch_desc">Quitar el popup al tocar fuera del heads-up</string>
@@ -129,7 +130,7 @@ Deteniendo.</string>
   <string name="pref_reminder_delay_desc">Si deslizas el heads-up hacia arriba, el heads-up volverá a mostrarse tras los minutos que especifique aquí. Poner cero para deshabilitar. \nADVERTENCIA: funcion experimental e inestable. No confíe en que funcione.</string>
   <string name="pref_reminder_delay_counter">Recordarme tras <xliff:g id="time" example="7">%s</xliff:g> minutos</string>
   <string name="pref_top_margin_locked">Posición del Popup en la pantalla de bloqueo</string>
-  <string name="pref_dont_disturb_error">Advertencia: Google ha removido la habilidad de mantener funcionando tareas en Android 6.0, por eso tal vez esto no funcionará apropiadamente. Desde los documentos:\ngetRecentTasks()  —  A partir de LOLLIPOP, este método ya no está disponible para aplicaciones de terceros: la introducción de recientes al centradas en los documentos significa que pueden filtrar información personal. Para retrocompatibilidad, todavía devolverá un pequeño subconjunto de sus datos: el llamado a las propias tareas, y posiblemente algunas otras tareas como la de home que son conocidas por no ser sensibles.</string>
+  <string name="pref_dont_disturb_error">Advertencia: Google ha removido la habilidad de mantener funcionando tareas en Android 6.0, por eso tal vez esto no funcionará apropiadamente.</string>
   <string name="pref_dismiss_on_swipe_desc"> Al descartar un heads-up deslizando, remover también la notificación en la barra de notificaciones. Igual puedes presionar la X para descartar notificaciones en la barra.</string>
   <string name="pref_dismiss_keyguard_desc">Intentar desbloquear el dispositivo cuando abra una notificación. Desactivar si al abrir una notificación ve una pantalla en blanco.</string>
   <string name="pref_broadcast_notifications">Transmitir notificaciones</string>

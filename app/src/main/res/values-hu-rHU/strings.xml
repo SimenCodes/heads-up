@@ -35,6 +35,7 @@
   <string name="pref_header_style">Stílus</string>
   <string name="pref_lock_screen_on">Megjelenítés lezárt kijelzőn</string>
   <string name="pref_lock_screen_on_desc">Mutassa a lebegő értesítést a lezárt kijelzőn.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Ha az alkalmazás nem működik megfelelően, akkor érintse meg itt, hogy jelentse a problémát. Ha megfelelően működik, nincs semmi teendője.\n\nMegjegyzés: Kérem, hogy hibabejelentését angolul fogalmazza meg!</string>
   <string name="pref_overlay_display_time">Értesítés megjelenítésének időtartama</string>
   <string name="pref_overlay_time_max">Elutasításig</string>
@@ -100,6 +101,7 @@
     <item name="holo">Világos téma</item>
     <item name="holodark">Sötét téma</item>
     <item name="random">Pszichedelikus (véletlenszerű)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Csak a lezárt kijelzőn</string>
@@ -115,7 +117,6 @@
   <string name="pref_keep_screen_on_forever_desc">A kijelző bekapcsolása után tartsa azt mindaddig bekapcsolva, amíg a lebegő értesítés látható.</string>
   <string name="action_help">Segítség!</string>
   <string name="action_test">Teszt</string>
-  <string name="device_admin_enable_explanation">Ennek bekapcsolása lehetővé teszi, hogy az alkalmazás kikapcsolja a képernyőt. Csak akkor használja ezt a lehetőséget, ha a kijelző nem kapcsol ki az értesítés megjelenítése után, vagy ha zseb észlelése nem működik megfelelően.\n\nFONTOS! Nem tudja majd törölni az alkalmazást, amíg ez a funkció engedélyezve van.</string>
   <string name="device_admin_alredy_on">Az eszköz-rendszergazda már engedélyezve van.</string>
   <string name="device_admin_not_available">Eszköz-rendszergazda nem engedélyezett. Leállítás.</string>
   <string name="intro_status_on">A szolgáltatás engedélyezve van. Próbáljon egy üzenetet küldeni saját magának.\nHa ez nem működik, kérjük indítsa újra az eszközt, és próbálja újra.\nÉrintse meg itt, ha segítségre van szüksége</string>

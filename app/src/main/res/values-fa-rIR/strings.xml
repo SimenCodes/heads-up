@@ -14,4 +14,52 @@
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<resources xmlns:xliff="http://schemas.android.com/apk/res-auto"/>
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+  <string name="app_name">اعلانهای جلب توجه</string>
+  <string name="app_icon_name">جلب توجه</string>
+  <string name="title_activity_welcome">اعلانهای جلب توجه</string>
+  <string name="action_settings">تنظیمات</string>
+  <string name="reader_btn_open">باز کردن</string>
+  <string name="intro_desc">دکمه زیر را بزنید تا اعلان های جلب توجه شما فعال یا لغو شوند.</string>
+  <string name="welcome_btn_toggleservice">تبديل رؤساء متابعة</string>
+  <string name="intro_warning_miui">هل تستخدم MIUI ROM أو مماثل؟ قبل أن تتمكن من استخدام هذا التطبيق، سوف تحتاج على الأرجح لإعطائه بعض الركود عندما يتعلق الأمر بالأمن. \ ن 1. انتقل إلى إعدادات النظام وGT. كل وGT. التطبيقات وGT. تم تنزيلها وGT. رؤساء متابعة الإخطارات. \ ن 2. تبديل المفتاح الذي يقول \'عرض النوافذ المنبثقة \"(الخيار الثاني). \ ن 3. في الجزء السفلي، انتقل إلى \'إدارة الأذونات. \ ن 4. مجموعة \"أثق بهذا التطبيق\" إلى جرا. </string>
+  <string name="site_ad">دوست دارید چی ببینید؟ برنامه های دیگه من رو هم چک کنید:</string>
+  <string name="title_activity_app_list">فیلتر نرم افزار</string>
+  <string name="pref_priority_title">اولویت اعلان</string>
+  <string name="pref_priority_summary">فیلتر کردن اعلان ها بر اساس اولویت. نیازمند آندروید 4.1</string>
+  <string name="applist_desc">برای بی صدا کردن یک برنامه، آن را باز نکنید. همچنین شما میتوانید روی دکمه X ضربه بزنید و نگه دارید و آن را داخل \"جلب توجه\" بندازیم تا برنامه بی صدا شود.</string>
+  <string name="blocked_confirmation">برنامه های مسدود شده</string>
+  <string name="pref_header_style">سبک</string>
+  <string name="pref_lock_screen_on">نمایش در صفحه قفل شده</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
+  <string name="pref_overlay_display_time">زمان نمایش</string>
+  <string name="title_activity_settings">تنظیمات</string>
+  <string name="pref_header_general">فیلتر کردن</string>
+  <string-array name="priorityLevel">
+    <item name="MAX">مهم و فوری (تماس های از دست رفته، دستورالعمل ها، هشدارهای اضطراری)</item>
+    <item name="HIGH">مهم (ارتباطات، ایمیل های مهم)</item>
+    <item name="NORMAL">Normal (+notifications from old apps)</item>
+    <item name="LOW">Non-important (software updates, junk mail)</item>
+    <item name="MIN">Contextual and background info (weather, expired events, suggestions)</item>
+  </string-array>
+  <string name="title_activity_noshow_list">مزاحم نشوید</string>
+  <string-array name="overlayPosition">
+    <item name="aboveStatus">Top</item>
+    <item name="top">Below status bar</item>
+    <item name="center">Center</item>
+    <item name="bottom">ته صفحه، دکمه</item>
+  </string-array>
+  <string-array name="overlayStyles">
+    <item name="l">Android 5.0 \'Lollipop\' light</item>
+    <item name="ldark">Android 5.0 \'Lollipop\' dark</item>
+    <item name="lblack">Android 5.0 \'Lollipop\' black</item>
+    <item name="holo">نور ساده</item>
+    <item name="holodark">Plain dark</item>
+    <item name="random">Psychedelic (random)</item>
+    <!-- Do not translate this one -->
+    <item name="ubuntu">Ubuntu</item>
+  </string-array>
+  <string name="welcome_hi">سلام!</string>
+  <string name="welcome_btn_opensettings">تنظیمات برنامه باز</string>
+  <string name="welcome_step1_title">مرحله 1: اطلاعیه ها</string>
+</resources>

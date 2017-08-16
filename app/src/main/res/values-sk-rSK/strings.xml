@@ -35,6 +35,7 @@
   <string name="pref_header_style">Vzhľad</string>
   <string name="pref_lock_screen_on">Zobraziť na uzamknutej obrazovke</string>
   <string name="pref_lock_screen_on_desc">Zobrazí heads-up upozornenia na uzamknutej obrazovke.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">V prípade, že sa aplikácia nechová správne, kliknutím sem nahláste problém, prosím píšte po anglicky. Nemusíte robiť nič, ak sa aplikácia chová normálne.\n\n</string>
   <string name="pref_overlay_display_time">Doba zobrazenia</string>
   <string name="pref_overlay_time_max">Pokým ho nezruším</string>
@@ -100,6 +101,7 @@
     <item name="holo">Jednoduchý svetlý</item>
     <item name="holodark">Jednoduchý tmavý</item>
     <item name="random">Náhodný</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Iba na uzamknutej obrazovke</string>
@@ -115,7 +117,6 @@
   <string name="pref_keep_screen_on_forever_desc">Ponechá obrazovku rozsvietenú pokým bude zobrazené upozornenie.</string>
   <string name="action_help">Pomoc!</string>
   <string name="action_test">Test</string>
-  <string name="device_admin_enable_explanation">Povolením dovolíte aplikácii Heads-up vypnúť obrazovku. Použite iba ak sa obrazovka nevypne po zobrazení upozornenia na uzamknutej obrazovke alebo ak detekcia vrecka nefunguje správne.\n\nDÔLEŽITÉ! Nebudete môcť odinštalovať aplikáciu Heads-up pokým je táto funkcia povolená.</string>
   <string name="device_admin_alredy_on">Už je správca zariadenia.</string>
   <string name="device_admin_not_available">Správca zariadenia nie je povolený. Ukončuje sa.</string>
   <string name="intro_status_on">Služba je povolená. Skúste si poslať správu.\nAk nefunguje, prosím, reštartujte zariadenie a skúste to znovu.\nKliknite sem ak potrebujete pomoc.</string>
@@ -157,4 +158,5 @@
   <string name="sample_notification">Ďakujem, že používate Heads-up! Ak sa vám páči, prosím, napíšte recenziu v Obchode Play. Ak vám ale nefunguje, môžete získať pomoc na stránkach projektu na GitHub.</string>
   <string name="sample_notification_title_setup">Funguje to!</string>
   <string name="pref_off_as_locked">Riešenie: vyp. ako zamknuté</string>
+  <string name="pref_off_as_locked_desc">Ak je povolené, Heads-up si bude myslieť, že je obrazovka zamknutá vždy, keď je vypnutá. Užitočné, ak sa upozornenia zobrazujú na uzamknutej obrazovke, aj keď máte toto nastavenie vypnuté.</string>
 </resources>

@@ -35,6 +35,7 @@
   <string name="pref_header_style">Стиль</string>
   <string name="pref_lock_screen_on">Відображення на екрані блокування</string>
   <string name="pref_lock_screen_on_desc">Відображати за Heads-Up на екрані блокування.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Якщо додаток працює некоректно , то натисніть повідомити про проблему. Ви не повинні робити нічого, якщо застосунок веде себе нормально.\n\n</string>
   <string name="pref_overlay_display_time">Відображення часу</string>
   <string name="pref_overlay_time_max">Проігнорувати</string>
@@ -100,6 +101,7 @@
     <item name="holo">Просто біла</item>
     <item name="holodark">Просто темна</item>
     <item name="random">Випадкова</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Тільки на екрані блокування</string>
@@ -115,7 +117,6 @@
   <string name="pref_keep_screen_on_forever_desc">Після включення екрану, тримайте телефон до тих пір, поки  Heads-Up є видимими.</string>
   <string name="action_help">Допоможіть!</string>
   <string name="action_test">Перевірка</string>
-  <string name="device_admin_enable_explanation">Включення цього дозволу дозволить Heads-Up вимкнення екрану. Використовуйте цей дозвіл, якщо екран не вимикається після відображення спливаючого вікна на екрані блокування чи виявлення \"телефона у кишені\" не працює правильно.\n\nВАЖЛИВО! Не можна видаляти Heads-Up, коли він включений, перед видаленням виключіть його.</string>
   <string name="device_admin_alredy_on">Диспетчер пристроїв.</string>
   <string name="device_admin_not_available">Ініціалізація пристрою не ввімкнута. Зупинка.</string>
   <string name="intro_status_on">Служба активовна. Спробуйте відправити собі повідомлення. \nЯкщо вона не працює, будь ласка перезавантажте пристрій та повторіть спробу. \nНажміть тут, якщо вам потрібна допомога</string>
@@ -128,13 +129,16 @@
   <string name="pref_reminder_delay_desc">Якщо протягнути з Heads-Up вгору, Heads-Up  відобразить його через кількість хвилин, тут можна вказати. Нуль, щоб вимкнути. \nУВАГА: експериментальна, нестабільна функція. Не надійтесь на те, що вона буде працювати.</string>
   <string name="pref_reminder_delay_counter">Нагадайте мені за <xliff:g id="time" example="7">%s </xliff:g> хвилин</string>
   <string name="pref_top_margin_locked">Спливаючі повідомлення на екрані блокування</string>
+  <string name="pref_dont_disturb_error">Warning: Google removed the ability to get running tasks in Android 6.0, so this will not work properly.</string>
   <string name="pref_dismiss_on_swipe_desc">Видалити сповіщення з рядку, можна провевши пальцем горизонтально. Ще можна натиснути кнопку X, щоб очистити. \nПотрібний Android 4.3</string>
+  <string name="pref_dismiss_keyguard_desc">Attempt to unlock the device when you open a notification. Disable if you get a blank desktop when opening a notification.</string>
   <string name="pref_broadcast_notifications">Широкомовне повідомлення</string>
   <string name="pref_broadcast_notifications_desc">Дозвольте іншим моїм додаткам доступ до сповіщень. Це дозволить скоротити використання оперативної пам\'яті, у разі використання застосунку, подібного для Voiceify. Залишайте його вимкнути, тільки якщо одина з моїх програм не просить вас включити її.</string>
   <string name="title_broadcast_request">Доступ до сповіщень</string>
   <string name="content_broadcast_request">Це дасть %s доступ до вашого повідомлення. Ви впевнені, що це те, що ви хочете?</string>
   <string name="pref_show_non_cancelable">Показувати повідомлення, які не можуть бути скасовані</string>
   <string name="action_donate">Пожертвувати</string>
+  <string name="pref_dismiss_keyguard_dirty">Брудні розблокувати</string>
   <string name="pref_dismiss_keyguard_dirty_desc">Якщо параметр звичайного розблокування не працює, то спробуйте включити це.\nУВАГА: Це замінить налаштування безпеки заблокованого екрану та може визвати проблеми на деяких пристроях!</string>
   <string name="pref_night_mode">Нічний режим</string>
   <string name="pref_night_mode_desc">Вимкнути Heads-Up, поки ви спите</string>
@@ -142,8 +146,10 @@
   <string name="pref_night_mode_end">Час закінчення нічного режиму</string>
   <string name="title_activity_setup">Установка Heads-up</string>
   <string name="welcome_hi">Привіт!</string>
+  <string name="welcome_btn_opensettings">Відкрити параметри програми</string>
   <string name="welcome_step1_title">Крок 1: Повідомлення</string>
   <string name="welcome_step2_title">Крок 2: Спливаючі вікна</string>
   <string name="welcome_done_title">Ось воно!</string>
+  <string name="sample_notification">Дякуємо за спробу Heads-Up! Якщо вам це подобається, будь ласка, залиште свій відгук у Play. Якщо ви не можете змусити його працювати, ви можете отримати допомогу на сторінці проекту GitHub.</string>
   <string name="sample_notification_title_setup">Працює!</string>
 </resources>

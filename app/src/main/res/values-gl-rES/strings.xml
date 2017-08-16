@@ -35,6 +35,7 @@
   <string name="pref_header_style">Estilo</string>
   <string name="pref_lock_screen_on">Amosar na pantalla de bloqueo</string>
   <string name="pref_lock_screen_on_desc">Amosar heads-up na pantalla de bloqueo.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Se a aplicación presentou problemas ultimamente, toca aquí para reportalos. No tes que facer nada se funciona correctamente.\n\n</string>
   <string name="pref_overlay_display_time">Duración da notificación</string>
   <string name="pref_overlay_time_max">Até que o rexeite</string>
@@ -99,6 +100,7 @@
     <item name="holo">Claro simple</item>
     <item name="holodark">Escuro simple</item>
     <item name="random">Psicodélico (ó chou)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Só na pantalla de bloqueo</string>

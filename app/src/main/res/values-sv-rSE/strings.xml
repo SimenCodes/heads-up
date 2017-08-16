@@ -35,6 +35,7 @@
   <string name="pref_header_style">Stil</string>
   <string name="pref_lock_screen_on">Visa på låsskärmen</string>
   <string name="pref_lock_screen_on_desc">Visa heads-up på låsskärmen.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Om appen krånglat på senaste, tryck här för att rapportera ett problem. Du behöver inte göra något om appen fungerar som den ska\n\n</string>
   <string name="pref_overlay_display_time">Visa tid</string>
   <string name="pref_overlay_time_max">Tills jag avböjder den</string>
@@ -99,6 +100,7 @@
     <item name="holo">Fullt ljust</item>
     <item name="holodark">Fullt mörkt</item>
     <item name="random">Psychedelic (slumpmässigt)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Endast på låsskärmen</string>
@@ -114,7 +116,6 @@
   <string name="pref_keep_screen_on_forever_desc">Efter skärmen har satt på, är den på så länge Heads-up visas.</string>
   <string name="action_help">Hjälp!</string>
   <string name="action_test">Test</string>
-  <string name="device_admin_enable_explanation">Aktivera detta låter Heads-up att stänga av skärmen. Använd denna funktion om skärmen inte stängs av efter visat en popup på låsskärmen, eller om fick igenkänning inte fungerar korrekt.</string>
   <string name="device_admin_alredy_on">Redan en administratör.</string>
   <string name="device_admin_not_available">Enhetprovisionering är inte aktiverad. Stoppar.</string>
   <string name="intro_status_on">Tjänsten är aktiverad. Prova skicka dig själv ett meddelande.\nOm det inte fungerar, starta om din enhet och försök igen. Kontakta mig sb@simen.codes om du inte får det att fungera</string>

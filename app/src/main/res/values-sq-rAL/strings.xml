@@ -35,6 +35,7 @@
   <string name="pref_header_style">Stili</string>
   <string name="pref_lock_screen_on">Shfaqje kur ekrani është i kyçur</string>
   <string name="pref_lock_screen_on_desc">Shfaqi njoftimet kur ekrani është i kyçur.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Nëse aplikacioni ka kryer gabime kohët e fundit, prek këtu për të raportuar problemin. Nuk duhet të bësh asgjë nëse aplikacioni po sillet normalisht.\n\n</string>
   <string name="pref_overlay_display_time">Koha e shfaqjes</string>
   <string name="pref_overlay_time_max">Derisa ta injoroj</string>
@@ -99,6 +100,7 @@
     <item name="holo">E ndritshme e lehtë</item>
     <item name="holodark">E errët e lehtë</item>
     <item name="random">Psikedelike (e rastësishme)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Vetëm kur ekrani është i kyçur</string>
@@ -114,7 +116,6 @@
   <string name="pref_keep_screen_on_forever_desc">Pasi ta ndezësh ekranin, mbaje ndezur për aq kohë sa njoftimet janë të dallueshme.</string>
   <string name="action_help">Ndihmë!</string>
   <string name="action_test">Bëj një provë</string>
-  <string name="device_admin_enable_explanation">Aktivizimi i kësaj do ta lejojë aplikacionin që të fikë ekranin. Përdore këtë vetëm nëse ekrani nuk fiket pasi shfaqen njoftimet, ose nëse zbulimi i xhepit nuk punon siç duhet.\n\nE RËNDËSISHME! Ti nuk do të jesh i aftë që ta çinstalosh aplikacionin për sa kohë që ky tipar është aktiv.</string>
   <string name="device_admin_alredy_on">Tanimë një menaxhues i pajisjes.</string>
   <string name="device_admin_not_available">Dispozitimi i pajisjes nuk është aktiv. Duke ndaluar.</string>
   <string name="intro_status_on">Shërbimi është aktivizuar. Provo t\'i dërgosh vetes një mesazh.\nNëse nuk punon, të lutem rindiz telefonin dhe provo përsëri.\nPrek këtu nëse të duhet ndihmë</string>

@@ -35,6 +35,7 @@
   <string name="pref_header_style">其他设置</string>
   <string name="pref_lock_screen_on">在锁屏上显示</string>
   <string name="pref_lock_screen_on_desc">在锁屏界面显示 Heads-up 浮动通知。</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">如果程序近期运行不正常，请点击这里反馈问题。\n\n</string>
   <string name="pref_overlay_display_time">持续时间</string>
   <string name="pref_overlay_time_max">永不</string>
@@ -102,6 +103,7 @@
     <item name="holo">纯亮色主题</item>
     <item name="holodark">纯暗色主题</item>
     <item name="random">迷幻 （随机）</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">只在锁屏显示</string>
@@ -117,7 +119,6 @@
   <string name="pref_keep_screen_on_forever_desc">点亮屏幕以后，保持屏幕点亮直到通知消失。</string>
   <string name="action_help">帮助!</string>
   <string name="action_test">测试</string>
-  <string name="device_admin_enable_explanation">启用设备管理将允许Heads-up关闭你的屏幕。当显示弹窗后屏幕不关闭或口袋模式工作不正常请启用设备管理。</string>
   <string name="device_admin_alredy_on">设备管理器已开启。</string>
   <string name="device_admin_not_available">设备管理器未启用。正在停止。</string>
   <string name="intro_status_on">服务已开启。尝试给自己发一条信息，\n如果没有浮动通知弹出，请重启设备再试。若仍不显示请通过邮件联系开发者：sb@simen.codes.\n（反馈信息请用英文书写）</string>

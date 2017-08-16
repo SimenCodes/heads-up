@@ -35,6 +35,7 @@
   <string name="pref_header_style">風格</string>
   <string name="pref_lock_screen_on">在鎖屏上顯示</string>
   <string name="pref_lock_screen_on_desc">在鎖屏上顯示浮動通知</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">如果應用程式的行為異常，點這裡以回報錯誤。如果你的應用程式正常運作，則不用回報錯誤。（請以英文書寫）\n\n</string>
   <string name="pref_overlay_display_time">停留時間</string>
   <string name="pref_overlay_time_max">直到我移除通知</string>
@@ -100,6 +101,7 @@
     <item name="holo">明亮</item>
     <item name="holodark">灰暗</item>
     <item name="random">迷幻 (隨機)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">僅在鎖屏上顯示</string>
@@ -115,7 +117,6 @@
   <string name="pref_keep_screen_on_forever_desc">直到浮動通知消失前，螢幕將不會關閉。</string>
   <string name="action_help">幫助！</string>
   <string name="action_test">測試</string>
-  <string name="device_admin_enable_explanation">開啟此功能將允許浮動通知關閉您的螢幕\n如果在浮動通知顯示之後螢幕沒有自動關閉或口袋偵測出現異常，才需要開啟此功能。\n\n請注意！在開啟此功能後，您將無法移除此應用程式直到您將它關閉。</string>
   <string name="device_admin_alredy_on">已設置裝置管理員。</string>
   <string name="device_admin_not_available">裝置管理員尚未啟動。停止中。</string>
   <string name="intro_status_on">服務已啟動. 試試看寄給自己一封訊息.\n 如果沒出現任何東西的話，請先試試重啟您的裝置。 還是不行的話可以寄封E-Mail至sb@simen.codes. \n (請使用英文，如果英文不方便可寄封E-Mail至341464@gmail.com)</string>
@@ -138,6 +139,9 @@
   <string name="pref_show_non_cancelable">顯示常駐通知</string>
   <string name="pref_show_non_cancelable_desc">顯示由背景服務運行的常駐通知，如：下載。\n註：如果某些通知卡住無法清除的話，試試看將此功能關閉。</string>
   <string name="action_donate">捐赠</string>
+  <string name="pref_dismiss_keyguard_dirty">Head up</string>
+  <string name="pref_dismiss_keyguard_dirty_desc">head up
+</string>
   <string name="pref_night_mode">夜間模式</string>
   <string name="pref_night_mode_start">夜間模式開始時間</string>
   <string name="pref_night_mode_end">夜間模式結束時間</string>

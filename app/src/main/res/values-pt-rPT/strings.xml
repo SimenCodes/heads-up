@@ -35,6 +35,7 @@
   <string name="pref_header_style">Estilo</string>
   <string name="pref_lock_screen_on">Mostrar na tela de bloqueio</string>
   <string name="pref_lock_screen_on_desc">Mostra o Heads-up na tela de bloqueio.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Se o aplicativo apresentou problemas ultimamente, toque aqui para relatar o problema.\n\n</string>
   <string name="pref_overlay_display_time">Tempo de exibição</string>
   <string name="pref_overlay_time_max">Até que eu rejeite</string>
@@ -56,7 +57,7 @@
   <string name="pref_keep_on_lock_screen">Manter na tela de bloqueio</string>
   <string name="pref_keep_on_lock_screen_desc">Manter as notificações na tela de bloqueio até você rejeitá-las.</string>
   <string name="pref_dismiss_on_swipe">Rejeitar ao deslizar</string>
-  <string name="title_activity_noshow_list">Notificar mesmo em execução</string>
+  <string name="title_activity_noshow_list">Não perturbar</string>
   <string name="pref_round_icons">Ícones arredondados</string>
   <string name="pref_round_icons_desc">Usar ícones arredondados do Android L ao invés dos quadrados dos modelos anteriores.</string>
   <string name="pref_use_proximity">Detecção de bolso</string>
@@ -67,6 +68,7 @@
   <string name="pref_header_behaviour">Comportamento</string>
   <string name="music_title">Tocando <xliff:g id="Faixa" example="FAIXA">%s</xliff:g></string>
   <string name="music_text">de <xliff:g id="Artist" example="ARTISTA">%s</xliff:g>\ndo álbum <xliff:g id="Álbum" example="ÁLBUM">%s</xliff:g></string>
+  <string name="music_unknown">Unknown</string>
   <string name="pref_music_popup">Som de popup</string>
   <string name="pref_music_popup_desc">Tocar som ao mudar de faixa.\nNota: nem todos os players são suportados.</string>
   <string name="intro_warning_both_services">Som de notificação e serviço de acessibilidade estão ambos ativados. Por favor, desative um deles.</string>
@@ -99,6 +101,7 @@
     <item name="holo">Plano claro</item>
     <item name="holodark">Plano escuro</item>
     <item name="random">Psicodélico (aleatório)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Somente na tela de bloqueio</string>
@@ -111,10 +114,9 @@
   <string name="pref_device_admin">Consertar erro da \'tela ligada\'.</string>
   <string name="no_proximity_sensor_error">Nenhum sensor de proximidade detectado. Detector de bolso não irá funcionar. Por favor não reporte esse bug.</string>
   <string name="pref_keep_screen_on_forever">Manter a tela ligada</string>
-  <string name="pref_keep_screen_on_forever_desc">Depois de ligar a tela, mantenha-o ligado enquanto o Heads-up for visível.</string>
+  <string name="pref_keep_screen_on_forever_desc">Depois de ligar o ecrã, mantenha-o ligado enquanto o Heads-up for visível.</string>
   <string name="action_help">Ajuda!</string>
   <string name="action_test">Teste</string>
-  <string name="device_admin_enable_explanation">Habilitando esta função, o Heads-up poderá desligar a tela. Use se a tela não desligar após mostrar os popups na tela de bloqueio, ou se a detecção de bolso não está funcionando adequadamente.</string>
   <string name="device_admin_alredy_on">Já é um administrador do dispositivo.</string>
   <string name="device_admin_not_available">Provisionamento de dispositivo não está habilitado. Parando.</string>
   <string name="intro_status_on">O serviço está habilitado. Tente enviar uma mensagem a você mesmo.\nSe não funcionar, por favor, reinicie seu aparelho e tente novamente. Contate-me através do email sb@simen.codes se não funcionar. Por favor, deixe seu comentário em inglês.</string>
@@ -127,6 +129,7 @@
   <string name="pref_reminder_delay_desc">Se você deslizar o heads-up para cima, o heads-up re-irá exibi-la após o número de minutos que você especificar aqui. Defina como zero para desativar.\nAVISO: caraterística experimental e instável. Não confie nela para trabalhar.</string>
   <string name="pref_reminder_delay_counter">Lembrar-me após <xliff:g id="time" example="7">%s</xliff:g> minutos</string>
   <string name="pref_top_margin_locked">Localização do popup na tela de desbloqueio</string>
+  <string name="pref_dont_disturb_error">Aviso: O Google removido a capacidade de obter execução de tarefas Android 6.0, então isso não funcionará corretamente.</string>
   <string name="pref_dismiss_on_swipe_desc">Remover notificações do drawer ao deslizá-los. Você ainda pode tocar no X para fechar a partir do drawer.</string>
   <string name="pref_dismiss_keyguard_desc">Tentativa para desbloquear o dispositivo quando você abre uma notificação. Desabilite se você ter um desktop em branco quando uma notificação de abertura.</string>
   <string name="pref_broadcast_notifications">Notificações de transmissão</string>
@@ -135,4 +138,25 @@
   <string name="content_broadcast_request">Isto dará acesso %s para suas notificações. Tem certeza que isto é o que você quer?</string>
   <string name="pref_show_non_cancelable">Mostrar notificações não cancelável</string>
   <string name="pref_show_non_cancelable_desc">Mostrar notificações em curso, não-clearable exibidas pelos serviços de plano de fundo como Downloads. \nNote: se algumas notificações se recusam a ir embora, tente desabilitar isso.</string>
+  <string name="action_donate">Faça uma doação</string>
+  <string name="pref_dismiss_keyguard_dirty">Sujo, desbloquear</string>
+  <string name="pref_dismiss_keyguard_dirty_desc">Se a opção de desbloqueio normal não funcionar, tente activar isto. \nWARNING: isto irá substituir toda a segurança do ecrã de bloqueio, e pode causar problemas em alguns dispositivos!</string>
+  <string name="pref_night_mode">Modo nocturno</string>
+  <string name="pref_night_mode_desc">Desabilite o heads-up enquanto você dorme</string>
+  <string name="pref_night_mode_start">Hora de início do modo noite</string>
+  <string name="pref_night_mode_end">Hora de fim do modo noite</string>
+  <string name="title_activity_setup">Configuração de Heads-up</string>
+  <string name="welcome_hi">Olá!</string>
+  <string name="welcome_info">Obrigado por baixar Heads-up.\n\nDurante a instalação, você verá alguns avisos do sistema Android. Eles parecem um pouco assustadores, mas não se preocupe; Heads-up NÃO recolhe, armazena ou envia os seus dados para qualquer lugar.</string>
+  <string name="welcome_btn_opensettings">Abrir definições</string>
+  <string name="welcome_step1_title">Passo 1: notificações</string>
+  <string name="welcome_step1_text">De acesso a Heads-up as suas notificações tocando no botão abaixo, activar Heads-up e em seguida, pressione o botão voltar no seu dispositivo.</string>
+  <string name="welcome_step2_title">Passo 2: pop-ups</string>
+  <string name="welcome_step2_2_text">Para permitir que o heads-up exiba pop-ups, toque no botão abaixo, coloque o interruptor on e pressione o botão voltar no seu dispositivo.</string>
+  <string name="welcome_done_title">É isso!</string>
+  <string name="welcome_done_text">Se você vir uma notificação heads-up no topo do seu ecrã, você está pronto! \n\nAgora, vá para a página de configurações e ajuste tudo do jeito que você quer.\n\nNão aparecem as notificações? Toque em ajuda!</string>
+  <string name="sample_notification">Obrigado por experimentar heads-up! Se você gostar, por favor, deixe uma revisão na Play. Se você não conseguir por isto a trabalhar, você pode obter ajuda na página de edição do projecto GitHub.</string>
+  <string name="sample_notification_title_setup">Funciona!</string>
+  <string name="pref_off_as_locked">Solução alternativa: desactivar como bloqueado</string>
+  <string name="pref_off_as_locked_desc">Permitir isto fará heads-up considerar o ecrã bloqueado sempre que é desligado. Útil se você receber notificações no ecrã bloqueado, mesmo se você tiver essa configuração desactivada.</string>
 </resources>

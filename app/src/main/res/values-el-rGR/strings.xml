@@ -35,6 +35,7 @@
   <string name="pref_header_style">Στυλ</string>
   <string name="pref_lock_screen_on">Εμφάνιση στην οθόνη κλειδώματος</string>
   <string name="pref_lock_screen_on_desc">Εμφάνιση των heads-up στην οθόνη κλειδώματος.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Σ περίπτωση που η εφαρμογή δυσλειτουργεί, πατήστε εδώ για να αναφέρεται το πρόβλημα. Δεν χρειάζεται να κάνετε τίποτα σε περίπτωση που λειτουργεί κανονικά.\n\n</string>
   <string name="pref_overlay_display_time">Χρονικό όριο εμφάνισης</string>
   <string name="pref_overlay_time_max">Εώς ότου το απορρίψω</string>
@@ -99,6 +100,7 @@
     <item name="holo">Απλό ανοικτό</item>
     <item name="holodark">Απλό σκοτεινό</item>
     <item name="random">Psychedelic (random)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Μόνο στην οθόνη κλειδώματος</string>
@@ -109,7 +111,6 @@
   <string name="device_admin_disable_warning">Απενεργοποιώντας αυτή την υπηρεσία, κάποιες δυνατότητες των Heads-up ίσως να μην λειτουργούν σωστά.</string>
   <string name="title_activity_device_admin_enabler">Ενεργοποιήστε τον διαχειριστή συσκευής</string>
   <string name="pref_device_admin">Διόρθωση \'οθόνη σε\' bug.</string>
-  <string name="device_admin_enable_explanation">Ενεργοποιώντας αυτό, το Heads-up θα είναι σε θέση να απενεργοποιεί την οθόνη. Χρησιμοποιείστε το εάν η οθόνη δεν απενεργοποιείται όταν εμφανιστεί αναδυόμενο στην οθόνη κλειδώματος, or if the pocket detection doesn\'t work properly.</string>
   <string name="intro_status_on">Η υπηρεσία είναι ενεργή. Δοκιμάστε να στείλετε στον εαυτό σας ένα μήνυμα.\nΕαν δεν λειτουργεί, παρακαλώ επανεκκινήστε την συσκευή σας και δοκιμάστε ξανά. Επικοινωνήστε μαζί μου γράφοντας μου στα αγγλικά στο sb@simen.codes στην περίπτωση που δεν μπορέσει να λειτουργήσει.</string>
   <string name="intro_status_on_confirmed">Η υπηρεσία είναι ενεργή. Προσπαθήστε να στείλετε μήνυμα στον εαυτό σας.\nΕπικοινωνήστε μαζί μου γράφοντας στα αγγλικά στο sb@simen.codes αν δεν λειτουργεί.</string>
   <string name="pref_dismiss_on_swipe_desc">Απομάκρυνση των ειδοποιήσεων από το συρτάρι όταν τις σύρετε. Μπορείτε ακόμα πατώντας στο Χ να τις απορρίψετε από το συρτάρι.</string>

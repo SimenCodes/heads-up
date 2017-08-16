@@ -117,7 +117,9 @@
     <string name="pref_keep_screen_on_forever_desc">After turning the screen on, keep it on as long as the heads-up is visible.</string>
     <string name="action_help">Help!</string>
     <string name="action_test">Test</string>
-    <string name="device_admin_enable_explanation">Enabling this will allow Heads-up to turn off your screen. Only use this if the screen doesn\'t turn off after displaying popups on the lockscreen, or if the pocket detection doesn\'t work properly.\n\nIMPORTANT! You will not be able to uninstall Heads-up while this feature is enabled.</string>
+    <string name="device_admin_enable_title">READ THIS, IT IS IMPORTANT!</string>
+    <string name="device_admin_enable_explanation">Enabling this will allow Heads-up to turn off your screen.\n\n<strong>Only turn this on if the screen doesn\'t turn off after displaying popups on the lockscreen.\n\nIf you continue, you will not be able to uninstall Heads-up until you turn this off.</strong></string>
+    <string name="device_admin_too_fast">You didn\'t read that, did you?</string>
     <string name="device_admin_alredy_on">Already a device manager.</string>
     <string name="device_admin_not_available">Device provisioning is not enabled. Stopping.</string>
     <string name="intro_status_on">The service is enabled. Try sending yourself a message.\nIf it doesn\'t work, please reboot your device and try again.\nTap here if you need help</string>

@@ -35,6 +35,7 @@
   <string name="pref_header_style">Stil</string>
   <string name="pref_lock_screen_on">Arata pe ecranul de blocare</string>
   <string name="pref_lock_screen_on_desc">Arata heads-up pe ecranul de blocare.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Daca aplicatia a functionat incorect in ultima vreme, apasati aici pentru a reporta problema. Nu trebuie sa faci nimic daca aplicatia functioneaza normal.\n\n</string>
   <string name="pref_overlay_display_time">Afisare timp</string>
   <string name="pref_overlay_time_max">Pana cand il resping</string>
@@ -99,6 +100,7 @@
     <item name="holo">Deschis simplu</item>
     <item name="holodark">Deschis intunecat</item>
     <item name="random">Psychedelic (aleatoriu)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Doar pe ecranul de blocare</string>
@@ -114,7 +116,6 @@
   <string name="pref_keep_screen_on_forever_desc">Dupa pornirea ecranului,pastreasa-l asa cat timp heads-up este vizibil.</string>
   <string name="action_help">Ajutor!</string>
   <string name="action_test">Test</string>
-  <string name="device_admin_enable_explanation">Activarea acest lucru va permite Heads-up la oprirea ecranului. Utilizati  acest lucru numai daca ecranul nu porneste după afisarea pop-up pe ecranul de blocare sau daca detectarea buzunar nu functioneaza corect.\n\nIMPORTANT! Nu vei fi putea sa stergi Heads-up cat timp ce aceasta caracteristica este activata.</string>
   <string name="device_admin_alredy_on">Deja un manager de dispozitiv.</string>
   <string name="device_admin_not_available">Dispozitiv de asigurare a accesului nu este activat. Se opreste.</string>
   <string name="intro_status_on">Serviciul este activat. Incearca sa-ti trimiti un mesaj.\nDaca nu functioneaza , restarteaza telefonul si incearca din nou.\nApasa aici daca ai nevoie de ajutor</string>

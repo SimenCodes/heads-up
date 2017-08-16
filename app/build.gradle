@@ -17,7 +17,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '23.0.2'
+    buildToolsVersion '25.0.0'
     signingConfigs {
         release {
             storeFile file('/home/simen/Kode/Android/keystore/keys')
@@ -27,8 +27,8 @@ android {
         applicationId "codes.simen.l50notifications"
         minSdkVersion 12
         targetSdkVersion 23
-        versionCode 60
-        versionName '1.12'
+        versionCode 61
+        versionName '1.12.1'
     }
     buildTypes {
         release {
@@ -38,7 +38,7 @@ android {
             signingConfig signingConfigs.release
             minifyEnabled true
             shrinkResources true
-            proguardFiles '/home/simen/.apps/Android/Sdk/tools/proguard/proguard-android-optimize.txt', 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
             // Development

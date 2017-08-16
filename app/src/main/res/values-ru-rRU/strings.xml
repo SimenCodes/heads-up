@@ -35,6 +35,7 @@
   <string name="pref_header_style">Стиль</string>
   <string name="pref_lock_screen_on">Показывать на экране блокировки</string>
   <string name="pref_lock_screen_on_desc">Включите для отображения уведомления на экране блокировки.\nВНИМАНИЕ! Некоторые устройства могут сделать экран блокировки прозрачным во время отображения уведомления. Будьте осторожны!.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Нажмите здесь, чтобы сообщить об ошибке.\n\n</string>
   <string name="pref_overlay_display_time">Время показа</string>
   <string name="pref_overlay_time_max">Пока не скрою</string>
@@ -102,6 +103,7 @@
     <item name="holo">Светлая</item>
     <item name="holodark">Тёмная</item>
     <item name="random">Психоделика (случайный)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Только на экране блокировки</string>
@@ -117,7 +119,6 @@
   <string name="pref_keep_screen_on_forever_desc">Держать экран включенным, пока уведомление не закроется.</string>
   <string name="action_help">Помогите!</string>
   <string name="action_test">Тест</string>
-  <string name="device_admin_enable_explanation">Используйте это, если экран не выключается после уведомления на экрана блокировки, или если карманный режим не работает должным образом.</string>
   <string name="device_admin_alredy_on">Уже администратор устройства.</string>
   <string name="device_admin_not_available">Нет прав администратора. Остановка.</string>
   <string name="intro_status_on">Служба включена. Попробуйте отправить себе сообщение.\nЕсли уведомление не работает, пожалуйста, перезагрузите устройство и попробуйте еще раз. Свяжитесь со мной sb@simen.codes если уведомление не работает.</string>

@@ -30,11 +30,12 @@
   <string name="pref_priority_title">Prioritetsfilter</string>
   <string name="pref_priority_summary">Filtrer varsler basert på prioritet.\nKrever Android 4.1</string>
   <string name="applist_desc">Kryss av for de appene du vil se heads-up-varsler fra. Du kan også bruke X-knappen i popup-vinduet for å deaktivere en app.</string>
-  <string name="blocklist_desc">Kryss av for appene du ikke vil bli forstyrret mens du bruker.</string>
+  <string name="blocklist_desc">Marker en app for å forhindre denne i å vise Heads-up-varsler mens den er åpnet. Fungerer ikke på enkelte enheter med Android 5 og oppover.</string>
   <string name="blocked_confirmation">App blokkert</string>
   <string name="pref_header_style">Utseende</string>
   <string name="pref_lock_screen_on">Vis på låseskjermen</string>
   <string name="pref_lock_screen_on_desc">Vis heads-up-vinduer på låseskjermen.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Hvis appen har oppført seg rart eller krasjet i det siste, trykk her for å rapportere problemet. Du trenger ikke gjøre noe hvis appen fungerer normalt.\n\n</string>
   <string name="pref_overlay_display_time">Visningstid</string>
   <string name="pref_overlay_time_max">Vis i all evighet</string>
@@ -63,7 +64,7 @@
   <string name="pref_use_proximity_desc">Ikke slå på skjermen om mobilen ligger i lomma eller med skjermen ned.\nKrever at enheten har avstandssensor.</string>
   <string name="pref_header_lockscreen">Låseskjerm</string>
   <string name="pref_block_current_app">Blokker aktiv app</string>
-  <string name="pref_block_current_app_desc">Blokker varsler fra den aktive appen.</string>
+  <string name="pref_block_current_app_desc">Blokker heads-up varsler fra den aktive appen.\nDette fungerer IKKE i Android 6.0+ på grunn av systembegrensinger.</string>
   <string name="pref_header_behaviour">Oppførsel</string>
   <string name="music_title">Spiller <xliff:g id="track" example="TRACK">%s</xliff:g></string>
   <string name="music_text">Av <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nFra albumet <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
@@ -100,6 +101,7 @@
     <item name="holo">Enkel lys</item>
     <item name="holodark">Enkel mørk</item>
     <item name="random">Fargerik (tilfeldig)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Bare på låseskjerm</string>
@@ -115,7 +117,6 @@
   <string name="pref_keep_screen_on_forever_desc">Etter å ha slått på skjermen, behold den på helt til du åpner elker fjerner meldingen.</string>
   <string name="action_help">Hjelp!</string>
   <string name="action_test">Test</string>
-  <string name="device_admin_enable_explanation">Dette gir Heads-up tilgang til å slå av skjermen. Aktiver hvis skjermen ikke slås av igjen etter at Heads-up har slått på skjermen, eller hvis lommemodusen ikke fungerer ordentlig.\n\nNB! Heads-up kan ikke avinstalleres mens dette er aktivert.</string>
   <string name="device_admin_alredy_on">Heads-up er allerede administrator.</string>
   <string name="device_admin_not_available">Enheten rapporterer at den ikke støtter enhetsadministrasjon.</string>
   <string name="intro_status_on">Tjenesten er aktivert. Prøv å sende deg selv en melding.\nHvis det ikke virker, start enheten på nytt og prøv igjen. Trykk på Hjelp-knappen hvis du trenger hjelp med å få det til å fungere.</string>
@@ -137,13 +138,13 @@
   <string name="content_broadcast_request">Dette vil gi %s tilgang til varslene dine. Er du sikker på at du vil dette?</string>
   <string name="pref_show_non_cancelable">Vis pågående varsler</string>
   <string name="pref_show_non_cancelable_desc">Vis varsler fra bakgrunnstjenester, for eksempel pågående nedlastinger.\nOBS: Hvis noen meldinger nekter å gå bort, prøv å deaktivere dette.</string>
-  <string name="action_donate">Doner</string>
+  <string name="action_donate">Donér</string>
   <string name="pref_dismiss_keyguard_dirty">Alternativ opplåsing</string>
   <string name="pref_dismiss_keyguard_dirty_desc">Hvis enheten ikke låses opp riktig, prøv å aktivere dette.\nADVARSEL: Dette overstyrer låseskjermen, slik at hvem som helst kan låse opp enheten din!</string>
   <string name="pref_night_mode">Nattmodus</string>
   <string name="pref_night_mode_desc">Slå av Heads-up mens du sover</string>
-  <string name="pref_night_mode_start">Slå på nattmodus klokka</string>
-  <string name="pref_night_mode_end">Slå av nattmodus klokka</string>
+  <string name="pref_night_mode_start">Starttid for nattmodus</string>
+  <string name="pref_night_mode_end">Sluttid for nattmodus</string>
   <string name="title_activity_setup">Oppsett av Heads-up</string>
   <string name="welcome_hi">Hei!</string>
   <string name="welcome_info">Takk for at du prøver Heads-up.\n\nUnder installasjonen får du nok et par advarsler fra Android. De kan virke litt skremmende, men slapp av; Heads-up samler ALDRI inn dataene dine.</string>

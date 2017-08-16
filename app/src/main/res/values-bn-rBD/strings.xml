@@ -15,9 +15,12 @@
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+  <string name="app_name">Heads-up notifications</string>
+  <string name="title_activity_welcome">Heads-up notifications</string>
   <string name="reader_btn_open">খুলুন</string>
   <string name="reader_btn_dismiss">বাদ দিন</string>
   <string name="intro_desc">নিচের বোতাম চেপে heads-up বিজ্ঞপ্তি চালু বা বন্ধ করুন</string>
   <string name="welcome_btn_toggleservice">Heads-up চালু বা বন্ধ</string>
   <string name="intro_warning_miui">আপনি MIUI অথবা অনুরূপ রম ব্যবহার করছেন? এই app ব্যবহার করার আগে, আপনাকে সম্ভবত নিরাপত্তা নিয়ে কিছু ছাড় দেওয়ার দরকার হবে। সিস্টেম সেটিংস এ জান, সেখান থেকে সব অ্যাপ, সেখান থেকে downloaded, সেখান থেকে heads-up এখন জেই সুইস তা বলছে ভেসে উঠা তথ্য দেখান সেটি চালু করুন। এইবার সবার নিচে \"ম্যানেজ অনুমতিসমূহ\" তে জান এবং \'আমি এই app বিশ্বাস করি \' এ সেট করুন। </string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
 </resources>

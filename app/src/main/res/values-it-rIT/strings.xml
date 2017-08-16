@@ -35,6 +35,7 @@
   <string name="pref_header_style">Stile</string>
   <string name="pref_lock_screen_on">Visualizza sulla schermata di blocco</string>
   <string name="pref_lock_screen_on_desc">Visualizza le notifiche heads-up sulla schermata di sblocco.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Se l\'app non funziona come dovrebbe, clicca qui per segnalare il problema.\n\n</string>
   <string name="pref_overlay_display_time">Durata visualizzazione heads-up</string>
   <string name="pref_overlay_time_max">Finchè non la rimuovo</string>
@@ -102,6 +103,7 @@
     <item name="holo">Holo chiaro</item>
     <item name="holodark">Holo scuro</item>
     <item name="random">Psichedelico (casuale)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Solo sulla schermata di blocco</string>
@@ -117,7 +119,6 @@
   <string name="pref_keep_screen_on_forever_desc">Dopo aver acceso lo schermo, mantienilo acceso fino a quando l\'heads-up è visibile.</string>
   <string name="action_help">Aiuto!</string>
   <string name="action_test">Test</string>
-  <string name="device_admin_enable_explanation">Abilitando questa opzione permetterai a Heads-up di spegnere il display. Usala solo se lo schermo non si spegne automaticamente dopo aver ricevuto un popup nella schermata di blocco, altrimenti la rilevazione col sensore di prossimità non funzionerà correttamente.\n\nIMPORTANTE! Non potrai disinstallare Heads-up finché questa opzione è attiva.</string>
   <string name="device_admin_alredy_on">Amministratore dispositivo è già attivo.</string>
   <string name="device_admin_not_available">Amministratore dispositivo non è abilitato. Arresto.</string>
   <string name="intro_status_on">Il servizio è attivo. Provalo inviandoti un messaggio.\nSe non funziona correttamente riavvia il dispositivo e prova di nuovo. \n Premi qui se hai bisogno di aiuto</string>
@@ -159,4 +160,8 @@ ATTENZIONE: Questo questo sorvolerà le lockscreen di sicurezza, e può causare 
   <string name="welcome_done_text">Se vedi una notifica Heads-up in cima allo schermo, sei pronto per andare!
 Ora, vai sulle impostazioni e modifica qualsiasi cosa come preferisci.
 Non appaiono le notifiche Heads-up? Fai tap su aiuto!</string>
+  <string name="sample_notification">Grazie per aver provato Heads-up! Se l\'applicazione ti piace, lascia una recensione sul Play Store. Se non riesci a far funzionare quest\'app, puoi ricevere aiuto sulla pagina GitHub dedicata alla risoluzione dei problemi.</string>
+  <string name="sample_notification_title_setup">Funziona!</string>
+  <string name="pref_off_as_locked">Soluzione alternativa: off come bloccato</string>
+  <string name="pref_off_as_locked_desc">Spuntando questa casella Heads-up considererà lo schermo come bloccato quando è spento. Utile se ricevi notifiche sulla schermata di blocco anche se hai non hai attivato questa impostazione.</string>
 </resources>

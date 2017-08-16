@@ -40,6 +40,7 @@
   <string name="pref_header_style">المظهر</string>
   <string name="pref_lock_screen_on">عرض على شاشة القفل</string>
   <string name="pref_lock_screen_on_desc">عرض إشعارات البرنامج على شاشة القفل.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">\"إذا كنت تواجه مشكلة مع التطبيق مؤخراً، اضغط هنا للتبليغ. ان لم تواجه مشكلة فليس عليك فعل شيء./n/n
 
 \"</string>
@@ -75,6 +76,7 @@
   <string name="music_title">تشغيل <g example="TRACK" id="track">%s</g></string>
   <string name="music_text">بواسطة: <g example="ARTIST" id="artist">%s</g>\"
 ألبوم: \"<g example="ALBUM" id="album">%s</g></string>
+  <string name="music_unknown">Unknown</string>
   <string name="pref_music_popup">الأغنية الحالية منبثقة</string>
   <string name="pref_music_popup_desc">\"عرض الأغنية بطريقة تغيير مساريّة
 ملاحظة: لا يتم دعم جميع مشغلات الموسيقى.\"</string>
@@ -108,6 +110,7 @@
     <item name="holo">أبيض سادة</item>
     <item name="holodark">اسود سادة</item>
     <item name="random">عشوائي</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">أوبونتو</item>
   </string-array>
   <string name="pref_only_on_lock_screen">فقط بوضع قفل الشاشة</string>
@@ -124,9 +127,6 @@
   <string name="pref_keep_screen_on_forever_desc">بعد تشغيل الشاشة، اجعلها باقيّة طالما البرنامج ظاهر.</string>
   <string name="action_help">مساعدة!</string>
   <string name="action_test">تجربة</string>
-  <string name="device_admin_enable_explanation">\"تمكين هذا سيسمح للتطبيق باطفاء شاشتك. استخدم هذا لو لم تطفأ الشاشة بعد الانبثاق بوضعية قفل الشاشة.
-أو إذا استشعار الجيب لا يعمل بشكل صحيح. 
-تنبيه مهم! لن تتمكن من إلغاء تثبيت التطبيق بينما هذه الميزة ممكنة.\"</string>
   <string name="device_admin_alredy_on">بالغعل مديراً للجهاز.</string>
   <string name="device_admin_not_available">جهاز الإمداد غير مُمكن. توقف.</string>
   <string name="intro_status_on">الخدمة مُمكنة. حاول إرسال رسالة لنفسك.\n لو لم تعمل، رجاءاً اعد تشغيل جهازك وحاول مجدداً \n اضغط هنا لو كنت بحاجة للمساعدة</string>
@@ -140,9 +140,18 @@
   <string name="pref_reminder_delay_desc">لو مررت التطبيق صاعداً، سيعيد عرضها بعد الدقائق التي تحددها هنا. ضعها صفرْ للالغاء./n تحذير : تجريبياً، ميزة غير ثابتة. لا تعتمد قول أنها ستعمل.</string>
   <string name="pref_reminder_delay_counter">ذكرني بعد<g example="7" id="time">%s</g> دقائق</string>
   <string name="pref_top_margin_locked">وضع الانبثاق بحال قفل الشاشة</string>
+  <string name="pref_dont_disturb_error">Warning: Google removed the ability to get running tasks in Android 6.0, so this will not work properly.</string>
   <string name="pref_dismiss_on_swipe_desc">ازالة الاشعارات بالسحب عندما تمررها أفقياً. لا زال بامكانك التجاهل بزرّ X. /nيتطلّب أندرويد 4.3</string>
+  <string name="pref_dismiss_keyguard_desc">Arabic</string>
   <string name="pref_broadcast_notifications">تنبيهات البث</string>
   <string name="pref_broadcast_notifications_desc">اعط تصريح وصول تطبيقاتي الأخرى إلى التنبيهات خاصتُك. هذا سيخفضّ من استخدام الذاكرة العشوائية لو كُنت تستخدم تطبيق مثل voiceify. ابقهِ غير مفعلاً مالم يطلب أحد تطبيقاتي تمكينه.</string>
   <string name="title_broadcast_request">صلاحيّة الإشعارات</string>
   <string name="content_broadcast_request">هذا سيعطي بنسبة %s وصول إلى تنبيهاتك. هل أنت متأكد أن ذلك ماتريده ؟</string>
+  <string name="pref_show_non_cancelable">عرض التنويهات الي لا يمكن الغاءها</string>
+  <string name="pref_show_non_cancelable_desc">تظهر، والإخطارات غير clearable الجارية عرض الخدمات الأساسية مثل التحميل. \ ن ملاحظة: إذا كانت بعض الإخطارات ترفض الذهاب بعيدا، حاول تعطيل هذا.</string>
+  <string name="action_donate">تبرع</string>
+  <string name="pref_dismiss_keyguard_dirty">Current song popup
+</string>
+  <string name="pref_dismiss_keyguard_dirty_desc">إذا لم يعمل خيار إلغاء القفل العادي، فجرب تمكين ذلك. \ n تحذير: سيؤدي هذا إلى تجاوز جميع أمانات قفل الشاشة، وقد يسبب مشاكل على بعض الأجهزة!</string>
+  <string name="pref_night_mode">الوضع الليلي</string>
 </resources>

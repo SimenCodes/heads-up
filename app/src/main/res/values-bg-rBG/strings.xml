@@ -24,8 +24,8 @@
   <string name="intro_desc">Докоснете бутона отдолу за да активирате/деактивирате Heads-up.</string>
   <string name="welcome_btn_toggleservice">Активиране/деактивиране на Heads-up</string>
   <string name="intro_warning_miui">Използвате ли MIUI? Преди да можете да използвате приложението, вие трябва да дадете повече възможности откъм сигурността.\n1. Идете в Настройки &gt; Всички &gt; Приложения &gt; Изтеглени &gt; Heads-up notifications.\n2. Включете \'Show popup windows\' (втората опция).\n3. Най-отдолу отидете на \'Управление на разрешенията\'.\n4. Настройте \'Доверявам се на това приложение\' да е в режим включено. </string>
-  <string name="site_ad">Харесвате това приложение? Вижте и другите ми приложения.:</string>
-  <string name="site_ad_link">Посетете уеб сайт Simen.codes</string>
+  <string name="site_ad">Харесвате ли каквото виждате? Проверете и другите ми приложения:</string>
+  <string name="site_ad_link">Посетете сайта Simen.codes</string>
   <string name="title_activity_app_list">Филтър за приложения</string>
   <string name="pref_priority_title">Приоритет на известията</string>
   <string name="pref_priority_summary">Филтриране на приложения по височина на приоритета.\nИзисква Android 4.1 или по-нов</string>
@@ -35,9 +35,10 @@
   <string name="pref_header_style">Стил</string>
   <string name="pref_lock_screen_on">Показване на заключения екран</string>
   <string name="pref_lock_screen_on_desc">Показване на известия директно на заключения екран.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Ако приложението отговаря по-късно докоснете тук за да изпратите доклад за грешка. Не е нужно да правите нищо ако приложението работи коректно.\n\n</string>
-  <string name="pref_overlay_display_time">Продължителност на показване</string>
-  <string name="pref_overlay_time_max">Докато не го откажа</string>
+  <string name="pref_overlay_display_time">Време на показване</string>
+  <string name="pref_overlay_time_max">Until I dismiss it</string>
   <string name="title_activity_settings">Настройки</string>
   <string name="pref_header_general">Филтриране</string>
   <string-array name="priorityLevel">
@@ -67,6 +68,7 @@
   <string name="pref_header_behaviour">Поведение</string>
   <string name="music_title">Звучи <xliff:g id="track" example="TRACK">%s</xliff:g></string>
   <string name="music_text">От <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nOn the album <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+  <string name="music_unknown">Unknown</string>
   <string name="pref_music_popup">Изкачащо прозорче за текущата песен</string>
   <string name="pref_music_popup_desc">Показване на прозорче с информация за песента.\nЗабележка: Hе всички музикални плейъри са съвместими.</string>
   <string name="intro_warning_both_services">И приложението което засича известия и услугите за достъпност за активни. Моля, деактивирайте едното от тях.</string>
@@ -93,12 +95,13 @@
     <item name="bottom">Долу</item>
   </string-array>
   <string-array name="overlayStyles">
-    <item name="l">Android 5.0 \'Lollipop\' light</item>
+    <item name="l">H</item>
     <item name="ldark">Android 5.0 \'Lollipop\' dark</item>
     <item name="lblack">Android 5.0 \'Lollipop\' black</item>
     <item name="holo">Чисто бяло</item>
     <item name="holodark">Чисто черно</item>
-    <item name="random">Psychedelic (random)</item>
+    <item name="random">Кошмарен (случаен)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Само на заключен екран</string>
@@ -109,8 +112,27 @@
   <string name="device_admin_disable_warning">Ако изключите това, някой функции може да не работят както трябва.</string>
   <string name="title_activity_device_admin_enabler">Включете администратор на устройството</string>
   <string name="pref_device_admin">Поправи бъг \"включен екран\".</string>
-  <string name="device_admin_enable_explanation">Включвайки това ние позволявате на Heads-up да заключва вашия екран. Използвайте това ако дисплея ви не се изключва автоматично след показване на известието.</string>
+  <string name="no_proximity_sensor_error">Няма открити сензор за близост. Джоб откриване няма да работи. Моля не изпращайте доклади този бъг.</string>
+  <string name="pref_keep_screen_on_forever">Запазва екрана включен</string>
+  <string name="pref_keep_screen_on_forever_desc">After turning the screen on, keep it on as long as the heads-up is visible.</string>
+  <string name="action_help">Help!</string>
+  <string name="action_test">Тестове</string>
+  <string name="device_admin_alredy_on">Already a device manager.</string>
+  <string name="device_admin_not_available">Device provisioning is not enabled. Stopping.</string>
   <string name="intro_status_on">Услугата е активна. Пробвайте да изпратите съобщение до себе си.\nАко не работи, моля рестартирайте устройството си и пробвайте пак. Свържете се с мен на e-mail адрес sb@simen.codes ако не работи въобще.</string>
   <string name="intro_status_on_confirmed">Услугата е активна. Пробвайте да изпратите съобщение до себе си. Свържете се с мен на e-mail адрес sb@simen.codes ако не работи въобще</string>
+  <string name="accessibility_service_blocked">%s може да блокира хедс-ъп от достъп до вашите известия. Моля го изключите от менюто на достъпност.</string>
+  <string name="export_debug_data">Експорт на потребителски данни</string>
+  <string name="pref_close_on_outside_touch">Затваряне на външни докосване</string>
+  <string name="pref_close_on_outside_touch_desc">Премествам определителен член масите, когато докоснете извън хедс-ъп</string>
+  <string name="pref_reminder_delay">Време за напомняне</string>
+  <string name="pref_reminder_delay_desc">Ако сте неточен удар на хедс-ъп нагоре Heads-up отново ще го покаже след броя на минутите, които задавате тук. Настроен на нула и неспособен. \nWARNING: експериментални, нестабилна функция. Не разчитайте на него да работи.</string>
+  <string name="pref_reminder_delay_counter">Напомни ми след <xliff:g id="time" example="7">%s </xliff:g> минути</string>
   <string name="pref_dismiss_on_swipe_desc">Изтриване на известието от лентата за известия, когато го плъзнете. Можете да използвате и бутон \"X\" за да го премахнете от лентата за известия.</string>
+  <string name="action_donate">Дарение</string>
+  <string name="pref_night_mode">Нощен режим</string>
+  <string name="welcome_hi">Здравейте!</string>
+  <string name="welcome_btn_opensettings">Отваряне на настройките на приложението</string>
+  <string name="welcome_done_title">Това беше!</string>
+  <string name="sample_notification_title_setup">То работи!</string>
 </resources>

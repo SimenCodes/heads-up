@@ -35,6 +35,7 @@
   <string name="pref_header_style">Stil</string>
   <string name="pref_lock_screen_on">Kilit ekranında göster</string>
   <string name="pref_lock_screen_on_desc">Kilit ekranında üst bildirimleri göster.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Uygulama son zamanlarda hatalı davrandıysa, sorunu bildirmek için buraya dokunun. Uygulama normal davranıyorsa bir şey yapmanıza gerek yok.\n\n</string>
   <string name="pref_overlay_display_time">Görüntüleme süresi</string>
   <string name="pref_overlay_time_max">Kapatılana kadar</string>
@@ -100,6 +101,7 @@
     <item name="holo">Sade aydınlık</item>
     <item name="holodark">Sade karanlık</item>
     <item name="random">Psychedelic (rastgele)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Sadece kilit ekranında</string>
@@ -115,7 +117,6 @@
   <string name="pref_keep_screen_on_forever_desc">Ekranı açtıktan sonra, üst bildirim görünür olduğu sürece açık tut.</string>
   <string name="action_help">Yardım!</string>
   <string name="action_test">Test</string>
-  <string name="device_admin_enable_explanation">Bunu etkinleştirmek Heads-up\'ın ekranı kapatmasına izin verir. Bunu yalnızca kilit ekranında açılır pencere görüntülendikten sonra ekran kapanmıyorsa, ya da cep algılama düzgün çalışmıyorsa kullanın.\n\nÖNEMLİ! Bu özellik etkinken Heads-up\'ı kaldırmanız mümkün olmayacaktır.</string>
   <string name="device_admin_alredy_on">Zaten bir cihaz yöneticisi.</string>
   <string name="device_admin_not_available">Cihaz hazırlama etkin değil. Durduruluyor.</string>
   <string name="intro_status_on">Hizmet etkinleştirildi. Kendinize bir mesaj göndermeyi deneyin.\nÇalışmazsa, cihazınızı yeniden başlatın ve tekrar deneyin.\nYardıma ihtiyacınız varsa buraya dokunun</string>

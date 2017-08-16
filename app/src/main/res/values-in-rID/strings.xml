@@ -35,15 +35,16 @@
   <string name="pref_header_style">Gaya</string>
   <string name="pref_lock_screen_on">Tampilkan di layar kunci</string>
   <string name="pref_lock_screen_on_desc">Munculkan heads-up di layar kunci.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Jika aplikasi telah berbuat tidak pantas akhir-akhir ini, ketuk disini untuk melaporkan masalah. Anda tidak harus melakukan ini jika aplikasi ini bekerja dengan normal. Tolong tulis dalam bahasa Inggris.\n\n</string>
-  <string name="pref_overlay_display_time">Durasi tampak</string>
+  <string name="pref_overlay_display_time">waktu tampilan</string>
   <string name="pref_overlay_time_max">Sampai saya menyingkirnya</string>
   <string name="title_activity_settings">Pengaturan</string>
   <string name="pref_header_general">Penyaringan</string>
   <string-array name="priorityLevel">
     <item name="MAX">Kritis dan mendesak (panggilan tak terjawab, petunjuk jalan, peringatan darurat)</item>
     <item name="HIGH">Penting (komunikasi, surel penting)</item>
-    <item name="NORMAL">Biasa (Pemberitahuan dari aplikasi lama)</item>
+    <item name="NORMAL">Normal (Pemberitahuan dari aplikasi lama)</item>
     <item name="LOW">Tidak penting (pembaruan aplikasi, surel sampah)</item>
     <item name="MIN">Kontekstual dan informasi latar belakang (Cuaca, agenda yang terlewati, anjuran)</item>
   </string-array>
@@ -67,6 +68,7 @@
   <string name="pref_header_behaviour">Tingkah laku</string>
   <string name="music_title">Sedang memutar: <xliff:g id="track" example="TRACK">%s</xliff:g></string>
   <string name="music_text">Artis: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+  <string name="music_unknown">Tidak Diketahui</string>
   <string name="pref_music_popup">Munculan lagu yang diputar</string>
   <string name="pref_music_popup_desc">Tampilkan informasi lagu saat mengganti lagu.\nCatatan: Tidak semua pemutar musik mendukung.</string>
   <string name="intro_warning_both_services">Akses pemberitahuan dan layanan aksesibilitas diaktifkan. Harap matikan salah satu.</string>
@@ -99,6 +101,7 @@
     <item name="holo">Cerah polos</item>
     <item name="holodark">Gelap polos</item>
     <item name="random">Psikedelik (acak)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Hanya di layar terkunci</string>
@@ -114,7 +117,6 @@
   <string name="pref_keep_screen_on_forever_desc">Setelah layar menyala, biarkan layar menyala selama pemberitahuan ancangan tampak.</string>
   <string name="action_help">Bantuan</string>
   <string name="action_test">Tes</string>
-  <string name="device_admin_enable_explanation">Jika iya, nyalakan layanan ini. Menyalakan ini akan mengizinkan Heads-up untuk mematikan layar anda. Hanya gunakan saat layar tidak mati setelah menampilkan popup di layar kunci, atau jika pendeteksi saku tidak bekerja dengan baik.\n\nPENTING! Anda tidak akan dapat menghapus Heads-up di saat fitur ini menyala.</string>
   <string name="device_admin_alredy_on">Telah menjadi admin.</string>
   <string name="device_admin_not_available">Aplikasi tidak menjadi admin. Menghentikan aplikasi.</string>
   <string name="intro_status_on">Layanan sedang menyala. Coba mengirim pesan ke diri anda sendiri.\nJika tidak bekerja, tolong nyalakan ulang perangkat anda dan coba lagi.\nKetuk disini jika anda memerlukan bantuan</string>
@@ -127,6 +129,7 @@
   <string name="pref_reminder_delay_desc">Jika anda menggeser popup heads-up keatas, Heads-up akan menampilkan pemberitahuan itu lagi setelah beberapa menit yang anda masukkan disini. Atur sebagai nol untuk mematikan.\nPERINGATAN: Eksperiman, fitur tidak stabil. Jangan terlalu percaya itu akan bekerja.</string>
   <string name="pref_reminder_delay_counter">Ingatkan saya kembali setelah <xliff:g id="time" example="7">%s</xliff:g> menit</string>
   <string name="pref_top_margin_locked">Posisi popup di layar kunci</string>
+  <string name="pref_dont_disturb_error">Peringatan: Google menghapus kemampuan untuk membaca tugas berjalan di Android 6.0, sehingga fungsi ini mungkin tidak akan bekerja dengan benar.</string>
   <string name="pref_dismiss_on_swipe_desc">Hilangkan pemberitahuan jika anda menggesernya secara horizontal. Anda tetap dapat mengetuk tombol \'X\' untuk mengabaikannya.\nMemerlukan Android 4.3</string>
   <string name="pref_dismiss_keyguard_desc">Membuka perangkat saat anda membuka pemberitahuan. Matikan jika tidak muncul apa-apa saat membuka pemberitahuan.</string>
   <string name="pref_broadcast_notifications">Siarkan pemberitahuan</string>
@@ -138,4 +141,22 @@
   <string name="action_donate">Sumbang</string>
   <string name="pref_dismiss_keyguard_dirty">Metode buka kunci alternatif</string>
   <string name="pref_dismiss_keyguard_dirty_desc">Jika opsi buka kunci normal tidak bekerja, coba aktifkan ini.\nAMARAN: Ini akan mengesampingkan semua keamanan layar terkunci, dan dapat menyebabkan masalah dalam beberapa perangkat!</string>
+  <string name="pref_night_mode">Modus malam</string>
+  <string name="pref_night_mode_desc">Nonaktifkan Heads-up saat Anda tidur</string>
+  <string name="pref_night_mode_start">Waktu mulai modus malam</string>
+  <string name="pref_night_mode_end">Waktu berhenti modus malam</string>
+  <string name="title_activity_setup">Mengatur Heads-up</string>
+  <string name="welcome_hi">Hai!</string>
+  <string name="welcome_info">Terimakasih telah mengunduh Heads-up.\n\nSaat mengatur, anda akan melihat beberapa peringatan dari sistem Android. Aplikasi berbahaya, namun jangan khawatir; Heads-up TIDAK mengumpulkan, menyimpan dan mengirimkan data apapun milik anda.</string>
+  <string name="welcome_btn_opensettings">Buka pengaturan aplikasi</string>
+  <string name="welcome_step1_title">Langkah 1: Pemberitahuan</string>
+  <string name="welcome_step1_text">Mengizinkan akses Heads-up ke Pemberitahuan anda dengan menekan tombol di bawah ini, aktifkan Heads-up dan tekan tombol kembali pada perangkat anda.</string>
+  <string name="welcome_step2_title">Langkah 2: Muncul</string>
+  <string name="welcome_step2_2_text">Untuk Mengizinkan Heads-up agar muncul popups, tekan tombol di bawah ini, atur agar aktif, dan tekan tombol kembali pada perangkat anda.</string>
+  <string name="welcome_done_title">Itu saja!</string>
+  <string name="welcome_done_text">Jika anda melihat Heads-up di bagian atas pemberitahuan, Anda telah sukses!\n\nSekarang, masuk ke halaman pengaturan dan tweak apapun yang anda inginkan.\n\n muncul pemberitahuan Head-up? Tekan Bantuan!</string>
+  <string name="sample_notification">Terimakasih telah mencoba Heads-up! Jika anda menyukainya, silahkan beri tinjauan pada Playstore. Jika aplikasi tidak berkerja, Anda bisa mendapatkan bantuan di halaman masalah pada proyek GitHub.</string>
+  <string name="sample_notification_title_setup">Ini berkerja!</string>
+  <string name="pref_off_as_locked">Solusi: tidak aktif saat terkunci</string>
+  <string name="pref_off_as_locked_desc">Mengizinkan ini akan membuat Heads-up membuat layar terkunci saat dimatikan. Sangat berguna jika anda mendapatkan pemberitahuan pada kunci layar bahkan jika anda mematikan pengaturan ini.</string>
 </resources>

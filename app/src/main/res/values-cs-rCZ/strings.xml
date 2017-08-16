@@ -15,16 +15,16 @@
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
-  <string name="app_name">vyskakující oznámení</string>
-  <string name="app_icon_name">Vyskakující</string>
-  <string name="title_activity_welcome">Vyskakující oznámení</string>
+  <string name="app_name">Heads-up oznámení</string>
+  <string name="app_icon_name">Heads-up</string>
+  <string name="title_activity_welcome">Heads-up oznámení</string>
   <string name="action_settings">Nastavení</string>
   <string name="reader_btn_open">Otevřít</string>
   <string name="reader_btn_dismiss">Zamítnout</string>
-  <string name="intro_desc">Klepni na zelené tlačítko níže pro povolení nebo zakázaní Plovoucích oznámení.</string>
-  <string name="welcome_btn_toggleservice">Vyp/zap plovoucí oznámení</string>
-  <string name="intro_warning_miui">Používáš MIUI? Před použitím této aplikace budeš asi muset trochu projít nastavení zabezpečení.\n1. Jdi do systémových nastavení&gt; Vše &gt; Aplikace &gt; Stažené &gt; Plovoucí oznámení.\n2. Povol, aby bylo zobrazeno \'Zobrazovat vyskakovací okna\' (druhý možnost).\n3. Vespod, jdi do \'Spravovat oprávění\'.\n4. Nastav \'Věřím této aplikaci\'. </string>
-  <string name="site_ad">Líbí se ti aplikace? Zkoukni také moje ostatní aplikace:</string>
+  <string name="intro_desc">Klepněte na zelené tlačítko níže pro povolení nebo zakázání Heads-up oznámení.</string>
+  <string name="welcome_btn_toggleservice">Vypnout/Zapnout Heads-up</string>
+  <string name="intro_warning_miui">Používáte MIUI? Před použitím této aplikace budete asi muset trochu projít nastavení zabezpečení.\n1. Jděte do systémových nastavení&gt; Vše &gt; Aplikace &gt; Stažené &gt; Heads-up oznámení.\n2. Povolte funkci \'Zobrazovat vyskakovací okna\' (druhá možnost).\n3. Dole přejděte do \'Spravovat oprávění\'.\n4. Nastavte \'Věřím této aplikaci\'. </string>
+  <string name="site_ad">Líbí se Vám aplikace? Zkoukněte také moje ostatní aplikace:</string>
   <string name="site_ad_link">Navštívit Simen.codes</string>
   <string name="title_activity_app_list">Filtr aplikací</string>
   <string name="pref_priority_title">Priorita oznámení</string>
@@ -34,8 +34,9 @@
   <string name="blocked_confirmation">Aplikace zablokována</string>
   <string name="pref_header_style">Styl</string>
   <string name="pref_lock_screen_on">Zobrazit na zamykací obrazovce</string>
-  <string name="pref_lock_screen_on_desc">Zobrazit plovoucí oznámení na zamykací obrazovce.</string>
-  <string name="bug_report_request">Pokud se aplikace chovala nepředvídatelně, klikni zde a oznam problém. Není potřeba nic dělat, pokud se aplikace chová tak jak má.\nHlášení piš, prosím, v anglickém jazyce.\n</string>
+  <string name="pref_lock_screen_on_desc">Zobrazit Heads-up oznámení na zamykací obrazovce.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
+  <string name="bug_report_request">Pokud se aplikace chovala nepředvídatelně, klikněte a oznamte problém. Není potřeba nic dělat, pokud se aplikace chová tak jak má.\nHlášení pište, prosím, v anglickém jazyce.\n</string>
   <string name="pref_overlay_display_time">Doba zobrazení upozornění</string>
   <string name="pref_overlay_time_max">Dokud ji nezamítnu</string>
   <string name="title_activity_settings">Nastavení</string>
@@ -67,6 +68,7 @@
   <string name="pref_header_behaviour">Chování</string>
   <string name="music_title">Hraje: <xliff:g id="track" example="TRACK">%s</xliff:g></string>
   <string name="music_text">Od: <xliff:g id="artist" example="ARTIST">%s</xliff:g>\nAlbum: <xliff:g id="album" example="ALBUM">%s</xliff:g></string>
+  <string name="music_unknown">Neznámý</string>
   <string name="pref_music_popup">Vyskakovací okno přehrávané skladby</string>
   <string name="pref_music_popup_desc">Zobrazit metadata při změně skladby.\nPozn.: nejsou podporovány všechny přehrávače.</string>
   <string name="intro_warning_both_services">Obojí, naslouchání notifikacím a služba přístupu, jsou zapnuté. Prosím vypni jednu možnost.</string>
@@ -99,6 +101,7 @@
     <item name="holo">Plochý světlý</item>
     <item name="holodark">Plochý tmavý</item>
     <item name="random">Psychotický (náhodný)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Pouze na zamykací obrazovce</string>
@@ -114,7 +117,6 @@
   <string name="pref_keep_screen_on_forever_desc">Po zapnutí obrazovky ji udržet zapnutou po dobu, co je upozornění viditelné.</string>
   <string name="action_help">Pomoc!</string>
   <string name="action_test">Otestovat</string>
-  <string name="device_admin_enable_explanation">Tímto povolíš Plovoucím oznámení vypínat obrazovku. Použij pouze pokud se obrazovka nevypne po zobrazení upozornění na zamykací obrazovce nebo pokud detekce kapsy nefunguje správně.\n\nDŮLEŽITÉ! Aplikaci nepůjde odinstalovat, pokud je toto zapnuto.</string>
   <string name="device_admin_alredy_on">Již je správcem zařízení.</string>
   <string name="device_admin_not_available">Oprávnění zařízení není povoleno. Zastavuji.</string>
   <string name="intro_status_on">Služba povolena. Zkus sám sobě poslat zprávu.\nPokud nebude fungovat, restartuj zařízení a zkus znovu.\nKlepni zde, pokud potřebuješ pomoci</string>
@@ -127,6 +129,7 @@
   <string name="pref_reminder_delay_desc">Tahem oznámení vzhůru se oznámení znovu-zobrazí po určité době, kterou zde nastavíš. Nastav 0 pro vypnutí.\nVAROVÁNÍ! Experimentální, nestabilní funkce. Nespoléhej se na ni.</string>
   <string name="pref_reminder_delay_counter">Připomenou po <xliff:g id="time" example="7">%s</xliff:g> minutách</string>
   <string name="pref_top_margin_locked">Pozice vyskakovacího okna na zamykací obrazovce</string>
+  <string name="pref_dont_disturb_error">Upozornění: Google odstranil možnost získat informace o spuštěných úlohách v Androidu 6.0, takže to nebude fungovat správně.</string>
   <string name="pref_dismiss_on_swipe_desc">Zamítnout upozornění tahem do stran. Stále můžeš použít X tlačítko pro jejich zamítnutí.\nVyžaduje Android 4.3</string>
   <string name="pref_dismiss_keyguard_desc">Automaticky odemknout telefon po otevření upozorění.\nVAROVÁNÍ! Tímto umožníš KOMUKOLIV odemknout zařízení navzdory tvému nastavení zabezpečení.\nToto je také zastaralé v Androidu a nemusí fungovat korektně.</string>
   <string name="pref_broadcast_notifications">Oznámení vysílání</string>
@@ -136,4 +139,24 @@
   <string name="pref_show_non_cancelable">Zobrazit stálá oznámení</string>
   <string name="pref_show_non_cancelable_desc">Zobrazit probíhající, neodstranitelná oznámení zobrazující služby na pozadí jako Stahování.\nPozn.: Pokud nějaké upozornění odmítá zmizet, zkus toto vypnout.</string>
   <string name="action_donate">Finanční podpora</string>
+  <string name="pref_dismiss_keyguard_dirty">Alternativní odemknutí</string>
+  <string name="pref_dismiss_keyguard_dirty_desc">Jestliže normální odemknutí nefunguje, zkuste povolit toto.\nUPOZORNĚNÍ: Změní se zabezpečení uzamčené obrazovky a může způsobit problémy na některých zařízeních!</string>
+  <string name="pref_night_mode">Noční režim</string>
+  <string name="pref_night_mode_desc">Zakázat Heads-up když spíte</string>
+  <string name="pref_night_mode_start">Začátek nočního režimu</string>
+  <string name="pref_night_mode_end">Konec nočního režimu</string>
+  <string name="title_activity_setup">Heads-up nastavení</string>
+  <string name="welcome_hi">Ahoj!</string>
+  <string name="welcome_info">Děkujeme, že jste nainstaloval Heads-up.\n\nPři nastavení uvidíte několik upozornení systému Android, Vypadají malinko desivě, ale nemějte obavy, Heads-up nezbírá, neukladá ani nikam neodosílá vaše údaje.</string>
+  <string name="welcome_btn_opensettings">Otevřít nastavení aplikace</string>
+  <string name="welcome_step1_title">Krok 1: Upozornění</string>
+  <string name="welcome_step1_text">Pro udělení oprávnění aplikaci Heads-up k přístupu k Vašim notifikacím klikněte na tlačítko níže, u Heads-up zapněte přepínač a šipkou zpět se vraťte zpět do aplikace.</string>
+  <string name="welcome_step2_title">Krok 2: Vyskakovací okna</string>
+  <string name="welcome_step2_2_text">Pro povolení aplikaci Heads-up zobrazení vyskakovacích oken, klepněte na tlačítko níže, nastavte zapněte přepínač a šipkou se vraťte zpět do aplikace.</string>
+  <string name="welcome_done_title">A je to!</string>
+  <string name="welcome_done_text">Jestli vidíte oznámení nahoře na displeji, je vše v pořádku. \n\nPřejděte do nastavení a přizpůsobte si aplikaci podle svých představ.\n\nNic se nezobrazilo? Zkuste se podívat do nápovědy!</string>
+  <string name="sample_notification">Děkujeme za vyzkoušení Heads-up! Pokud se Vám aplikace líbí, zanechte prosím hodnocení na Google Play. Pokud Vám aplikace nefunguje, můžete se pokusit najít pomoc na GitHub stránce projektu.</string>
+  <string name="sample_notification_title_setup">Funguje to!</string>
+  <string name="pref_off_as_locked">Ponechat Heads-up zapnuté při vypnuté obrazovce</string>
+  <string name="pref_off_as_locked_desc">Tímto povolíte aplikaci Heads-up ponechat obrazovku uzamčenu, i když je vypnuta. Užitečná funkce pokud chcete dostávat oznáení na zamykací obrazovce, i když je obrazovka vypnuta.</string>
 </resources>

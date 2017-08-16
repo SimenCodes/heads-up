@@ -18,7 +18,7 @@
   <string name="app_name">Heads-up notifications</string>
   <string name="app_icon_name">Heads-up</string>
   <string name="title_activity_welcome">Heads-up notifications</string>
-  <string name="action_settings">Réglages</string>
+  <string name="action_settings">Paramètres</string>
   <string name="reader_btn_open">Ouvrir</string>
   <string name="reader_btn_dismiss">Rejeter</string>
   <string name="intro_desc">Appuyer ci-dessous pour activer/désactiver les notifications heads-up.</string>
@@ -35,6 +35,7 @@
   <string name="pref_header_style">Style</string>
   <string name="pref_lock_screen_on">Afficher sur l\'écran de verrouillage</string>
   <string name="pref_lock_screen_on_desc">Afficher la notification sur l\'écran de verrouillage.</string>
+  <!-- Translators: Please add a note in the next lines asking users to write in English. -->
   <string name="bug_report_request">Si l\'appli ne fonctionne pas correctement, appuyez ici pour rapporter un problème (support en Anglais). Vous n\'avez rien à faire si tout fonctionne correctement.\n\n</string>
   <string name="pref_overlay_display_time">Durée d\'affichage</string>
   <string name="pref_overlay_time_max">Jusqu\'au rejet</string>
@@ -100,6 +101,7 @@
     <item name="holo">Clair normal</item>
     <item name="holodark">Foncé normal</item>
     <item name="random">Psychédélique (aléatoire)</item>
+    <!-- Do not translate this one -->
     <item name="ubuntu">Ubuntu</item>
   </string-array>
   <string name="pref_only_on_lock_screen">Seulement sur l\'écran de verrouillage</string>
@@ -115,7 +117,6 @@
   <string name="pref_keep_screen_on_forever_desc">Après avoir allumé l\'écran, le garder allumé tant que la notification est visible.</string>
   <string name="action_help">Aide !</string>
   <string name="action_test">Tester</string>
-  <string name="device_admin_enable_explanation">L\'activation permet à Heads-up d\'éteindre l\'écran. À utiliser si l\'écran ne s\'éteint pas après l\'affichage des notifications sur l\'écran de verrouillage ou si la détection de la poche ne fonctionne pas.\n\nATTENTION! Vous ne pourrez désinstaller Heads-up tant que cette fonction est activée.</string>
   <string name="device_admin_alredy_on">Déjà un gestionnaire de périphérique.</string>
   <string name="device_admin_not_available">L\'administration du périphérique n\'est pas activée. Arrêt.</string>
   <string name="intro_status_on">Le service fonctionne. Essayez de vous envoyer un message.\nSi cela ne fonctionne pas, redémarrer le périphérique.\nAppuyez ici si vous avez besoin d\'aide</string>
@@ -156,5 +157,6 @@
   <string name="welcome_done_text">Si vous voyez une notification Heads-up en haut de votre écran vous êtes prêt.\n\nMaintenant, allez dans les paramètres et réglez tout comme vous le souhaitez.\n\nAucune notification Heads-up? Appuyez sur Aide!</string>
   <string name="sample_notification">Merci d\'essayer Heads-up! Si vous l\'aimer, s\'il vous plait laissez un avis sur le Play Store. Si vous ne réussissez pas à le faire fonctionner vous pouvez obtenir de l\'aide sur la page GitHub du projet.</string>
   <string name="sample_notification_title_setup">Ca marche!</string>
+  <string name="pref_off_as_locked">Autre solution : désactivé comme bloqué</string>
   <string name="pref_off_as_locked_desc">Permettre ceci fera à Heads-up considérer l\'écran verrouillé chaque fois qu\'il est éteint. Utile si vous recevez des notifications sur l\'écran de vérrouillage même si ce réglage est désactivé.</string>
 </resources>
