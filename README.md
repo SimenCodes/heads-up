@@ -2,6 +2,16 @@
 With this app, any device can get the heads-up notifications introduced in Android 5 “Lollipop”, no root required. And the popups actually look like those in Android Lollipop.
 But according to Addictivetips (and a lot of the users), this app “has done more than just replicate a feature of Lollipop. Even if you aren’t dying to try Lollipop and some of its new features, this app is worth a try“.
 
+<div style="width: 500px; padding: 10px; background-color: #ffffb6; margin: 0 auto;">
+<h3>Hi everyone!</h3>
+<p>As you might have noticed, I don’t really have time to work on Heads-up anymore. Heads-up will keep working, but I won’t add any new features. Maybe someday in the future, but right now I’ve got too much other exciting stuff going on :)</p>
+<p><b>I’d like to say thank you for using Heads-up, leaving over 30,000 awesome reviews on Google Play, sending me thousands of emails with feedback, and translating it into 30 languages. And of course a huge thank you to those who donated as well!</b></p>
+<p>Seems like you’ve been busy telling your friends about Heads-up too, we’ve been getting over 1,000 new users <b>daily</b> for a total of almost <b>900,000 downloads</b>!</p>
+<p>I’d never be able to pull this off without you!</p>
+<p>Cheers,<br>
+Simen</p>
+</div>
+
 *Looking for help? Scroll down to "Common Issues"*
 
 ## Features ##
@@ -67,11 +77,9 @@ If you find that the uninstall button is disabled, go to Settings > Security > D
 Yup, that's right. **Heads-up does only show one notification.** Period. See [issue #34](https://github.com/SimenCodes/heads-up/issues/34).
 
 #### Something else? ####
-Something I haven't covered here? I answer all kinds questions in the [issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue).
-If your question hasn't been answered there already, feel free to ask!
-*Let me know that you've tried the steps here when asking qustions. If you don't, the first thing you'll get is a link to this list.*
+Something I haven't covered here? I have answered all kinds questions in the [issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue).
+If your question hasn't been answered there *(protip: use the search button)*, ~~feel free to ask!~~ you're unfortunately out of luck (I don't provide support Heads-up anymore, see note at the top of this page).
+~~*Let me know that you've tried the steps here when asking qustions. If you don't, the first thing you'll get is a link to this list.~~
 
 ## Contact ##
-Problems, feature requests or questions? Go to the [Issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue). You can also [email](mailto:sb@simen.codes) me, but I'm slower to answer emails.
-
-*PS: Want to try the newest version before everyone else? [Get the BETA here](https://play.google.com/apps/testing/codes.simen.l50notifications).*
+Want to get in touch? Feel free to [email](mailto:sb@simen.codes) me about anything else than questions about Heads-up.
