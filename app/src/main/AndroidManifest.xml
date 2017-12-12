@@ -63,7 +63,7 @@
         </service>
         <service
             android:name=".NotificationListenerAccessibilityService"
-            android:enabled="true"
+            android:enabled="@bool/is_not_sdk_18"
             android:exported="true"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >

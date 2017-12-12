@@ -108,7 +108,7 @@
     <string name="pref_only_on_lock_screen_desc">Only display popups on the lockscreen.</string>
     <string name="pref_privacy_on_lockscreen">Privacy on lockscreen</string>
     <string name="pref_privacy_on_lockscreen_desc">Don\'t display message contents on the lockscreen</string>
-    <string name="accessibility_desc">Enable this service to allow Heads-up to read your notifications.\n\nDO NOT enable the accessibility service if your device is running Android 4.3 or newer (follow instructions inside the app instead).</string>
+    <string name="accessibility_desc">Enable this service to let Heads-up notifications display your notifications in an easy-to-read banner when they arrive.</string>
     <string name="device_admin_disable_warning">After disabling this service, some features in Heads-up might not work properly.</string>
     <string name="title_activity_device_admin_enabler">Enable device admin</string>
     <string name="pref_device_admin">Fix \'screen stays on\' bug.</string>
