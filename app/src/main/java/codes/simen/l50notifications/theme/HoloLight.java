@@ -56,7 +56,7 @@ public class HoloLight extends ThemeClass {
         Button button = (Button) v.getChildAt(v.getChildCount() - 1);
         button.setText(actionTitle);
         button.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontMultiplier * button.getTextSize());
-        button.setTextColor(Color.BLACK);
+        button.setTextColor(Color.DKGRAY);
         if (icon != null) {
             icon.mutate().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
             button.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null);

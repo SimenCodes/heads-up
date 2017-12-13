@@ -34,7 +34,7 @@
     <string name="blocked_confirmation">App blocked</string>
     <string name="pref_header_style">Style</string>
     <string name="pref_lock_screen_on">Display on lockscreen</string>
-    <string name="pref_lock_screen_on_desc">Display the heads-up on the lockscreen.</string>
+    <string name="pref_lock_screen_on_desc">Display the heads-up on the lockscreen. (Not available on Android 8+)</string>
     <!-- Translators: Please add a note in the next lines asking users to write in English. -->
     <string name="bug_report_request">If the app has been misbehaving lately, tap here to report the problem. You don\'t have to do anything if the app is behaving normally.\n\n</string>
     <string name="pref_overlay_display_time">Display time</string>

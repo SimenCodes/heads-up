@@ -23,7 +23,9 @@
     <color name="notification_background">#000000</color>
     <color name="notification_background_light">#FFFFFF</color>
     <color name="notification_btn_text_color_light">#000</color>
-    <color name="shadow_dark">#666</color>
+    <color name="shadow_dark">#96666666</color>
+
+    <color name="actions_background_light">#ededed</color>
 
     <color name="suggestion_highlight_text">#177bbd</color>
     <color name="button_press_highlight">#dedede</color>
@@ -32,6 +34,7 @@
 
     <color name="text_color_dark">#000000</color>
     <color name="text_color_light">#FFFFFF</color>
+    <color name="text_color_light_secondary">#747474</color>
     <color name="error_highlight_text">#ffcc0000</color>
 
     <color name="primary">#2196F3</color>

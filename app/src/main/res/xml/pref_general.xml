@@ -62,13 +62,6 @@
         android:defaultValue="false"
         />
 
-    <CheckBoxPreference
-        android:key="broadcast_notifications"
-        android:title="@string/pref_broadcast_notifications"
-        android:summary="@string/pref_broadcast_notifications_desc"
-        android:defaultValue="false"
-        />
-
     <SwitchPreference
         android:key="night_mode"
         android:title="@string/pref_night_mode"

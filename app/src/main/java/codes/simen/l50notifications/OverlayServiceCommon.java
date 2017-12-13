@@ -209,6 +209,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                     WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH,
                     PixelFormat.TRANSLUCENT
             );
+
             if (isLocked)
                 position = Integer.valueOf(preferences.getString("overlay_vertical_position_locked", "-10"));
             if (!isLocked || position == -10)
@@ -228,6 +229,10 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
                 case -1:
                     layoutParams.gravity = Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL;
                     break;
+            }
+
+            if (Build.VERSION.SDK_INT >= 26) {
+                layoutParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
             }
 
             isCompact = preferences.getBoolean("compact_mode", true);

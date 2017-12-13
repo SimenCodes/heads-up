@@ -128,8 +128,7 @@ public class ThemeClass {
      */
     public void addActionButton(ViewGroup actionButtons, String actionTitle, Drawable icon, View.OnClickListener clickListener, float fontMultiplier) {
         LayoutInflater inflater = LayoutInflater.from(actionButtons.getContext());
-        ViewGroup v = (ViewGroup) inflater.inflate(
-                R.layout.button_notification, actionButtons);
+        ViewGroup v = (ViewGroup) inflater.inflate(R.layout.button_notification, actionButtons);
 
         Button button = (Button) v.getChildAt(v.getChildCount() - 1);
         button.setText(actionTitle);

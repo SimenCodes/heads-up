@@ -67,10 +67,13 @@ public class SetupActivity extends Activity {
         try {
             WindowManager windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
             final View view = new View(getApplicationContext());
+            int type = Build.VERSION.SDK_INT >= 26
+                    ? WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
+                    : WindowManager.LayoutParams.TYPE_PRIORITY_PHONE;
             windowManager.addView(view, new WindowManager.LayoutParams(
                     WindowManager.LayoutParams.MATCH_PARENT,
                     WindowManager.LayoutParams.WRAP_CONTENT,
-                    WindowManager.LayoutParams.TYPE_PRIORITY_PHONE,
+                    type,
                     WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                     PixelFormat.TRANSLUCENT
             ));
@@ -96,7 +99,7 @@ public class SetupActivity extends Activity {
     public void openOverlaySettings(View view) {
         try {
             startActivity(new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                            Uri.parse("package:codes.simen.l50notifications"))
+                    Uri.parse("package:codes.simen.l50notifications"))
             );
         } catch (ActivityNotFoundException e) {
             openAppSettings(view);
@@ -106,7 +109,7 @@ public class SetupActivity extends Activity {
     public void openAppSettings(View view) {
         try {
             startActivity(new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-                            Uri.parse("package:codes.simen.l50notifications"))
+                    Uri.parse("package:codes.simen.l50notifications"))
             );
         } catch (ActivityNotFoundException e) {
             startActivity(new Intent(android.provider.Settings.ACTION_MANAGE_APPLICATIONS_SETTINGS));

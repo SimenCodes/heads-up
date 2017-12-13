@@ -39,6 +39,7 @@
         android:entryValues="@array/overlayPositionValues"
         android:title="@string/pref_top_margin_locked"
         android:defaultValue="1"
+        android:enabled="@bool/is_not_sdk_26"
         />
 
     <codes.simen.l50notifications.ui.OpacityPreference
