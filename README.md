@@ -1,4 +1,4 @@
-#Heads-up notifications#
+# Heads-up notifications #
 With this app, any device can get the heads-up notifications introduced in Android 5 “Lollipop”, no root required. And the popups actually look like those in Android Lollipop.
 But according to Addictivetips (and a lot of the users), this app “has done more than just replicate a feature of Lollipop. Even if you aren’t dying to try Lollipop and some of its new features, this app is worth a try“.
 
