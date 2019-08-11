@@ -17,6 +17,7 @@ package codes.simen.l50notifications;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.ActivityManager;
 import android.app.KeyguardManager;
@@ -72,7 +73,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import codes.simen.l50notifications.admin.AdminReceiver;
 import codes.simen.l50notifications.theme.HoloDark;
 import codes.simen.l50notifications.theme.HoloLight;
 import codes.simen.l50notifications.theme.L5Black;
@@ -94,7 +94,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
     private static final int SENSOR_DELAY_MILLIS = 10000;
     private static final int MIN_LINES = 2;
     public static final int FLAG_FLOATING_WINDOW = 0x00002000;
-    private static final ArrayList<String> LOCKSCREEN_APPS = new ArrayList<>(Arrays.asList(new String[]{
+    private static final ArrayList<String> LOCKSCREEN_APPS = new ArrayList<>(Arrays.asList(
             "com.achep.acdisplay",
             "com.silverfinger.lockscreen",
             "com.slidelock",
@@ -110,7 +110,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
             "com.vlocker.locker",
             "com.microsoft.next",
             "com.cmcm.locker"
-    }));
+    ));
 
     private WindowManager windowManager;
     private WindowManager.LayoutParams layoutParams;
@@ -839,6 +839,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
         }
     }
 
+    @SuppressLint("WrongConstant") // FLAG_FLOATING_WINDOW isn't official
     private void openIntent(PendingIntent mPendingIntent, boolean isFloating) {
         try {
             Mlog.d(logTag, "sendPending");
@@ -1047,7 +1048,7 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
         wLock = powerManager.newWakeLock(
                 PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP,
-                "heads-up");
+                "heads-up:lock");
     }
 
     private void initPowerManager() {
@@ -1074,16 +1075,6 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
 
     void screenOff() {
         if (wLock != null && wLock.isHeld()) wLock.release();
-
-        initPowerManager();
-        if (powerManager.isScreenOn()) {
-            if (policyManager == null)
-                policyManager = (DevicePolicyManager) getSystemService(DEVICE_POLICY_SERVICE);
-            if (policyManager.isAdminActive(AdminReceiver.getComponentName(getApplicationContext()))) {
-                Mlog.v(logTag, "ADMIN_ACTIVE");
-                policyManager.lockNow();
-            } else Mlog.v(logTag, "ADMIN_NOT_ACTIVE");
-        }
     }
 
     /**
@@ -1091,7 +1082,8 @@ public class OverlayServiceCommon extends Service implements SensorEventListener
      */
     void pokeScreenTimer() {
         initPowerManager();
-        powerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, "pokeScreenTimer").acquire(1000);
+        int flags = PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE;
+        powerManager.newWakeLock(flags, "heads-up:pokeScreenTimer").acquire(1000);
     }
 
     @Override

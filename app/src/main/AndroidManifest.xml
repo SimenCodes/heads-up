@@ -112,30 +112,7 @@
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
             </intent-filter>
         </receiver>
-        <receiver
-            android:name=".admin.AdminReceiver"
-            android:description="@string/device_admin_description_manifest"
-            android:label="@string/app_name"
-            android:permission="android.permission.BIND_DEVICE_ADMIN" >
-            <meta-data
-                android:name="android.app.device_admin"
-                android:resource="@xml/device_admin_config" />
 
-            <intent-filter>
-                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
-            </intent-filter>
-        </receiver>
-
-        <activity
-            android:name=".ui.DeviceAdminEnabler"
-            android:exported="true"
-            android:label="@string/title_activity_device_admin_enabler" >
-            <intent-filter>
-                <action android:name="codes.simen.l50notifications.deviceAdmin" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".ui.RequestBroadcastDialog"
             android:theme="@style/Dialog" >

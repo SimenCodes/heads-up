@@ -73,15 +73,6 @@
         android:dependency="lock_screen_on"
         />
 
-    <Preference
-        android:title="@string/pref_device_admin"
-        android:enabled="@bool/is_not_sdk_26"
-        android:summary="@string/device_admin_enable_explanation">
-        <intent android:targetPackage="codes.simen.l50notifications"
-            android:action="codes.simen.l50notifications.deviceAdmin"
-            />
-    </Preference>
-
     <CheckBoxPreference
         android:key="off_as_locked"
         android:title="@string/pref_off_as_locked"
