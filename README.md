@@ -78,8 +78,7 @@ Yup, that's right. **Heads-up does only show one notification.** Period. See [is
 
 #### Something else? ####
 Something I haven't covered here? I have answered all kinds questions in the [issue tracker](https://github.com/SimenCodes/heads-up/issues?q=is%3Aissue).
-If your question hasn't been answered there *(protip: use the search button)*, ~~feel free to ask!~~ you're unfortunately out of luck (I don't provide support Heads-up anymore, see note at the top of this page).
-~~*Let me know that you've tried the steps here when asking qustions. If you don't, the first thing you'll get is a link to this list.~~
+If your question hasn't been answered there *(protip: use the search box)*, you're probably out of luck (I don't provide support for Heads-up anymore, see note at the top of this page).
 
 ## Contact ##
-Want to get in touch? Feel free to [email](mailto:sb@simen.codes) me about anything else than questions about Heads-up.
+Want to get in touch? Feel free to [email](mailto:sb@simen.codes) me about anything **except asking for help using Heads-up**.
